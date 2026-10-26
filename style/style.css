@@ -1261,7 +1261,7 @@ html.deck-held body { pointer-events: none; touch-action: none; }
 }
 
 /* ── side ruler ──────────────────────────────────────────────────────────
-   Shared by the playground and the home page; see js/sideRuler.js. Colour is
+   Shared by the chapter rails on the project pages. Colour is
    left to the page through --sr-ink / --sr-on so each one can theme it
    without a second copy of the layout. Hidden on narrow screens, where there
    is no margin to put it in and the thumb is already doing the scrolling. */

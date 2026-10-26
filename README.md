@@ -34,7 +34,7 @@ An interactive portfolio built with smooth page transitions, WebGL particle back
 | 02 | [Streams](https://maybo-sasha.github.io/Dev_2/streams.html) | Optimove | Current |
 | 03 | [AI skills for product design](https://maybo-sasha.github.io/Dev_2/ai-champion.html) | Optimove | Current |
 
-Other projects are temporarily hidden. Their pages and assets remain in the repository, while the homepage, navigation and production build include only the three projects above. See [restoration instructions](./archive/README.md).
+Other projects are hidden. Their pages, assets and the former homepage sections are kept on the [hidden-projects-backup](https://github.com/maybo-sasha/portfolio/tree/hidden-projects-backup) branch. To bring one back, restore its files from that branch, add it to index.html, js/workMenu.js, js/projectNav.js and portfolio.config.mjs, then update the visibility tests.
 
 ## Tech stack
 

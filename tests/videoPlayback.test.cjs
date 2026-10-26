@@ -117,8 +117,7 @@ test('every homepage video matches its project video, including the hero where p
         const inner = fs.readFileSync(path.join(root, page), 'utf8');
         const videos = [...inner.matchAll(/<video\b([^>]+)>/g)].filter(m => !m[1].includes('about-video'));
         const innerSources = videos.map(m => m[1].match(/\ssrc="([^"]+)"/)?.[1]).filter(Boolean);
-        if (page === 'playground.html') assert.ok(innerSources.includes(homeSrc));
-        else assert.equal(homeSrc, innerSources[0], page + ' hero differs');
+        assert.equal(homeSrc, innerSources[0], page + ' hero differs');
         assert.ok(fs.existsSync(path.join(root, decodeURIComponent(homeSrc.split('?')[0]))), homeSrc);
     }
 });

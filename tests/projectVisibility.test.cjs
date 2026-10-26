@@ -19,12 +19,14 @@ test('homepage, Work menu and Next sequence contain exactly the active projects'
         for (const archived of hidden) assert.ok(!html.includes('href="' + archived + '"'), page + ' links to ' + archived);
     }
 });
-test('hidden pages and their former homepage sections are preserved outside the live page', () => {
-    for (const page of hidden) assert.ok(fs.existsSync(path.join(root, page)), page + ' was deleted');
-    const archive = read('archive/home-projects.html');
-    for (const page of hidden.slice(0, 4)) {
-        assert.ok(archive.includes('href="' + page + '"'));
+// The hidden projects live on the hidden-projects-backup branch, not in this tree.
+test('hidden project pages and their asset folders are removed from the live tree', () => {
+    for (const page of hidden) {
+        assert.ok(!fs.existsSync(path.join(root, page)), page + ' is still here');
         assert.ok(!read('index.html').includes(page));
+    }
+    for (const dir of ['assets/personal', 'assets/tetrisblockparty', 'assets/lucky-buddies', 'assets/playerjoueney', '28-days']) {
+        assert.ok(!fs.existsSync(path.join(root, dir)) || !require('node:child_process').execSync('git ls-files ' + dir, { cwd: root }).toString().trim(), dir + ' is still tracked');
     }
     assert.ok(!read('index.html').includes('assets/personal/'));
     assert.ok(!read('index.html').includes('assets/tetrisblockparty/'));
