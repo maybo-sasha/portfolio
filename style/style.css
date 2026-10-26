@@ -1149,14 +1149,14 @@ html.deck-held body { pointer-events: none; touch-action: none; }
 
 .work-menu-inner {
     display: grid;
-    grid-template-columns: 1.05fr 1fr;
+    grid-template-columns: 1.3fr 1fr;
     gap: 4vw;
     max-width: 1500px;
     margin: 0 auto;
     align-items: center;
 }
 
-.work-list { display: flex; flex-direction: column; }
+.work-list { display: flex; flex-direction: column; container-type: inline-size; }
 
 .work-item {
     display: grid;
@@ -1180,9 +1180,12 @@ html.deck-held body { pointer-events: none; touch-action: none; }
 .work-item .work-name {
     font-family: var(--font-display);
     font-weight: 800;
-    font-size: clamp(1.4rem, 2.6vw, 2.4rem);
+    /* one line for every name: full size when the list is wide, all three shrink together when it isn't
+       (240px = index + category + gaps + hover indent; 13.6 = the longest name's width per px of size) */
+    font-size: clamp(1.1rem, calc((100cqi - 240px) / 13.6), 2.4rem);
     letter-spacing: -0.025em;
     line-height: 1;
+    white-space: nowrap;
 }
 .work-item .work-cat {
     font-size: 0.6rem;
@@ -1190,6 +1193,7 @@ html.deck-held body { pointer-events: none; touch-action: none; }
     letter-spacing: 0.22em;
     text-transform: uppercase;
     color: rgba(255,255,255,0.3);
+    white-space: nowrap;
     transition: color 0.35s ease;
 }
 .work-item:hover,

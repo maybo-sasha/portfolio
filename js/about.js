@@ -20,11 +20,14 @@ if (mouse) {
     let unlockTimer;
     gsap.ticker.add(() => { if (!isLocked) { setLeft(rawX); setTop(rawY); } });
 
-    const resetCursor = () => gsap.to(mouse, {
-        width: '2rem', height: '2rem', borderRadius: '50%',
-        borderColor: 'rgba(255,255,255,0.75)', backgroundColor: 'transparent',
-        duration: 0.25, ease: 'power2.out', overwrite: true,
-    });
+    // width first, then height (js/ringShrink.js), so the pill never stretches on the way back
+    const resetCursor = () => window.ringShrink
+        ? window.ringShrink(mouse, { borderColor: 'rgba(255,255,255,0.75)', backgroundColor: 'transparent' }, gsap)
+        : gsap.to(mouse, {
+            width: '2rem', height: '2rem', borderRadius: '50%',
+            borderColor: 'rgba(255,255,255,0.75)', backgroundColor: 'transparent',
+            duration: 0.25, ease: 'power2.out', overwrite: true,
+        });
 
     // Lock + expand to cover the link, with the pulsing ripple
     const lockLink = link => {
