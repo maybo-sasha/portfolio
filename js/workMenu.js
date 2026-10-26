@@ -5,7 +5,7 @@
     const PROJECTS = [
         { name: 'AI Decisioning Studio', cat: 'Optimove · Current', href: 'ai-decisioning-studio.html', type: 'video', media: './assets/ai-decisioning-studio/hub.mp4?v=3008' },
         { name: 'Streams', cat: 'Optimove · Journey orchestration', href: 'streams.html', type: 'video', media: './assets/streams/streams-hero.mp4?v=35956b769e55' },
-        { name: 'AI skills for product design', cat: 'Optimove · AI Skills', href: 'ai-champion.html', type: 'video', media: './assets/ai-champion/generate-ds-ui-1440.mp4' },
+        { name: 'AI skills for product design', cat: 'Optimove · AI Skills', href: 'ai-champion.html', type: 'video', media: './assets/ai-champion/generate-ds-ui-1440.mp4?v=1024' },
     ];
 
     function init() {
@@ -55,6 +55,12 @@
                 media.playsInline = true;
                 media.preload = 'metadata';
                 media.src = p.media;
+                // a silent preview loop, not a player: no browser viewer, PiP, AirPlay or fullscreen extras over it
+                media.disablePictureInPicture = true;
+                media.setAttribute('disablepictureinpicture', '');
+                media.setAttribute('disableremoteplayback', '');
+                media.setAttribute('x-webkit-airplay', 'deny');
+                media.setAttribute('controlslist', 'nofullscreen nodownload noremoteplayback noplaybackrate');
             } else {
                 media = document.createElement('img');
                 media.src = p.media;
@@ -126,11 +132,14 @@
             };
             const ring = getComputedStyle(document.documentElement)
                 .getPropertyValue('--cursor-ring').trim() || 'rgba(255,255,255,0.75)';
-            const shrink = () => gsap.to(cursorEl, {
-                width: '2rem', height: '2rem', borderRadius: '50%',
-                backgroundColor: 'transparent', borderColor: ring,
-                duration: 0.25, ease: 'power2.out', overwrite: 'auto',
-            });
+            // width first, then height (js/ringShrink.js), so the pill never stretches on the way back
+            const shrink = () => window.ringShrink
+                ? window.ringShrink(cursorEl, { backgroundColor: 'transparent', borderColor: ring })
+                : gsap.to(cursorEl, {
+                    width: '2rem', height: '2rem', borderRadius: '50%',
+                    backgroundColor: 'transparent', borderColor: ring,
+                    duration: 0.25, ease: 'power2.out', overwrite: 'auto',
+                });
             workLink.addEventListener('mouseenter', () => expand(workLink));
             workLink.addEventListener('mouseleave', shrink);
             items.forEach(it => {

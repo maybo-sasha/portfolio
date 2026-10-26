@@ -16,6 +16,8 @@ let rawX = 0, rawY = 0;
 
 const resetCursor = () => {
     if (!mouse) return;
+    // width first, then height (js/ringShrink.js), so the pill never stretches on the way back
+    if (window.ringShrink) return window.ringShrink(mouse, { borderColor: 'rgba(255,255,255,0.75)', backgroundColor: 'transparent' });
     gsap.to(mouse, {
         width:  '2rem',
         height: '2rem',

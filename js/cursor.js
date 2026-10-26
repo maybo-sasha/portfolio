@@ -44,7 +44,9 @@
     function reset() {
         locked = false;
         cursor.classList.remove('has-ripple');
-        if (g) g.to(cursor, {
+        // width first, then height (js/ringShrink.js); a plain tween is the fallback if that script is missing
+        if (window.ringShrink) window.ringShrink(cursor, { backgroundColor: 'transparent', borderColor: ring() });
+        else if (g) g.to(cursor, {
             width: '2rem', height: '2rem', borderRadius: '50%',
             backgroundColor: 'transparent', borderColor: ring(),
             duration: 0.25, ease: 'power2.out', overwrite: 'auto',

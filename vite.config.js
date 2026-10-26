@@ -3,8 +3,8 @@ import { resolve, join } from 'path';
 import { cpSync, existsSync, readFileSync } from 'fs';
 import { publishedPages, runtimeAssets } from './portfolio.config.mjs';
 
-// GitHub Pages project sites live under /Dev_2/; local dev stays at /
-const base = process.env.GITHUB_PAGES === 'true' ? '/Dev_2/' : '/';
+// Relative asset URLs work at the domain root and under renamed GitHub Pages repositories.
+const base = './';
 
 // Discover the classic scripts actually used by published pages. Module scripts
 // are bundled by Vite; archived pages do not add scripts or assets to the build.
