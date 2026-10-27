@@ -165,6 +165,8 @@ function cursorAnim() {}  // kept for call-site compat in appearOnScroll
     };
 
     document.addEventListener('pointerdown', e => {
+        // a mouse drag only: a finger already scrolls natively, and on a phone the deck snaps one project per swipe
+        if (e.pointerType && e.pointerType !== 'mouse') return;
         if (e.target.closest('a, button, input')) return;
         isDragging   = true;
         dragStartY   = e.clientY;
