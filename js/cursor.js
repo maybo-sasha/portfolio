@@ -24,13 +24,16 @@
 
     window.addEventListener('mousemove', e => { rawX = e.clientX; rawY = e.clientY; });
 
+    // Write only when the pointer has moved: left/top on every frame cost a style and layout pass even at rest
+    let shownX = NaN, shownY = NaN;
+    const moved = () => !locked && (rawX !== shownX || rawY !== shownY);
     if (g) {
         const setL = g.quickSetter(cursor, 'left', 'px');
         const setT = g.quickSetter(cursor, 'top', 'px');
-        g.ticker.add(() => { if (!locked) { setL(rawX); setT(rawY); } });
+        g.ticker.add(() => { if (moved()) { shownX = rawX; shownY = rawY; setL(rawX); setT(rawY); } });
     } else {
         const loop = () => {
-            if (!locked) { cursor.style.left = rawX + 'px'; cursor.style.top = rawY + 'px'; }
+            if (moved()) { shownX = rawX; shownY = rawY; cursor.style.left = rawX + 'px'; cursor.style.top = rawY + 'px'; }
             requestAnimationFrame(loop);
         };
         requestAnimationFrame(loop);
@@ -43,6 +46,7 @@
 
     function reset() {
         locked = false;
+        shownX = shownY = NaN;   // the hover tween moved the ring off the pointer: put it back on the next frame
         cursor.classList.remove('has-ripple');
         // width first, then height (js/ringShrink.js); a plain tween is the fallback if that script is missing
         if (window.ringShrink) window.ringShrink(cursor, { backgroundColor: 'transparent', borderColor: ring() });

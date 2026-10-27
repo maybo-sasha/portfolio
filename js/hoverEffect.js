@@ -204,8 +204,10 @@ function initHoverEffects() {
             if (mediaEl.readyState >= 2) markReady();
             else mediaEl.addEventListener('loadeddata', markReady, { once: true });
 
-            // Ensure the source video keeps playing while WebGL samples it
-            mediaEl.play().catch(() => {});
+            // Start the card that is on screen; the others start as they arrive (js/lazyVideo.js, appearOnScroll.js),
+            // so a visit doesn't download all three project videos up front
+            const r = mediaEl.getBoundingClientRect();
+            if (r.bottom > 0 && r.top < window.innerHeight) mediaEl.play().catch(() => {});
         } else {
             // Load texture — if a reveal was already requested, play it now
             new THREE.TextureLoader().load(mediaEl.src, tex => {

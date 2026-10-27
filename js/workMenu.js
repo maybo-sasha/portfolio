@@ -3,9 +3,9 @@
 // on any page that has a .nav-links-inline nav and it wires itself up.
 (function () {
     const PROJECTS = [
-        { name: 'AI Decisioning Studio', cat: 'Optimove · Current', href: 'ai-decisioning-studio.html', type: 'video', media: './assets/ai-decisioning-studio/hub.mp4?v=3008' },
-        { name: 'Streams', cat: 'Optimove · Journey orchestration', href: 'streams.html', type: 'video', media: './assets/streams/streams-hero.mp4?v=35956b769e55' },
-        { name: 'AI skills for product design', cat: 'Optimove · AI Skills', href: 'ai-champion.html', type: 'video', media: './assets/ai-champion/generate-ds-ui-1440.mp4?v=1024' },
+        { name: 'AI Decisioning Studio', cat: 'Optimove · Current', href: 'ai-decisioning-studio.html', type: 'video', media: './assets/ai-decisioning-studio/hub.mp4?v=f5df23a260a8' },
+        { name: 'Streams', cat: 'Optimove · Journey orchestration', href: 'streams.html', type: 'video', media: './assets/streams/streams-hero.mp4?v=fb46f18ac6d1' },
+        { name: 'AI skills for product design', cat: 'Optimove · AI Skills', href: 'ai-champion.html', type: 'video', media: './assets/ai-champion/generate-ds-ui-1440.mp4?v=4c866207a787' },
     ];
 
     function init() {
@@ -53,7 +53,8 @@
                 media.muted = true;
                 media.loop = true;
                 media.playsInline = true;
-                media.preload = 'metadata';
+                // nothing loads until the menu first opens: it is built on every page, and on phones it never opens
+                media.preload = 'none';
                 media.src = p.media;
                 // a silent preview loop, not a player: no browser viewer, PiP, AirPlay or fullscreen extras over it
                 media.disablePictureInPicture = true;
@@ -102,6 +103,7 @@
             menu.classList.add('is-open');
             menu.setAttribute('aria-hidden', 'false');
             workLink.classList.add('active');
+            medias.forEach(el => { if (el.tagName === 'VIDEO' && el.preload === 'none') el.preload = 'metadata'; });
             if (active < 0) activate(0);
         }
         function close() {

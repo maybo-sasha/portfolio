@@ -69,11 +69,6 @@
                 radial-gradient(120% 80% at 80% 10%, rgba(107,78,245,0.35) 0%, rgba(107,78,245,0) 50%);
         }
         .ads-hero-tag { position: absolute; left: 6vw; bottom: clamp(3rem, 8vw, 7rem); z-index: 2; color: #fff; }
-        .ads-hero-tag .eyebrow {
-            display: inline-flex; align-items: center; gap: 0.5rem;
-            font-size: 0.74rem; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase;
-            color: rgba(255,255,255,0.72); margin: 0 0 1.1rem;
-        }
         .spark { color: var(--lime); }
         .ads-hero-tag h1 {
             font-size: clamp(2.8rem, 8vw, 7.5rem); font-weight: 800; letter-spacing: -0.04em;
@@ -97,22 +92,7 @@
         }
         .ads-lede p.big .spark { color: var(--violet); }
         .ads-lede p.sub { font-size: clamp(1.05rem, 1.5vw, 1.25rem); line-height: 1.7; color: var(--text); max-width: 64ch; margin: 0 auto; }
-        .ads-lede p.big .sep { color: var(--text); font-weight: 400; padding: 0 0.15em; }
-
-        /* The claim is centred; the three points under it are not.
-           Ranged left in columns, because a list is read line by line
-           and centred text makes every line start somewhere new. */
-        .ads-lede .ads-new {
-            list-style: none; padding: 0;
-            display: grid; grid-template-columns: repeat(3, minmax(0, 1fr));
-            gap: clamp(1.4rem, 3vw, 2.8rem); text-align: left;
-            max-width: 1240px; margin: clamp(3rem, 6vw, 5rem) auto 0;
-        }
-        @media (max-width: 900px) { .ads-lede .ads-new { grid-template-columns: minmax(0, 1fr); max-width: 60ch; } }
-        .ads-lede .ads-new li {
-            border-top: 2px solid var(--violet); padding-top: 1.1rem;
-            font-size: clamp(1.02rem, 1.3vw, 1.14rem); line-height: 1.55; color: var(--text);
-        }
+        @media (max-width: 900px) { }
 
         /* ── section scaffolding ── */
         .ads-sec { padding: clamp(4rem, 8vw, 7rem) 0; counter-increment: adss; }
@@ -126,27 +106,11 @@
         .ads-h2 { font-weight: 800; font-size: clamp(2rem, 4.2vw, 3.4rem); line-height: 1.02; letter-spacing: -0.035em; margin: 0 0 1.2rem; max-width: 18ch; }
         .ads-body { font-size: clamp(1.08rem, 1.5vw, 1.3rem); line-height: 1.65; color: var(--text); max-width: 56ch; }
         .ads-head { max-width: 100ch; margin-bottom: clamp(2.5rem, 5vw, 4rem); }
-
-        /* ── a section opening: its copy beside its screen ─────*/
-        .ads-lead {
-            display: grid; grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
-            gap: clamp(2rem, 4vw, 4.5rem); align-items: center;
-            margin-bottom: clamp(2.5rem, 5vw, 4rem);
-        }
-        @media (max-width: 900px) { .ads-lead { grid-template-columns: minmax(0, 1fr); } }
-        .ads-lead:last-child { margin-bottom: 0; }
-        /* the grid gap does the spacing, so the head only keeps a margin
-           when something follows it in the same column */
-        .ads-lead .ads-head { margin-bottom: clamp(1.6rem, 3vw, 2.2rem); }
-        .ads-lead .ads-head:only-child { margin-bottom: 0; }
+        @media (max-width: 900px) { }
 
         /* ── product showcase ── */
         .ads-shot { border-radius: 18px; overflow: hidden; background: var(--paper); box-shadow: 0 50px 90px -45px rgba(29,24,80,0.5), 0 0 0 1px var(--line); }
         .ads-shot img, .ads-shot video { display: block; width: 100%; height: auto; }
-        /* fills its frame instead of sitting inside it, which crops the
-           dead margin the screen recording carries around the app */
-        .ads-shot--cover { aspect-ratio: 16 / 9; }
-        .ads-shot--cover video { height: 100%; object-fit: cover; }
 
         /* ── principles ── */
         .ads-princ { display: grid; grid-template-columns: repeat(3, 1fr); gap: clamp(1.4rem, 3vw, 2.6rem); }
@@ -294,10 +258,6 @@
 .media-story-copy h3 { font-size: clamp(1.5rem, 2vw, 2.25rem); font-weight: 700; line-height: 1.2; letter-spacing: -.025em; margin: 0 0 1.5rem; }
 .media-story-copy > p:not(.media-kicker) { font-size: clamp(1rem, 1.1vw, 1.125rem); color: var(--text); line-height: 1.7; margin: 0; }
 .media-story-copy > p:not(.media-kicker) + p { margin-top: 1rem; }
-.screen-context { margin-top: 3rem; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); padding: 1.25rem 0; }
-.screen-context summary { cursor: pointer; color: var(--violet-deep); font-size: 1rem; font-weight: 600; line-height: 1.5; }
-.screen-context summary:focus-visible { outline: 2px solid var(--violet); outline-offset: 3px; }
-.screen-context .case-figure { margin: 2rem auto; }
 .campaign-principles { margin-top: 3rem; }
 .agentrow { display: block; padding-top: 0; }
 .agentrow + .agentrow { margin-top: clamp(4rem, 6vw, 6rem); padding-top: clamp(4rem, 6vw, 6rem); border-top: 1px solid var(--line); }
@@ -308,8 +268,6 @@
 .agentrow .does { font-size: clamp(1rem, 1.2vw, 1.2rem); font-weight: 500; line-height: 1.6; }
 .agent-recording { margin-top: 2.5rem; }
 .agent-recording .case-figure { margin-top: 0; }
-.reflection-stories .media-story:first-child { margin-top: 0; }
-.story-closing { max-width: 66ch; font-size: clamp(1.1rem, 1.5vw, 1.3rem); line-height: 1.7; color: var(--text); margin: 4rem 0 0; }
 .ads-view-stage { width: min(100%, var(--source-w, 2500px), calc((100dvh - 7.6rem) * var(--source-ratio, 1.778))); }
 .ads-view.is-actual .ads-view-stage { width: var(--source-w, 2500px); }
 @media (max-width: 1100px) {
@@ -348,10 +306,8 @@
 .ads-wrap > .case-figure, .ads-wrap > .reflection-stories, .reflection-stories > .media-story,
 .ads-wrap > .agentrow, .ads-wrap > .story-closing { margin-top: var(--block-gap); margin-bottom: 0; }
 .ads-wrap > .media-story, .ads-wrap > .case-figure, .reflection-stories > .media-story { padding-top: var(--block-gap); border-top: 1px solid var(--line); }
-.reflection-stories > .media-story:first-child { margin-top: 0; }
 .story-opening--page + .case-figure { margin-top: var(--block-gap); }
 .campaign-principles { margin-top: var(--block-gap); }
-.story-closing { padding-top: var(--block-gap); border-top: 1px solid var(--line); max-width: none; }
 
 /* A screen shown on its own sits on a coloured stage and is a little smaller than the measure,
    so the whole screen and its frame fit one view. The stage replaces the hairline. */
@@ -379,13 +335,6 @@
 .princ h3, .story-phases h3 { font-size: clamp(1.25rem, 1.5vw, 1.5rem); line-height: 1.35; letter-spacing: -.025em; margin: 1rem 0; max-width: 24ch; }
 #strategy > .ads-wrap > .ads-princ .princ h3 { max-width: none; }
 .princ p, .story-phases p { font-size: clamp(1rem, 1.1vw, 1.125rem); line-height: 1.7; color: var(--text); margin: 0; max-width: 42ch; }
-
-/* the brief: each problem sits above the step of the product model that answers it */
-.story-pairs { grid-template-rows: auto auto; grid-auto-flow: column; row-gap: clamp(1.5rem, 2.5vw, 2.5rem); }
-.flow-step { display: flex; align-items: flex-start; gap: 1rem; min-width: 0; padding: clamp(1.25rem, 2vw, 2rem); background: var(--lav); border-radius: 20px; }
-.flow-step > span { display: grid; place-items: center; width: 2rem; height: 2rem; flex-shrink: 0; border-radius: 50%; color: var(--text); background: var(--lime); font-size: .8rem; font-weight: 700; }
-.flow-step strong { display: block; font-size: clamp(1.1rem, 1.4vw, 1.35rem); letter-spacing: -.02em; line-height: 1.35; }
-.flow-step small { display: block; margin-top: .4rem; max-width: 40ch; font-size: clamp(.95rem, 1vw, 1.05rem); line-height: 1.6; color: var(--text); }
 
 /* A screen and its account share the chapter's two columns: the account on the left, the screen on the right. */
 .media-story, .agentrow { display: grid; grid-template-columns: var(--case-columns); gap: var(--case-gap); align-items: start; }
@@ -420,23 +369,6 @@
 .ux-block-head { display: grid; grid-template-columns: var(--case-columns); gap: var(--case-gap); align-items: center; margin-bottom: 2.5rem; }
 .ux-block-head h3 { margin: 0; font-size: clamp(1.5rem, 2vw, 2.25rem); letter-spacing: -.025em; line-height: 1.25; }
 .ux-block-head p { margin: 0; max-width: 62ch; color: var(--text); font-size: clamp(1rem, 1.1vw, 1.125rem); line-height: 1.7; }
-/* The flow reads as a diagram: illustrations, short labels, one review loop. */
-.ux-flow { padding: clamp(1.25rem, 2.5vw, 2.5rem); border: 1px solid var(--line); border-radius: 24px; background: var(--paper); }
-.ux-flow + .ux-flow { margin-top: 2rem; }
-.ux-flow h3 { display: flex; align-items: center; gap: .75rem; font-size: clamp(1.2rem, 1.5vw, 1.5rem); line-height: 1.4; letter-spacing: -.02em; margin: 0 0 1.75rem; }
-.flow-track { font-size: .75rem; color: var(--violet); border: 1px solid var(--line); padding: .35rem .5rem; border-radius: 6px; letter-spacing: .08em; }
-.ux-flow ol { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 2.5rem; list-style: none; padding: 0; margin: 0; }
-.ux-flow li { position: relative; min-width: 0; }
-.ux-flow li + li::before { content: '→'; position: absolute; left: -1.95rem; top: 1.5rem; color: var(--violet); font-size: 1.5rem; }
-.flow-visual { display: flex; align-items: center; gap: .75rem; margin-bottom: 1rem; }
-.flow-art { display: block; width: 72px; height: 72px; flex-shrink: 0; object-fit: contain; }
-.ux-flow .flow-number { color: var(--text); font-size: .7rem; letter-spacing: .08em; }
-.ux-flow strong { display: block; font-size: clamp(1rem, 1.1vw, 1.125rem); line-height: 1.4; }
-.ux-flow small { display: block; margin-top: .5rem; font-size: .9rem; line-height: 1.6; color: var(--text); }
-.ux-flow .flow-branch { display: flex; gap: .4rem; flex-wrap: wrap; margin-top: .6rem; }
-.flow-branch span { font-size: .75rem; padding: .25rem .5rem; border: 1px dashed var(--violet); background: var(--stage); border-radius: 6px; color: var(--text); }
-.ux-flow .flow-return { display: flex; align-items: center; gap: .65rem; color: var(--text); font-size: .85rem; line-height: 1.6; border-top: 1px dashed var(--line); padding-top: .8rem; margin-top: 1.5rem; }
-.flow-return > span { color: var(--violet); font-size: 1.5rem; }
 
 /* The highlighted region replaces a separate paragraph of UX tradeoffs. */
 .wireframe-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--three-gap); }
@@ -444,63 +376,13 @@
 .wireframe-note { min-height: 124px; margin-bottom: 1.5rem; }
 .wireframe-note h4 { font-size: clamp(1.15rem, 1.3vw, 1.4rem); line-height: 1.35; letter-spacing: -.02em; margin: 0 0 .65rem; }
 .wireframe-note p { color: var(--text); font-size: 1rem; line-height: 1.6; max-width: 42ch; margin: 0; }
-.wireframe { background: var(--paper); border: 1px solid var(--line); border-radius: 12px; overflow: hidden; color: var(--text); font-size: .8rem; line-height: 1.5; }
-.wireframe-bar { display: flex; align-items: center; gap: .65rem; padding: .65rem 1rem; border-bottom: 1px solid var(--line); font-weight: 600; background: var(--stage); }
-.wf-window-dots { color: var(--line); font-size: .5rem; letter-spacing: .1em; }
-.wireframe-body { display: grid; gap: .75rem; padding: 1rem; height: 380px; box-sizing: border-box; }
-.wireframe-modal { grid-template-columns: minmax(0, 1.6fr) minmax(0, 1fr); }
-.wireframe .wf-stack { display: flex; flex-direction: column; gap: .75rem; min-width: 0; }
-.wf-box { display: flex; align-items: center; justify-content: center; padding: .55rem; min-height: 38px; border: 1px solid var(--line); border-radius: 5px; text-align: center; }
-.wf-box--tall { flex: 1; min-height: 88px; align-items: flex-start; }
-.wf-highlight { position: relative; border: 1.5px solid var(--violet); background: var(--stage); border-radius: 8px; padding: .65rem; }
-.wf-marker { position: absolute; top: -.65rem; left: -.65rem; display: grid; place-items: center; width: 1.35rem; height: 1.35rem; border: 1px solid var(--violet); border-radius: 50%; color: var(--text); background: var(--lime); font-weight: 700; font-size: .7rem; z-index: 1; }
-.wf-prompt { justify-content: space-between; gap: .5rem; margin-bottom: .65rem; background: var(--paper); text-align: left; }
-.wf-prompt > span { color: var(--violet); }
-.wf-criteria { flex-direction: column; gap: .5rem; font-size: .75rem; background: var(--paper); }
-.wf-summary { padding: .7rem; border-left: 1px solid var(--line); background: var(--stage); font-size: .75rem; }
-.wf-summary strong { display: block; margin-bottom: .75rem; }
-.wf-summary span { display: block; margin: .65rem 0; }
-.wf-note-line { border-top: 1px dashed var(--line); padding-top: .6rem; margin-top: 1rem; color: var(--text); font-size: .7rem; }
-.wf-footer { display: flex; justify-content: space-between; gap: 1rem; margin-top: auto; padding-top: .5rem; }
-.wf-goals { display: flex; flex-direction: column; gap: .25rem; }
-.wf-goals span { color: var(--text); font-size: .65rem; }
-.wf-metrics { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: .4rem; }
-.wf-metrics .wf-box { padding: .35rem; background: var(--paper); }
-.wf-sparkline { height: 45px; margin-top: .65rem; }
-.wf-sparkline svg { width: 100%; height: 100%; fill: none; stroke: var(--violet); stroke-width: 2; }
-.wf-sparkline .wf-control-line { stroke: var(--muted); stroke-dasharray: 4 3; opacity: .55; }
-.wf-mini-label { display: block; color: var(--text); font-size: .65rem; margin-top: .25rem; }
-.wf-campaign-list { display: flex; flex-direction: column; gap: .6rem; margin-top: .25rem; }
-.wf-campaign-list span { height: 20px; border: 1px solid var(--line); border-radius: 4px; }
-.wf-workspace { grid-template-columns: minmax(0, 3fr) minmax(0, 1fr); }
-.wf-assistant { display: flex; flex-direction: column; gap: .65rem; border-left: 1px solid var(--line); padding-left: .75rem; min-width: 0; font-size: .7rem; color: var(--text); }
-.wf-assistant strong { color: var(--text); font-size: .7rem; }
-.wf-assistant .wf-box { margin-top: auto; }
-.wf-agent-controls { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .4rem; font-size: .7rem; }
-.wf-agent-controls .wf-box { min-height: 36px; padding: .3rem; }
-.wf-explain-highlight { flex: 1; display: flex; align-items: stretch; }
-.wf-explanation { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 4fr); gap: .65rem; width: 100%; }
-.wf-nav-lines { display: flex; flex-direction: column; gap: .55rem; padding-top: .15rem; }
-.wf-nav-lines span { height: 14px; border-radius: 3px; background: var(--line); }
-.wf-nav-lines .wf-selected { background: var(--violet); }
-.wf-decision-result { display: flex; flex-direction: column; gap: .4rem; justify-content: center; font-size: .7rem; }
-.wf-decision-result small { font-size: .65rem; color: var(--text); }
 @media (max-width: 1100px) {
     .ux-block-head, .program-media-grid, .wireframe-grid { grid-template-columns: minmax(0, 1fr); }
     .ux-block-head { gap: 1.5rem; }
     .wireframe-note { min-height: 0; }
     .wireframe-study { max-width: 700px; width: 100%; }
-    .ux-flow ol { grid-template-columns: minmax(0, 1fr); gap: 1.75rem; }
-    .ux-flow li { display: grid; grid-template-columns: 80px minmax(0, 1fr); column-gap: 1rem; align-items: start; }
-    .flow-visual { grid-row: 1 / span 3; flex-direction: column-reverse; gap: .25rem; margin: 0; }
-    .flow-art { width: 64px; height: 64px; }
-    .ux-flow small, .ux-flow .flow-branch { grid-column: 2; }
-    .ux-flow li + li::before, .ux-flow li:nth-child(3)::before { content: '↓'; left: 2rem; top: -1.8rem; font-size: 1.25rem; }
 }
 @media (max-width: 600px) {
-    .wireframe-body { height: 400px; padding: .8rem; gap: .6rem; }
-    .wf-agent-controls, .wf-metrics { font-size: .65rem; }
-    .wf-assistant { padding-left: .5rem; }
 }
 @media (max-width: 650px) {
     .program-media-grid .case-figure { padding: 1rem; border-radius: 18px; }
@@ -511,8 +393,6 @@
 }
 @media (max-width: 900px) {
     .ads-princ, .story-phases { grid-template-columns: minmax(0, 1fr); }
-    .story-pairs { grid-template-rows: none; grid-auto-flow: row; row-gap: 1.25rem; }
-    .story-pairs .flow-step + .princ { margin-top: 1.5rem; }
 }
 
 
@@ -527,50 +407,10 @@
    design decision made for it. The icons are the only colour. */
 @font-face { font-family: 'Caveat'; font-style: normal; font-weight: 700; font-display: swap; src: url('./assets/ai-decisioning-studio/caveat-700.ttf') format('truetype'); } /* Caveat, SIL Open Font License 1.1: ./assets/ai-decisioning-studio/caveat-OFL.txt */
 .ads { --plan-ink: #1b1b1e; --plan-mute: #6d6d75; --plan-line: #d6d6dc; --hand: 'Caveat', 'Bradley Hand', 'Segoe Print', cursive; }
-.plan-board { padding: clamp(1.5rem, 2.5vw, 2.75rem); border: 1px solid var(--line); border-radius: 24px; background: var(--paper); color: var(--plan-ink); }
-.plan-board + .plan-board { margin-top: 2rem; }
-.plan-head { padding-bottom: clamp(1.25rem, 1.8vw, 1.75rem); margin-bottom: clamp(1.5rem, 2vw, 2.25rem); border-bottom: 1px solid var(--plan-line); }   /* kicker, title, then the intent under it: one left edge */
-.plan-kicker { margin: 0 0 .5rem; font-size: .7rem; font-weight: 600; letter-spacing: .12em; line-height: 1.5; text-transform: uppercase; color: var(--plan-mute); }
-.plan-head h3 { margin: 0; font-size: clamp(1.35rem, 1.7vw, 1.9rem); line-height: 1.25; letter-spacing: -.025em; color: var(--plan-ink); }
-.plan-intent { margin: .75rem 0 0; max-width: 72ch; font-size: clamp(1rem, 1.1vw, 1.125rem); line-height: 1.65; color: var(--plan-mute); }
-.flow-plan { display: grid; grid-template-columns: 7.5rem minmax(0, 1fr); grid-template-rows: auto auto auto; column-gap: 1.5rem; row-gap: 1rem; }
-.plan-lanes { grid-column: 1; grid-row: 1 / span 3; display: grid; grid-template-rows: subgrid; }
-.plan-lanes span { font-size: .7rem; font-weight: 600; letter-spacing: .12em; line-height: 1.5; text-transform: uppercase; color: var(--plan-mute); }
-.plan-lanes span:nth-child(1) { align-self: end; padding-bottom: .5rem; }
-.plan-lanes span:nth-child(2) { padding-top: 1.6rem; }
-.plan-lanes span:nth-child(3) { padding-top: .2rem; }
-.plan-steps { grid-column: 2; grid-row: 1 / span 3; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); grid-template-rows: subgrid; column-gap: 2.75rem; list-style: none; margin: 0; padding: 0; }
-.plan-step { grid-row: 1 / span 3; display: grid; grid-template-rows: subgrid; min-width: 0; }
-.plan-label { display: none; }
-.plan-ask { align-self: end; margin: 0; padding-right: .5rem; font-family: var(--hand); font-weight: 700; font-size: clamp(1.5rem, 1.75vw, 2rem); line-height: 1.1; color: #2b2b2d; transform: rotate(-1.2deg); transform-origin: left bottom; }
-.plan-step:nth-child(even) .plan-ask { transform: rotate(.7deg); }
-.plan-card { position: relative; padding: 1.1rem 1.35rem 1.4rem; border: 1.5px solid var(--plan-ink); border-radius: 14px; background: var(--paper); }
-.plan-card-top { display: flex; justify-content: space-between; align-items: flex-start; gap: 1rem; margin-bottom: 1rem; }
-.plan-num { display: grid; place-items: center; min-width: 2.1rem; height: 2.1rem; padding: 0 .55rem; box-sizing: border-box; border: 1px solid var(--plan-ink); border-radius: 999px; font-size: .75rem; font-weight: 700; letter-spacing: .06em; }
-.plan-title { margin: 0; font-size: clamp(1.05rem, 1.2vw, 1.25rem); font-weight: 700; line-height: 1.35; letter-spacing: -.015em; color: var(--plan-ink); }
-.plan-note { margin: .45rem 0 0; max-width: 34ch; font-size: .95rem; line-height: 1.55; color: var(--plan-mute); }
-.plan-choice { display: flex; flex-wrap: wrap; align-items: center; gap: .45rem; margin-top: .7rem; }
-.plan-choice span { padding: .25rem .7rem; border: 1px solid var(--plan-ink); border-radius: 999px; font-size: .75rem; font-weight: 600; line-height: 1.4; }
-.plan-choice em { font-style: normal; font-size: .75rem; color: var(--plan-mute); }
-.plan-decision { align-self: start; margin: 0; padding-left: .9rem; border-left: 1.5px solid var(--plan-ink); max-width: 40ch; font-size: .95rem; line-height: 1.6; color: var(--plan-ink); }
-/* one step leads to the next */
-.plan-step + .plan-step .plan-card::before { content: ''; position: absolute; left: calc(-2.75rem - 1.5px); top: 2.15rem; width: 2.75rem; height: 1.5px; background: var(--plan-ink); }
-.plan-step + .plan-step .plan-card::after { content: ''; position: absolute; left: -11px; top: calc(2.15rem - 3.5px); width: 8px; height: 8px; box-sizing: border-box; border: solid var(--plan-ink); border-width: 1.5px 1.5px 0 0; transform: rotate(45deg); }
 /* without room for the lane names beside the plan, each cell carries its own */
 @media (max-width: 1399px) {
-    .flow-plan { grid-template-columns: minmax(0, 1fr); }
-    .plan-lanes { display: none; }
-    .plan-steps { grid-column: 1; column-gap: 2.25rem; }
-    .plan-step + .plan-step .plan-card::before { left: calc(-2.25rem - 1.5px); width: 2.25rem; }
-    .plan-label { display: block; margin-bottom: .4rem; font-family: var(--font-display); font-size: .7rem; font-weight: 600; letter-spacing: .12em; line-height: 1.5; text-transform: uppercase; color: var(--plan-mute); }
-    .plan-ask, .plan-step:nth-child(even) .plan-ask { transform: none; }
 }
 @media (max-width: 1100px) {
-    .flow-plan, .plan-steps, .plan-step { display: block; }
-    .plan-step + .plan-step { margin-top: 2rem; padding-top: 2rem; border-top: 1px dashed var(--plan-line); }
-    .plan-step + .plan-step .plan-card::before, .plan-step + .plan-step .plan-card::after { display: none; }
-    .plan-ask { margin-bottom: .9rem; }
-    .plan-decision { margin-top: 1rem; max-width: 60ch; }
 }
 
 /* four wireframes sit two by two, so each stays large enough to read */
@@ -621,14 +461,9 @@ body::after { content: ""; position: fixed; inset: 0; z-index: 9000; pointer-eve
 /* Discovery explainers, flat vector keycap look (motion_graphics.py). Plays once, then idles. Without .is-armed the finished picture simply shows. */
 .mg{display:block;width:100%;height:auto;overflow:visible}
 .mg text{font-family:var(--font-display),Inter,system-ui,sans-serif;letter-spacing:-.01em;stroke:none}
-.mg .dot{fill:#1d1850;opacity:.3}
 .mg .mut{fill:var(--muted)}
 .mg .hand{font-weight:600}
 .mg .hand.mut{font-weight:500}
-.story-sketch #mg-flow{width:60%;min-width:700px;margin:0 auto}
-.story-sketch #mg-idea{width:80%;min-width:760px;margin:0 auto}
-.mg .typing,.mg .tabon,.mg .taboff{opacity:0}
-.mg .band{stroke-dasharray:var(--b) 2}
 .mg .pop,.mg .move,.mg .capbar{transform-box:fill-box;transform-origin:center}
 .mg .move{transform:translateX(var(--dx))}
 .mg.is-armed .drop{opacity:0;transform:translateY(-26px)}
@@ -637,26 +472,16 @@ body::after { content: ""; position: fixed; inset: 0; z-index: 9000; pointer-eve
 .mg.is-armed .w{clip-path:inset(-20% 101% -30% -2%)}
 .mg.is-armed .tx,.mg.is-armed .cap,.mg.is-armed .capbar{opacity:0}
 .mg.is-armed .move{transform:none}
-.mg.is-armed .band{stroke-dasharray:var(--a) 2;opacity:0}
 .mg.is-in .drop{animation:mg-drop .55s cubic-bezier(.3,1.4,.5,1) var(--d) both}
 .mg.is-in .pop{animation:mg-pop .45s cubic-bezier(.3,1.5,.5,1) var(--d) both}
 .mg.is-in .dr{animation:mg-draw var(--t,.4s) cubic-bezier(.4,0,.2,1) var(--d) both}
 .mg.is-in .w{animation:mg-wipe var(--t) cubic-bezier(.4,.05,.3,1) var(--d) both}
 .mg.is-in .tx{animation:mg-fade var(--t,.4s) ease-out var(--d) both}
 .mg.is-in .cap{animation:mg-rise .6s cubic-bezier(.22,.8,.3,1) var(--d) both}
-.mg.is-in .capbar{animation:mg-grow .5s cubic-bezier(.3,1.3,.5,1) var(--d) both}
 .mg.is-in .move{animation:mg-move .9s cubic-bezier(.5,0,.2,1) var(--md) both}
-.mg.is-in .band{animation:mg-fade .4s ease var(--d) both,mg-band .9s cubic-bezier(.5,0,.2,1) var(--md) both}
-.mg.is-in .typing{animation:mg-blink var(--t) linear var(--d) both}
-.mg.is-in .typing .dot{animation:mg-dot .6s ease-in-out calc(var(--d) + var(--k) * .12s) 1.3 both}
 .mg .halo,.mg .ring{opacity:0;transform-box:fill-box;transform-origin:center}
 .mg .flow,.mg .step{opacity:0}
-/* Idle, after the build has played once: an outline walks the plan step by step (keys stay still), the approval breathes, the
-   active tab steps through, customers flow down both branches, and a soft ring passes over each knob in turn. */
-.mg.is-in .step{animation:mg-step calc(var(--n) * 1.2s) ease-in-out calc(6.8s + var(--i) * 1.2s) infinite}
 .mg.is-in .halo{animation:mg-halo 3.2s ease-out 6.6s infinite}
-.mg.is-in .tabon{animation:mg-tab 6s linear calc(6.6s + (var(--i) - 1) * 2s) infinite}
-.mg.is-in .taboff{animation:mg-taboff 6s linear 6.6s infinite}
 .mg.is-in .flow{animation:mg-flowin .6s ease 6.4s forwards,mg-flow 1.6s linear calc(6.4s + var(--i) * .3s) infinite}
 .mg.is-in .ring{animation:mg-halo 4.5s ease-out calc(7s + var(--i) * 1.5s) infinite}
 .mg.is-off,.mg.is-off *{animation-play-state:paused!important}
@@ -749,7 +574,7 @@ body::after { content: ""; position: fixed; inset: 0; z-index: 9000; pointer-eve
 
 <main class="ads">
         <section class="ads-hero" id="top">
-            <video src="./assets/ai-decisioning-studio/hub.mp4?v=3008" poster="./assets/ai-decisioning-studio/strategy.webp?v=039f8a9c8ae7" loop muted playsinline preload="metadata" aria-label="AI Decisioning Studio strategy overview"></video>
+            <video src="./assets/ai-decisioning-studio/hub.mp4?v=f5df23a260a8" data-m="./assets/ai-decisioning-studio/hub-m.mp4?v=f745a2e1a56e" poster="./assets/ai-decisioning-studio/strategy.webp?v=04fbbd7aebcb" loop muted playsinline preload="metadata" aria-label="AI Decisioning Studio strategy overview"></video>
             <div class="ads-hero-tag fade-up"><h1>AI Decisioning Studio</h1></div>
             <div class="scroll-cue" aria-hidden="true"><span>Scroll</span><span class="scroll-cue-line"></span></div>
         </section>
@@ -833,20 +658,20 @@ body::after { content: ""; position: fixed; inset: 0; z-index: 9000; pointer-eve
                 <div class="program-walkthrough-head story-opening story-opening--page fade-up"><div><p class="media-kicker">The connected workspace</p><h3>From a goal to the whole Strategy</h3></div><p class="ads-body" style="max-width:66ch">From the Strategy lobby into a single Strategy, with every campaign one step away.</p></div>
                 <div class="program-media-grid">
                     <figure class="case-figure fade-up" style="--media-max:2500px"><div class="ads-shot recording-frame" data-title="Strategy · Full-screen recording">
-            <video src="./assets/ai-decisioning-studio/hub.mp4?v=3008" poster="./assets/ai-decisioning-studio/lobby.webp?v=b04617c3122d" width="3008" height="1692" autoplay loop muted playsinline preload="metadata" aria-label="Strategy · Full-screen recording"></video></div></figure>
-                    <figure class="case-figure case-figure--stage fade-up" style="--media-max:2500px"><div class="ads-shot" data-full="./assets/ai-decisioning-studio/strategy.webp?v=039f8a9c8ae7" data-width="3008" data-height="1692" data-title="The complete Strategy page"><img loading="lazy" decoding="async" src="./assets/ai-decisioning-studio/strategy.webp?v=039f8a9c8ae7" width="3008" height="1692" alt="Complete Strategy page with audience, reach, KPI trends, campaigns and OptiGenie"></div></figure>
+            <video src="./assets/ai-decisioning-studio/hub.mp4?v=f5df23a260a8" data-m="./assets/ai-decisioning-studio/hub-m.mp4?v=f745a2e1a56e" poster="./assets/ai-decisioning-studio/lobby.webp?v=dcb738581402" width="3008" height="1692" autoplay loop muted playsinline preload="metadata" aria-label="Strategy · Full-screen recording"></video></div></figure>
+                    <figure class="case-figure case-figure--stage fade-up" style="--media-max:2500px"><div class="ads-shot" data-full="./assets/ai-decisioning-studio/strategy.webp?v=04fbbd7aebcb" data-width="3008" data-height="1692" data-title="The complete Strategy page"><img loading="lazy" decoding="async" src="./assets/ai-decisioning-studio/strategy.webp?v=04fbbd7aebcb" width="3008" height="1692" alt="Complete Strategy page with audience, reach, KPI trends, campaigns and OptiGenie"></div></figure>
                 </div>
             </div>
             <div class="media-story">
                 <div class="media-story-copy fade-up"><div><p class="media-kicker">Strategy creation</p><h3>Describe the audience, then review the criteria</h3></div><div><p>Start with a goal and a customer pool: reuse a Target Group, or describe the audience in plain language. OptiGenie turns it into editable rules, with the audience, control share and KPIs in view at every step.</p></div></div>
                 <figure class="case-figure fade-up" style="--media-max:2500px"><div class="ads-shot recording-frame" data-title="Creating a Strategy">
-            <video src="./assets/ai-decisioning-studio/strategy-create.mp4?v=586c92021e04" poster="./assets/ai-decisioning-studio/strategy-create.webp?v=075ef13b882d" width="3008" height="1692" loop muted playsinline preload="none" aria-label="Creating a Strategy"></video></div></figure>
+            <video src="./assets/ai-decisioning-studio/strategy-create.mp4?v=586c92021e04" data-m="./assets/ai-decisioning-studio/strategy-create-m.mp4?v=f90bcc57ae21" poster="./assets/ai-decisioning-studio/strategy-create.webp?v=075ef13b882d" width="3008" height="1692" loop muted playsinline preload="none" aria-label="Creating a Strategy"></video></div></figure>
             </div>
         </div></section>
 
         <section class="ads-sec" id="campaign" data-rail="Campaign page"><div class="ads-wrap">
             <div class="story-opening story-opening--page"><div class="ads-head fade-up"><p class="ads-label page-chapter">The campaign page</p><h2 class="ads-h2">Make automation inspectable</h2></div><div class="intro-copy fade-up"><p class="ads-body">Setup, results and explanations in one workspace. The header shows the optimization score and what the campaign adds; each decisioning card shows its status, options and next step.</p><p class="ads-body">I gave all six agents one pattern for setup and reporting.</p></div></div>
-            <figure class="case-figure case-figure--stage fade-up" style="--media-max:2500px"><div class="ads-shot" data-full="./assets/ai-decisioning-studio/campaign.webp?v=d8617e79bf78" data-width="3008" data-height="1692" data-title="The complete campaign page"><img loading="lazy" decoding="async" src="./assets/ai-decisioning-studio/campaign.webp?v=d8617e79bf78" width="3008" height="1692" alt="Complete campaign page including campaign details, decisioning cards, explanations and OptiGenie"></div></figure>
+            <figure class="case-figure case-figure--stage fade-up" style="--media-max:2500px"><div class="ads-shot" data-full="./assets/ai-decisioning-studio/campaign.webp?v=e24e7fe58fa8" data-width="3008" data-height="1692" data-title="The complete campaign page"><img loading="lazy" decoding="async" src="./assets/ai-decisioning-studio/campaign.webp?v=e24e7fe58fa8" width="3008" height="1692" alt="Complete campaign page including campaign details, decisioning cards, explanations and OptiGenie"></div></figure>
             <div class="ads-princ campaign-principles">
                 <div class="princ fade-up"><span class="n">Context</span><h3>Keep campaign context visible</h3><p>Campaign details and the inherited offer objective stay beside the working area, so every setup change stays tied to the Strategy.</p></div>
                 <div class="princ fade-up"><span class="n">Control</span><h3>Make the decision boundaries clear</h3><p>Each agent has its own options and scope. Setup shows what AI can change, and the marketer reviews it before applying.</p></div>
@@ -859,7 +684,7 @@ body::after { content: ""; position: fixed; inset: 0; z-index: 9000; pointer-eve
             <div class="media-story">
                 <div class="media-story-copy fade-up"><div><p class="media-kicker">Ask, then act</p><h3>Connect the answer to the interface</h3></div><div><p>“Who wasn’t reached?” returns this Strategy’s missed audience. “Show the pool” brings it into view.</p><p>I designed the answer and the page action as one interaction. Visible feedback shows what OptiGenie did, and the workspace stays open to check it.</p></div></div>
                 <figure class="case-figure fade-up" style="--media-max:2500px"><div class="ads-shot recording-frame" data-title="OptiGenie · From question to action">
-            <video src="./assets/ai-decisioning-studio/optigenie.mp4?v=8b7f31bf49d5" poster="./assets/ai-decisioning-studio/optigenie.webp?v=5cb6f025394d" width="3008" height="1692" loop muted playsinline preload="none" aria-label="OptiGenie · From question to action"></video></div></figure>
+            <video src="./assets/ai-decisioning-studio/optigenie.mp4?v=2009ca073aa4" data-m="./assets/ai-decisioning-studio/optigenie-m.mp4?v=27941017f308" poster="./assets/ai-decisioning-studio/optigenie.webp?v=6acce3c9e665" width="3008" height="1692" loop muted playsinline preload="none" aria-label="OptiGenie · From question to action"></video></div></figure>
             </div>
         </div></section>
 
@@ -871,42 +696,42 @@ body::after { content: ""; position: fixed; inset: 0; z-index: 9000; pointer-eve
                 <div><p>I designed the bank as a plain list, so every promotion AI may use is in view and adding or removing one is a single step. Promotion is decided together with Channel, so the report shows one shared result against the marketer’s original setup.</p></div>
             </div>
             <div class="agent-recording fade-up"><figure class="case-figure" style="--media-max:2500px"><div class="ads-shot recording-frame" data-title="Promotion · Full-screen recording">
-            <video src="./assets/ai-decisioning-studio/promotion.mp4?v=0c4493b08024" poster="./assets/ai-decisioning-studio/promotion.webp?v=a3ece5f8167c" width="3008" height="1692" loop muted playsinline preload="none" aria-label="Promotion · Full-screen recording"></video></div></figure></div>
+            <video src="./assets/ai-decisioning-studio/promotion.mp4?v=193873d07fa1" data-m="./assets/ai-decisioning-studio/promotion-m.mp4?v=482d779bb912" poster="./assets/ai-decisioning-studio/promotion.webp?v=9611a6d3755c" width="3008" height="1692" loop muted playsinline preload="none" aria-label="Promotion · Full-screen recording"></video></div></figure></div>
         </article><article class="agentrow" id="agent-channel">
             <div class="agentrow-copy fade-up">
                 <div class="agentrow-head"><div class="agentblk-ic"><img loading="lazy" decoding="async" src="./assets/ai-decisioning-studio/channel-icon.svg" alt=""></div><h3>Channel</h3><p class="does">Chooses how to reach each customer, from the channels the marketer sets up.</p></div>
                 <div><p>I kept the template, brand and send window in one channel card. The shared Promotion and Channel report connects those settings to what each customer received.</p></div>
             </div>
             <div class="agent-recording fade-up"><figure class="case-figure" style="--media-max:2500px"><div class="ads-shot recording-frame" data-title="Channel · Full-screen recording">
-            <video src="./assets/ai-decisioning-studio/channel.mp4?v=cfe689122fc2" poster="./assets/ai-decisioning-studio/channel.webp?v=11c137bdd7ce" width="3008" height="1692" loop muted playsinline preload="none" aria-label="Channel · Full-screen recording"></video></div></figure></div>
+            <video src="./assets/ai-decisioning-studio/channel.mp4?v=8fe0ce99b069" data-m="./assets/ai-decisioning-studio/channel-m.mp4?v=37ab9e679926" poster="./assets/ai-decisioning-studio/channel.webp?v=6bacf10c6550" width="3008" height="1692" loop muted playsinline preload="none" aria-label="Channel · Full-screen recording"></video></div></figure></div>
         </article><article class="agentrow" id="agent-journey">
             <div class="agentrow-copy fade-up">
                 <div class="agentrow-head"><div class="agentblk-ic"><img loading="lazy" decoding="async" src="./assets/Opimove/Ai%20studio/Brand%20Icons%20(1).png" alt=""></div><h3>Journey Decisioning</h3><p class="does">Picks the campaign for each customer when campaigns overlap, by the long-term value it predicts.</p></div>
                 <div><p>I put fixed and automatic priority side by side in setup. The report connects the campaigns held back to the prediction behind each choice.</p></div>
             </div>
             <div class="agent-recording fade-up"><figure class="case-figure" style="--media-max:2500px"><div class="ads-shot recording-frame" data-title="Journey Decisioning · Full-screen recording">
-            <video src="./assets/ai-decisioning-studio/journey.mp4?v=403a0eebe5f7" poster="./assets/ai-decisioning-studio/campaign.webp?v=d8617e79bf78" width="3008" height="1692" loop muted playsinline preload="none" aria-label="Journey Decisioning · Full-screen recording"></video></div></figure></div>
+            <video src="./assets/ai-decisioning-studio/journey.mp4?v=4a615a613c3d" data-m="./assets/ai-decisioning-studio/journey-m.mp4?v=e788ec4bf867" poster="./assets/ai-decisioning-studio/campaign.webp?v=e24e7fe58fa8" width="3008" height="1692" loop muted playsinline preload="none" aria-label="Journey Decisioning · Full-screen recording"></video></div></figure></div>
         </article><article class="agentrow" id="agent-offer">
             <div class="agentrow-copy fade-up">
                 <div class="agentrow-head"><div class="agentblk-ic"><img loading="lazy" decoding="async" src="./assets/Opimove/Ai%20studio/Brand%20Icons.png" alt=""></div><h3>Offer Decisioning</h3><p class="does">Adjusts which of the campaign’s offers each customer group receives, within the Strategy’s gross or net revenue objective.</p></div>
                 <div><p>I kept the inherited objective visible in setup and in reporting. The report shows how customers split across the offers, and the incremental gain against sending one offer to everyone.</p></div>
             </div>
             <div class="agent-recording fade-up"><figure class="case-figure" style="--media-max:2500px"><div class="ads-shot recording-frame" data-title="Offer Decisioning · Full-screen recording">
-            <video src="./assets/ai-decisioning-studio/offer.mp4?v=d80e28be0e46" poster="./assets/ai-decisioning-studio/campaign.webp?v=d8617e79bf78" width="3008" height="1692" loop muted playsinline preload="none" aria-label="Offer Decisioning · Full-screen recording"></video></div></figure></div>
+            <video src="./assets/ai-decisioning-studio/offer.mp4?v=28fcad634c28" data-m="./assets/ai-decisioning-studio/offer-m.mp4?v=23cc1ee5f5f7" poster="./assets/ai-decisioning-studio/campaign.webp?v=e24e7fe58fa8" width="3008" height="1692" loop muted playsinline preload="none" aria-label="Offer Decisioning · Full-screen recording"></video></div></figure></div>
         </article><article class="agentrow" id="agent-send-time">
             <div class="agentrow-copy fade-up">
                 <div class="agentrow-head"><div class="agentblk-ic"><img loading="lazy" decoding="async" src="./assets/Opimove/Ai%20studio/Brand%20Icons%20(2).png" alt=""></div><h3>Send Time Optimization</h3><p class="does">Sends at each customer’s best hour, inside the window the marketer allows.</p></div>
                 <div><p>I placed the send window over the audience activity chart and made clear which messages it applies to. The report names the fallback hour used when there is too little history.</p></div>
             </div>
             <div class="agent-recording fade-up"><figure class="case-figure" style="--media-max:2500px"><div class="ads-shot recording-frame" data-title="Send Time Optimization · Full-screen recording">
-            <video src="./assets/ai-decisioning-studio/send-time.mp4?v=fa41cac87f7b" poster="./assets/ai-decisioning-studio/campaign.webp?v=d8617e79bf78" width="3008" height="1692" loop muted playsinline preload="none" aria-label="Send Time Optimization · Full-screen recording"></video></div></figure></div>
+            <video src="./assets/ai-decisioning-studio/send-time.mp4?v=f60d9159a6f2" data-m="./assets/ai-decisioning-studio/send-time-m.mp4?v=beceaa9663db" poster="./assets/ai-decisioning-studio/campaign.webp?v=e24e7fe58fa8" width="3008" height="1692" loop muted playsinline preload="none" aria-label="Send Time Optimization · Full-screen recording"></video></div></figure></div>
         </article><article class="agentrow" id="agent-content">
             <div class="agentrow-copy fade-up">
                 <div class="agentrow-head"><div class="agentblk-ic"><img loading="lazy" decoding="async" src="./assets/Opimove/Ai%20studio/Brand%20Icons%20(3).png" alt=""></div><h3>Content Decisioning</h3><p class="does">Matches the best-performing content to each customer while the campaign is live.</p></div>
                 <div><p>I separated choosing templates from editing variations. In the report, creative previews, engagement and traffic sit together, so the number has a visible context.</p></div>
             </div>
             <div class="agent-recording fade-up"><figure class="case-figure" style="--media-max:2500px"><div class="ads-shot recording-frame" data-title="Content Decisioning · Full-screen recording">
-            <video src="./assets/ai-decisioning-studio/content.mp4?v=50c0f04d80ef" poster="./assets/ai-decisioning-studio/campaign.webp?v=d8617e79bf78" width="3008" height="1692" loop muted playsinline preload="none" aria-label="Content Decisioning · Full-screen recording"></video></div></figure></div>
+            <video src="./assets/ai-decisioning-studio/content.mp4?v=141da6497f9d" data-m="./assets/ai-decisioning-studio/content-m.mp4?v=51f23d630b88" poster="./assets/ai-decisioning-studio/campaign.webp?v=e24e7fe58fa8" width="3008" height="1692" loop muted playsinline preload="none" aria-label="Content Decisioning · Full-screen recording"></video></div></figure></div>
         </article>
         </div></section>
     <script>
