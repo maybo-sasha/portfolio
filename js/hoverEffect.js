@@ -108,7 +108,7 @@ function initHoverEffects() {
                 uAspect:      { value: 1.0 }, // card height / width, so the focus blur stays round
                 uFocus:       { value: 1.0 }, // 1 = slide centred in the viewport, 0 = a slide away
                 uHover:       { value: 0.0 }, // 0..1, eased on pointer enter/leave (a slight push-in)
-                uCrop:        { value: mediaEl.dataset.crop === 'bottom' ? CROP_BOTTOM : CROP_NONE },
+                uCrop:        { value: (mediaEl.dataset.crop === 'bottom' ? CROP_BOTTOM : CROP_NONE).clone() },
             },
             transparent: true,
             vertexShader: `
@@ -312,6 +312,17 @@ function initHoverEffects() {
     // below runs at the same speed on a 144 Hz display as on a 60 Hz one.
     const ease = (rate, frames) => 1 - Math.pow(1 - rate, frames);
 
+    // The plane fills its card the way object-fit: cover would: a card taller than the video (the phone layout)
+    // shows its centre, at full height. On a 16:9 card the window is the whole frame, as before.
+    function coverCrop(item, W, H) {
+        const el = item.mediaEl;
+        if (!item.isVideo || !W || !H) return;
+        const base = el.dataset.crop === 'bottom' ? CROP_BOTTOM : CROP_NONE;
+        const media = (el.videoWidth || 16) / (el.videoHeight || 9), box = W / H;
+        const sx = box < media ? box / media : 1, sy = box > media ? media / box : 1;
+        item.mat.uniforms.uCrop.value.set(base.x + base.z * (1 - sx) / 2, base.y + base.w * (1 - sy) / 2, base.z * sx, base.w * sy);
+    }
+
     function updateMeshes() {
         const vFOV = camera.fov * Math.PI / 180;
         const visH = 2 * Math.tan(vFOV / 2) * camDist;
@@ -330,6 +341,7 @@ function initHoverEffects() {
             mesh.scale.set((W / vw) * visW * grow, (H / vh) * visH * grow, 1);
             mesh.position.x = (cx - 0.5) * visW;
             mesh.position.y = (0.5 - cy) * visH;
+            coverCrop(item, W, H);
 
             if (reduceMotion) return;
             // how close this slide is to the centre of the frame

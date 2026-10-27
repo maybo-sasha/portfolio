@@ -1036,8 +1036,22 @@ body::after { content: ""; position: fixed; inset: 0; z-index: 9000; pointer-eve
       if (e.isIntersecting) { s.classList.add('is-in'); s.classList.remove('is-off'); }
       else if (s.classList.contains('is-in')) s.classList.add('is-off');
     });
-  }, { threshold: 0.35 });
+  }, { threshold: window.matchMedia('(max-width: 900px)').matches ? 0.12 : 0.35 });
   figs.forEach(function (s) { s.classList.add('is-armed'); io.observe(s); });
+})();
+/* Phones: a sketch wider than the screen says so, and loses its edge fade once swiped to the end */
+(function () {
+  if (!window.matchMedia('(max-width: 900px)').matches) return;
+  [].forEach.call(document.querySelectorAll('.story-sketch'), function (fig) {
+    if (fig.scrollWidth <= fig.clientWidth + 8) { fig.classList.add('is-end'); return; }
+    var hint = document.createElement('p');
+    hint.className = 'sketch-hint'; hint.setAttribute('aria-hidden', 'true');
+    hint.textContent = 'Swipe to see the whole sketch';
+    fig.insertAdjacentElement('afterend', hint);
+    fig.addEventListener('scroll', function () {
+      fig.classList.toggle('is-end', fig.scrollLeft + fig.clientWidth >= fig.scrollWidth - 8);
+    }, { passive: true });
+  });
 })();
 </script>
 <script>
@@ -1069,6 +1083,22 @@ body::after { content: ""; position: fixed; inset: 0; z-index: 9000; pointer-eve
    The screenshots, recordings and the hero stay clean and sharp; the faint page grain sits behind the content. */
 .ads-shot::after, .ads-hero::before, .ac-shot::after, .ac-hero-art::after { content: none !important; animation: none !important; }
 body::after { z-index: -1 !important; }
+
+/* ── Phone (2026-10-27 mobile pass) ── */
+@media (max-width: 600px) {
+  /* the 16:9 video sits under the header instead of behind it, and the title fits the smaller frame */
+  .ads-hero { height: calc(56.25vw + 4.5rem); background: #110d3a; }
+  .ads-hero video { top: 4.5rem; height: calc(100% - 4.5rem); }
+  .ads-hero-tag { bottom: 1.1rem; }
+  .ads-hero-tag h1 { font-size: clamp(2rem, 9.5vw, 2.6rem); }
+  .ads-hero .scroll-cue { display: none; }
+}
+@media (max-width: 900px) {
+  /* sketches stay readable as a swipeable strip; the right edge fades until the end is reached */
+  .story-sketch { -webkit-mask-image: linear-gradient(90deg, #000 80%, transparent); mask-image: linear-gradient(90deg, #000 80%, transparent); }
+  .story-sketch.is-end { -webkit-mask-image: none; mask-image: none; }
+  .sketch-hint { margin: .75rem 0 0; font-size: .8rem; letter-spacing: .02em; color: var(--violet); }
+}
 </style>
 </body>
 </html>

@@ -1064,11 +1064,21 @@ html.deck-held body { pointer-events: none; touch-action: none; }
 
 /* ─── Mobile (≤ 600px) ─────────────────────────────── */
 @media (max-width: 600px) {
+    /* title and card centred between the header and the category line, so the card is never cut off at the bottom */
     .slide {
         flex-direction: column;
-        justify-content: flex-end;
+        justify-content: center;
         height: 100svh;
+        padding: 5rem 0 7rem;
     }
+    /* the card fills the phone, taller than the video: js/hoverEffect.js crops its centre to fit, like cover
+       (the earlier 86vw rule sits above the base rule and loses to it) */
+    .project-img-wrap.is-wide {
+        width: 90vw;
+        aspect-ratio: 4 / 5;
+        max-height: 60svh;
+    }
+    .project-img-wrap.is-wide .project-video { object-fit: cover; }
 
     .hero-desc {
         position: relative;
@@ -1376,3 +1386,31 @@ html.deck-held body { pointer-events: none; touch-action: none; }
 }
 .about-content a[target="_blank"]:hover::after { opacity: 1; transform: translate(1px, -1px); }
 .about-content a[target="_blank"] .sr-only-new { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
+
+/* ── Inner pages on a phone (2026-10-27 mobile pass) ─────── */
+/* The fixed header gets a frosted bar, so text scrolls under it instead of through the Back button and the links.
+   Over a dark hero video it stays clear: the project pages set body.is-over-hero while the hero is under the header. */
+@media (max-width: 760px) {
+    body:has(.inner-back) .nav-header {
+        background: rgba(255, 255, 255, 0.84);
+        -webkit-backdrop-filter: saturate(1.4) blur(14px);
+        backdrop-filter: saturate(1.4) blur(14px);
+        box-shadow: 0 1px 0 rgba(29, 24, 80, 0.08);
+        transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    }
+    body.is-over-hero:has(.inner-back) .nav-header {
+        background: transparent;
+        -webkit-backdrop-filter: none;
+        backdrop-filter: none;
+        box-shadow: none;
+    }
+}
+/* Touch: the header links are 15px tall, so give them a finger-sized hit area without moving them */
+@media (pointer: coarse) {
+    .nav-link::before { content: ''; position: absolute; inset: -14px -10px; }
+}
+/* Home on a touch screen: one swipe, one project (the wheel steps the same way in js/cinema.js) */
+@media (pointer: coarse) {
+    html:has(.slide) { scroll-snap-type: y mandatory; }
+    .slide { scroll-snap-align: start; scroll-snap-stop: always; }
+}

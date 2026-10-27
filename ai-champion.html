@@ -1077,6 +1077,8 @@
             .cvex-viewport { padding: 2px 16px 22px; }
             .cvex-copy { padding-top: 1rem; }
             .cvex-copy p { font-size: .875rem; line-height: 1.5; }
+            .cvex-viewport { scroll-snap-type: x mandatory; scroll-padding: 0 16px; }
+            .cvex-row { scroll-snap-align: start; }
         }
   .cpa { display: block; width: 100%; height: auto; overflow: visible; font-family: var(--font-display); }
   .cpa text { fill: var(--text); }
@@ -1352,7 +1354,7 @@
         <section class="ac-sec ac-ch" id="ch-compose" data-rail="compose-optimove-screens"><div class="ac-wrap">
             <article class="work-panel is-on" id="p-dsui">
                 <div class="ch-open">
-                    <div class="ch-text"><p class="ch-num fade-up">01</p><p class="ac-label fade-up">Team skill</p><h2 class="skill-name fade-up"><span class="dot"></span>compose-optimove-screens</h2><p class="ac-body fade-up" style="margin-top:1.2rem">The skill carries what a designer brings: the design system, our UX guides and our motion guide. Every choice is checked against them, so it holds every time. And speed isn’t the headline. It’s that we now ideate and test at a level we couldn’t reach before.</p>
+                    <div class="ch-text"><p class="ch-num fade-up">01</p><p class="ac-label fade-up">Team skill</p><h2 class="skill-name fade-up"><span class="dot"></span>compose-optimove-screens</h2><p class="ac-body fade-up" style="margin-top:1.2rem">I built this skill to turn product briefs into working Optimove screens, grounded in our design system’s components, tokens and patterns. It checks both the building blocks and the experience: hierarchy, readability, interactions and states. When something is missing, it flags the gap. This gives the team tangible ideas to explore and test, with a clear basis for design review.</p>
 
 
                 </div>
@@ -1371,7 +1373,7 @@
                     </div>
                     <div class="pns-card">
                         <p class="pns-k">User testing</p>
-                        <p class="pns-t">We hand people something real. No “ignore that part”, no “pretend this loads”. Every state is clicked and checked before handover, so what we learn is about the product, not the prototype.</p>
+                        <p class="pns-t">Users now experience the real product, not a mockup of it. No “ignore that part”, no “pretend this loads”. Every state is clicked and checked before the session, so what we learn is about the product, not the prototype.</p>
                     </div>
                     <div class="pns-card">
                         <p class="pns-k">Handoff</p>
@@ -1842,7 +1844,7 @@
         (function () {
             document.querySelectorAll('.cvex').forEach(function (root) {
                 var viewport = root.querySelector('.cvex-viewport'), track = root.querySelector('.cvex-track');
-                var group = track.querySelector('.cvex-group'), media = matchMedia('(prefers-reduced-motion: reduce)');
+                var group = track.querySelector('.cvex-group'), media = matchMedia('(prefers-reduced-motion: reduce), (max-width: 700px)');   // phones swipe, nothing drifts
                 var period = 0, visible = false, focused = false, hold = 0, manual = 0, last = 0, raf = 0, drift = 0, speed = 0;
                 function copies() {
                     flushDrift();
@@ -2061,6 +2063,13 @@
    The screenshots, recordings and the hero stay clean and sharp; the faint page grain sits behind the content. */
 .ads-shot::after, .ads-hero::before, .ac-shot::after, .ac-hero-art::after { content: none !important; animation: none !important; }
 body::after { z-index: -1 !important; }
+
+/* ── Phone (2026-10-27 mobile pass): kickers readable, sketch dots easier to hit ── */
+@media (max-width: 760px) {
+    .ac-label, .pns-k, .ux-overline, .ux-stage-num, .ic-overline { font-size: .72rem; }
+    .cvk-dots { gap: .4rem; }
+    .cvk-dot { height: 2.5rem; }
+}
 </style>
 </body>
 </html>
