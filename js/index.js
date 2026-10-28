@@ -49,7 +49,7 @@ if (mouse) {
     });
 
     // ── Nav links + about-back: auto-lock & expand to cover the button ──
-    document.querySelectorAll('.nav-link, .about-back, .about-social a, .about-block-text a').forEach(link => {
+    document.querySelectorAll('.nav-link, .about-back, .about-social a, .about-block-text a, .about-cv a').forEach(link => {
         link.addEventListener('mouseenter', () => {
             clearTimeout(unlockTimer);
             isLocked = true;

@@ -58,7 +58,7 @@
     }
 
     // Only the back button and the menu links get the expand effect.
-    const SEL = '.nav-link, .inner-back, .about-back, .about-social a, .about-block-text a, [data-menu="work"], .work-item';
+    const SEL = '.nav-link, .inner-back, .about-back, .about-social a, .about-block-text a, .about-cv a, [data-menu="work"], .work-item';
 
     document.addEventListener('mouseover', e => {
         const el = e.target.closest && e.target.closest(SEL);
