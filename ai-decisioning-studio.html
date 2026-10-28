@@ -850,7 +850,7 @@ body::after { content: ""; position: fixed; inset: 0; z-index: 9000; pointer-eve
         // About retains the site's design, with a closed state hidden from keyboard navigation.
         const overlay = document.querySelector('.about-overlay');
         overlay.inert = true; overlay.setAttribute('role', 'dialog');
-        overlay.setAttribute('aria-modal', 'true'); overlay.setAttribute('aria-label', 'About Sasha Mayboroda');
+        overlay.setAttribute('aria-modal', 'true'); overlay.setAttribute('aria-label', 'About Sasha Maiboroda');
         let overlayOpen = false;
         function openOverlay() {
             overlayOpen = true; overlay.inert = false;

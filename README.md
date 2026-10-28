@@ -1,4 +1,4 @@
-# Sasha Mayboroda · Selected Projects
+# Sasha Maiboroda · Selected Projects
 
 **Senior Product Designer** — design systems, cohesive visual languages, and considered experiences across web, mobile, and game platforms.
 
@@ -13,7 +13,7 @@
     <img src="https://img.shields.io/badge/🌐_Live_Site-maybo--sasha.github.io%2FDev_2%2F-111111?style=for-the-badge" alt="Live site" />
   </a>
   <a href="https://www.linkedin.com/in/sasha-mayboroda-177b17bb/">
-    <img src="https://img.shields.io/badge/LinkedIn-Sasha_Mayboroda-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn" />
+    <img src="https://img.shields.io/badge/LinkedIn-Sasha_Maiboroda-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn" />
   </a>
   <a href="mailto:maybosasha@gmail.com">
     <img src="https://img.shields.io/badge/Email-maybosasha@gmail.com-EA4335?style=for-the-badge&logo=gmail&logoColor=white" alt="Email" />
@@ -70,5 +70,5 @@ For one-time setup and troubleshooting, see [DEPLOY.md](./DEPLOY.md).
 ---
 
 <p align="center">
-  <sub>Designed & built by <a href="https://maybo-sasha.github.io/Dev_2/">Sasha Mayboroda</a></sub>
+  <sub>Designed & built by <a href="https://maybo-sasha.github.io/Dev_2/">Sasha Maiboroda</a></sub>
 </p>
