@@ -55,7 +55,7 @@ if (mouse) {
             }, 30);
         });
     };
-    document.querySelectorAll('.about-back-link, .nav-links h3 a, .nav-about a, .about-social a, .about-block-text a').forEach(lockLink);
+    document.querySelectorAll('.about-back-link, .nav-links h3 a, .nav-about a, .about-social a, .about-block-text a, .about-cv a').forEach(lockLink);
 
     // Click pulse
     document.addEventListener('mousedown', () => {
