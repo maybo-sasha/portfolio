@@ -523,6 +523,39 @@ body::after { content: ""; position: fixed; inset: 0; z-index: 9000; pointer-eve
             .ads-meta > div, .ac-meta > div { padding: 1.05rem 0; }
             .ads-meta > div + div, .ac-meta > div + div { border-left: 0; border-top: 1px solid var(--line); }
         }
+        /* Results (Sasha 2026-10-29): the recognition (Gartner, SBC Awards) as the one tinted card on the left, the published customer
+           results stacked on the right, rows split by hairlines. Every figure links to the page it comes from. */
+        /* Chapter openings: the intro sits beneath the heading, not in a second column (Sasha 2026-10-29) */
+        .story-opening--page:not(.story-opening--sketch) .ads-head > .ads-h2 + .ads-body { margin-top: 1.5rem; }
+        .story-opening--page:not(.story-opening--sketch) .ads-head > .ads-body { max-width: 52ch; }
+        .ads-proof { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: clamp(2rem, 5vw, 5rem); margin-top: var(--block-gap); align-items: stretch; }
+        .ads-award { display: flex; flex-direction: column; justify-content: center; padding: clamp(2rem, 4vw, 3.5rem); border-radius: 24px; background: var(--lav); }
+        .ads-award .num { font-weight: 800; font-size: clamp(5rem, 10vw, 9rem); line-height: .85; letter-spacing: -0.05em; color: var(--ink); margin-bottom: clamp(1.25rem, 2.5vw, 2rem); }
+        .ads-award h3 { margin: 0 0 .9rem; font-size: clamp(1.4rem, 2.2vw, 2rem); line-height: 1.2; font-weight: 800; color: var(--ink); }
+        .ads-award p { margin: 0; color: var(--text); font-size: clamp(1rem, 1.2vw, 1.12rem); line-height: 1.6; }
+        .ads-award p + p { margin-top: .6rem; }
+        .ads-award .ads-src { display: inline-block; margin-top: 1.5rem; }
+        .ads-ranks { list-style: none; margin: 1.1rem 0; padding: 0; display: grid; gap: .55rem; }
+        .ads-ranks li { display: flex; gap: .85rem; align-items: baseline; color: var(--text); font-size: clamp(1rem, 1.2vw, 1.12rem); line-height: 1.45; }
+        .ads-ranks b { flex: 0 0 auto; min-width: 2.2ch; font-weight: 800; color: var(--ink); }
+        .ads-award-more { margin-top: clamp(1.75rem, 3vw, 2.5rem); padding-top: clamp(1.5rem, 2.5vw, 2rem); border-top: 1px solid rgba(29,24,80,0.14); }
+        .ads-award-more .k { margin: 0 0 .5rem; font-size: .8rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--violet); }
+        .ads-award-more h4 { margin: 0 0 .6rem; font-size: clamp(1.15rem, 1.6vw, 1.4rem); line-height: 1.25; font-weight: 800; color: var(--ink); }
+        .ads-results { display: flex; flex-direction: column; }
+        .ads-result { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 6fr); gap: 0 clamp(1.5rem, 3vw, 3rem); align-items: start; padding: clamp(1.5rem, 2.5vw, 2.25rem) 0; }
+        .ads-result:first-child { padding-top: 0; }
+        .ads-result:last-child { padding-bottom: 0; }
+        .ads-result + .ads-result { border-top: 1px solid var(--line); }
+        .ads-result .who { margin: 0 0 .5rem; font-size: .8rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--violet); }
+        .ads-result .num { font-weight: 800; font-size: clamp(3rem, 5vw, 4.5rem); line-height: 1; letter-spacing: -0.045em; color: var(--ink); }
+        .ads-result .what { margin: .35rem 0 0; font-weight: 800; font-size: clamp(1.05rem, 1.4vw, 1.25rem); color: var(--ink); }
+        .ads-result .why { display: flex; flex-direction: column; padding-top: 1.6rem; }
+        .ads-result .why p { margin: 0 0 1rem; color: var(--text); font-size: clamp(.98rem, 1.15vw, 1.08rem); line-height: 1.6; }
+        .ads-src { font-size: .85rem; font-weight: 600; color: var(--violet-deep); text-decoration: none; border-bottom: 1px solid currentColor; align-self: flex-start; }
+        .ads-src:hover { color: var(--ink); }
+        .ads-results-note { margin: clamp(2.5rem, 5vw, 3.5rem) 0 0; padding-top: 1.25rem; border-top: 1px solid var(--line); font-size: .8rem; line-height: 1.6; color: var(--muted); max-width: 90ch; }
+        @media (max-width: 1100px) { .ads-result { grid-template-columns: minmax(0, 1fr); } .ads-result .why { padding-top: 1rem; } }
+        @media (max-width: 900px) { .ads-proof { grid-template-columns: minmax(0, 1fr); } }
     </style>
 </head>
 <body>
@@ -669,7 +702,7 @@ body::after { content: ""; position: fixed; inset: 0; z-index: 9000; pointer-eve
         </div></section>
 
         <section class="ads-sec" id="campaign" data-rail="Campaign page"><div class="ads-wrap">
-            <div class="story-opening story-opening--page"><div class="ads-head fade-up"><p class="ads-label page-chapter">The campaign page</p><h2 class="ads-h2">Make automation inspectable</h2></div><div class="intro-copy fade-up"><p class="ads-body">Setup, results and explanations in one workspace. The header shows the optimization score and what the campaign adds; each decisioning card shows its status, options and next step.</p><p class="ads-body">I gave all six agents one pattern for setup and reporting.</p></div></div>
+            <div class="story-opening story-opening--page"><div class="ads-head fade-up"><p class="ads-label page-chapter">The campaign page</p><h2 class="ads-h2">Make automation inspectable</h2><p class="ads-body">Setup, results and explanations in one workspace. The header shows the optimization score and what the campaign adds; each decisioning card shows its status, options and next step.</p><p class="ads-body">I gave all six agents one pattern for setup and reporting.</p></div></div>
             <figure class="case-figure case-figure--stage fade-up" style="--media-max:2500px"><div class="ads-shot" data-full="./assets/ai-decisioning-studio/campaign.webp?v=e24e7fe58fa8" data-width="3008" data-height="1692" data-title="The complete campaign page"><img loading="lazy" decoding="async" src="./assets/ai-decisioning-studio/campaign.webp?v=e24e7fe58fa8" width="3008" height="1692" alt="Complete campaign page including campaign details, decisioning cards, explanations and OptiGenie"></div></figure>
             <div class="ads-princ campaign-principles">
                 <div class="princ fade-up"><span class="n">Context</span><h3>Keep campaign context visible</h3><p>Campaign details and the inherited offer objective stay beside the working area, so every setup change stays tied to the Strategy.</p></div>
@@ -679,7 +712,7 @@ body::after { content: ""; position: fixed; inset: 0; z-index: 9000; pointer-eve
         </div></section>
 
         <section class="ads-sec ads-sec--mist" id="optigenie" data-rail="OptiGenie"><div class="ads-wrap">
-            <div class="story-opening story-opening--page"><div class="ads-head fade-up"><p class="ads-label page-chapter">OptiGenie</p><h2 class="ads-h2">A conversation that moves the work forward</h2></div><div class="intro-copy fade-up"><p class="ads-body">OptiGenie works beside the Strategy or campaign on screen. Marketers ask, and it finds the audience, explains a result or opens the next step, without leaving the page.</p></div></div>
+            <div class="story-opening story-opening--page"><div class="ads-head fade-up"><p class="ads-label page-chapter">OptiGenie</p><h2 class="ads-h2">A conversation that moves the work forward</h2><p class="ads-body">OptiGenie works beside the Strategy or campaign on screen. Marketers ask, and it finds the audience, explains a result or opens the next step, without leaving the page.</p></div></div>
             <div class="media-story">
                 <div class="media-story-copy fade-up"><div><p class="media-kicker">Ask, then act</p><h3>Connect the answer to the interface</h3></div><div><p>“Who wasn’t reached?” returns this Strategy’s missed audience. “Show the pool” brings it into view.</p><p>I designed the answer and the page action as one interaction. Visible feedback shows what OptiGenie did, and the workspace stays open to check it.</p></div></div>
                 <figure class="case-figure fade-up" style="--media-max:2500px"><div class="ads-shot recording-frame" data-title="OptiGenie · From question to action">
@@ -688,7 +721,7 @@ body::after { content: ""; position: fixed; inset: 0; z-index: 9000; pointer-eve
         </div></section>
 
         <section class="ads-sec" id="agents" data-rail="The agents"><div class="ads-wrap">
-            <div class="story-opening story-opening--page"><div class="ads-head fade-up"><p class="ads-label page-chapter">The agents</p><h2 class="ads-h2">Each agent, in action</h2></div><div class="intro-copy fade-up"><p class="ads-body">Six AI agents, each deciding one part of the campaign for every customer. I gave them one way to explain the role, set the limits and inspect the contribution.</p></div></div>
+            <div class="story-opening story-opening--page"><div class="ads-head fade-up"><p class="ads-label page-chapter">The agents</p><h2 class="ads-h2">Each agent, in action</h2><p class="ads-body">Six AI agents, each deciding one part of the campaign for every customer. I gave them one way to explain the role, set the limits and inspect the contribution.</p></div></div>
             <article class="agentrow" id="agent-promotion">
             <div class="agentrow-copy fade-up">
                 <div class="agentrow-head"><div class="agentblk-ic"><img loading="lazy" decoding="async" src="./assets/ai-decisioning-studio/promotion-icon.svg" alt=""></div><h3>Promotion</h3><p class="does">Picks the promotion each customer receives, from a bank the marketer defines.</p></div>
@@ -733,7 +766,71 @@ body::after { content: ""; position: fixed; inset: 0; z-index: 9000; pointer-eve
             <video src="./assets/ai-decisioning-studio/content.mp4?v=141da6497f9d" data-m="./assets/ai-decisioning-studio/content-m.mp4?v=51f23d630b88" poster="./assets/ai-decisioning-studio/campaign.webp?v=e24e7fe58fa8" width="3008" height="1692" loop muted playsinline preload="none" aria-label="Content Decisioning · Full-screen recording"></video></div></figure></div>
         </article>
         </div></section>
+
+        <section class="ads-sec ads-sec--mist" id="results" data-rail="Results"><div class="ads-wrap">
+            <div class="story-opening story-opening--page"><div class="ads-head fade-up"><p class="ads-label page-chapter">Results</p><h2 class="ads-h2">What the agents deliver</h2><p class="ads-body">AI Decisioning Studio launched in March 2026 as the hub for Optimove’s decisioning agents. Below are customer results Optimove has published from those agents, and the recognition its AI received in 2026.</p></div></div>
+            <div class="ads-proof">
+            <div class="ads-award fade-up">
+                <div class="num">#1</div>
+                <div>
+                    <h3>Of 12 vendors in Real‑Time Personalization and Decisioning</h3>
+                    <p>Optimove ranked first for this use case in Gartner’s 2026 Critical Capabilities for Multichannel Marketing Hubs, scoring 3.59 out of 5. Optimove traces the ranking to its chain of decisioning agents, each owning one decision: which audience, which journey, which offer, which content and what time.</p>
+                    <ul class="ads-ranks">
+                        <li><b>#2</b><span>Omnichannel Workflow Innovation, for agent-augmented workflows</span></li>
+                        <li><b>#3</b><span>Conversational and Agent-Augmented Marketing</span></li>
+                    </ul>
+                    <p>Gartner also named Optimove a Visionary in the 2026 Magic Quadrant for Multichannel Marketing Hubs, for the third year in a row.</p>
+                    <a class="ads-src" href="https://www.optimove.com/resources/blog/optimove-ranked-first-by-gartner-magic-quadrant-for-realtime-personalization-and-decisioning-2026" target="_blank" rel="noopener">Read the ranking ↗</a>
+                    <div class="ads-award-more">
+                        <p class="k">SBC Awards 2026</p>
+                        <h4>Industry Innovation of the Year</h4>
+                        <p>Optimove AI won in Lisbon in October 2026, for marketing AI built around how CRM teams work. Its in-platform agents decide journeys, offers, content and send time.</p>
+                        <a class="ads-src" href="https://www.optimove.com/resources/blog/optimove-ai-wins-industry-innovation-of-the-year-at-sbc-awards-2026" target="_blank" rel="noopener">Read about the award ↗</a>
+                    </div>
+                </div>
+            </div>
+            <div class="ads-results">
+                <div class="ads-result fade-up">
+                    <div><p class="who">Enterprise beauty retailer</p>
+                        <div class="num" data-count="84" data-prefix="+" data-suffix="%">+84%</div>
+                        <p class="what">incremental net revenue</p></div>
+                    <div class="why"><p>Offer Decisioning across four discount tiers in a six-week cross-sell campaign, set to optimize net revenue rather than gross sales.</p>
+                    <a class="ads-src" href="https://www.optimove.com/resources/blog/beyond-content-personalization-journey-and-offer-decisioning-is-attainable-for-retail-crm-teams" target="_blank" rel="noopener">Source: Optimove ↗</a></div>
+                </div>
+                <div class="ads-result fade-up">
+                    <div><p class="who">iGaming operator</p>
+                        <div class="num" data-count="207" data-prefix="+" data-suffix="%">+207%</div>
+                        <p class="what">clicks</p></div>
+                    <div class="why"><p>Content Decisioning was the only change in a reactivation campaign. Opens rose 137% and deposits per 1,000 players 13.8%.</p>
+                    <a class="ads-src" href="https://g3newswire.com/first-customer-results-show-optimove-ai-driving-measurable-gains-for-igaming-marketers/" target="_blank" rel="noopener">Source: G3 Newswire ↗</a></div>
+                </div>
+                <div class="ads-result fade-up">
+                    <div><p class="who">iGaming operator</p>
+                        <div class="num" data-count="3" data-suffix="x">3x</div>
+                        <p class="what">average bet value</p></div>
+                    <div class="why"><p>Content Decisioning across the onboarding journey brought more than 1,200 incremental first-time deposits and lifted the deposit rate by 42%.</p>
+                    <a class="ads-src" href="https://g3newswire.com/first-customer-results-show-optimove-ai-driving-measurable-gains-for-igaming-marketers/" target="_blank" rel="noopener">Source: G3 Newswire ↗</a></div>
+                </div>
+            </div>
+            </div>
+            <p class="ads-results-note">Customer names are withheld in the published results. GARTNER and MAGIC QUADRANT are registered trademarks of Gartner, Inc. and/or its affiliates. Gartner does not endorse any vendor, product or service depicted in its research publications.</p>
+        </div></section>
     <script>
+/* Results: each figure counts up once when it comes into view (static under reduced motion) */
+(function () {
+  var nums = [].slice.call(document.querySelectorAll('#results [data-count]'));
+  if (!nums.length || !('IntersectionObserver' in window) || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  var show = function (el, v) { el.textContent = (el.dataset.prefix || '') + v + (el.dataset.suffix || ''); };
+  var io = new IntersectionObserver(function (es) {
+    es.forEach(function (e) {
+      if (!e.isIntersecting) return;
+      io.unobserve(e.target);
+      var el = e.target, to = +el.dataset.count, t0 = performance.now(), ms = to > 9 ? 1400 : 700;
+      (function step(now) { var k = Math.min(1, (now - t0) / ms); show(el, Math.max(to < 10 ? 1 : 0, Math.round(to * (1 - Math.pow(1 - k, 3))))); if (k < 1) requestAnimationFrame(step); })(t0);
+    });
+  }, { threshold: 0.6 });
+  nums.forEach(function (el) { show(el, +el.dataset.count < 10 ? 1 : 0); io.observe(el); });
+})();
 /* Discovery explainers. Fit: every label with data-max is measured in this browser and shrunk only if it would overflow its key
    (the page font is Helvetica Neue, whose width differs between machines). Motion: the build plays once when the figure is mostly
    in view, then an idle loop runs; both pause while the figure is off screen. */
