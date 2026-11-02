@@ -4,7 +4,7 @@
 (function () {
     const PROJECTS = [
         { name: 'AI Decisioning Studio', cat: 'Optimove · Current', href: 'ai-decisioning-studio.html', type: 'video', media: './assets/ai-decisioning-studio/hub.mp4?v=4131e8725797' },
-        { name: 'Streams', cat: 'Optimove · Journey orchestration', href: 'streams.html', type: 'video', media: './assets/streams/streams-hero.mp4?v=97d141be3200' },
+        { name: 'Streams', cat: 'Optimove · Journey orchestration', href: 'streams.html', type: 'video', media: './assets/streams/streams-hero.mp4?v=eeec0a09ede5' },
         { name: 'AI skills for product design', cat: 'Optimove · AI Skills', href: 'ai-champion.html', type: 'video', media: './assets/ai-champion/generate-ds-ui-1440.mp4?v=4c866207a787' },
     ];
 
