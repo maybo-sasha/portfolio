@@ -9,208 +9,171 @@
 <text x="28" y="106" font-size="12.5" font-weight="400" fill="#6d6d75">Monitor and enhance how AI optimizes your campaigns</text>
 <rect x="28" y="118" width="96" height="22" rx="11.0" fill="#ffffff" stroke="#dadadf" stroke-width="1"/><text x="76.0" y="133.14" font-size="11.5" font-weight="400" fill="#1b1b1e" text-anchor="middle">Period</text>
 <rect x="588" y="66" width="154" height="30" rx="7" fill="#1b1b1e" stroke="#1b1b1e" stroke-width="1"/><text x="665.0" y="85.5" font-size="12.5" font-weight="600" fill="#ffffff" text-anchor="middle">Create New Strategy</text>
-<text x="28" y="172" font-size="13" font-weight="700" fill="#1b1b1e">AI agents overview</text>
-<rect x="28" y="182" width="171" height="54" rx="8" fill="#ffffff" stroke="#dadadf" stroke-width="1"/>
-<circle cx="48" cy="209" r="11" fill="#f1f1f3" stroke="#d2d2d8"/>
-<text x="66" y="205" font-size="10.5" font-weight="600" fill="#1b1b1e">Journey Decisioning</text>
-<rect x="66" y="214" width="64" height="6" rx="3.0" fill="#ebebee"/>
-<rect x="144" y="213" width="40" height="8" rx="4.0" fill="#3a3a40"/>
-<rect x="209" y="182" width="171" height="54" rx="8" fill="#ffffff" stroke="#dadadf" stroke-width="1"/>
-<circle cx="229" cy="209" r="11" fill="#f1f1f3" stroke="#d2d2d8"/>
-<text x="247" y="205" font-size="10.5" font-weight="600" fill="#1b1b1e">Send Time Optimization</text>
-<rect x="247" y="214" width="64" height="6" rx="3.0" fill="#ebebee"/>
-<rect x="325" y="213" width="40" height="8" rx="4.0" fill="#3a3a40"/>
-<rect x="390" y="182" width="171" height="54" rx="8" fill="#ffffff" stroke="#dadadf" stroke-width="1"/>
-<circle cx="410" cy="209" r="11" fill="#f1f1f3" stroke="#d2d2d8"/>
-<text x="428" y="205" font-size="10.5" font-weight="600" fill="#1b1b1e">Offer Decisioning</text>
-<rect x="428" y="214" width="64" height="6" rx="3.0" fill="#ebebee"/>
-<rect x="506" y="213" width="40" height="8" rx="4.0" fill="#3a3a40"/>
-<rect x="571" y="182" width="171" height="54" rx="8" fill="#ffffff" stroke="#dadadf" stroke-width="1"/>
-<circle cx="591" cy="209" r="11" fill="#f1f1f3" stroke="#d2d2d8"/>
-<text x="609" y="205" font-size="10.5" font-weight="600" fill="#1b1b1e">Content Decisioning</text>
-<rect x="609" y="214" width="64" height="6" rx="3.0" fill="#ebebee"/>
-<rect x="687" y="213" width="40" height="8" rx="4.0" fill="#3a3a40"/>
-<text x="28" y="268" font-size="13" font-weight="700" fill="#1b1b1e">Strategies</text>
-<rect x="104" y="253" width="92" height="22" rx="11.0" fill="#f7f7f8" stroke="#dadadf" stroke-width="1"/><text x="150.0" y="268.14" font-size="11.5" font-weight="400" fill="#1b1b1e" text-anchor="middle">7 strategies</text>
-<rect x="20" y="290" width="730" height="410" rx="12" fill="#f1f1f3" stroke="#1b1b1e" stroke-width="2"/>
-<circle cx="22" cy="292" r="14" fill="#1b1b1e" stroke="#ffffff" stroke-width="2"/><text x="22" y="297" font-size="14" font-weight="700" fill="#ffffff" text-anchor="middle">2</text><rect x="44" y="278" width="342.0" height="24" rx="12" fill="#1b1b1e"/><text x="215.0" y="294.5" font-size="12" font-weight="600" fill="#ffffff" text-anchor="middle">One card per Strategy: result, benchmark, agents</text>
-<rect x="36" y="312" width="226" height="276" rx="10" fill="#ffffff" stroke="#dadadf" stroke-width="1"/>
-<rect x="50" y="328" width="120" height="10" rx="5.0" fill="#1b1b1e"/>
-<text x="246" y="339" font-size="15" font-weight="400" fill="#6d6d75" text-anchor="middle">›</text>
-<rect x="50" y="348" width="70" height="20" rx="10.0" fill="#ffffff" stroke="#dadadf" stroke-width="1"/><text x="85.0" y="361.78" font-size="10.5" font-weight="400" fill="#1b1b1e" text-anchor="middle">Campaigns</text>
-<rect x="126" y="348" width="124" height="20" rx="10.0" fill="#f1f1f3" stroke="#d2d2d8" stroke-width="1"/><text x="188.0" y="361.6" font-size="10" font-weight="400" fill="#1b1b1e" text-anchor="middle">Optimization available</text>
-<text x="50" y="396" font-size="11.5" font-weight="400" fill="#6d6d75">Increase in KPI</text>
-<rect x="192" y="385" width="56" height="13" rx="6.5" fill="#3a3a40"/>
-<rect x="48" y="408" width="202" height="56" rx="6" fill="#ffffff" stroke="#dadadf" stroke-width="1"/>
-<path d="M144.5 408L144.5 464" stroke="#dadadf" stroke-width="1" fill="none" stroke-linecap="round"/>
-<text x="58" y="426" font-size="10" font-weight="400" fill="#6d6d75">Outcome rate</text>
-<rect x="58" y="436" width="26" height="11" rx="5.5" fill="#1b1b1e"/>
-<rect x="90" y="433" width="44" height="18" rx="9.0" fill="#f1f1f3" stroke="#d2d2d8" stroke-width="1"/><text x="112.0" y="445.6" font-size="10" font-weight="600" fill="#3a3a40" text-anchor="middle">below</text>
-<text x="154" y="426" font-size="10" font-weight="400" fill="#6d6d75">Optimization score</text>
-<rect x="154" y="436" width="34" height="11" rx="5.5" fill="#1b1b1e"/>
-<text x="50" y="486" font-size="11" font-weight="600" fill="#1b1b1e">What the agents are doing</text>
-<rect x="48" y="496" width="202" height="80" rx="6" fill="#ffffff" stroke="#dadadf" stroke-width="1"/>
-<circle cx="62" cy="510" r="6" fill="#f1f1f3" stroke="#d2d2d8"/>
-<rect x="76" y="506.5" width="92" height="7" rx="3.5" fill="#cfcfd5"/>
-<rect x="190" y="504" width="46" height="12" rx="6" fill="#efeff1" stroke="#d6d6dc" stroke-width="1"/>
-<circle cx="62" cy="528" r="6" fill="#f1f1f3" stroke="#d2d2d8"/>
-<rect x="76" y="524.5" width="80" height="7" rx="3.5" fill="#cfcfd5"/>
-<rect x="190" y="522" width="46" height="12" rx="6" fill="#efeff1" stroke="#d6d6dc" stroke-width="1"/>
-<circle cx="62" cy="546" r="6" fill="#f1f1f3" stroke="#d2d2d8"/>
-<rect x="76" y="542.5" width="100" height="7" rx="3.5" fill="#cfcfd5"/>
-<rect x="190" y="540" width="46" height="12" rx="6" fill="#efeff1" stroke="#d6d6dc" stroke-width="1"/>
-<circle cx="62" cy="564" r="6" fill="#f1f1f3" stroke="#d2d2d8"/>
-<rect x="76" y="560.5" width="88" height="7" rx="3.5" fill="#cfcfd5"/>
-<rect x="190" y="558" width="46" height="12" rx="6" fill="#efeff1" stroke="#d6d6dc" stroke-width="1"/>
-<rect x="273" y="312" width="226" height="276" rx="10" fill="#ffffff" stroke="#dadadf" stroke-width="1"/>
-<rect x="287" y="328" width="150" height="10" rx="5.0" fill="#1b1b1e"/>
-<text x="483" y="339" font-size="15" font-weight="400" fill="#6d6d75" text-anchor="middle">›</text>
-<rect x="287" y="348" width="70" height="20" rx="10.0" fill="#ffffff" stroke="#dadadf" stroke-width="1"/><text x="322.0" y="361.78" font-size="10.5" font-weight="400" fill="#1b1b1e" text-anchor="middle">Campaigns</text>
-<rect x="363" y="348" width="124" height="20" rx="10.0" fill="#f1f1f3" stroke="#d2d2d8" stroke-width="1"/><text x="425.0" y="361.6" font-size="10" font-weight="400" fill="#1b1b1e" text-anchor="middle">Optimization available</text>
-<text x="287" y="396" font-size="11.5" font-weight="400" fill="#6d6d75">Increase in KPI</text>
-<rect x="429" y="385" width="56" height="13" rx="6.5" fill="#3a3a40"/>
-<rect x="285" y="408" width="202" height="56" rx="6" fill="#ffffff" stroke="#dadadf" stroke-width="1"/>
-<path d="M381.5 408L381.5 464" stroke="#dadadf" stroke-width="1" fill="none" stroke-linecap="round"/>
-<text x="295" y="426" font-size="10" font-weight="400" fill="#6d6d75">Outcome rate</text>
-<rect x="295" y="436" width="26" height="11" rx="5.5" fill="#1b1b1e"/>
-<rect x="327" y="433" width="44" height="18" rx="9.0" fill="#f1f1f3" stroke="#d2d2d8" stroke-width="1"/><text x="349.0" y="445.6" font-size="10" font-weight="600" fill="#3a3a40" text-anchor="middle">above</text>
-<text x="391" y="426" font-size="10" font-weight="400" fill="#6d6d75">Optimization score</text>
-<rect x="391" y="436" width="34" height="11" rx="5.5" fill="#1b1b1e"/>
-<text x="287" y="486" font-size="11" font-weight="600" fill="#1b1b1e">What the agents are doing</text>
-<rect x="285" y="496" width="202" height="80" rx="6" fill="#ffffff" stroke="#dadadf" stroke-width="1"/>
-<circle cx="299" cy="510" r="6" fill="#f1f1f3" stroke="#d2d2d8"/>
-<rect x="313" y="506.5" width="92" height="7" rx="3.5" fill="#cfcfd5"/>
-<rect x="427" y="504" width="46" height="12" rx="6" fill="#efeff1" stroke="#d6d6dc" stroke-width="1"/>
-<circle cx="299" cy="528" r="6" fill="#f1f1f3" stroke="#d2d2d8"/>
-<rect x="313" y="524.5" width="80" height="7" rx="3.5" fill="#cfcfd5"/>
-<rect x="427" y="522" width="46" height="12" rx="6" fill="#efeff1" stroke="#d6d6dc" stroke-width="1"/>
-<circle cx="299" cy="546" r="6" fill="#f1f1f3" stroke="#d2d2d8"/>
-<rect x="313" y="542.5" width="100" height="7" rx="3.5" fill="#cfcfd5"/>
-<rect x="427" y="540" width="46" height="12" rx="6" fill="#efeff1" stroke="#d6d6dc" stroke-width="1"/>
-<circle cx="299" cy="564" r="6" fill="#f1f1f3" stroke="#d2d2d8"/>
-<rect x="313" y="560.5" width="88" height="7" rx="3.5" fill="#cfcfd5"/>
-<rect x="427" y="558" width="46" height="12" rx="6" fill="#efeff1" stroke="#d6d6dc" stroke-width="1"/>
-<rect x="510" y="312" width="226" height="276" rx="10" fill="#ffffff" stroke="#dadadf" stroke-width="1"/>
-<rect x="524" y="328" width="104" height="10" rx="5.0" fill="#1b1b1e"/>
-<text x="720" y="339" font-size="15" font-weight="400" fill="#6d6d75" text-anchor="middle">›</text>
-<rect x="524" y="348" width="70" height="20" rx="10.0" fill="#ffffff" stroke="#dadadf" stroke-width="1"/><text x="559.0" y="361.78" font-size="10.5" font-weight="400" fill="#1b1b1e" text-anchor="middle">Campaigns</text>
-<rect x="600" y="348" width="124" height="20" rx="10.0" fill="#f1f1f3" stroke="#d2d2d8" stroke-width="1"/><text x="662.0" y="361.6" font-size="10" font-weight="400" fill="#1b1b1e" text-anchor="middle">Optimization available</text>
-<text x="524" y="396" font-size="11.5" font-weight="400" fill="#6d6d75">Increase in KPI</text>
-<rect x="666" y="385" width="56" height="13" rx="6.5" fill="#3a3a40"/>
-<rect x="522" y="408" width="202" height="56" rx="6" fill="#ffffff" stroke="#dadadf" stroke-width="1"/>
-<path d="M618.5 408L618.5 464" stroke="#dadadf" stroke-width="1" fill="none" stroke-linecap="round"/>
-<text x="532" y="426" font-size="10" font-weight="400" fill="#6d6d75">Outcome rate</text>
-<rect x="532" y="436" width="26" height="11" rx="5.5" fill="#1b1b1e"/>
-<rect x="564" y="433" width="44" height="18" rx="9.0" fill="#f1f1f3" stroke="#d2d2d8" stroke-width="1"/><text x="586.0" y="445.6" font-size="10" font-weight="600" fill="#3a3a40" text-anchor="middle">above</text>
-<text x="628" y="426" font-size="10" font-weight="400" fill="#6d6d75">Optimization score</text>
-<rect x="628" y="436" width="34" height="11" rx="5.5" fill="#1b1b1e"/>
-<text x="524" y="486" font-size="11" font-weight="600" fill="#1b1b1e">What the agents are doing</text>
-<rect x="522" y="496" width="202" height="80" rx="6" fill="#ffffff" stroke="#dadadf" stroke-width="1"/>
-<circle cx="536" cy="510" r="6" fill="#f1f1f3" stroke="#d2d2d8"/>
-<rect x="550" y="506.5" width="92" height="7" rx="3.5" fill="#cfcfd5"/>
-<rect x="664" y="504" width="46" height="12" rx="6" fill="#efeff1" stroke="#d6d6dc" stroke-width="1"/>
-<circle cx="536" cy="528" r="6" fill="#f1f1f3" stroke="#d2d2d8"/>
-<rect x="550" y="524.5" width="80" height="7" rx="3.5" fill="#cfcfd5"/>
-<rect x="664" y="522" width="46" height="12" rx="6" fill="#efeff1" stroke="#d6d6dc" stroke-width="1"/>
-<circle cx="536" cy="546" r="6" fill="#f1f1f3" stroke="#d2d2d8"/>
-<rect x="550" y="542.5" width="100" height="7" rx="3.5" fill="#cfcfd5"/>
-<rect x="664" y="540" width="46" height="12" rx="6" fill="#efeff1" stroke="#d6d6dc" stroke-width="1"/>
-<circle cx="536" cy="564" r="6" fill="#f1f1f3" stroke="#d2d2d8"/>
-<rect x="550" y="560.5" width="88" height="7" rx="3.5" fill="#cfcfd5"/>
-<rect x="664" y="558" width="46" height="12" rx="6" fill="#efeff1" stroke="#d6d6dc" stroke-width="1"/>
-<clipPath id="grid"><rect x="21" y="291" width="728" height="408" rx="11"/></clipPath>
+<text x="28" y="170" font-size="13" font-weight="700" fill="#1b1b1e">AI agents overview</text>
+<rect x="28" y="180" width="138" height="66" rx="8" fill="#ffffff" stroke="#dadadf" stroke-width="1"/>
+<circle cx="47" cy="199" r="9" fill="#f1f1f3" stroke="#d2d2d8"/>
+<rect x="120" y="194" width="34" height="9" rx="4.5" fill="#3a3a40"/>
+<text x="38" y="226" font-size="9.8" font-weight="600" fill="#1b1b1e">Promotion</text>
+<rect x="38" y="233" width="64" height="5" rx="2.5" fill="#ebebee"/>
+<rect x="172" y="180" width="138" height="66" rx="8" fill="#ffffff" stroke="#dadadf" stroke-width="1"/>
+<circle cx="191" cy="199" r="9" fill="#f1f1f3" stroke="#d2d2d8"/>
+<rect x="264" y="194" width="34" height="9" rx="4.5" fill="#3a3a40"/>
+<text x="182" y="226" font-size="9.8" font-weight="600" fill="#1b1b1e">Channel</text>
+<rect x="182" y="233" width="64" height="5" rx="2.5" fill="#ebebee"/>
+<rect x="316" y="180" width="138" height="66" rx="8" fill="#ffffff" stroke="#dadadf" stroke-width="1"/>
+<circle cx="335" cy="199" r="9" fill="#f1f1f3" stroke="#d2d2d8"/>
+<rect x="408" y="194" width="34" height="9" rx="4.5" fill="#3a3a40"/>
+<text x="326" y="226" font-size="9.8" font-weight="600" fill="#1b1b1e">Journey Decisioning</text>
+<rect x="326" y="233" width="64" height="5" rx="2.5" fill="#ebebee"/>
+<rect x="460" y="180" width="138" height="66" rx="8" fill="#ffffff" stroke="#dadadf" stroke-width="1"/>
+<circle cx="479" cy="199" r="9" fill="#f1f1f3" stroke="#d2d2d8"/>
+<rect x="552" y="194" width="34" height="9" rx="4.5" fill="#3a3a40"/>
+<text x="470" y="226" font-size="9.8" font-weight="600" fill="#1b1b1e">Send Time Optimization</text>
+<rect x="470" y="233" width="64" height="5" rx="2.5" fill="#ebebee"/>
+<rect x="604" y="180" width="138" height="66" rx="8" fill="#ffffff" stroke="#dadadf" stroke-width="1"/>
+<circle cx="623" cy="199" r="9" fill="#f1f1f3" stroke="#d2d2d8"/>
+<rect x="696" y="194" width="34" height="9" rx="4.5" fill="#3a3a40"/>
+<text x="614" y="226" font-size="9.8" font-weight="600" fill="#1b1b1e">Content Decisioning</text>
+<rect x="614" y="233" width="64" height="5" rx="2.5" fill="#ebebee"/>
+<text x="28" y="276" font-size="13" font-weight="700" fill="#1b1b1e">Strategies</text>
+<rect x="104" y="261" width="92" height="22" rx="11.0" fill="#f7f7f8" stroke="#dadadf" stroke-width="1"/><text x="150.0" y="276.14" font-size="11.5" font-weight="400" fill="#1b1b1e" text-anchor="middle">7 strategies</text>
+<rect x="20" y="298" width="730" height="402" rx="12" fill="#f1f1f3" stroke="#1b1b1e" stroke-width="2"/>
+<circle cx="22" cy="300" r="14" fill="#1b1b1e" stroke="#ffffff" stroke-width="2"/><text x="22" y="305" font-size="14" font-weight="700" fill="#ffffff" text-anchor="middle">1</text><rect x="44" y="286" width="407.0" height="24" rx="12" fill="#1b1b1e"/><text x="247.5" y="302.5" font-size="12" font-weight="600" fill="#ffffff" text-anchor="middle">One card per Strategy, on thirds: result, customers, score</text>
+<rect x="36" y="318" width="226" height="186" rx="10" fill="#ffffff" stroke="#dadadf" stroke-width="1"/>
+<rect x="50" y="334" width="120" height="10" rx="5.0" fill="#1b1b1e"/>
+<text x="246" y="345" font-size="15" font-weight="400" fill="#6d6d75" text-anchor="middle">›</text>
+<rect x="50" y="352" width="74" height="20" rx="5" fill="#ffffff" stroke="#dadadf" stroke-width="1"/>
+<circle cx="60" cy="362" r="2.5" fill="#6d6d75"/>
+<text x="67" y="366" font-size="10.5" font-weight="400" fill="#1b1b1e">Campaigns</text>
+<path d="M50 380.5L248 380.5" stroke="#dadadf" stroke-width="1" fill="none" stroke-linecap="round"/>
+<text x="50" y="400" font-size="10.5" font-weight="400" fill="#6d6d75">Increase in KPI</text>
+<rect x="50" y="408" width="80" height="18" rx="9.0" fill="#3a3a40"/>
+<path d="M182.0 390L182.0 432" stroke="#dadadf" stroke-width="1" fill="none" stroke-linecap="round"/>
+<text x="190.0" y="400" font-size="10.5" font-weight="400" fill="#6d6d75">Secondary</text>
+<rect x="190.0" y="410" width="40" height="11" rx="5.5" fill="#3a3a40"/>
+<path d="M50 442.5L248 442.5" stroke="#dadadf" stroke-width="1" fill="none" stroke-linecap="round"/>
+<text x="50.0" y="464" font-size="10.5" font-weight="400" fill="#6d6d75">Customers</text>
+<rect x="50.0" y="474" width="36" height="10" rx="5.0" fill="#1b1b1e"/>
+<path d="M116.0 452L116.0 492" stroke="#dadadf" stroke-width="1" fill="none" stroke-linecap="round"/>
+<text x="124.0" y="464" font-size="10.5" font-weight="400" fill="#6d6d75">AI uplift</text>
+<rect x="124.0" y="474" width="36" height="10" rx="5.0" fill="#1b1b1e"/>
+<path d="M182.0 452L182.0 492" stroke="#dadadf" stroke-width="1" fill="none" stroke-linecap="round"/>
+<text x="190.0" y="464" font-size="10.5" font-weight="400" fill="#6d6d75">Score</text>
+<rect x="190.0" y="474" width="36" height="10" rx="5.0" fill="#1b1b1e"/>
+<rect x="273" y="318" width="226" height="186" rx="10" fill="#ffffff" stroke="#dadadf" stroke-width="1"/>
+<rect x="287" y="334" width="150" height="10" rx="5.0" fill="#1b1b1e"/>
+<text x="483" y="345" font-size="15" font-weight="400" fill="#6d6d75" text-anchor="middle">›</text>
+<rect x="287" y="352" width="74" height="20" rx="5" fill="#ffffff" stroke="#dadadf" stroke-width="1"/>
+<circle cx="297" cy="362" r="2.5" fill="#6d6d75"/>
+<text x="304" y="366" font-size="10.5" font-weight="400" fill="#1b1b1e">Campaigns</text>
+<path d="M287 380.5L485 380.5" stroke="#dadadf" stroke-width="1" fill="none" stroke-linecap="round"/>
+<text x="287" y="400" font-size="10.5" font-weight="400" fill="#6d6d75">Increase in KPI</text>
+<rect x="287" y="408" width="80" height="18" rx="9.0" fill="#3a3a40"/>
+<path d="M419.0 390L419.0 432" stroke="#dadadf" stroke-width="1" fill="none" stroke-linecap="round"/>
+<text x="427.0" y="400" font-size="10.5" font-weight="400" fill="#6d6d75">Secondary</text>
+<rect x="427.0" y="410" width="40" height="11" rx="5.5" fill="#3a3a40"/>
+<path d="M287 442.5L485 442.5" stroke="#dadadf" stroke-width="1" fill="none" stroke-linecap="round"/>
+<text x="287.0" y="464" font-size="10.5" font-weight="400" fill="#6d6d75">Customers</text>
+<rect x="287.0" y="474" width="36" height="10" rx="5.0" fill="#1b1b1e"/>
+<path d="M353.0 452L353.0 492" stroke="#dadadf" stroke-width="1" fill="none" stroke-linecap="round"/>
+<text x="361.0" y="464" font-size="10.5" font-weight="400" fill="#6d6d75">AI uplift</text>
+<rect x="361.0" y="474" width="36" height="10" rx="5.0" fill="#1b1b1e"/>
+<path d="M419.0 452L419.0 492" stroke="#dadadf" stroke-width="1" fill="none" stroke-linecap="round"/>
+<text x="427.0" y="464" font-size="10.5" font-weight="400" fill="#6d6d75">Score</text>
+<rect x="427.0" y="474" width="36" height="10" rx="5.0" fill="#1b1b1e"/>
+<rect x="510" y="318" width="226" height="186" rx="10" fill="#ffffff" stroke="#dadadf" stroke-width="1"/>
+<rect x="524" y="334" width="104" height="10" rx="5.0" fill="#1b1b1e"/>
+<text x="720" y="345" font-size="15" font-weight="400" fill="#6d6d75" text-anchor="middle">›</text>
+<rect x="524" y="352" width="74" height="20" rx="5" fill="#ffffff" stroke="#dadadf" stroke-width="1"/>
+<circle cx="534" cy="362" r="2.5" fill="#6d6d75"/>
+<text x="541" y="366" font-size="10.5" font-weight="400" fill="#1b1b1e">Campaigns</text>
+<path d="M524 380.5L722 380.5" stroke="#dadadf" stroke-width="1" fill="none" stroke-linecap="round"/>
+<text x="524" y="400" font-size="10.5" font-weight="400" fill="#6d6d75">Increase in KPI</text>
+<rect x="524" y="408" width="80" height="18" rx="9.0" fill="#3a3a40"/>
+<path d="M656.0 390L656.0 432" stroke="#dadadf" stroke-width="1" fill="none" stroke-linecap="round"/>
+<text x="664.0" y="400" font-size="10.5" font-weight="400" fill="#6d6d75">Secondary</text>
+<rect x="664.0" y="410" width="40" height="11" rx="5.5" fill="#3a3a40"/>
+<path d="M524 442.5L722 442.5" stroke="#dadadf" stroke-width="1" fill="none" stroke-linecap="round"/>
+<text x="524.0" y="464" font-size="10.5" font-weight="400" fill="#6d6d75">Customers</text>
+<rect x="524.0" y="474" width="36" height="10" rx="5.0" fill="#1b1b1e"/>
+<path d="M590.0 452L590.0 492" stroke="#dadadf" stroke-width="1" fill="none" stroke-linecap="round"/>
+<text x="598.0" y="464" font-size="10.5" font-weight="400" fill="#6d6d75">AI uplift</text>
+<rect x="598.0" y="474" width="36" height="10" rx="5.0" fill="#1b1b1e"/>
+<path d="M656.0 452L656.0 492" stroke="#dadadf" stroke-width="1" fill="none" stroke-linecap="round"/>
+<text x="664.0" y="464" font-size="10.5" font-weight="400" fill="#6d6d75">Score</text>
+<rect x="664.0" y="474" width="36" height="10" rx="5.0" fill="#1b1b1e"/>
+<clipPath id="grid"><rect x="21" y="299" width="728" height="400" rx="11"/></clipPath>
 <g clip-path="url(#grid)">
-<rect x="36" y="600" width="226" height="276" rx="10" fill="#ffffff" stroke="#dadadf" stroke-width="1"/>
-<rect x="50" y="616" width="150" height="10" rx="5.0" fill="#1b1b1e"/>
-<text x="246" y="627" font-size="15" font-weight="400" fill="#6d6d75" text-anchor="middle">›</text>
-<rect x="50" y="636" width="70" height="20" rx="10.0" fill="#ffffff" stroke="#dadadf" stroke-width="1"/><text x="85.0" y="649.78" font-size="10.5" font-weight="400" fill="#1b1b1e" text-anchor="middle">Campaigns</text>
-<rect x="126" y="636" width="124" height="20" rx="10.0" fill="#f1f1f3" stroke="#d2d2d8" stroke-width="1"/><text x="188.0" y="649.6" font-size="10" font-weight="400" fill="#1b1b1e" text-anchor="middle">Optimization available</text>
-<text x="50" y="684" font-size="11.5" font-weight="400" fill="#6d6d75">Increase in KPI</text>
-<rect x="192" y="673" width="56" height="13" rx="6.5" fill="#3a3a40"/>
-<rect x="48" y="696" width="202" height="56" rx="6" fill="#ffffff" stroke="#dadadf" stroke-width="1"/>
-<path d="M144.5 696L144.5 752" stroke="#dadadf" stroke-width="1" fill="none" stroke-linecap="round"/>
-<text x="58" y="714" font-size="10" font-weight="400" fill="#6d6d75">Outcome rate</text>
-<rect x="58" y="724" width="26" height="11" rx="5.5" fill="#1b1b1e"/>
-<rect x="90" y="721" width="44" height="18" rx="9.0" fill="#f1f1f3" stroke="#d2d2d8" stroke-width="1"/><text x="112.0" y="733.6" font-size="10" font-weight="600" fill="#3a3a40" text-anchor="middle">above</text>
-<text x="154" y="714" font-size="10" font-weight="400" fill="#6d6d75">Optimization score</text>
-<rect x="154" y="724" width="34" height="11" rx="5.5" fill="#1b1b1e"/>
-<text x="50" y="774" font-size="11" font-weight="600" fill="#1b1b1e">What the agents are doing</text>
-<rect x="48" y="784" width="202" height="80" rx="6" fill="#ffffff" stroke="#dadadf" stroke-width="1"/>
-<circle cx="62" cy="798" r="6" fill="#f1f1f3" stroke="#d2d2d8"/>
-<rect x="76" y="794.5" width="92" height="7" rx="3.5" fill="#cfcfd5"/>
-<rect x="190" y="792" width="46" height="12" rx="6" fill="#efeff1" stroke="#d6d6dc" stroke-width="1"/>
-<circle cx="62" cy="816" r="6" fill="#f1f1f3" stroke="#d2d2d8"/>
-<rect x="76" y="812.5" width="80" height="7" rx="3.5" fill="#cfcfd5"/>
-<rect x="190" y="810" width="46" height="12" rx="6" fill="#efeff1" stroke="#d6d6dc" stroke-width="1"/>
-<circle cx="62" cy="834" r="6" fill="#f1f1f3" stroke="#d2d2d8"/>
-<rect x="76" y="830.5" width="100" height="7" rx="3.5" fill="#cfcfd5"/>
-<rect x="190" y="828" width="46" height="12" rx="6" fill="#efeff1" stroke="#d6d6dc" stroke-width="1"/>
-<circle cx="62" cy="852" r="6" fill="#f1f1f3" stroke="#d2d2d8"/>
-<rect x="76" y="848.5" width="88" height="7" rx="3.5" fill="#cfcfd5"/>
-<rect x="190" y="846" width="46" height="12" rx="6" fill="#efeff1" stroke="#d6d6dc" stroke-width="1"/>
-<rect x="273" y="600" width="226" height="276" rx="10" fill="#ffffff" stroke="#dadadf" stroke-width="1"/>
-<rect x="287" y="616" width="104" height="10" rx="5.0" fill="#1b1b1e"/>
-<text x="483" y="627" font-size="15" font-weight="400" fill="#6d6d75" text-anchor="middle">›</text>
-<rect x="287" y="636" width="70" height="20" rx="10.0" fill="#ffffff" stroke="#dadadf" stroke-width="1"/><text x="322.0" y="649.78" font-size="10.5" font-weight="400" fill="#1b1b1e" text-anchor="middle">Campaigns</text>
-<rect x="363" y="636" width="124" height="20" rx="10.0" fill="#f1f1f3" stroke="#d2d2d8" stroke-width="1"/><text x="425.0" y="649.6" font-size="10" font-weight="400" fill="#1b1b1e" text-anchor="middle">Optimization available</text>
-<text x="287" y="684" font-size="11.5" font-weight="400" fill="#6d6d75">Increase in KPI</text>
-<rect x="429" y="673" width="56" height="13" rx="6.5" fill="#3a3a40"/>
-<rect x="285" y="696" width="202" height="56" rx="6" fill="#ffffff" stroke="#dadadf" stroke-width="1"/>
-<path d="M381.5 696L381.5 752" stroke="#dadadf" stroke-width="1" fill="none" stroke-linecap="round"/>
-<text x="295" y="714" font-size="10" font-weight="400" fill="#6d6d75">Outcome rate</text>
-<rect x="295" y="724" width="26" height="11" rx="5.5" fill="#1b1b1e"/>
-<rect x="327" y="721" width="44" height="18" rx="9.0" fill="#f1f1f3" stroke="#d2d2d8" stroke-width="1"/><text x="349.0" y="733.6" font-size="10" font-weight="600" fill="#3a3a40" text-anchor="middle">above</text>
-<text x="391" y="714" font-size="10" font-weight="400" fill="#6d6d75">Optimization score</text>
-<rect x="391" y="724" width="34" height="11" rx="5.5" fill="#1b1b1e"/>
-<text x="287" y="774" font-size="11" font-weight="600" fill="#1b1b1e">What the agents are doing</text>
-<rect x="285" y="784" width="202" height="80" rx="6" fill="#ffffff" stroke="#dadadf" stroke-width="1"/>
-<circle cx="299" cy="798" r="6" fill="#f1f1f3" stroke="#d2d2d8"/>
-<rect x="313" y="794.5" width="92" height="7" rx="3.5" fill="#cfcfd5"/>
-<rect x="427" y="792" width="46" height="12" rx="6" fill="#efeff1" stroke="#d6d6dc" stroke-width="1"/>
-<circle cx="299" cy="816" r="6" fill="#f1f1f3" stroke="#d2d2d8"/>
-<rect x="313" y="812.5" width="80" height="7" rx="3.5" fill="#cfcfd5"/>
-<rect x="427" y="810" width="46" height="12" rx="6" fill="#efeff1" stroke="#d6d6dc" stroke-width="1"/>
-<circle cx="299" cy="834" r="6" fill="#f1f1f3" stroke="#d2d2d8"/>
-<rect x="313" y="830.5" width="100" height="7" rx="3.5" fill="#cfcfd5"/>
-<rect x="427" y="828" width="46" height="12" rx="6" fill="#efeff1" stroke="#d6d6dc" stroke-width="1"/>
-<circle cx="299" cy="852" r="6" fill="#f1f1f3" stroke="#d2d2d8"/>
-<rect x="313" y="848.5" width="88" height="7" rx="3.5" fill="#cfcfd5"/>
-<rect x="427" y="846" width="46" height="12" rx="6" fill="#efeff1" stroke="#d6d6dc" stroke-width="1"/>
-<rect x="510" y="600" width="226" height="276" rx="10" fill="#ffffff" stroke="#dadadf" stroke-width="1"/>
-<rect x="524" y="616" width="120" height="10" rx="5.0" fill="#1b1b1e"/>
-<text x="720" y="627" font-size="15" font-weight="400" fill="#6d6d75" text-anchor="middle">›</text>
-<rect x="524" y="636" width="70" height="20" rx="10.0" fill="#ffffff" stroke="#dadadf" stroke-width="1"/><text x="559.0" y="649.78" font-size="10.5" font-weight="400" fill="#1b1b1e" text-anchor="middle">Campaigns</text>
-<rect x="600" y="636" width="124" height="20" rx="10.0" fill="#f1f1f3" stroke="#d2d2d8" stroke-width="1"/><text x="662.0" y="649.6" font-size="10" font-weight="400" fill="#1b1b1e" text-anchor="middle">Optimization available</text>
-<text x="524" y="684" font-size="11.5" font-weight="400" fill="#6d6d75">Increase in KPI</text>
-<rect x="666" y="673" width="56" height="13" rx="6.5" fill="#3a3a40"/>
-<rect x="522" y="696" width="202" height="56" rx="6" fill="#ffffff" stroke="#dadadf" stroke-width="1"/>
-<path d="M618.5 696L618.5 752" stroke="#dadadf" stroke-width="1" fill="none" stroke-linecap="round"/>
-<text x="532" y="714" font-size="10" font-weight="400" fill="#6d6d75">Outcome rate</text>
-<rect x="532" y="724" width="26" height="11" rx="5.5" fill="#1b1b1e"/>
-<rect x="564" y="721" width="44" height="18" rx="9.0" fill="#f1f1f3" stroke="#d2d2d8" stroke-width="1"/><text x="586.0" y="733.6" font-size="10" font-weight="600" fill="#3a3a40" text-anchor="middle">below</text>
-<text x="628" y="714" font-size="10" font-weight="400" fill="#6d6d75">Optimization score</text>
-<rect x="628" y="724" width="34" height="11" rx="5.5" fill="#1b1b1e"/>
-<text x="524" y="774" font-size="11" font-weight="600" fill="#1b1b1e">What the agents are doing</text>
-<rect x="522" y="784" width="202" height="80" rx="6" fill="#ffffff" stroke="#dadadf" stroke-width="1"/>
-<circle cx="536" cy="798" r="6" fill="#f1f1f3" stroke="#d2d2d8"/>
-<rect x="550" y="794.5" width="92" height="7" rx="3.5" fill="#cfcfd5"/>
-<rect x="664" y="792" width="46" height="12" rx="6" fill="#efeff1" stroke="#d6d6dc" stroke-width="1"/>
-<circle cx="536" cy="816" r="6" fill="#f1f1f3" stroke="#d2d2d8"/>
-<rect x="550" y="812.5" width="80" height="7" rx="3.5" fill="#cfcfd5"/>
-<rect x="664" y="810" width="46" height="12" rx="6" fill="#efeff1" stroke="#d6d6dc" stroke-width="1"/>
-<circle cx="536" cy="834" r="6" fill="#f1f1f3" stroke="#d2d2d8"/>
-<rect x="550" y="830.5" width="100" height="7" rx="3.5" fill="#cfcfd5"/>
-<rect x="664" y="828" width="46" height="12" rx="6" fill="#efeff1" stroke="#d6d6dc" stroke-width="1"/>
-<circle cx="536" cy="852" r="6" fill="#f1f1f3" stroke="#d2d2d8"/>
-<rect x="550" y="848.5" width="88" height="7" rx="3.5" fill="#cfcfd5"/>
-<rect x="664" y="846" width="46" height="12" rx="6" fill="#efeff1" stroke="#d6d6dc" stroke-width="1"/>
+<rect x="36" y="514" width="226" height="186" rx="10" fill="#ffffff" stroke="#dadadf" stroke-width="1"/>
+<rect x="50" y="530" width="150" height="10" rx="5.0" fill="#1b1b1e"/>
+<text x="246" y="541" font-size="15" font-weight="400" fill="#6d6d75" text-anchor="middle">›</text>
+<rect x="50" y="548" width="74" height="20" rx="5" fill="#ffffff" stroke="#dadadf" stroke-width="1"/>
+<circle cx="60" cy="558" r="2.5" fill="#6d6d75"/>
+<text x="67" y="562" font-size="10.5" font-weight="400" fill="#1b1b1e">Campaigns</text>
+<path d="M50 576.5L248 576.5" stroke="#dadadf" stroke-width="1" fill="none" stroke-linecap="round"/>
+<text x="50" y="596" font-size="10.5" font-weight="400" fill="#6d6d75">Increase in KPI</text>
+<rect x="50" y="604" width="80" height="18" rx="9.0" fill="#3a3a40"/>
+<path d="M182.0 586L182.0 628" stroke="#dadadf" stroke-width="1" fill="none" stroke-linecap="round"/>
+<text x="190.0" y="596" font-size="10.5" font-weight="400" fill="#6d6d75">Secondary</text>
+<rect x="190.0" y="606" width="40" height="11" rx="5.5" fill="#3a3a40"/>
+<path d="M50 638.5L248 638.5" stroke="#dadadf" stroke-width="1" fill="none" stroke-linecap="round"/>
+<text x="50.0" y="660" font-size="10.5" font-weight="400" fill="#6d6d75">Customers</text>
+<rect x="50.0" y="670" width="36" height="10" rx="5.0" fill="#1b1b1e"/>
+<path d="M116.0 648L116.0 688" stroke="#dadadf" stroke-width="1" fill="none" stroke-linecap="round"/>
+<text x="124.0" y="660" font-size="10.5" font-weight="400" fill="#6d6d75">AI uplift</text>
+<rect x="124.0" y="670" width="36" height="10" rx="5.0" fill="#1b1b1e"/>
+<path d="M182.0 648L182.0 688" stroke="#dadadf" stroke-width="1" fill="none" stroke-linecap="round"/>
+<text x="190.0" y="660" font-size="10.5" font-weight="400" fill="#6d6d75">Score</text>
+<rect x="190.0" y="670" width="36" height="10" rx="5.0" fill="#1b1b1e"/>
+<rect x="273" y="514" width="226" height="186" rx="10" fill="#ffffff" stroke="#dadadf" stroke-width="1"/>
+<rect x="287" y="530" width="104" height="10" rx="5.0" fill="#1b1b1e"/>
+<text x="483" y="541" font-size="15" font-weight="400" fill="#6d6d75" text-anchor="middle">›</text>
+<rect x="287" y="548" width="74" height="20" rx="5" fill="#ffffff" stroke="#dadadf" stroke-width="1"/>
+<circle cx="297" cy="558" r="2.5" fill="#6d6d75"/>
+<text x="304" y="562" font-size="10.5" font-weight="400" fill="#1b1b1e">Campaigns</text>
+<path d="M287 576.5L485 576.5" stroke="#dadadf" stroke-width="1" fill="none" stroke-linecap="round"/>
+<text x="287" y="596" font-size="10.5" font-weight="400" fill="#6d6d75">Increase in KPI</text>
+<rect x="287" y="604" width="80" height="18" rx="9.0" fill="#3a3a40"/>
+<path d="M419.0 586L419.0 628" stroke="#dadadf" stroke-width="1" fill="none" stroke-linecap="round"/>
+<text x="427.0" y="596" font-size="10.5" font-weight="400" fill="#6d6d75">Secondary</text>
+<rect x="427.0" y="606" width="40" height="11" rx="5.5" fill="#3a3a40"/>
+<path d="M287 638.5L485 638.5" stroke="#dadadf" stroke-width="1" fill="none" stroke-linecap="round"/>
+<text x="287.0" y="660" font-size="10.5" font-weight="400" fill="#6d6d75">Customers</text>
+<rect x="287.0" y="670" width="36" height="10" rx="5.0" fill="#1b1b1e"/>
+<path d="M353.0 648L353.0 688" stroke="#dadadf" stroke-width="1" fill="none" stroke-linecap="round"/>
+<text x="361.0" y="660" font-size="10.5" font-weight="400" fill="#6d6d75">AI uplift</text>
+<rect x="361.0" y="670" width="36" height="10" rx="5.0" fill="#1b1b1e"/>
+<path d="M419.0 648L419.0 688" stroke="#dadadf" stroke-width="1" fill="none" stroke-linecap="round"/>
+<text x="427.0" y="660" font-size="10.5" font-weight="400" fill="#6d6d75">Score</text>
+<rect x="427.0" y="670" width="36" height="10" rx="5.0" fill="#1b1b1e"/>
+<rect x="510" y="514" width="226" height="186" rx="10" fill="#ffffff" stroke="#dadadf" stroke-width="1"/>
+<rect x="524" y="530" width="120" height="10" rx="5.0" fill="#1b1b1e"/>
+<text x="720" y="541" font-size="15" font-weight="400" fill="#6d6d75" text-anchor="middle">›</text>
+<rect x="524" y="548" width="74" height="20" rx="5" fill="#ffffff" stroke="#dadadf" stroke-width="1"/>
+<circle cx="534" cy="558" r="2.5" fill="#6d6d75"/>
+<text x="541" y="562" font-size="10.5" font-weight="400" fill="#1b1b1e">Campaigns</text>
+<path d="M524 576.5L722 576.5" stroke="#dadadf" stroke-width="1" fill="none" stroke-linecap="round"/>
+<text x="524" y="596" font-size="10.5" font-weight="400" fill="#6d6d75">Increase in KPI</text>
+<rect x="524" y="604" width="80" height="18" rx="9.0" fill="#3a3a40"/>
+<path d="M656.0 586L656.0 628" stroke="#dadadf" stroke-width="1" fill="none" stroke-linecap="round"/>
+<text x="664.0" y="596" font-size="10.5" font-weight="400" fill="#6d6d75">Secondary</text>
+<rect x="664.0" y="606" width="40" height="11" rx="5.5" fill="#3a3a40"/>
+<path d="M524 638.5L722 638.5" stroke="#dadadf" stroke-width="1" fill="none" stroke-linecap="round"/>
+<text x="524.0" y="660" font-size="10.5" font-weight="400" fill="#6d6d75">Customers</text>
+<rect x="524.0" y="670" width="36" height="10" rx="5.0" fill="#1b1b1e"/>
+<path d="M590.0 648L590.0 688" stroke="#dadadf" stroke-width="1" fill="none" stroke-linecap="round"/>
+<text x="598.0" y="660" font-size="10.5" font-weight="400" fill="#6d6d75">AI uplift</text>
+<rect x="598.0" y="670" width="36" height="10" rx="5.0" fill="#1b1b1e"/>
+<path d="M656.0 648L656.0 688" stroke="#dadadf" stroke-width="1" fill="none" stroke-linecap="round"/>
+<text x="664.0" y="660" font-size="10.5" font-weight="400" fill="#6d6d75">Score</text>
+<rect x="664.0" y="670" width="36" height="10" rx="5.0" fill="#1b1b1e"/>
 </g>
 <rect x="762" y="60" width="250" height="640" rx="12" fill="#ffffff" stroke="#dadadf" stroke-width="1"/>
 <text x="778" y="86" font-size="14" font-weight="700" fill="#1b1b1e">OptiGenie</text>
 <text x="778" y="104" font-size="11.5" font-weight="400" fill="#6d6d75">Across AI Decisioning Studio</text>
 <rect x="774" y="118" width="226" height="100" rx="8" fill="#ffffff" stroke="#dadadf" stroke-width="1"/>
 <circle cx="792" cy="140" r="9" fill="#f1f1f3" stroke="#1b1b1e" stroke-width="1"/>
-<text x="808" y="138" font-size="11" font-weight="400" fill="#6d6d75">Benchmark</text>
+<text x="808" y="138" font-size="11" font-weight="400" fill="#6d6d75">Coverage gap</text>
 <rect x="808" y="148" width="150" height="8" rx="4.0" fill="#cfcfd5"/>
 <rect x="786" y="168" width="196" height="6" rx="3.0" fill="#ebebee"/>
 <rect x="786" y="180" width="160" height="6" rx="3.0" fill="#ebebee"/>
@@ -218,7 +181,7 @@
 <text x="955" y="204" font-size="11" font-weight="600" fill="#1b1b1e" text-anchor="middle">Open</text>
 <rect x="774" y="230" width="226" height="100" rx="8" fill="#ffffff" stroke="#dadadf" stroke-width="1"/>
 <circle cx="792" cy="252" r="9" fill="#f1f1f3" stroke="#1b1b1e" stroke-width="1"/>
-<text x="808" y="250" font-size="11" font-weight="400" fill="#6d6d75">Coverage gap</text>
+<text x="808" y="250" font-size="11" font-weight="400" fill="#6d6d75">Optimization score</text>
 <rect x="808" y="260" width="150" height="8" rx="4.0" fill="#cfcfd5"/>
 <rect x="786" y="280" width="196" height="6" rx="3.0" fill="#ebebee"/>
 <rect x="786" y="292" width="160" height="6" rx="3.0" fill="#ebebee"/>
@@ -226,20 +189,20 @@
 <text x="955" y="316" font-size="11" font-weight="600" fill="#1b1b1e" text-anchor="middle">Open</text>
 <rect x="774" y="342" width="226" height="100" rx="8" fill="#ffffff" stroke="#dadadf" stroke-width="1"/>
 <circle cx="792" cy="364" r="9" fill="#f1f1f3" stroke="#1b1b1e" stroke-width="1"/>
-<text x="808" y="362" font-size="11" font-weight="400" fill="#6d6d75">Optimization score</text>
+<text x="808" y="362" font-size="11" font-weight="400" fill="#6d6d75">Related campaigns</text>
 <rect x="808" y="372" width="150" height="8" rx="4.0" fill="#cfcfd5"/>
 <rect x="786" y="392" width="196" height="6" rx="3.0" fill="#ebebee"/>
 <rect x="786" y="404" width="160" height="6" rx="3.0" fill="#ebebee"/>
 <rect x="922" y="414" width="66" height="20" rx="6" fill="#ffffff" stroke="#dadadf" stroke-width="1"/>
-<text x="955" y="428" font-size="11" font-weight="600" fill="#1b1b1e" text-anchor="middle">Open</text>
+<text x="955" y="428" font-size="11" font-weight="600" fill="#1b1b1e" text-anchor="middle">Review</text>
 <rect x="774" y="454" width="226" height="100" rx="8" fill="#ffffff" stroke="#dadadf" stroke-width="1"/>
 <circle cx="792" cy="476" r="9" fill="#f1f1f3" stroke="#1b1b1e" stroke-width="1"/>
-<text x="808" y="474" font-size="11" font-weight="400" fill="#6d6d75">Strategy gap</text>
+<text x="808" y="474" font-size="11" font-weight="400" fill="#6d6d75">Customer pool</text>
 <rect x="808" y="484" width="150" height="8" rx="4.0" fill="#cfcfd5"/>
 <rect x="786" y="504" width="196" height="6" rx="3.0" fill="#ebebee"/>
 <rect x="786" y="516" width="160" height="6" rx="3.0" fill="#ebebee"/>
 <rect x="922" y="526" width="66" height="20" rx="6" fill="#ffffff" stroke="#dadadf" stroke-width="1"/>
-<text x="955" y="540" font-size="11" font-weight="600" fill="#1b1b1e" text-anchor="middle">Create</text>
+<text x="955" y="540" font-size="11" font-weight="600" fill="#1b1b1e" text-anchor="middle">Show</text>
 <rect x="774" y="634" width="226" height="54" rx="8" fill="#ffffff" stroke="#1b1b1e" stroke-width="1.5"/>
 <text x="786" y="656" font-size="11.5" font-weight="400" fill="#6d6d75">Ask, or tell OptiGenie what to do</text>
 <rect x="970" y="660" width="22" height="20" rx="5" fill="#f7f7f8" stroke="#dadadf" stroke-width="1"/>
