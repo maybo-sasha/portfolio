@@ -1044,8 +1044,10 @@ body::after { z-index: -1 !important; }
 /* ── Phone (2026-10-27 mobile pass) ── */
 @media (max-width: 600px) {
   /* the 16:9 video sits under the header instead of behind it, and the title fits the smaller frame */
-  .ads-hero { height: calc(56.25vw + 4.5rem); background: #110d3a; }
-  .ads-hero video { top: 4.5rem; height: calc(100% - 4.5rem); }
+  .ads-hero { height: calc(56.25vw + 5rem); background: #110d3a; }
+  .ads-hero video { top: 5rem; height: calc(100% - 5rem); }
+  /* the header covers the video as it scrolls up (Sasha 2026-11-02), same colour as the band it sits on */
+  .is-over-hero .nav-header { background: #110d3a !important; -webkit-backdrop-filter: none !important; backdrop-filter: none !important; box-shadow: none !important; border-color: transparent !important; }
   .ads-hero-tag { bottom: 1.1rem; }
   .ads-hero-tag h1 { font-size: clamp(2rem, 9.5vw, 2.6rem); }
   .ads-hero .scroll-cue { display: none; }
