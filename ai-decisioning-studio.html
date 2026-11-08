@@ -598,6 +598,14 @@ body::after { content: ""; position: fixed; inset: 0; z-index: 9000; pointer-eve
         @media (max-width: 900px) { .ads-proof { grid-template-columns: minmax(0, 1fr); } }
     </style>
 <style id="inner-nav-hidden">.nav-links-inline{display:none!important}</style>
+<style id="ads-hero-walk">
+/* Hero film v3 (Sasha 2026-11-08): the app as a still window on the lavender set, scenes crossfading */
+.ads-hero.ads-hero--walk { background: #ededfd !important; }
+/* no words over the film (his OptiGenie rule, "remove the words at the hero"): the title stays for screen readers only, nothing darkens the window */
+.ads-hero.ads-hero--walk::after { content: none; }
+.ads-hero.ads-hero--walk .ads-hero-tag { position: absolute; width: 1px; height: 1px; margin: -1px; padding: 0; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0; }
+.ads-hero.ads-hero--walk .scroll-cue { display: none; }
+</style>
 </head>
 <body>
 
@@ -647,8 +655,8 @@ body::after { content: ""; position: fixed; inset: 0; z-index: 9000; pointer-eve
     </nav>
 
 <main class="ads">
-        <section class="ads-hero" id="top">
-            <video src="./assets/ai-decisioning-studio/hub.mp4?v=7a2043c70fe0" data-m="./assets/ai-decisioning-studio/hub-m.mp4?v=fdb0a534bf33" poster="./assets/ai-decisioning-studio/strategy.webp?v=ed9b34007c5d" loop muted playsinline preload="metadata" aria-label="AI Decisioning Studio strategy overview"></video>
+        <section class="ads-hero ads-hero--walk" id="top">
+            <video src="./assets/ai-decisioning-studio/ads-walk.mp4?v=83e89758d846" data-m="./assets/ai-decisioning-studio/ads-walk-m.mp4?v=aa636c4abdfd" poster="./assets/ai-decisioning-studio/ads-walk-poster.webp?v=aa5e7c1a4cab" width="2560" height="1440" loop muted playsinline preload="metadata" aria-label="AI Decisioning Studio walkthrough: the lobby and into a Strategy, its overview, OptiGenie answering, the campaign's five AI Decisioning agents, then Send Time and its heatmap."></video>
             <div class="ads-hero-tag fade-up"><h1>AI Decisioning Studio</h1></div>
             <div class="scroll-cue" aria-hidden="true"><span>Scroll</span><span class="scroll-cue-line"></span></div>
         </section>

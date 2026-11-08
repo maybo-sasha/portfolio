@@ -4,8 +4,8 @@
 (function () {
     const PROJECTS = [
         { name: 'OptiGenie', cat: 'Optimove · AI assistant', href: 'optigenie.html', type: 'video', media: './assets/optigenie/optigenie-hero-m.mp4?v=14f5665a89ec' },
-        { name: 'AI Decisioning Studio', cat: 'Optimove · Current', href: 'ai-decisioning-studio.html', type: 'video', media: './assets/ai-decisioning-studio/hub.mp4?v=7a2043c70fe0' },
-        { name: 'Streams', cat: 'Optimove · Journey orchestration', href: 'streams.html', type: 'video', media: './assets/streams/streams-hero.mp4?v=eeec0a09ede5' },
+        { name: 'AI Decisioning Studio', cat: 'Optimove · Current', href: 'ai-decisioning-studio.html', type: 'video', media: './assets/ai-decisioning-studio/ads-walk-m.mp4?v=aa636c4abdfd' },
+        { name: 'Streams', cat: 'Optimove · Journey orchestration', href: 'streams.html', type: 'video', media: './assets/streams/streams-walk-m.mp4?v=fe5de8298b87' },
         { name: 'AI skills for product design', cat: 'Optimove · AI Skills', href: 'ai-champion.html', type: 'video', media: './assets/ai-champion/generate-ds-ui-1440.mp4?v=4c866207a787' },
     ];
 

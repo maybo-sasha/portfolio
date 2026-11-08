@@ -732,6 +732,13 @@ body::after { content: ""; position: fixed; inset: 0; z-index: 9000; pointer-eve
         }
     </style>
 <style id="inner-nav-hidden">.nav-links-inline{display:none!important}</style>
+<style id="ads-hero-walk">
+/* Hero film (Sasha 2026-11-09, same as ADS): the app as a still window on the lavender set, scenes crossfading, no words over it */
+.ads-hero.ads-hero--walk { background: #ededfd !important; }
+.ads-hero.ads-hero--walk::after { content: none; }
+.ads-hero.ads-hero--walk .ads-hero-tag { position: absolute; width: 1px; height: 1px; margin: -1px; padding: 0; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0; }
+.ads-hero.ads-hero--walk .scroll-cue { display: none; }
+</style>
 </head>
 <body>
 
@@ -781,8 +788,8 @@ body::after { content: ""; position: fixed; inset: 0; z-index: 9000; pointer-eve
     </nav>
 
 <main class="ads">
-        <section class="ads-hero" id="top">
-            <video src="./assets/streams/streams-hero.mp4?v=eeec0a09ede5" data-m="./assets/streams/streams-hero-m.mp4?v=5af463b0413d" poster="./assets/streams/streams-hero-poster.webp?v=1eb4a7b8b34a" width="3008" height="1692" loop muted playsinline preload="metadata" aria-label="Streams walkthrough: write a brief, review the build, apply a timing suggestion, check the dry run and start the Stream. Then explore a running journey, its results and its AI decisions."></video>
+        <section class="ads-hero ads-hero--walk" id="top">
+            <video src="./assets/streams/streams-walk.mp4?v=9d41b0953f45" data-m="./assets/streams/streams-walk-m.mp4?v=fe5de8298b87" poster="./assets/streams/streams-walk-poster.webp?v=d5cdf1037520" width="2560" height="1440" loop muted playsinline preload="metadata" aria-label="Streams walkthrough: a brief typed, the Stream drawing itself, a send-time suggestion approved, the dry run and its finding, live Streams in the lobby, then a live Stream scanned with its layers."></video>
             <div class="ads-hero-tag fade-up"><h1>Streams</h1></div>
             <div class="scroll-cue" aria-hidden="true"><span>Explore</span><span class="scroll-cue-line"></span></div>
         </section>
