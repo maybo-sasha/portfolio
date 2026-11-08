@@ -3,6 +3,7 @@
 // on any page that has a .nav-links-inline nav and it wires itself up.
 (function () {
     const PROJECTS = [
+        { name: 'OptiGenie', cat: 'Optimove · AI assistant', href: 'optigenie.html', type: 'video', media: './assets/optigenie/optigenie-hero-m.mp4?v=14f5665a89ec' },
         { name: 'AI Decisioning Studio', cat: 'Optimove · Current', href: 'ai-decisioning-studio.html', type: 'video', media: './assets/ai-decisioning-studio/hub.mp4?v=7a2043c70fe0' },
         { name: 'Streams', cat: 'Optimove · Journey orchestration', href: 'streams.html', type: 'video', media: './assets/streams/streams-hero.mp4?v=eeec0a09ede5' },
         { name: 'AI skills for product design', cat: 'Optimove · AI Skills', href: 'ai-champion.html', type: 'video', media: './assets/ai-champion/generate-ds-ui-1440.mp4?v=4c866207a787' },
@@ -144,10 +145,7 @@
                 });
             workLink.addEventListener('mouseenter', () => expand(workLink));
             workLink.addEventListener('mouseleave', shrink);
-            items.forEach(it => {
-                it.addEventListener('mouseenter', () => expand(it));
-                it.addEventListener('mouseleave', shrink);
-            });
+            // no cursor pill around the menu rows (Sasha 11-08: "remove the hover effect on the menu"); the row preview stays
         }
     }
 

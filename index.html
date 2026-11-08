@@ -21,7 +21,7 @@
                 const frame = storage.getItem('returnFrame');
                 const time = parseFloat(storage.getItem('returnTime')) || 0;
                 ['returnSlide', 'returnFrame', 'returnTime'].forEach(key => storage.removeItem(key));
-                const active = ['ai-decisioning-studio.html', 'streams.html', 'ai-champion.html'];
+                const active = ['optigenie.html', 'ai-decisioning-studio.html', 'streams.html', 'ai-champion.html'];
                 if (active.includes(project)) {
                     const card = JSON.parse(storage.getItem('homeCards') || '{}')[project];
                     window.__returnTo = { href: project, zoom: false, image: frame, time: frame ? time : 0 };
@@ -108,6 +108,20 @@
              Leave it off and js/cinema.js reads a colour from the poster instead. -->
         <main data-barba="container" data-barba-namespace="home">
 
+            <!-- OptiGenie -->
+            <section class="slide" data-ambient="#6b4ef5">
+                <div class="slide-inner">
+                    <h2 class="project-title">OptiGenie<span class="title-fill">OptiGenie</span></h2>
+                    <a class="project-card" href="optigenie.html">
+                        <div class="project-img-wrap is-wide">
+                            <video class="project-video" src="./assets/optigenie/optigenie-hero.mp4?v=aa8a7a14abdb" data-m="./assets/optigenie/optigenie-hero-m.mp4?v=14f5665a89ec" poster="./assets/optigenie/optigenie-hero-poster.webp?v=15f536c88d2c" muted loop playsinline preload="metadata"></video>
+                        </div>
+                    </a>
+                </div>
+                <span class="project-category">Optimove · AI assistant</span>
+                <span class="slide-num">01</span>
+            </section>
+
             <!-- Slide 1 -->
             <section class="slide" data-ambient="#6b4ef5">
                 <div class="slide-inner">
@@ -119,7 +133,7 @@
                     </a>
                 </div>
                 <span class="project-category">Optimove · AI Decisioning</span>
-                <span class="slide-num">01</span>
+                <span class="slide-num">02</span>
             </section>
 
             <!-- Streams -->
@@ -133,7 +147,7 @@
                     </a>
                 </div>
                 <span class="project-category">Optimove · Orchestration</span>
-                <span class="slide-num">02</span>
+                <span class="slide-num">03</span>
             </section>
 
             <!-- AI skills for product design -->
@@ -147,7 +161,7 @@
                     </a>
                 </div>
                 <span class="project-category">Optimove · AI Skills</span>
-                <span class="slide-num">03</span>
+                <span class="slide-num">04</span>
             </section>
 
         </main>

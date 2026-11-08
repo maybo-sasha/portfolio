@@ -4,6 +4,7 @@ export const publishedPages = [
     'about.html',
     'ai-decisioning-studio.html',
     'streams.html',
+    'optigenie.html',
     'ai-champion.html',
 ];
 
@@ -12,6 +13,7 @@ export const publishedPages = [
 export const runtimeAssets = [
     'assets/ai-decisioning-studio',
     'assets/streams',
+    'assets/optigenie',
     'assets/ai-champion',
     // compose: the font and previews only; the v3 report bundles are shown as still images
     'assets/compose/caveat-700.ttf',
