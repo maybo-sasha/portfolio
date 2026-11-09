@@ -599,11 +599,12 @@ body::after { content: ""; position: fixed; inset: 0; z-index: 9000; pointer-eve
     </style>
 <style id="inner-nav-hidden">.nav-links-inline{display:none!important}</style>
 <style id="ads-hero-walk">
-/* Hero film v3 (Sasha 2026-11-08): the app as a still window on the lavender set, scenes crossfading */
+/* Hero film on the lavender set, with the project title and the dark purple gradient from top and bottom,
+   the same treatment as the OptiGenie hero (Sasha 2026-11-09: "we lost our gradients with the project titles") */
 .ads-hero.ads-hero--walk { background: #ededfd !important; }
-/* no words over the film (his OptiGenie rule, "remove the words at the hero"): the title stays for screen readers only, nothing darkens the window */
-.ads-hero.ads-hero--walk::after { content: none; }
-.ads-hero.ads-hero--walk .ads-hero-tag { position: absolute; width: 1px; height: 1px; margin: -1px; padding: 0; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0; }
+.ads-hero.ads-hero--walk::after { background: linear-gradient(180deg, rgba(29,24,80,.78) 0%, rgba(29,24,80,0) 24%, rgba(29,24,80,0) 64%, rgba(29,24,80,.9) 100%); }
+.ads-hero.ads-hero--walk .ads-hero-tag { color: #fff; }
+.ads-hero.ads-hero--walk .ads-hero-tag h1 { font-size: clamp(2.4rem, 4.4vw, 4.8rem); }
 .ads-hero.ads-hero--walk .scroll-cue { display: none; }
 </style>
 </head>
