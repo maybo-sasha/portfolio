@@ -20,6 +20,28 @@ const runtimeScripts = [...new Set(publishedPages.flatMap(page =>
 // copies in assets/ai-champion/ instead.
 const COPY_EXCLUDE = [/[\\/]assets[\\/]skills([\\/]|$)/, /[\\/]\.git([\\/]|$)/, /\.zip$/i];
 
+// Performance pass (Sasha 2026-11-09): browsers fetch every <video poster> at parse and every preload="metadata" video at
+// once, even off screen. Only the page's first film (the hero, or the home page's first slide) keeps its poster and preload;
+// every other video gets preload="none" and data-poster, which js/lazyVideo.js turns back into a poster one screen ahead.
+function lazyMedia() {
+  return {
+    name: 'lazy-media',
+    transformIndexHtml: {
+      order: 'pre',
+      handler(html) {
+        let first = true;
+        return html.replace(/<video\b[^>]*>/g, tag => {
+          if (/class="about-video"/.test(tag)) return tag;
+          if (first) { first = false; return tag; }
+          // autoplay would start the download at parse whatever preload says; js/lazyVideo.js plays it once it shows
+          let t = tag.replace(/\sautoplay(?=[\s>])/, '').replace(/\spreload="[a-z]*"/, '').replace(/<video\b/, '<video preload="none"');
+          return t.replace(/\sposter="/, ' data-poster="');
+        });
+      },
+    },
+  };
+}
+
 function copyStaticToDist(...paths) {
   return {
     name: 'copy-static-to-dist',
@@ -40,7 +62,7 @@ function copyStaticToDist(...paths) {
 export default defineConfig({
   base,
   resolve: { dedupe: ['three'] },
-  plugins: [copyStaticToDist(...runtimeScripts, ...runtimeAssets)],
+  plugins: [lazyMedia(), copyStaticToDist(...runtimeScripts, ...runtimeAssets)],
   build: {
     rollupOptions: {
       input: Object.fromEntries(publishedPages.map(page => [page.replace(/\.html$/, ''), resolve(__dirname, page)])),

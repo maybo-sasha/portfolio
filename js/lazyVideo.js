@@ -30,8 +30,12 @@
             return inView(v);
         }
 
+        // data-poster (build step, vite.config.js lazyMedia): the poster loads one screen ahead, not with the page
+        function poster(v) { if (v.dataset && v.dataset.poster && !v.getAttribute('poster')) v.setAttribute('poster', v.dataset.poster); }
+
         var blocked = [];
         function play(v) {
+            poster(v);
             if (!shouldPlay(v)) return;
             if (v.__released) { v.__released = false; v.preload = 'auto'; }
             var p;
@@ -120,18 +124,24 @@
         all.forEach(function (v) { if (!v.__overlay && shouldPlay(v)) play(v); });
 
         if (!('IntersectionObserver' in window)) {
-            all.forEach(function (v) { if (v.__deferred) v.preload = 'metadata'; });
+            all.forEach(function (v) { poster(v); if (v.__deferred) v.preload = 'metadata'; });
             return;
         }
-        // About one screen ahead of the viewport, a deferred video starts buffering so it can play on arrival
+        // Half a screen ahead, a deferred video gets its poster and its index (preload="metadata"), not the film: a paused
+        // 20-50 MB film buffering behind the one on screen took its bandwidth (performance pass, 2026-11-09). The film itself
+        // starts when the video is showing; the poster covers that moment. Watching starts after load, once the layout has
+        // settled, so a page that is briefly short while it loads does not count far-down videos as near.
         var near = new IntersectionObserver(function (entries) {
             entries.forEach(function (e) {
                 if (!e.isIntersecting) return;
                 near.unobserve(e.target);
-                if (!e.target.__started) e.target.preload = 'auto';
+                poster(e.target);
+                if (!e.target.__started && e.target.preload === 'none') e.target.preload = 'metadata';
             });
-        }, { rootMargin: '100% 0px' });
-        all.forEach(function (v) { if (v.__deferred) near.observe(v); });
+        }, { rootMargin: '50% 0px' });
+        all.forEach(function (v) { if (!v.__deferred) poster(v); });
+        var watchNear = function () { all.forEach(function (v) { if (v.__deferred) near.observe(v); }); };
+        if (doc.readyState === 'complete') watchNear(); else win.addEventListener('load', watchNear, { once: true });
         // Visibility is read from the layout, not the entry, so a tall recording counts as showing at a fifth of the screen
         var io = new IntersectionObserver(function (entries) {
             entries.forEach(function (e) { if (!e.target.__overlay) update(e.target); });
