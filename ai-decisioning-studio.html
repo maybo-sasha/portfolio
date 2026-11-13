@@ -213,27 +213,19 @@
         .ads-closeup__frame { position: relative; transform-origin: 50% 100%; }
         .ads-closeup__frame img { display: block; width: 100%; height: auto; border-radius: 14px; background: #fff; outline: 1px solid rgba(29, 24, 80, .07); box-shadow: 0 2px 4px rgba(29, 24, 80, .04), 0 36px 70px -34px rgba(29, 24, 80, .5); }
         .ads-closeup__shot img { border-radius: 14px; }
-        .ads-pin { width: 26px; height: 26px; font: 800 12px/26px var(--font-display); background: var(--violet-deep); box-shadow: 0 0 0 3px #fff, 0 8px 18px rgba(29, 24, 80, .3); transition: scale .25s cubic-bezier(.2, 0, 0, 1), box-shadow .25s; }
+        .ads-pin { width: 26px; height: 26px; font: 800 12px/26px var(--font-display); background: var(--violet-deep); box-shadow: 0 0 0 3px #fff, 0 8px 18px rgba(29, 24, 80, .3); }
         .ads-closeup__notes ol { display: flex; flex-direction: column; gap: 0; grid-template-columns: none !important; }
         .ads-closeup__notes li { padding: 1rem 0 1rem 2.6rem; border-top: 1px solid var(--plan-line); cursor: default; transition: color .2s; }
         .ads-closeup__notes li:first-child { border-top: 0; padding-top: 0; }
         .ads-closeup__notes li::before { top: 1.05rem; width: 26px; height: 26px; font: 800 12px/26px var(--font-display); }
         .ads-closeup__notes li:first-child::before { top: .05rem; }
-        .ads-closeup:has(.ads-closeup__notes li:nth-child(1):hover) .ads-pin:nth-of-type(1) { scale: 1.3; box-shadow: 0 0 0 4px #fff, 0 0 0 10px rgba(107, 78, 245, .28), 0 10px 22px rgba(29, 24, 80, .3); }
-        .ads-closeup:has(.ads-closeup__notes li:nth-child(2):hover) .ads-pin:nth-of-type(2) { scale: 1.3; box-shadow: 0 0 0 4px #fff, 0 0 0 10px rgba(107, 78, 245, .28), 0 10px 22px rgba(29, 24, 80, .3); }
-        .ads-closeup:has(.ads-closeup__notes li:nth-child(3):hover) .ads-pin:nth-of-type(3) { scale: 1.3; box-shadow: 0 0 0 4px #fff, 0 0 0 10px rgba(107, 78, 245, .28), 0 10px 22px rgba(29, 24, 80, .3); }
-        .ads-closeup:has(.ads-closeup__notes li:nth-child(4):hover) .ads-pin:nth-of-type(4) { scale: 1.3; box-shadow: 0 0 0 4px #fff, 0 0 0 10px rgba(107, 78, 245, .28), 0 10px 22px rgba(29, 24, 80, .3); }
-        .ads-closeup:has(.ads-closeup__notes li:nth-child(5):hover) .ads-pin:nth-of-type(5) { scale: 1.3; box-shadow: 0 0 0 4px #fff, 0 0 0 10px rgba(107, 78, 245, .28), 0 10px 22px rgba(29, 24, 80, .3); }
         .ads-closeup.is-armed .ads-closeup__frame { opacity: 0; transform: perspective(1400px) rotateX(9deg) translateY(28px) scale(.97); }
         .ads-closeup.is-in .ads-closeup__frame { animation: cu-rise .95s cubic-bezier(.2, .8, .2, 1) .1s forwards; }
-        .ads-closeup.is-armed .ads-pin { opacity: 0; transform: translate(-100%, -100%) scale(.3); }
-        .ads-closeup.is-in .ads-pin { animation: cu-pin .5s cubic-bezier(.3, 1.6, .5, 1) calc(.8s + var(--i) * .12s) forwards; }
         .ads-closeup.is-armed .ads-closeup__notes li { opacity: 0; transform: translateX(-16px); }
         .ads-closeup.is-in .ads-closeup__notes li { animation: cu-note .55s cubic-bezier(.2, .8, .2, 1) calc(.35s + var(--i) * .1s) forwards; }
         .ads-closeup--side.ads-closeup--landscape { grid-template-columns: minmax(0, .6fr) minmax(0, 1.4fr); }
         .ads-closeup--landscape .ads-closeup__shot { max-width: 980px; }
         @keyframes cu-rise { to { opacity: 1; transform: none; } }
-        @keyframes cu-pin { to { opacity: 1; transform: translate(-100%, -100%); } }
         @keyframes cu-note { to { opacity: 1; transform: none; } }
         @media (max-width: 900px) { .ads-closeup, .ads-closeup--side, .ads-closeup--landscape { grid-template-columns: minmax(0, 1fr); } .ads-closeup__notes { order: 1; } .ads-closeup__shot { justify-self: stretch; max-width: none; } }
         /* Explainability's "Before it runs" (2026-11-12): the setup still beside its text, after the three tabs */
