@@ -3,6 +3,7 @@
 // project; the next page fades in via the body opacity transition.
 (function () {
     const order = [
+        { file: 'optigenie.html',            name: 'OptiGenie' },
         { file: 'ai-decisioning-studio.html', name: 'AI Decisioning Studio' },
         { file: 'streams.html',              name: 'Streams' },
         { file: 'ai-champion.html',           name: 'AI skills for product design' },
