@@ -1427,9 +1427,13 @@ html.deck-held body { pointer-events: none; touch-action: none; }
 .intro-title { margin: 0; color: #fff; font-family: var(--font-display); font-size: clamp(4rem, 9.5vw, 9rem); font-weight: 800;
     letter-spacing: -0.045em; line-height: 0.95; }
 .intro-text { margin: 0; max-width: 34ch; color: rgba(255, 255, 255, 0.72); font-size: clamp(1.05rem, 1.35vw, 1.3rem); line-height: 1.6; }
-.intro-art { justify-self: end; width: min(100%, 78vh); aspect-ratio: 1; }
+.intro-art { position: relative; justify-self: end; width: min(100%, 78vh); aspect-ratio: 1; }
+/* part b sits on part a and shows once it is playing; they share a frame at the hand-off */
+.intro-film--b { position: absolute; inset: 0; opacity: 0; }
+.intro-art.is-living .intro-film--b { opacity: 1; }
+.intro-art.is-living .intro-film--a { opacity: 0; }
 .intro-film { display: block; width: 100%; height: 100%; object-fit: cover; mix-blend-mode: lighten;   /* the page's grain shows through the film's black */
-    -webkit-mask-image: radial-gradient(closest-side, #000 72%, transparent 100%); mask-image: radial-gradient(closest-side, #000 72%, transparent 100%); }
+    -webkit-mask-image: radial-gradient(closest-side, #000 82%, transparent 100%); mask-image: radial-gradient(closest-side, #000 82%, transparent 100%); }
 /* Phones: the words first, the cube under them */
 @media (max-width: 900px) {
     .slide.slide--intro { justify-content: flex-start; padding-top: clamp(110px, 16svh, 150px); }

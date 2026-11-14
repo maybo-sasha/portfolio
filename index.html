@@ -108,9 +108,10 @@
              Leave it off and js/cinema.js reads a colour from the poster instead. -->
         <main data-barba="container" data-barba-namespace="home">
 
-            <!-- Intro (2026-11-14): "Hello" and two lines from About on the left; on the right a HyperFrames film of loose
-                 cubes locking into one, the last piece lime (source: personal-os/work/portfolio-intro-order). It plays once
-                 and holds the finished cube. No data-ambient: the deck's glow is off on this slide (js/cinema.js). -->
+            <!-- Intro (2026-11-14): "Hello" and two lines from About on the left; on the right a HyperFrames film (source:
+                 personal-os/work/portfolio-intro-order): cubes, golden-ratio squares and points swirl as one body, then find
+                 their order, the spiral drawing into the cube. Part a plays once; part b, a seamless loop that starts on a's
+                 last frame, takes over (the script at the end of the page). No data-ambient: the deck's glow is off on this slide (js/cinema.js). -->
             <section class="slide slide--intro" id="intro" aria-labelledby="intro-title">
                 <div class="intro">
                     <div class="intro-copy">
@@ -118,7 +119,8 @@
                         <p class="intro-text">Senior product designer and design lead with 10+ years across B2B and B2C products. I design AI decisioning, agentic and conversational experiences that stay explainable.</p>
                     </div>
                     <div class="intro-art">
-                        <video class="intro-film" src="./assets/intro/intro-order.mp4?v=e73a65febaa8" data-m="./assets/intro/intro-order-m.mp4?v=a1a8d86a4e25" poster="./assets/intro/intro-order-poster.webp?v=95fab60792b2" width="1400" height="1400" autoplay muted playsinline preload="metadata" aria-hidden="true"></video>
+                        <video class="intro-film intro-film--a" src="./assets/intro/intro-a.mp4?v=483176e12cde" data-m="./assets/intro/intro-a-m.mp4?v=ebbe873f9075" poster="./assets/intro/intro-a-poster.webp?v=43f56f1e3d1e" width="1400" height="1400" autoplay muted playsinline preload="auto" data-playlist aria-hidden="true"></video>
+                        <video class="intro-film intro-film--b" src="./assets/intro/intro-b.mp4?v=a82ffbd81ea7" data-m="./assets/intro/intro-b-m.mp4?v=8285151a0329" poster="./assets/intro/intro-b-poster.webp?v=f520cbffbfe9" width="1400" height="1400" muted playsinline loop preload="auto" data-playlist aria-hidden="true"></video>
                     </div>
                 </div>
             </section>
@@ -267,5 +269,38 @@
     <script src="./js/transition.js"></script>
     <script src="./js/workMenu.js"></script>
     <script src="./js/lazyVideo.js"></script>
+    <script>
+        // Intro film: part a (chaos into order) plays once, then part b (the cube turning, light flowing along the spiral)
+        // loops, starting on a's last frame. Both are data-playlist, so js/lazyVideo.js leaves them to this script.
+        (function () {
+            var a = document.querySelector('.intro-film--a'), b = document.querySelector('.intro-film--b');
+            if (!a || !b) return;
+            var art = a.parentNode, done = false;
+            var light = window.matchMedia('(max-width: 900px)').matches || !!(navigator.connection && navigator.connection.saveData);
+            [a, b].forEach(function (v) {
+                if (light && v.dataset.m) v.src = v.dataset.m;
+                if (v.dataset.poster && !v.getAttribute('poster')) v.setAttribute('poster', v.dataset.poster);
+            });
+            b.preload = 'auto';
+            if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {   // no motion: show the finished cube, still
+                a.removeAttribute('autoplay'); a.pause(); art.classList.add('is-living'); return;
+            }
+            function live() { if (!done) { done = true; art.classList.add('is-living'); } }
+            a.addEventListener('ended', function () {
+                b.currentTime = 0;
+                var p = b.play();
+                b.addEventListener('playing', live, { once: true });
+                if (p && p.catch) p.catch(live);
+            });
+            // off screen, nothing plays
+            new IntersectionObserver(function (es) {
+                es.forEach(function (e) {
+                    var v = done ? b : a;
+                    if (e.isIntersecting) { if (!v.ended) { var p = v.play(); if (p && p.catch) p.catch(function () {}); } }
+                    else v.pause();
+                });
+            }, { threshold: 0.2 }).observe(art);
+        })();
+    </script>
 </body>
 </html>
