@@ -156,7 +156,13 @@
     }
 
     function showAmbient() {
-        if (layers.length < 2 || shownSlide === active || !colors[active]) return;
+        if (layers.length < 2 || shownSlide === active) return;
+        // a slide with no colour (the intro) has no glow: put out the last one, so it does not hang behind
+        if (!colors[active]) {
+            if (shownLayer >= 0) layers[shownLayer].classList.remove('is-on');
+            shownLayer = -1; shownSlide = -1;
+            return;
+        }
         shownSlide = active;
         // paint the idle layer, then swap which one is lit
         const next = shownLayer === 0 ? 1 : 0;

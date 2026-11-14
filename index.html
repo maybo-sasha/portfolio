@@ -108,6 +108,21 @@
              Leave it off and js/cinema.js reads a colour from the poster instead. -->
         <main data-barba="container" data-barba-namespace="home">
 
+            <!-- Intro (2026-11-14): "Hello" and two lines from About on the left; on the right a HyperFrames film of loose
+                 cubes locking into one, the last piece lime (source: personal-os/work/portfolio-intro-order). It plays once
+                 and holds the finished cube. No data-ambient: the deck's glow is off on this slide (js/cinema.js). -->
+            <section class="slide slide--intro" id="intro" aria-labelledby="intro-title">
+                <div class="intro">
+                    <div class="intro-copy">
+                        <h1 class="intro-title" id="intro-title">Hello</h1>
+                        <p class="intro-text">Senior product designer and design lead with 10+ years across B2B and B2C products. I design AI decisioning, agentic and conversational experiences that stay explainable.</p>
+                    </div>
+                    <div class="intro-art">
+                        <video class="intro-film" src="./assets/intro/intro-order.mp4?v=e73a65febaa8" data-m="./assets/intro/intro-order-m.mp4?v=a1a8d86a4e25" poster="./assets/intro/intro-order-poster.webp?v=95fab60792b2" width="1400" height="1400" autoplay muted playsinline preload="metadata" aria-hidden="true"></video>
+                    </div>
+                </div>
+            </section>
+
             <!-- OptiGenie -->
             <section class="slide" data-ambient="#6b4ef5">
                 <div class="slide-inner">

@@ -1414,3 +1414,26 @@ html.deck-held body { pointer-events: none; touch-action: none; }
     html:has(.slide) { scroll-snap-type: y mandatory; }
     .slide { scroll-snap-align: start; scroll-snap-stop: always; }
 }
+
+/* ── Intro (2026-11-14): "Hello" and two lines from About; on the right loose cubes lock into one ─────────────────
+   The film is HyperFrames (personal-os/work/portfolio-intro-order); it plays once and holds the finished cube.
+   Its square edges fade into the page so no box shows. It is a .slide, so the deck steps from it to the first project. */
+.slide.slide--intro { justify-content: center; align-items: stretch; gap: 0; padding: 0; text-align: left; }
+.intro { margin: 0 8vw; display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.05fr); align-items: center; gap: clamp(24px, 4vw, 72px); }
+@keyframes intro-in { from { opacity: 0; } to { opacity: 1; } }
+@media (prefers-reduced-motion: reduce) { .intro-copy { animation: none; } }
+/* the fade-in sits on the words only: on a parent of the film it would isolate the film from the page and break its blend */
+.intro-copy { display: flex; flex-direction: column; gap: clamp(18px, 2.2vw, 28px); animation: intro-in .9s ease-out both; }
+.intro-title { margin: 0; color: #fff; font-family: var(--font-display); font-size: clamp(4rem, 9.5vw, 9rem); font-weight: 800;
+    letter-spacing: -0.045em; line-height: 0.95; }
+.intro-text { margin: 0; max-width: 34ch; color: rgba(255, 255, 255, 0.72); font-size: clamp(1.05rem, 1.35vw, 1.3rem); line-height: 1.6; }
+.intro-art { justify-self: end; width: min(100%, 78vh); aspect-ratio: 1; }
+.intro-film { display: block; width: 100%; height: 100%; object-fit: cover; mix-blend-mode: lighten;   /* the page's grain shows through the film's black */
+    -webkit-mask-image: radial-gradient(closest-side, #000 72%, transparent 100%); mask-image: radial-gradient(closest-side, #000 72%, transparent 100%); }
+/* Phones: the words first, the cube under them */
+@media (max-width: 900px) {
+    .slide.slide--intro { justify-content: flex-start; padding-top: clamp(110px, 16svh, 150px); }
+    .intro { margin: 0 1.5rem; grid-template-columns: minmax(0, 1fr); gap: 8px; }
+    .intro-art { justify-self: center; width: min(100%, 52svh); }
+    .intro-text { font-size: 1.02rem; }
+}
