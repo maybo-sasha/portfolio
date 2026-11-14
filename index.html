@@ -109,8 +109,9 @@
         <main data-barba="container" data-barba-namespace="home">
 
             <!-- Intro (2026-11-14): "Hello" and two lines from About on the left; on the right a HyperFrames film (source:
-                 personal-os/work/portfolio-intro-order): cubes, golden-ratio squares and points swirl as one body, then find
-                 their order, the spiral drawing into the cube. Part a plays once; part b, a seamless loop that starts on a's
+                 personal-os/work/portfolio-intro-order): stars and loose squares turn as one; the squares fly home into a
+                 golden rectangle (Fibonacci numbers, inscribed circles, the spiral drawing), the stars glide onto galaxy arms that
+                 follow that golden spiral, with a sunflower core by the golden angle. Part a plays once; part b, a seamless loop that starts on a's
                  last frame, takes over (the script at the end of the page). No data-ambient: the deck's glow is off on this slide (js/cinema.js). -->
             <section class="slide slide--intro" id="intro" aria-labelledby="intro-title">
                 <div class="intro">
@@ -119,8 +120,8 @@
                         <p class="intro-text">Senior product designer and design lead with 10+ years across B2B and B2C products. I design AI decisioning, agentic and conversational experiences that stay explainable.</p>
                     </div>
                     <div class="intro-art">
-                        <video class="intro-film intro-film--a" src="./assets/intro/intro-a.mp4?v=483176e12cde" data-m="./assets/intro/intro-a-m.mp4?v=ebbe873f9075" poster="./assets/intro/intro-a-poster.webp?v=43f56f1e3d1e" width="1400" height="1400" autoplay muted playsinline preload="auto" data-playlist aria-hidden="true"></video>
-                        <video class="intro-film intro-film--b" src="./assets/intro/intro-b.mp4?v=a82ffbd81ea7" data-m="./assets/intro/intro-b-m.mp4?v=8285151a0329" poster="./assets/intro/intro-b-poster.webp?v=f520cbffbfe9" width="1400" height="1400" muted playsinline loop preload="auto" data-playlist aria-hidden="true"></video>
+                        <video class="intro-film intro-film--a" src="./assets/intro/intro-a.mp4?v=05fa683d2e98" data-m="./assets/intro/intro-a-m.mp4?v=7f0fe782b5b6" poster="./assets/intro/intro-a-poster.webp?v=81c74fdf04de" width="1100" height="1100" autoplay muted playsinline preload="auto" data-playlist aria-hidden="true"></video>
+                        <video class="intro-film intro-film--b" src="./assets/intro/intro-b.mp4?v=d13b945a4be4" data-m="./assets/intro/intro-b-m.mp4?v=c9d43c3d40f7" poster="./assets/intro/intro-b-poster.webp?v=96b355fa3109" width="1100" height="1100" muted playsinline loop preload="none" data-playlist aria-hidden="true"></video>
                     </div>
                 </div>
             </section>
@@ -281,7 +282,9 @@
                 if (light && v.dataset.m) v.src = v.dataset.m;
                 if (v.dataset.poster && !v.getAttribute('poster')) v.setAttribute('poster', v.dataset.poster);
             });
-            b.preload = 'auto';
+            // the loop loads once the build-up is under way, not with the page
+            b.preload = 'none';
+            a.addEventListener('timeupdate', function warm() { if (a.currentTime > 1) { a.removeEventListener('timeupdate', warm); b.preload = 'auto'; b.load(); } });
             if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {   // no motion: show the finished cube, still
                 a.removeAttribute('autoplay'); a.pause(); art.classList.add('is-living'); return;
             }
