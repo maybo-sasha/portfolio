@@ -17,6 +17,8 @@ export const runtimeAssets = [
     'assets/ai-champion',
     // the intro film's phone encode is a data-m attribute, which Vite does not follow
     'assets/intro',
+    // the About sphere's phone encode is a data-m attribute
+    'assets/about',
     // compose: the font and previews only; the v3 report bundles are shown as still images
     'assets/compose/caveat-700.ttf',
     'assets/compose/caveat-OFL.txt',
@@ -26,6 +28,6 @@ export const runtimeAssets = [
     'assets/Opimove/Ai studio/Brand Icons (1).png',
     'assets/Opimove/Ai studio/Brand Icons (2).png',
     'assets/Opimove/Ai studio/Brand Icons (3).png',
-    'homePage/aboutVideo-framed.mp4',
+    // homePage/aboutVideo-framed.mp4: replaced by the golden sphere (2026-11-14); kept in the repo, not shipped
     'assets/documents/Sasha-Maiboroda-CV.pdf',
 ];
