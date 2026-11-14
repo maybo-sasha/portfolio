@@ -117,11 +117,24 @@
                 <div class="intro">
                     <div class="intro-copy">
                         <h1 class="intro-title" id="intro-title">Hello</h1>
-                        <p class="intro-text">Senior product designer and design lead with 10+ years across B2B and B2C products. I design AI decisioning, agentic and conversational experiences that stay explainable.</p>
+                        <p class="intro-lede">My name is <b>Sasha Maiboroda</b>. I’m a senior <b>product designer</b>, designing AI experiences that stay explainable and keep people in the loop.</p>
+                        <div class="intro-expertise">
+                            <p class="intro-label"><span>Expertise</span><span>10+ years</span></p>
+                            <ul>
+                                <li>AI decisioning</li><li>Agentic and conversational</li>
+                                <li>Design systems</li><li>Interface design</li>
+                                <li>B2B and B2C products</li><li>Product management</li>
+                            </ul>
+                        </div>
                     </div>
+                    <!-- Carl Sagan, Cosmos: A Personal Voyage, episode 9 "The Lives of the Stars" (1980) -->
+                    <figure class="intro-quote">
+                        <blockquote>“If you wish to make an apple pie from scratch, you must first invent the universe.”</blockquote>
+                        <figcaption>Carl Sagan, Cosmos, 1980</figcaption>
+                    </figure>
                     <div class="intro-art">
-                        <video class="intro-film intro-film--a" src="./assets/intro/intro-a.mp4?v=05fa683d2e98" data-m="./assets/intro/intro-a-m.mp4?v=7f0fe782b5b6" poster="./assets/intro/intro-a-poster.webp?v=81c74fdf04de" width="1100" height="1100" autoplay muted playsinline preload="auto" data-playlist aria-hidden="true"></video>
-                        <video class="intro-film intro-film--b" src="./assets/intro/intro-b.mp4?v=d13b945a4be4" data-m="./assets/intro/intro-b-m.mp4?v=c9d43c3d40f7" poster="./assets/intro/intro-b-poster.webp?v=96b355fa3109" width="1100" height="1100" muted playsinline loop preload="none" data-playlist aria-hidden="true"></video>
+                        <video class="intro-film intro-film--a" src="./assets/intro/intro-a.mp4?v=2d4bc6f28c6d" data-m="./assets/intro/intro-a-m.mp4?v=9e7351da740c" poster="./assets/intro/intro-a-poster.webp?v=ef1f257c4c88" width="1100" height="1100" autoplay muted playsinline preload="auto" data-playlist aria-hidden="true"></video>
+                        <video class="intro-film intro-film--b" src="./assets/intro/intro-b.mp4?v=3fc57e69f5ca" data-m="./assets/intro/intro-b-m.mp4?v=b9ba27cb344a" poster="./assets/intro/intro-b-poster.webp?v=3d24ce19b726" width="1100" height="1100" muted playsinline loop preload="none" data-playlist aria-hidden="true"></video>
                     </div>
                 </div>
             </section>
@@ -303,6 +316,15 @@
                     else v.pause();
                 });
             }, { threshold: 0.2 }).observe(art);
+        })();
+    </script>
+    <script>
+        // The header's "Selected projects" belongs to the projects: hidden on the intro, shown once the deck reaches them
+        (function () {
+            var root = document.documentElement;
+            function mark(i) { root.classList.toggle('on-intro', i <= 0); }
+            mark(0);
+            window.addEventListener('slidechange', function (e) { if (e.detail && e.detail.index >= 0) mark(e.detail.index); });
         })();
     </script>
 </body>
