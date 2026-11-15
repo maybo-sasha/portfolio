@@ -10,7 +10,7 @@
     if (!hosts.length) return;
 
     var LW = 1312, LH = 1000, CX = 656, CY = 500, N = 3000, TAU = Math.PI * 2, PHI = (1 + Math.sqrt(5)) / 2;
-    var HOLD = 2.4, MOVE = 1.8, STEP = HOLD + MOVE;
+    var HOLD = 5.5, MOVE = 3.2, STEP = HOLD + MOVE;   // slow: each shape holds while the visitor reads, then reforms gently
     function mulberry32(seed) { return function () { seed |= 0; seed = (seed + 0x6d2b79f5) | 0; var t = Math.imul(seed ^ (seed >>> 15), 1 | seed);
         t = (t + Math.imul(t ^ (t >>> 7), 61 | t)) ^ t; return ((t ^ (t >>> 14)) >>> 0) / 4294967296; }; }
     var rng = mulberry32(31415926), span = function (a, b) { return a + (b - a) * rng(); };
