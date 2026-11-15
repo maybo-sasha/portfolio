@@ -1419,7 +1419,7 @@ html.deck-held body { pointer-events: none; touch-action: none; }
    Positions: the screen's golden sections (38.2%, 61.8%) across and down; left margin 1/φ⁵ = 9.02%.
    Type: body b; label b/φ; "Hi" b·φ²; title so its two lines fill the band from 0.382 to 0.618 of the height.
    Gaps are b·φ and b·φ². The faint lines are the sections themselves. */
-.slide.slide--intro { display: block; padding: 0; text-align: left; --b: clamp(15px, min(1.05vw, 1.95vh), 22px); --F: min(14.2vh, 6vw); }   /* "a bit smaller" (Sasha 11-15): x-height still on the 0.382 line */
+.slide.slide--intro { display: block; padding: 0; text-align: left; --b: clamp(15px, min(1.05vw, 1.95vh), 22px); --F: min(11.6vh, 6vw); }   /* the headline's full ink (1.885em, ascenders to descenders) fits inside the 0.382–0.618 band */
 .intro { position: absolute; inset: 0; animation: intro-in .9s ease-out both; }
 @keyframes intro-in { from { opacity: 0; } to { opacity: 1; } }
 @media (prefers-reduced-motion: reduce) { .intro { animation: none; } }
@@ -1429,14 +1429,14 @@ html.deck-held body { pointer-events: none; touch-action: none; }
 .phi-v i, .phi-h i { position: absolute; font-style: normal; font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 10px; letter-spacing: 0.08em; color: rgba(255, 255, 255, 0.3); }
 .phi-v i { bottom: 14px; left: 8px; } .phi-h i { right: 14px; top: 6px; }
 .intro > p, .intro > h1, .intro > div:not(.phi-lines) { position: absolute; margin: 0; }
-.intro-hi { left: 9.02%; bottom: calc(50% + 1.1235 * var(--F) + var(--b) * 1.618);   /* clear of the title's ascenders (0.42em above its x-height) */
+.intro-hi { left: 9.02%; bottom: calc(61.8% + var(--b) * 1.618);   /* in the cell above the 0.382 line */
     color: #fff; font-family: var(--font-display); font-size: calc(var(--b) * 2.618);
     font-weight: 800; line-height: 1; letter-spacing: -0.03em; }
 /* the title's grid fit: "senior"'s x-height sits on the 0.382 line and "designer."'s baseline on the 0.618 line.
    Montserrat 900 measured: x-height 0.547em, ascent 0.968em, descent 0.251em; at line-height 0.86 the first baseline is
    0.7885em below the box top, the x-height top 0.2415em, the second baseline 1.6485em; so 1.407em = 23.6% of the height,
    F = 16.77vh (width caps it at 7.1vw so "senior product" ends before the 0.618 line) */
-.intro-title { left: 9.02%; top: calc(50% - 0.945 * var(--F));   /* the block from the x-height of line 1 to the baseline of line 2 (1.407em) centred on the middle, between the 0.382 and 0.618 lines */
+.intro-title { left: 9.02%; top: calc(50% - 0.91 * var(--F));   /* ink centred in the band (measured: ink from -0.03em to 1.85em) */
     color: #fff; font-family: var(--font-display); font-size: var(--F);
     font-weight: 900; line-height: 0.86; letter-spacing: -0.055em; }
 .intro-col { top: calc(61.8% + var(--b) * 2.618); width: calc(23.6% - var(--b) * 2.618); display: flex; flex-direction: column; gap: calc(var(--b) * 0.618);
