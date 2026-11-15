@@ -3,7 +3,7 @@
 // can still render video), run in the page instead of shipped as video: it draws at the screen's own resolution, weighs a
 // few kilobytes instead of megabytes, and the canvas is truly transparent, so the site's particles show through.
 //   order: the dust gathers → the golden rectangle's squares draw as lines, largest first → the golden spiral draws as one
-//   curve while ~13,000 stars glide onto two galaxy arms that follow it, and a black-hole core made only of particles forms
+//   curve while ~13,000 stars glide onto two galaxy arms that follow it, and the stars gather into one bright lime point at the spiral's eye (many signals, one clear decision; Sasha chose this over the black hole, 2026-11-15)
 //   → then it lives: stars stream inward, the disk orbits (inner faster), a lime light glides the spiral.
 // Uses the global THREE the home page already loads. Pauses off screen and in a background tab; reduced motion gets the
 // finished picture, still. Every frame is a function of t alone, so the 12 s life after the build loops seamlessly.
@@ -34,6 +34,7 @@
     mk('stop', lg, { offset: '0', 'stop-color': '#c6e92b', 'stop-opacity': '0.8' }); mk('stop', lg, { offset: '1', 'stop-color': '#c6e92b', 'stop-opacity': '0' });
     var gSq = mk('g', svg), gArc = mk('g', svg, { fill: 'none', stroke: 'rgba(255,255,255,0.72)', 'stroke-width': 2.2, 'stroke-linecap': 'round' });
     var trail = mk('path', svg, { fill: 'none', stroke: '#c6e92b', 'stroke-width': 3, 'stroke-linecap': 'round', opacity: 0 });
+    var focal = mk('g', svg, { opacity: 0 }); mk('circle', focal, { r: 46, fill: 'url(#ig-lime)' }); var focalDot = mk('circle', focal, { r: 7, fill: '#e9ff8a' });   // the clear point the signals converge into
     var comet = mk('g', svg, { opacity: 0 }); mk('circle', comet, { r: 26, fill: 'url(#ig-lime)' }); mk('circle', comet, { r: 5.5, fill: '#efffa8' });
 
     // ── the golden rectangle, centred, cut into its squares ────────────────────────────────────────────────────
@@ -106,13 +107,13 @@
         '  float e = smoother((uT - start) / dur), th, rad, a;',
         '  if (mode < 0.5) {',                                                        // an arm star: on the golden spiral, streaming in
         '    float s = fract(u0 + uLoopT);',
-        '    rad = mix(780.0, 41.4, s);',
+        '    rad = mix(780.0, 3.0, s);',
         '    th = (log(rad) - uA) / uB + 0.9 * max(0.0, 240.0 / rad - 1.0) + arm * 3.14159265 + jt * 0.16 * clamp(rad / 240.0, 0.15, 1.0);',
         '    rad *= 1.0 + jr * 0.22 * clamp(rad / 240.0, 0.2, 1.0);',
-        '    a = smoothstep(0.0, 0.06, s) * smoothstep(46.0, 78.0, rad);',
+        '    a = smoothstep(0.0, 0.06, s) * (0.8 + 0.9 * smoothstep(120.0, 10.0, rad)) * smoothstep(2.0, 9.0, rad);',
         '  } else {',                                                                 // a disk star: orbiting the dark, inner faster
-        '    rad = dr; th = u0 + 6.2831853 * arm * uLoopT;',
-        '    a = 0.55 + 1.1 * smoothstep(210.0, 54.0, rad) + 1.6 * step(rad, 51.0);',
+        '    rad = (dr - 46.0) * 0.2; th = u0 + 6.2831853 * arm * uLoopT;',
+        '    a = 0.5 + 1.2 * smoothstep(34.0, 2.0, rad);',
         '  }',
         '  float ca = ca0 + uField, ang = ca + (th - ca + K) * e, r = mix(cr, rad, e);',
         '  vec2 p = uEye + vec2(cos(ang), sin(ang)) * r;',
@@ -159,6 +160,8 @@
             });
             if (t > A_END) built = true;
         }
+        var fo = smooth((lt - 4.6) / 1.4), pulse = 1 + 0.12 * Math.sin(TAU * (lt - A_END) / 3);   // breathes four times a loop
+        set(focal, { transform: 'translate(' + EYE[0] + ' ' + EYE[1] + ') scale(' + (fo * pulse) + ')', opacity: fo });
         var amp = smooth((lt - 5.4) / 1.0), u = easeInOut(fract((lt - A_END) / 6)), p = spiralAt(u), vis = amp * Math.sin(Math.PI * u);
         set(comet, { transform: 'translate(' + p[0] + ' ' + p[1] + ')', opacity: vis });
         var head = u * LEN, tail = Math.min(head, 220);
