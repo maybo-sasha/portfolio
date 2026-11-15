@@ -1429,14 +1429,15 @@ html.deck-held body { pointer-events: none; touch-action: none; }
 .phi-v i, .phi-h i { position: absolute; font-style: normal; font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 10px; letter-spacing: 0.08em; color: rgba(255, 255, 255, 0.3); }
 .phi-v i { bottom: 14px; left: 8px; } .phi-h i { right: 14px; top: 6px; }
 .intro > p, .intro > h1, .intro > div:not(.phi-lines) { position: absolute; margin: 0; }
-.intro-hi { left: 9.02%; bottom: calc(61.8% + 0.42 * var(--F) + var(--b) * 1.618);   /* clear of the title's ascenders (0.42em above its x-height) */
+.intro-hi { left: 9.02%; bottom: calc(50% + 1.1235 * var(--F) + var(--b) * 1.618);   /* clear of the title's ascenders (0.42em above its x-height) */
     color: #fff; font-family: var(--font-display); font-size: calc(var(--b) * 2.618);
     font-weight: 800; line-height: 1; letter-spacing: -0.03em; }
 /* the title's grid fit: "senior"'s x-height sits on the 0.382 line and "designer."'s baseline on the 0.618 line.
    Montserrat 900 measured: x-height 0.547em, ascent 0.968em, descent 0.251em; at line-height 0.86 the first baseline is
    0.7885em below the box top, the x-height top 0.2415em, the second baseline 1.6485em; so 1.407em = 23.6% of the height,
    F = 16.77vh (width caps it at 7.1vw so "senior product" ends before the 0.618 line) */
-.intro-title { left: 9.02%; top: calc(38.2% - 0.2415 * var(--F)); color: #fff; font-family: var(--font-display); font-size: var(--F);
+.intro-title { left: 9.02%; top: calc(50% - 0.945 * var(--F));   /* the block from the x-height of line 1 to the baseline of line 2 (1.407em) centred on the middle, between the 0.382 and 0.618 lines */
+    color: #fff; font-family: var(--font-display); font-size: var(--F);
     font-weight: 900; line-height: 0.86; letter-spacing: -0.055em; }
 .intro-col { top: calc(61.8% + var(--b) * 2.618); width: calc(23.6% - var(--b) * 2.618); display: flex; flex-direction: column; gap: calc(var(--b) * 0.618);
     font-size: var(--b); line-height: 1.618; color: rgba(255, 255, 255, 0.72); }
@@ -1459,7 +1460,7 @@ html.on-intro #logo .logo-sub { opacity: 0; }
    "about me", a large light list of disciplines, the story in short paragraphs, then CV / LinkedIn / Contact rows.
    Shared by about.html and the About overlay on every page. */
 .about-page .about-content, .about-overlay .about-content { display: grid !important; grid-template-columns: auto minmax(0, 34rem); grid-template-areas: "skills hello" "skills info"; row-gap: 1.4rem;
-    column-gap: clamp(32px, 4.5vw, 80px); align-items: start; align-content: center; justify-content: center; padding: 7rem 8vw 4rem !important; }
+    column-gap: clamp(56px, 9vw, 180px); align-items: start; align-content: center; justify-content: center; padding: 7rem 8vw 4rem !important; }
 .about-hello { grid-area: hello; } .about-skills { grid-area: skills; } .about-info { grid-area: info; }
 .about-page .about-hello h1, .about-overlay .about-hello h2 { font-size: clamp(1.5rem, 1.9vw, 2rem); letter-spacing: -0.04em; margin: 0; }
 .about-skills { list-style: none; margin: 0; padding: 0; font-family: var(--font-display); font-size: clamp(1.6rem, 2.7vw, 2.8rem); font-weight: 300;
