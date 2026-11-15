@@ -118,7 +118,7 @@
         '  vec2 p = uEye + vec2(cos(ang), sin(ang)) * r;',
         '  gl_Position = vec4(p.x / uRes * 2.0 - 1.0, 1.0 - p.y / uRes * 2.0, 0.0, 1.0);',
         '  float tw = 0.7 + 0.3 * sin(6.2831853 * uLoopT * 3.0 + tw0);',
-        '  gl_PointSize = size * (0.42 + 0.58 * e) * uScale;',
+        '  gl_PointSize = max(1.5, size * (0.42 + 0.58 * e) * uScale * 0.85);',
         '  float edge = min(min(p.x, p.y), min(uRes - p.x, uRes - p.y));',
         '  vAlpha = mix(0.2 + 0.1 * tw, a * (0.75 + 0.35 * tw), e) * smoothstep(0.0, 170.0, edge) * (e < 0.5 ? 0.85 : 1.0);',
         '  vec3 lav = vec3(0.70, 0.64, 1.0), lime = vec3(0.78, 0.91, 0.17);',
@@ -127,7 +127,7 @@
         '}'].join('\n');
     var FRAG = [
         'varying vec3 vCol; varying float vAlpha;',
-        'void main() { float d = length(gl_PointCoord - vec2(0.5)); float g = smoothstep(0.5, 0.0, d); float k = min(1.0, vAlpha * g * g); gl_FragColor = vec4(vCol * k, k); }'].join('\n');
+        'void main() { float d = length(gl_PointCoord - vec2(0.5)); float core = 1.0 - smoothstep(0.26, 0.36, d); float halo = 0.18 * (1.0 - smoothstep(0.0, 0.5, d)); float k = min(1.0, vAlpha * (core + halo)); gl_FragColor = vec4(vCol * k, k); }'].join('\n');
     var geo = new THREE.BufferGeometry();
     geo.setAttribute('position', new THREE.BufferAttribute(new Float32Array(STARS * 3), 3));
     geo.setAttribute('aA', new THREE.BufferAttribute(aA, 4)); geo.setAttribute('aB', new THREE.BufferAttribute(aB, 4));

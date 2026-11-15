@@ -9,7 +9,7 @@
     var hosts = document.querySelectorAll('.about-particles');
     if (!hosts.length) return;
 
-    var LW = 1312, LH = 1000, CX = 656, CY = 500, N = 2200, TAU = Math.PI * 2, PHI = (1 + Math.sqrt(5)) / 2;
+    var LW = 1312, LH = 1000, CX = 656, CY = 500, N = 3000, TAU = Math.PI * 2, PHI = (1 + Math.sqrt(5)) / 2;
     var HOLD = 2.4, MOVE = 1.8, STEP = HOLD + MOVE;
     function mulberry32(seed) { return function () { seed |= 0; seed = (seed + 0x6d2b79f5) | 0; var t = Math.imul(seed ^ (seed >>> 15), 1 | seed);
         t = (t + Math.imul(t ^ (t >>> 7), 61 | t)) ^ t; return ((t ^ (t >>> 14)) >>> 0) / 4294967296; }; }
@@ -74,9 +74,9 @@
     var P = []; for (var i = 0; i < N; i++) { var a = span(0, TAU); P.push({ dx: Math.cos(a), dy: Math.sin(a), burst: span(70, 260), ph: span(0, TAU), sz: span(0.75, 1.3) }); }
 
     function sprite(rgb, px) { var c = document.createElement('canvas'); c.width = c.height = px; var x = c.getContext('2d');
-        var g = x.createRadialGradient(px / 2, px / 2, 0, px / 2, px / 2, px / 2); g.addColorStop(0, 'rgba(' + rgb + ',1)'); g.addColorStop(0.3, 'rgba(' + rgb + ',0.55)'); g.addColorStop(1, 'rgba(' + rgb + ',0)');
+        var g = x.createRadialGradient(px / 2, px / 2, 0, px / 2, px / 2, px / 2); g.addColorStop(0, 'rgba(' + rgb + ',1)'); g.addColorStop(0.42, 'rgba(' + rgb + ',1)'); g.addColorStop(0.55, 'rgba(' + rgb + ',0.22)'); g.addColorStop(1, 'rgba(' + rgb + ',0)');   // a crisp dot, faint halo
         x.fillStyle = g; x.fillRect(0, 0, px, px); return c; }
-    var WHITE = sprite('255,255,255', 32), LIME = sprite('198,233,43', 32);
+    var WHITE = sprite('255,255,255', 64), LIME = sprite('198,233,43', 64);
 
     Array.prototype.forEach.call(hosts, function (host) {
         var canvas = document.createElement('canvas'); canvas.className = 'about-particles-canvas'; host.appendChild(canvas);
@@ -96,7 +96,7 @@
                 var a = A[i], c = Bs[i], q = P[i];
                 var x = a[0] + (c[0] - a[0]) * e - CX + q.dx * q.burst * b, y = a[1] + (c[1] - a[1]) * e - CY + q.dy * q.burst * b;
                 var rx = CX + x * cs - y * sn + Math.sin(t * 1.3 + q.ph) * 1.4, ry = CY + x * sn + y * cs + Math.cos(t * 1.1 + q.ph) * 1.4;
-                var acc = e < 0.5 ? a[2] : c[2], s = 9 * q.sz * (1 - 0.25 * b);
+                var acc = e < 0.5 ? a[2] : c[2], s = 7.5 * q.sz * (1 - 0.25 * b);
                 ctx.globalAlpha = (acc ? 0.95 : 0.78) * (0.8 + 0.2 * Math.sin(t * 2 + q.ph));
                 ctx.drawImage(acc ? LIME : WHITE, rx - s / 2, ry - s / 2, s, s);
             }
