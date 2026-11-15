@@ -1419,25 +1419,28 @@ html.deck-held body { pointer-events: none; touch-action: none; }
    The whole slide is the rectangle: columns 61.8 / 23.6 / 14.6, rows 61.8 / 38.2. Its hairlines are the layout's
    dividers and the golden spiral runs through the cells as one curve. Text sits in the cells. */
 .slide.slide--intro { display: block; padding: 0; text-align: left; }
-.intro { position: absolute; inset: 88px 3vw 40px; display: grid; grid-template-columns: 61.8fr 23.6fr 14.6fr; grid-template-rows: 61.8fr 38.2fr;
-    grid-template-areas: "a b b" "a c d"; border: 1px solid rgba(255, 255, 255, 0.14); animation: intro-in .9s ease-out both; }
+.intro { position: absolute; inset: 84px 3vw 36px; display: grid; place-items: center; animation: intro-in .9s ease-out both; }
+/* a true golden rectangle (1 : 1.618), as large as the screen allows, so every cell is a square and the spiral is true */
+.intro-rect { position: relative; width: min(100%, calc((100vh - 120px) * 1.618)); aspect-ratio: 1.618 / 1; container-type: inline-size;
+    display: grid; grid-template-columns: 61.8fr 14.6fr 23.6fr; grid-template-rows: 61.8fr 38.2fr; grid-template-areas: "a b b" "a c d";
+    border: 1px solid rgba(255, 255, 255, 0.14); }
 @keyframes intro-in { from { opacity: 0; } to { opacity: 1; } }
 @media (prefers-reduced-motion: reduce) { .intro { animation: none; } }
-.g { position: relative; min-width: 0; min-height: 0; padding: clamp(20px, 2.6vw, 48px); display: flex; flex-direction: column; }
+.g { position: relative; min-width: 0; min-height: 0; padding: 2.4cqw; display: flex; flex-direction: column; }
 .g-a { grid-area: a; border-right: 1px solid rgba(255, 255, 255, 0.14); justify-content: center; }
 .g-b { grid-area: b; border-bottom: 1px solid rgba(255, 255, 255, 0.14); justify-content: flex-end; }
-.g-c { grid-area: c; border-right: 1px solid rgba(255, 255, 255, 0.14); }
-.g-d { grid-area: d; justify-content: flex-end; align-items: flex-end; }
+.g-c { grid-area: c; border-right: 1px solid rgba(255, 255, 255, 0.14); justify-content: flex-start; padding: 1.4cqw; }
+.g-d { grid-area: d; justify-content: center; padding: 1.8cqw; }
 .g > *:not(.g-arc) { position: relative; }
 .g-arc { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; pointer-events: none; }
 .g-arc path { fill: none; stroke: rgba(255, 255, 255, 0.2); stroke-width: 1.2; }
-.g-phi { color: rgba(255, 255, 255, 0.35); font-size: 0.7rem; font-weight: 600; letter-spacing: 0.16em; }
-.intro-hi { margin: 0; color: #fff; font-family: var(--font-display); font-size: clamp(1.5rem, min(2.6vw, 4.6vh), 3rem); font-weight: 800; line-height: 1.02; letter-spacing: -0.03em; }
-.intro-title { margin: clamp(16px, 3.5vh, 44px) 0 0; color: #fff; font-family: var(--font-display); font-size: clamp(3rem, min(7.4vw, 17vh), 12rem);
-    font-weight: 900; line-height: 0.86; letter-spacing: -0.055em; }
-.intro-col { display: flex; flex-direction: column; gap: 12px; max-width: 30rem; font-size: clamp(0.95rem, min(1.1vw, 2.1vh), 1.3rem); line-height: 1.6; color: rgba(255, 255, 255, 0.72); }
+.g-phi { color: rgba(255, 255, 255, 0.35); font-size: max(0.6rem, 0.62cqw); font-weight: 600; letter-spacing: 0.14em; }
+.intro-hi { margin: 0; color: #fff; font-family: var(--font-display); font-size: max(1.3rem, 2.3cqw); font-weight: 800; line-height: 1.02; letter-spacing: -0.03em; }
+.intro-title { margin: 2.2cqw 0 0; color: #fff; font-family: var(--font-display); font-size: max(2.6rem, 6.5cqw); font-weight: 900; line-height: 0.86; letter-spacing: -0.055em; }
+.intro-col { display: flex; flex-direction: column; gap: 0.8cqw; max-width: 30rem; font-size: max(0.82rem, 1.12cqw); line-height: 1.55; color: rgba(255, 255, 255, 0.72); }
+.g-d .intro-col { font-size: max(0.78rem, 1.02cqw); }
 .intro-col p { margin: 0; }
-.intro-label { color: rgba(255, 255, 255, 0.45); font-size: 0.7rem !important; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; }
+.intro-label { color: rgba(255, 255, 255, 0.45); font-size: max(0.6rem, 0.62cqw) !important; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; }
 /* the header's "Selected projects" shows once the projects are in view */
 #logo .logo-sub { transition: opacity .5s ease; }
 html.on-intro #logo { opacity: 0; pointer-events: none; }   /* no name in the header on the intro: "Hi, I'm Sasha." says it */
@@ -1445,9 +1448,11 @@ html.on-intro #logo { opacity: 0; pointer-events: none; }   /* no name in the he
 html.on-intro #logo .logo-sub { opacity: 0; }
 @media (max-width: 900px) {
     .slide.slide--intro { height: auto; min-height: 100svh; overflow: visible; padding: 96px 1.25rem 48px; }
-    .intro { position: relative; inset: auto; grid-template-columns: minmax(0, 1fr); grid-template-rows: auto; grid-template-areas: "a" "b" "c"; }
-    .g-a { border-right: 0; border-bottom: 1px solid rgba(255, 255, 255, 0.14); min-height: 52svh; }
-    .g-c { border-right: 0; } .g-d, .g-arc { display: none; }
+    .intro { position: relative; inset: auto; display: block; }
+    .intro-rect { width: 100%; aspect-ratio: auto; grid-template-columns: minmax(0, 1fr); grid-template-rows: auto; grid-template-areas: "a" "b" "d"; }
+    .g { padding: 22px; } .g-a { border-right: 0; border-bottom: 1px solid rgba(255, 255, 255, 0.14); min-height: 50svh; }
+    .g-b { border-bottom: 1px solid rgba(255, 255, 255, 0.14); } .g-c, .g-arc { display: none; }
+    .intro-title { font-size: clamp(2.8rem, 15vw, 4.4rem); } .intro-hi { font-size: 1.6rem; } .intro-col, .g-d .intro-col { font-size: 1rem; gap: 10px; } .intro-label { font-size: 0.68rem !important; }
 }
 
 /* ── About (2026-11-15): typography only ─────────────────────────────────────────────────────────────────
