@@ -1415,39 +1415,39 @@ html.deck-held body { pointer-events: none; touch-action: none; }
     .slide { scroll-snap-align: start; scroll-snap-stop: always; }
 }
 
-/* ── Intro (2026-11-15): typography only ─────────────────────────────────────────────────────────────────
-   A small "Hi, I'm Sasha.", one huge line, three short columns; a faint φ behind as the only image. */
+/* ── Intro (2026-11-15): typography on a golden rectangle ───────────────────────────────────────────────
+   The whole slide is the rectangle: columns 61.8 / 23.6 / 14.6, rows 61.8 / 38.2. Its hairlines are the layout's
+   dividers and the golden spiral runs through the cells as one curve. Text sits in the cells. */
 .slide.slide--intro { display: block; padding: 0; text-align: left; }
-.intro { position: relative; height: 100%; margin: 0 8vw; display: flex; flex-direction: column; justify-content: center; }
-.intro > * { position: relative; }
-.intro-golden { position: absolute !important; right: -4vw; top: 50%; transform: translateY(-50%); width: min(78vw, 150vh); height: auto; color: rgba(255, 255, 255, 0.1); pointer-events: none; }
-.intro-golden-spiral { stroke: rgba(255, 255, 255, 0.16); }
-.intro-hi { margin: 0; color: #fff; font-family: var(--font-display); font-size: clamp(1.6rem, min(3vw, 5vh), 3rem); font-weight: 800; line-height: 1.02; letter-spacing: -0.03em; }
-.intro-title { margin: clamp(20px, 4vh, 48px) 0 0; color: #fff; font-family: var(--font-display); font-size: clamp(3.4rem, min(11.5vw, 19vh), 13rem);
-    font-weight: 900; line-height: 0.86; letter-spacing: -0.055em; }
-.intro-cols { margin-top: clamp(32px, 9vh, 104px); display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(24px, 4vw, 64px); max-width: 1500px;
-    font-size: clamp(0.98rem, min(1.2vw, 2.1vh), 1.3rem); line-height: 1.6; color: rgba(255, 255, 255, 0.72); }
-.intro-cols p { margin: 0; }
-.intro-col { padding-top: 18px; border-top: 1px solid rgba(255, 255, 255, 0.16); display: flex; flex-direction: column; gap: 12px; }
-.intro-label { color: rgba(255, 255, 255, 0.45); font-size: 0.7rem; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; }
-.intro-links { display: flex; flex-direction: column; align-items: flex-start; gap: 2px; }
-.intro-links a { color: #fff; text-decoration: underline; text-decoration-color: transparent; text-underline-offset: 5px; transition: text-decoration-color .2s; }
-.intro-links a:hover { text-decoration-color: currentColor; }
-.intro-links a[target="_blank"]::after { content: '↗'; margin-left: 6px; font-size: 0.8em; opacity: 0.7; }
-.intro-links .sr-only-new { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
-.intro { animation: intro-in .9s ease-out both; }
+.intro { position: absolute; inset: 88px 3vw 40px; display: grid; grid-template-columns: 61.8fr 23.6fr 14.6fr; grid-template-rows: 61.8fr 38.2fr;
+    grid-template-areas: "a b b" "a c d"; border: 1px solid rgba(255, 255, 255, 0.14); animation: intro-in .9s ease-out both; }
 @keyframes intro-in { from { opacity: 0; } to { opacity: 1; } }
 @media (prefers-reduced-motion: reduce) { .intro { animation: none; } }
+.g { position: relative; min-width: 0; min-height: 0; padding: clamp(20px, 2.6vw, 48px); display: flex; flex-direction: column; }
+.g-a { grid-area: a; border-right: 1px solid rgba(255, 255, 255, 0.14); justify-content: center; }
+.g-b { grid-area: b; border-bottom: 1px solid rgba(255, 255, 255, 0.14); justify-content: flex-end; }
+.g-c { grid-area: c; border-right: 1px solid rgba(255, 255, 255, 0.14); }
+.g-d { grid-area: d; justify-content: flex-end; align-items: flex-end; }
+.g > *:not(.g-arc) { position: relative; }
+.g-arc { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; pointer-events: none; }
+.g-arc path { fill: none; stroke: rgba(255, 255, 255, 0.2); stroke-width: 1.2; }
+.g-phi { color: rgba(255, 255, 255, 0.35); font-size: 0.7rem; font-weight: 600; letter-spacing: 0.16em; }
+.intro-hi { margin: 0; color: #fff; font-family: var(--font-display); font-size: clamp(1.5rem, min(2.6vw, 4.6vh), 3rem); font-weight: 800; line-height: 1.02; letter-spacing: -0.03em; }
+.intro-title { margin: clamp(16px, 3.5vh, 44px) 0 0; color: #fff; font-family: var(--font-display); font-size: clamp(3rem, min(7.4vw, 17vh), 12rem);
+    font-weight: 900; line-height: 0.86; letter-spacing: -0.055em; }
+.intro-col { display: flex; flex-direction: column; gap: 12px; max-width: 30rem; font-size: clamp(0.95rem, min(1.1vw, 2.1vh), 1.3rem); line-height: 1.6; color: rgba(255, 255, 255, 0.72); }
+.intro-col p { margin: 0; }
+.intro-label { color: rgba(255, 255, 255, 0.45); font-size: 0.7rem !important; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; }
 /* the header's "Selected projects" shows once the projects are in view */
 #logo .logo-sub { transition: opacity .5s ease; }
 html.on-intro #logo { opacity: 0; pointer-events: none; }   /* no name in the header on the intro: "Hi, I'm Sasha." says it */
 #logo { transition: opacity .5s ease; }
 html.on-intro #logo .logo-sub { opacity: 0; }
 @media (max-width: 900px) {
-    .slide.slide--intro { height: auto; min-height: 100svh; overflow: visible; padding: clamp(110px, 16svh, 150px) 0 56px; }
-    .intro { margin: 0 1.5rem; justify-content: flex-start; }
-    .intro-cols { grid-template-columns: minmax(0, 1fr); gap: 18px; }
-    .intro-golden { width: 160vw; right: -40vw; }
+    .slide.slide--intro { height: auto; min-height: 100svh; overflow: visible; padding: 96px 1.25rem 48px; }
+    .intro { position: relative; inset: auto; grid-template-columns: minmax(0, 1fr); grid-template-rows: auto; grid-template-areas: "a" "b" "c"; }
+    .g-a { border-right: 0; border-bottom: 1px solid rgba(255, 255, 255, 0.14); min-height: 52svh; }
+    .g-c { border-right: 0; } .g-d, .g-arc { display: none; }
 }
 
 /* ── About (2026-11-15): typography only ─────────────────────────────────────────────────────────────────
