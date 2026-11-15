@@ -1415,44 +1415,40 @@ html.deck-held body { pointer-events: none; touch-action: none; }
     .slide { scroll-snap-align: start; scroll-snap-stop: always; }
 }
 
-/* ── Intro (2026-11-15): typography on a golden rectangle ───────────────────────────────────────────────
-   The whole slide is the rectangle: columns 61.8 / 23.6 / 14.6, rows 61.8 / 38.2. Its hairlines are the layout's
-   dividers and the golden spiral runs through the cells as one curve. Text sits in the cells. */
-.slide.slide--intro { display: block; padding: 0; text-align: left; }
-.intro { position: absolute; inset: 84px 3vw 36px; display: grid; place-items: center; animation: intro-in .9s ease-out both; }
-/* a true golden rectangle (1 : 1.618), as large as the screen allows, so every cell is a square and the spiral is true */
-.intro-rect { position: relative; width: min(100%, calc((100vh - 120px) * 1.618)); aspect-ratio: 1.618 / 1; container-type: inline-size;
-    display: grid; grid-template-columns: 61.8fr 14.6fr 23.6fr; grid-template-rows: 61.8fr 38.2fr; grid-template-areas: "a b b" "a c d";
-    border: 1px solid rgba(255, 255, 255, 0.14); }
+/* ── Intro (2026-11-15): a composition by φ ─────────────────────────────────────────────────────────────
+   Positions: the screen's golden sections (38.2%, 61.8%) across and down; left margin 1/φ⁵ = 9.02%.
+   Type: body b; label b/φ; "Hi" b·φ²; title so its two lines fill the band from 0.382 to 0.618 of the height.
+   Gaps are b·φ and b·φ². The faint lines are the sections themselves. */
+.slide.slide--intro { display: block; padding: 0; text-align: left; --b: clamp(15px, min(1.05vw, 1.95vh), 22px); }
+.intro { position: absolute; inset: 0; animation: intro-in .9s ease-out both; }
 @keyframes intro-in { from { opacity: 0; } to { opacity: 1; } }
 @media (prefers-reduced-motion: reduce) { .intro { animation: none; } }
-.g { position: relative; min-width: 0; min-height: 0; padding: 2.4cqw; display: flex; flex-direction: column; }
-.g-a { grid-area: a; border-right: 1px solid rgba(255, 255, 255, 0.14); justify-content: center; }
-.g-b { grid-area: b; border-bottom: 1px solid rgba(255, 255, 255, 0.14); justify-content: flex-end; }
-.g-c { grid-area: c; border-right: 1px solid rgba(255, 255, 255, 0.14); justify-content: flex-start; padding: 1.4cqw; }
-.g-d { grid-area: d; justify-content: center; padding: 1.8cqw; }
-.g > *:not(.g-arc) { position: relative; }
-.g-arc { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; pointer-events: none; }
-.g-arc path { fill: none; stroke: rgba(255, 255, 255, 0.2); stroke-width: 1.2; }
-.g-phi { color: rgba(255, 255, 255, 0.35); font-size: max(0.6rem, 0.62cqw); font-weight: 600; letter-spacing: 0.14em; }
-.intro-hi { margin: 0; color: #fff; font-family: var(--font-display); font-size: max(1.3rem, 2.3cqw); font-weight: 800; line-height: 1.02; letter-spacing: -0.03em; }
-.intro-title { margin: 2.2cqw 0 0; color: #fff; font-family: var(--font-display); font-size: max(2.6rem, 6.5cqw); font-weight: 900; line-height: 0.86; letter-spacing: -0.055em; }
-.intro-col { display: flex; flex-direction: column; gap: 0.8cqw; max-width: 30rem; font-size: max(0.82rem, 1.12cqw); line-height: 1.55; color: rgba(255, 255, 255, 0.72); }
-.g-d .intro-col { font-size: max(0.78rem, 1.02cqw); }
+.phi-lines { position: absolute; inset: 0; pointer-events: none; }
+.phi-v, .phi-h { position: absolute; background: rgba(255, 255, 255, 0.09); }
+.phi-v { top: 0; bottom: 0; width: 1px; } .phi-h { left: 0; right: 0; height: 1px; }
+.phi-v i, .phi-h i { position: absolute; font-style: normal; font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 10px; letter-spacing: 0.08em; color: rgba(255, 255, 255, 0.3); }
+.phi-v i { bottom: 14px; left: 8px; } .phi-h i { right: 14px; top: 6px; }
+.intro > p, .intro > h1, .intro > div:not(.phi-lines) { position: absolute; margin: 0; }
+.intro-hi { left: 9.02%; bottom: calc(61.8% + var(--b) * 1.618); color: #fff; font-family: var(--font-display); font-size: calc(var(--b) * 2.618);
+    font-weight: 800; line-height: 1; letter-spacing: -0.03em; }
+.intro-title { left: 9.02%; top: 38.2%; color: #fff; font-family: var(--font-display); font-size: min(7.1vw, 13.72vh); font-weight: 900;
+    line-height: 0.86; letter-spacing: -0.055em; transform: translateY(0.11em); }
+.intro-col { top: calc(61.8% + var(--b) * 2.618); width: calc(23.6% - var(--b) * 2.618); display: flex; flex-direction: column; gap: calc(var(--b) * 0.618);
+    font-size: var(--b); line-height: 1.618; color: rgba(255, 255, 255, 0.72); }
 .intro-col p { margin: 0; }
-.intro-label { color: rgba(255, 255, 255, 0.45); font-size: max(0.6rem, 0.62cqw) !important; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; }
+.intro-col--1 { left: calc(38.2% + var(--b) * 1.618); } .intro-col--2 { left: calc(61.8% + var(--b) * 1.618); }
+.intro-label { color: rgba(255, 255, 255, 0.45); font-size: calc(var(--b) / 1.618) !important; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; }
+.intro-phi { left: 9.02%; top: calc(61.8% + var(--b) * 2.618); font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: calc(var(--b) / 1.618); letter-spacing: 0.08em; color: rgba(255, 255, 255, 0.35); }
 /* the header's "Selected projects" shows once the projects are in view */
 #logo .logo-sub { transition: opacity .5s ease; }
 html.on-intro #logo { opacity: 0; pointer-events: none; }   /* no name in the header on the intro: "Hi, I'm Sasha." says it */
 #logo { transition: opacity .5s ease; }
 html.on-intro #logo .logo-sub { opacity: 0; }
 @media (max-width: 900px) {
-    .slide.slide--intro { height: auto; min-height: 100svh; overflow: visible; padding: 96px 1.25rem 48px; }
-    .intro { position: relative; inset: auto; display: block; }
-    .intro-rect { width: 100%; aspect-ratio: auto; grid-template-columns: minmax(0, 1fr); grid-template-rows: auto; grid-template-areas: "a" "b" "d"; }
-    .g { padding: 22px; } .g-a { border-right: 0; border-bottom: 1px solid rgba(255, 255, 255, 0.14); min-height: 50svh; }
-    .g-b { border-bottom: 1px solid rgba(255, 255, 255, 0.14); } .g-c, .g-arc { display: none; }
-    .intro-title { font-size: clamp(2.8rem, 15vw, 4.4rem); } .intro-hi { font-size: 1.6rem; } .intro-col, .g-d .intro-col { font-size: 1rem; gap: 10px; } .intro-label { font-size: 0.68rem !important; }
+    .slide.slide--intro { height: auto; min-height: 100svh; overflow: visible; padding: 120px 1.5rem 56px; --b: 16px; }
+    .intro { position: relative; display: flex; flex-direction: column; gap: 26px; }
+    .intro > p, .intro > h1, .intro > div:not(.phi-lines) { position: relative; left: auto; top: auto; bottom: auto; width: auto; transform: none; }
+    .phi-lines, .intro-phi { display: none; } .intro-title { font-size: clamp(2.8rem, 15vw, 4.4rem); } .intro-col { padding-top: 16px; border-top: 1px solid rgba(255, 255, 255, 0.14); }
 }
 
 /* ── About (2026-11-15): typography only ─────────────────────────────────────────────────────────────────
