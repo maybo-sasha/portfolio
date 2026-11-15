@@ -53,15 +53,19 @@
 
     <!-- About overlay — circle-mask reveal -->
     <div class="about-overlay" aria-hidden="true">
-        <div class="about-video about-particles" aria-hidden="true"></div>   <!-- js/aboutParticles.js: UI elements built from particles -->
         <div class="about-scrim"></div>
         <a class="about-back" href="#"><span class="arrow">←</span> Back</a>
         <div class="about-content" data-lenis-prevent>
-<div class="about-hello"><h2>Hello</h2></div>
+<div class="about-hello"><h2>about me</h2></div>
+            <ul class="about-skills">
+                <li>AI Decisioning</li><li>Agentic &amp; Chat</li><li>Design Systems</li><li>Interface Design</li><li>Design Leadership</li><li>Product Management</li><li>&amp;more</li>
+            </ul>
             <div class="about-info">
                 <div class="about-block">
                     <p class="about-block-label">About</p>
-                    <p class="about-block-text">I'm a senior product designer and design lead with 10+ years across B2B and B2C products, spanning hands-on interface design, design leadership and product management. I lead projects end to end, from research and concept to final UI, build design systems that scale, and design AI decisioning, agentic and conversational experiences that stay explainable and keep people in the loop.</p>
+                    <p class="about-block-text">I'm a senior product designer and design lead with 10+ years across B2B and B2C products.</p>
+                    <p class="about-block-text">I lead projects end to end, from research and concept to final UI, and build design systems that scale.</p>
+                    <p class="about-block-text">Lately: AI decisioning, agentic and conversational experiences that stay explainable and keep people in the loop.</p>
                 </div>
                 <div class="about-block about-cv">
                     <p class="about-block-label">CV</p>
@@ -108,26 +112,17 @@
              Leave it off and js/cinema.js reads a colour from the poster instead. -->
         <main data-barba="container" data-barba-namespace="home">
 
-            <!-- Intro (2026-11-14): "Hello" and two lines from About on the left; on the right the golden galaxy, drawn live by js/introGalaxy.js (source composition:
-                 personal-os/work/portfolio-intro-order): stars and loose squares turn as one; the squares fly home into a
-                 golden rectangle (Fibonacci numbers, inscribed circles, the spiral drawing), the stars glide onto galaxy arms that
-                 follow that golden spiral, with a sunflower core by the golden angle. Part a plays once; part b, a seamless loop that starts on a's
-                 last frame, takes over (the script at the end of the page). No data-ambient: the deck's glow is off on this slide (js/cinema.js). -->
+            <!-- Intro (2026-11-15): typography only. -->
             <section class="slide slide--intro" id="intro" aria-labelledby="intro-title">
                 <div class="intro">
-                    <div class="intro-copy">
-                        <h1 class="intro-title" id="intro-title">Hello</h1>
-                        <p class="intro-lede">My name is <b>Sasha Maiboroda</b>. I’m a senior <b>product designer</b>, designing AI experiences that stay explainable and keep people in the loop.</p>
-                        <div class="intro-expertise">
-                            <p class="intro-label"><span>Expertise</span><span>10+ years</span></p>
-                            <ul>
-                                <li>AI decisioning</li><li>Agentic and conversational</li>
-                                <li>Design systems</li><li>Interface design</li>
-                                <li>B2B and B2C products</li><li>Product management</li>
-                            </ul>
-                        </div>
+                    <div class="intro-phi" aria-hidden="true">φ</div>
+                    <p class="intro-hi">Hi,<br>I’m Sasha.</p>
+                    <h1 class="intro-title" id="intro-title">senior product<br>designer.</h1>
+                    <div class="intro-cols">
+                        <p>I design AI decisioning, agentic and conversational experiences that stay explainable and keep people in the loop.</p>
+                        <p>10+ years across B2B and B2C products: design systems, hands-on interface design, design leadership and product management.</p>
+                        <p class="intro-links"><a href="./assets/documents/Sasha-Maiboroda-CV.pdf" download="Sasha-Maiboroda-CV.pdf" data-no-transition>Download CV <span aria-hidden="true">↓</span></a><a href="https://www.linkedin.com/in/sasha-mayboroda-177b17bb/" target="_blank" rel="noopener">LinkedIn<span class="sr-only-new"> (opens in a new tab)</span></a><a href="https://mail.google.com/mail/?view=cm&fs=1&to=maybosasha@gmail.com" target="_blank" rel="noopener">Email<span class="sr-only-new"> (opens in a new tab)</span></a></p>
                     </div>
-                    <div class="intro-art" aria-hidden="true"></div>   <!-- js/introGalaxy.js draws the golden galaxy here, live -->
                 </div>
             </section>
 
@@ -284,7 +279,5 @@
             window.addEventListener('slidechange', function (e) { if (e.detail && e.detail.index >= 0) mark(e.detail.index); });
         })();
     </script>
-    <script src="./js/introGalaxy.js"></script>
-    <script src="./js/aboutParticles.js"></script>
 </body>
 </html>
