@@ -1470,6 +1470,14 @@ html.on-intro #logo .logo-sub { opacity: 0; }
 .about-skills li:last-child { color: rgba(255, 255, 255, 0.45); }
 .about-info .about-block:first-child { display: flex; flex-direction: column; gap: 1.1rem; }
 .about-info .about-block:first-child .about-block-text { font-size: clamp(1.05rem, 1.35vw, 1.35rem); line-height: 1.55; color: rgba(255, 255, 255, 0.86); margin: 0; }
+/* On a desktop the layout sits on the dot grid (js/aboutTexture.js sets --cell and --c1): the list is whole cells wide, the gap is two cells, the
+   text column eight, every CV / Social / Contact row exactly one cell tall, and the grid is anchored so these edges land on its lines. */
+@media (min-width: 1101px) {
+    .about-page .about-content, .about-overlay .about-content { grid-template-columns: calc(var(--cell, 72px) * var(--c1, 7)) calc(var(--cell, 72px) * 8); column-gap: calc(var(--cell, 72px) * 2); }
+    .about-skills { line-height: var(--cell, 72px); }
+    .about-info .about-block:not(:first-child) { height: var(--cell, 72px); padding: 0 !important; align-items: center; box-sizing: border-box; }
+    .about-info .about-block:first-child { padding-bottom: calc(var(--cell, 72px) * 0.5) !important; }
+}
 @media (max-width: 1100px) {
     .about-page .about-content, .about-overlay .about-content { grid-template-columns: minmax(0, 1fr); grid-template-areas: "hello" "skills" "info"; row-gap: 2rem; align-content: start; padding: 6rem 6vw 3rem !important; }
 }

@@ -26,18 +26,30 @@
         var overlay = host.classList.contains('about-overlay') ? host : null;
 
         var cols = 0, rows = 0, ox = 0, oy = 0, dpr = 1, W = 0, H = 0;
+        host.style.setProperty('--cell', GAP + 'px');
         var px, py, dx, dy, vx, vy;            // home positions, offsets, velocities (flat arrays)
         function build() {
             W = host.clientWidth; H = host.clientHeight; dpr = Math.min(window.devicePixelRatio || 1, 2);
             canvas.width = Math.max(1, Math.round(W * dpr)); canvas.height = Math.max(1, Math.round(H * dpr));
             cols = Math.ceil(W / GAP) + 3; rows = Math.ceil(H / GAP) + 3;
-            ox = (W - (cols - 1) * GAP) / 2; oy = (H - (rows - 1) * GAP) / 2;
+            var a = anchor(); ox = a[0] - GAP * 2; oy = a[1] - GAP * 2;   // a column line through the text column's left edge, a row line through the first row's top
             var n = cols * rows;
             px = new Float32Array(n); py = new Float32Array(n);
             dx = new Float32Array(n); dy = new Float32Array(n); vx = new Float32Array(n); vy = new Float32Array(n);
             for (var j = 0; j < rows; j++) for (var i = 0; i < cols; i++) { var k = j * cols + i; px[k] = ox + i * GAP; py[k] = oy + j * GAP; }
         }
 
+        // the About layout sits on the grid: size the list's column in whole cells, then anchor the grid to the text column
+        function anchor() {
+            var hr = host.getBoundingClientRect(), info = host.querySelector('.about-info'), skills = host.querySelector('.about-skills'), row = host.querySelector('.about-info .about-block:nth-child(2)');
+            if (!info || !skills || window.innerWidth <= 1100 || !host.getBoundingClientRect().width) return [(W - (cols - 1) * GAP) / 2 + GAP * 2, (H - (rows - 1) * GAP) / 2 + GAP * 2];
+            var w = 0, rg = document.createRange();
+            skills.style.whiteSpace = 'nowrap';   // measure each item on one line, whatever the column was before
+            Array.prototype.forEach.call(skills.children, function (li) { rg.selectNodeContents(li); w = Math.max(w, rg.getBoundingClientRect().width); });
+            host.style.setProperty('--c1', String(Math.ceil((w + 8) / GAP)));
+            var ir = info.getBoundingClientRect(), rr = (row || info).getBoundingClientRect();
+            return [((ir.left - hr.left) % GAP + GAP) % GAP, ((rr.top - hr.top) % GAP + GAP) % GAP];
+        }
         var mx = -9999, my = -9999, mvx = 0, mvy = 0, near = false, lastMove = 0;
         function step() {
             var n = cols * rows, R2 = R * R;
@@ -100,6 +112,7 @@
         function wake() { if (!running && !still && shown()) { running = true; requestAnimationFrame(frame); } }
 
         build(); draw();
+        if (document.fonts && document.fonts.ready) document.fonts.ready.then(function () { build(); draw(); });
         if (window.ResizeObserver) new ResizeObserver(function () { build(); draw(); }).observe(host);
         if (still) return;
 
