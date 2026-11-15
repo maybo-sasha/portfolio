@@ -1419,7 +1419,7 @@ html.deck-held body { pointer-events: none; touch-action: none; }
    Positions: the screen's golden sections (38.2%, 61.8%) across and down; left margin 1/φ⁵ = 9.02%.
    Type: body b; label b/φ; "Hi" b·φ²; title so its two lines fill the band from 0.382 to 0.618 of the height.
    Gaps are b·φ and b·φ². The faint lines are the sections themselves. */
-.slide.slide--intro { display: block; padding: 0; text-align: left; --b: clamp(15px, min(1.05vw, 1.95vh), 22px); --F: min(11.6vh, 6vw); }   /* the headline's full ink (1.885em, ascenders to descenders) fits inside the 0.382–0.618 band */
+.slide.slide--intro { display: block; padding: 0; text-align: left; --b: clamp(15px, min(1.05vw, 1.95vh), 22px); --F: min(11vh, 5.7vw); }   /* the headline's full ink (1.985em at line-height 0.96) fits inside the 0.382–0.618 band */
 .intro { position: absolute; inset: 0; animation: intro-in .9s ease-out both; }
 @keyframes intro-in { from { opacity: 0; } to { opacity: 1; } }
 @media (prefers-reduced-motion: reduce) { .intro { animation: none; } }
@@ -1436,9 +1436,9 @@ html.deck-held body { pointer-events: none; touch-action: none; }
    Montserrat 900 measured: x-height 0.547em, ascent 0.968em, descent 0.251em; at line-height 0.86 the first baseline is
    0.7885em below the box top, the x-height top 0.2415em, the second baseline 1.6485em; so 1.407em = 23.6% of the height,
    F = 16.77vh (width caps it at 7.1vw so "senior product" ends before the 0.618 line) */
-.intro-title { left: 9.02%; top: calc(50% - 0.91 * var(--F));   /* ink centred in the band (measured: ink from -0.03em to 1.85em) */
+.intro-title { left: 9.02%; top: calc(50% - 1.01 * var(--F));   /* ink centred in the band (ink from 0.02em to 2.0em at line-height 0.96) */
     color: #fff; font-family: var(--font-display); font-size: var(--F);
-    font-weight: 900; line-height: 0.86; letter-spacing: -0.055em; }
+    font-weight: 900; line-height: 0.96; letter-spacing: -0.055em; }
 .intro-col { top: calc(61.8% + var(--b) * 2.618); width: calc(23.6% - var(--b) * 2.618); display: flex; flex-direction: column; gap: calc(var(--b) * 0.618);
     font-size: var(--b); line-height: 1.618; color: rgba(255, 255, 255, 0.72); }
 .intro-col p { margin: 0; }
