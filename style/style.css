@@ -1344,6 +1344,8 @@ html.deck-held body { pointer-events: none; touch-action: none; }
     border-radius: 0; opacity: 1; box-shadow: none;
 }
 .about-page .about-scrim, .about-overlay .about-scrim { display: none; }
+/* the dot-grid cloth behind About (js/aboutTexture.js, 2026-11-15) */
+.about-texture { position: absolute; inset: 0; width: 100%; height: 100%; display: block; z-index: 1; pointer-events: none; }
 .about-overlay .about-content, .about-page .about-content {
     align-items: flex-start; justify-content: safe center; gap: 0;
     padding: 6rem 6vw 3rem calc(var(--about-stage) + 4.5vw);
