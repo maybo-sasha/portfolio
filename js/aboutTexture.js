@@ -8,8 +8,8 @@
     var hosts = document.querySelectorAll('.about-page, .about-overlay');
     if (!hosts.length) return;
 
-    var GAP = 26;            // px between dots
-    var R = 190;             // the pointer's reach
+    var GAP = 48;            // px between dots (bigger squares, Sasha 11-15)
+    var R = 240;             // the pointer's reach
     var K = 0.055;           // spring back to rest
     var C = 0.09;            // pull from neighbours: carries the wave
     var DAMP = 0.88;         // how quickly it settles
@@ -72,7 +72,7 @@
             ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
             ctx.clearRect(0, 0, W, H);
             // threads: rows and columns as faint polylines, so the warp reads as cloth
-            ctx.lineWidth = 1; ctx.strokeStyle = 'rgba(255,255,255,0.045)';
+            ctx.lineWidth = 1; ctx.strokeStyle = 'rgba(255,255,255,0.028)';
             ctx.beginPath();
             for (var j = 0; j < rows; j++) { var k0 = j * cols; ctx.moveTo(px[k0] + dx[k0], py[k0] + dy[k0]); for (var i = 1; i < cols; i++) { var k = k0 + i; ctx.lineTo(px[k] + dx[k], py[k] + dy[k]); } }
             for (var i2 = 0; i2 < cols; i2++) { ctx.moveTo(px[i2] + dx[i2], py[i2] + dy[i2]); for (var j2 = 1; j2 < rows; j2++) { var kk = j2 * cols + i2; ctx.lineTo(px[kk] + dx[kk], py[kk] + dy[kk]); } }
@@ -81,10 +81,10 @@
             var R2 = R * R;
             for (var q = 0; q < cols * rows; q++) {
                 var x = px[q] + dx[q], y = py[q] + dy[q];
-                var stir = Math.min(1, (Math.abs(dx[q]) + Math.abs(dy[q])) / 14), a = 0.16 + 0.42 * stir;
-                if (near) { var rx = x - mx, ry = y - my, d2 = rx * rx + ry * ry; if (d2 < R2) a += 0.3 * (1 - Math.sqrt(d2) / R); }
-                ctx.fillStyle = 'rgba(255,255,255,' + Math.min(0.85, a).toFixed(3) + ')';
-                var s = 1.6 + 0.9 * stir; ctx.fillRect(x - s / 2, y - s / 2, s, s);
+                var stir = Math.min(1, (Math.abs(dx[q]) + Math.abs(dy[q])) / 18), a = 0.09 + 0.2 * stir;   // faded (Sasha 11-15)
+                if (near) { var rx = x - mx, ry = y - my, d2 = rx * rx + ry * ry; if (d2 < R2) a += 0.1 * (1 - Math.sqrt(d2) / R); }
+                ctx.fillStyle = 'rgba(255,255,255,' + Math.min(0.4, a).toFixed(3) + ')';
+                var s = 1.5 + 0.6 * stir; ctx.fillRect(x - s / 2, y - s / 2, s, s);
             }
         }
 
