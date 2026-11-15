@@ -846,7 +846,8 @@ body::after { content: ""; position: fixed; inset: 0; z-index: 9000; pointer-eve
 .story-phases.og-five .phase-note { margin: 1.5rem 0 2rem; }
 .story-phases.og-five:not(.og-disc) .phase-note { margin-left: auto; margin-right: auto; }
 .og-disc { margin-top: 0; }
-.og-disc .og-discfig { margin: 1.5rem 0 2.25rem; max-width: none; width: 100%; }
+.og-disc .og-discfig { margin: 1.5rem 0 2.25rem; max-width: none; width: 78%; }   /* smaller (Sasha 11-15) */
+@media (max-width: 900px) { .og-disc .og-discfig { width: 100%; } }
 .og-disc .og-discfig svg { display: block; width: 100%; height: auto; }
 @media (max-width: 900px) { .story-phases.og-five > article { padding-left: 0; padding-right: 0; border-left: 0 !important; } }
 #motion .og-five + .story-opening { margin-top: clamp(3.5rem, 6vw, 6rem); padding-top: var(--block-gap); border-top: 1px solid var(--line); }
