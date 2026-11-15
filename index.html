@@ -53,7 +53,7 @@
 
     <!-- About overlay — circle-mask reveal -->
     <div class="about-overlay" aria-hidden="true">
-        <video class="about-video" src="./assets/about/about-sphere.mp4?v=17f3ad60d2d4" data-m="./assets/about/about-sphere-m.mp4?v=3f34e3453092" poster="./assets/about/about-sphere-poster.webp?v=db199594efa8" aria-label="A sphere of points laid out by the golden angle, with a ring of points orbiting it" loop muted playsinline preload="none"></video>
+        <div class="about-video about-particles" aria-hidden="true"></div>   <!-- js/aboutParticles.js: UI elements built from particles -->
         <div class="about-scrim"></div>
         <a class="about-back" href="#"><span class="arrow">←</span> Back</a>
         <div class="about-content" data-lenis-prevent>
@@ -108,7 +108,7 @@
              Leave it off and js/cinema.js reads a colour from the poster instead. -->
         <main data-barba="container" data-barba-namespace="home">
 
-            <!-- Intro (2026-11-14): "Hello" and two lines from About on the left; on the right a HyperFrames film (source:
+            <!-- Intro (2026-11-14): "Hello" and two lines from About on the left; on the right the golden galaxy, drawn live by js/introGalaxy.js (source composition:
                  personal-os/work/portfolio-intro-order): stars and loose squares turn as one; the squares fly home into a
                  golden rectangle (Fibonacci numbers, inscribed circles, the spiral drawing), the stars glide onto galaxy arms that
                  follow that golden spiral, with a sunflower core by the golden angle. Part a plays once; part b, a seamless loop that starts on a's
@@ -127,15 +127,7 @@
                             </ul>
                         </div>
                     </div>
-                    <!-- Carl Sagan, Cosmos: A Personal Voyage, episode 9 "The Lives of the Stars" (1980) -->
-                    <figure class="intro-quote">
-                        <blockquote>“If you wish to make an apple pie from scratch, you must first invent the universe.”</blockquote>
-                        <figcaption>Carl Sagan, Cosmos, 1980</figcaption>
-                    </figure>
-                    <div class="intro-art">
-                        <video class="intro-film intro-film--a" src="./assets/intro/intro-a.mp4?v=2d4bc6f28c6d" data-m="./assets/intro/intro-a-m.mp4?v=9e7351da740c" poster="./assets/intro/intro-a-poster.webp?v=ef1f257c4c88" width="1100" height="1100" autoplay muted playsinline preload="auto" data-playlist aria-hidden="true"></video>
-                        <video class="intro-film intro-film--b" src="./assets/intro/intro-b.mp4?v=3fc57e69f5ca" data-m="./assets/intro/intro-b-m.mp4?v=b9ba27cb344a" poster="./assets/intro/intro-b-poster.webp?v=3d24ce19b726" width="1100" height="1100" muted playsinline loop preload="none" data-playlist aria-hidden="true"></video>
-                    </div>
+                    <div class="intro-art" aria-hidden="true"></div>   <!-- js/introGalaxy.js draws the golden galaxy here, live -->
                 </div>
             </section>
 
@@ -284,41 +276,6 @@
     <script src="./js/workMenu.js"></script>
     <script src="./js/lazyVideo.js"></script>
     <script>
-        // Intro film: part a (chaos into order) plays once, then part b (the cube turning, light flowing along the spiral)
-        // loops, starting on a's last frame. Both are data-playlist, so js/lazyVideo.js leaves them to this script.
-        (function () {
-            var a = document.querySelector('.intro-film--a'), b = document.querySelector('.intro-film--b');
-            if (!a || !b) return;
-            var art = a.parentNode, done = false;
-            var light = window.matchMedia('(max-width: 900px)').matches || !!(navigator.connection && navigator.connection.saveData);
-            [a, b].forEach(function (v) {
-                if (light && v.dataset.m) v.src = v.dataset.m;
-                if (v.dataset.poster && !v.getAttribute('poster')) v.setAttribute('poster', v.dataset.poster);
-            });
-            // the loop loads once the build-up is under way, not with the page
-            b.preload = 'none';
-            a.addEventListener('timeupdate', function warm() { if (a.currentTime > 1) { a.removeEventListener('timeupdate', warm); b.preload = 'auto'; b.load(); } });
-            if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {   // no motion: show the finished cube, still
-                a.removeAttribute('autoplay'); a.pause(); art.classList.add('is-living'); return;
-            }
-            function live() { if (!done) { done = true; art.classList.add('is-living'); } }
-            a.addEventListener('ended', function () {
-                b.currentTime = 0;
-                var p = b.play();
-                b.addEventListener('playing', live, { once: true });
-                if (p && p.catch) p.catch(live);
-            });
-            // off screen, nothing plays
-            new IntersectionObserver(function (es) {
-                es.forEach(function (e) {
-                    var v = done ? b : a;
-                    if (e.isIntersecting) { if (!v.ended) { var p = v.play(); if (p && p.catch) p.catch(function () {}); } }
-                    else v.pause();
-                });
-            }, { threshold: 0.2 }).observe(art);
-        })();
-    </script>
-    <script>
         // The header's "Selected projects" belongs to the projects: hidden on the intro, shown once the deck reaches them
         (function () {
             var root = document.documentElement;
@@ -327,5 +284,7 @@
             window.addEventListener('slidechange', function (e) { if (e.detail && e.detail.index >= 0) mark(e.detail.index); });
         })();
     </script>
+    <script src="./js/introGalaxy.js"></script>
+    <script src="./js/aboutParticles.js"></script>
 </body>
 </html>

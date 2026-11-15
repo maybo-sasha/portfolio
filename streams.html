@@ -750,7 +750,7 @@ body::after { content: ""; position: fixed; inset: 0; z-index: 9000; pointer-eve
 
     <!-- About overlay -->
     <div class="about-overlay" aria-hidden="true">
-        <video class="about-video" src="./assets/about/about-sphere.mp4?v=17f3ad60d2d4" data-m="./assets/about/about-sphere-m.mp4?v=3f34e3453092" poster="./assets/about/about-sphere-poster.webp?v=db199594efa8" aria-label="A sphere of points laid out by the golden angle, with a ring of points orbiting it" loop muted playsinline preload="none"></video>
+        <div class="about-video about-particles" aria-hidden="true"></div>   <!-- js/aboutParticles.js: UI elements built from particles -->
         <div class="about-scrim"></div>
         <a class="about-back" href="#"><span class="arrow">←</span> Back</a>
         <div class="about-content" data-lenis-prevent>
@@ -1110,5 +1110,6 @@ body::after { z-index: -1 !important; }
   .sketch-hint { margin: .75rem 0 0; font-size: .8rem; letter-spacing: .02em; color: var(--violet); }
 }
 </style>
+    <script src="./js/aboutParticles.js"></script>
 </body>
 </html>

@@ -1342,11 +1342,9 @@ html.deck-held body { pointer-events: none; touch-action: none; }
     max-height: none; aspect-ratio: 1312 / 1000; transform: translateY(-50%);
     object-fit: contain; object-position: 50% 50%;
     border-radius: 0; opacity: 1; box-shadow: none;
-    /* the golden sphere (HyperFrames, personal-os/work/about-sphere, 2026-11-14): no frame, blended into the dark */
-    mix-blend-mode: lighten;
-    -webkit-mask-image: linear-gradient(90deg, transparent, #000 10%, #000 90%, transparent), linear-gradient(180deg, transparent, #000 10%, #000 90%, transparent);
-    -webkit-mask-composite: source-in; mask-image: linear-gradient(90deg, transparent, #000 10%, #000 90%, transparent), linear-gradient(180deg, transparent, #000 10%, #000 90%, transparent); mask-composite: intersect;
 }
+/* the About stage is drawn live by js/aboutParticles.js (2026-11-15): a transparent canvas, no frame */
+.about-particles-canvas { position: absolute; inset: 0; width: 100%; height: 100%; display: block; }
 .about-page .about-scrim, .about-overlay .about-scrim { display: none; }
 .about-overlay .about-content, .about-page .about-content {
     align-items: flex-start; justify-content: safe center; gap: 0;
@@ -1423,8 +1421,7 @@ html.deck-held body { pointer-events: none; touch-action: none; }
    Type after Sasha's reference: one huge word, a large sentence in grey with only the key words in white, a small
    two-column list with hairlines. A proportional grid: text ~40% from the logo's edge, the galaxy fills the rest to the
    screen's edge, sized to the screen (on wide, short screens it may run past top and bottom; only faint stars are lost).
-   The film is HyperFrames (personal-os/work/portfolio-intro-order): part a plays once, part b loops from a's last
-   frame (script at the end of the page). Its square edges fade into the page. */
+   The galaxy is drawn live by js/introGalaxy.js (source composition: personal-os/work/portfolio-intro-order). */
 .slide.slide--intro { display: block; padding: 0; text-align: left; }
 .intro { position: relative; height: 100%; margin-left: 8vw; display: grid; grid-template-columns: minmax(0, 40%) minmax(0, 1fr);
     column-gap: 1.5vw; align-items: center; }
@@ -1441,23 +1438,12 @@ html.deck-held body { pointer-events: none; touch-action: none; }
     color: rgba(255, 255, 255, 0.5); font-size: 0.76em; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; }
 .intro-expertise ul { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: 1fr 1fr; column-gap: 1.8em; }
 .intro-expertise li { padding: 0.75em 0; border-bottom: 1px solid rgba(255, 255, 255, 0.1); color: rgba(255, 255, 255, 0.86); font-size: 1em; }
-.intro-art { position: relative; z-index: 1; justify-self: center; align-self: center; width: min(100%, 125vh); aspect-ratio: 1; }
-.intro-film { position: absolute; inset: 0; display: block; width: 100%; height: 100%; object-fit: cover; mix-blend-mode: lighten;   /* the page's grain shows through the film's black */
-    /* a soft square edge, so no circle shows */
-    -webkit-mask-image: linear-gradient(90deg, transparent, #000 14%, #000 86%, transparent), linear-gradient(180deg, transparent, #000 12%, #000 88%, transparent);
-    -webkit-mask-composite: source-in; mask-image: linear-gradient(90deg, transparent, #000 14%, #000 86%, transparent), linear-gradient(180deg, transparent, #000 12%, #000 88%, transparent); mask-composite: intersect; }
-/* the quote: small, top right, aligned with the menu */
-.intro-quote { position: absolute; z-index: 2; top: clamp(96px, 13vh, 150px); right: 8vw; margin: 0; max-width: 26ch; text-align: right; animation: intro-in .9s ease-out .2s both; }
-.intro-quote blockquote { margin: 0; color: rgba(255, 255, 255, 0.82); font-size: clamp(0.95rem, min(1vw, 2vh), 1.3rem); font-weight: 500; line-height: 1.45; letter-spacing: -0.005em; }
-.intro-quote figcaption { margin-top: 10px; color: rgba(255, 255, 255, 0.45); font-size: 0.68rem; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; }
-@media (prefers-reduced-motion: reduce) { .intro-quote { animation: none; } }
+.intro-art { position: relative; justify-self: center; align-self: center; width: min(100%, 125vh); aspect-ratio: 1; }   /* no z-index: it would isolate the film from the page and its blend would show as a dark square */
+.intro-gl, .intro-svg { position: absolute; inset: 0; width: 100%; height: 100%; display: block; overflow: visible; }   /* transparent: the site's particles show through */
+.intro-fib { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 15px; letter-spacing: 0.04em; fill: rgba(255, 255, 255, 0.55); }
 /* the header's "Selected projects" shows once the projects are in view */
 #logo .logo-sub { transition: opacity .5s ease; }
 html.on-intro #logo .logo-sub { opacity: 0; }
-/* part b sits on part a and shows once it is playing; they share a frame at the hand-off */
-.intro-film--b { opacity: 0; }
-.intro-art.is-living .intro-film--b { opacity: 1; }
-.intro-art.is-living .intro-film--a { opacity: 0; }
 /* Phones: the words, then the galaxy, then the list, then the quote */
 @media (max-width: 900px) {
     .slide.slide--intro { height: auto; min-height: 100svh; overflow: visible; padding: clamp(104px, 15svh, 140px) 0 48px; }
@@ -1466,5 +1452,4 @@ html.on-intro #logo .logo-sub { opacity: 0; }
     .intro-title { order: 1; } .intro-lede { order: 2; margin-top: 18px; font-size: 1.5rem; }
     .intro-art { order: 3; width: calc(100% + 3rem); margin: 4px -1.5rem; }
     .intro-expertise { order: 4; width: 100%; font-size: 0.92rem; }
-    .intro-quote { order: 5; position: relative; top: auto; right: auto; max-width: none; text-align: left; margin-top: 28px; }
 }

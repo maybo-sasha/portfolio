@@ -15,10 +15,6 @@ export const runtimeAssets = [
     'assets/streams',
     'assets/optigenie',
     'assets/ai-champion',
-    // the intro film's phone encode is a data-m attribute, which Vite does not follow
-    'assets/intro',
-    // the About sphere's phone encode is a data-m attribute
-    'assets/about',
     // compose: the font and previews only; the v3 report bundles are shown as still images
     'assets/compose/caveat-700.ttf',
     'assets/compose/caveat-OFL.txt',
