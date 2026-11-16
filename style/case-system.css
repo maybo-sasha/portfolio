@@ -220,6 +220,24 @@ main#case#case#case#case .og-main .og-dcard__fig video { box-shadow: 0 0 0 9px #
 /* peer cards: visuals share one height, so titles line up across the row */
 main#case#case#case#case .og-main .story-phases .phase-note { height: clamp(150px, 13vw, 230px); display: flex; align-items: flex-start; }
 main#case#case#case#case .og-main .story-phases .phase-note > svg { max-height: 100%; width: auto; max-width: 100%; }
+
+/* diagram panels: no tinted card behind a diagram; it sits on the paper like a plate */
+main#case#case#case#case .og-main .story-block__art, main#case#case#case#case .og-main .story-sketch { background: transparent !important; border: 0 !important; box-shadow: none !important; padding: 0 !important; }
+main#case#case#case#case .og-main .story-block__art svg { width: 100%; height: auto; display: block; }
+
+/* peer rows, v2: equal columns (gap, not uneven padding); the divider sits in the middle of the gap */
+main#case#case#case#case .og-main .story-phases, main#case#case#case#case .og-main .wireframe-grid, main#case#case#case#case .og-main .og-lessons { column-gap: clamp(2.5rem, 4.4vw, 4.5rem) !important; }
+main#case#case#case#case .og-main .story-phases > *, main#case#case#case#case .og-main .wireframe-grid > *, main#case#case#case#case .og-main .og-lessons > * { position: relative; padding-left: 0 !important; padding-right: 0 !important; border-left: 0 !important; }
+main#case#case#case#case .og-main .story-phases > * + *::before, main#case#case#case#case .og-main .wireframe-grid > * + *::before, main#case#case#case#case .og-main .og-lessons > * + *::before { content: ""; position: absolute; top: 0; bottom: 0; left: calc(-1 * clamp(2.5rem, 4.4vw, 4.5rem) / 2); width: 1px; background: var(--line); }
+/* wireframes: notes and figures on shared rows, so every figure starts on the same line */
+main#case#case#case#case .og-main .wireframe-grid { grid-template-rows: auto auto; align-items: start !important; }
+main#case#case#case#case .og-main .wireframe-grid > .wireframe-study { display: grid !important; grid-row: span 2; grid-template-rows: subgrid; row-gap: var(--sp-m); }
+main#case#case#case#case .og-main .wireframe-grid .wireframe-figure { margin: 0 !important; align-self: start !important; }
+main#case#case#case#case .og-main .wireframe-grid .wireframe-figure img { width: 100%; height: auto; aspect-ratio: 16 / 11; object-fit: cover; display: block; }
+/* side close-ups: every part spans the column; text above, visual below */
+main#case#case#case#case .og-main .ads-closeup--side > * { grid-column: 1 / -1 !important; grid-row: auto !important; width: 100% !important; max-width: none !important; }
+main#case#case#case#case .og-main .ads-closeup--side > .story-block__head { max-width: 68ch !important; }
+main#case#case#case#case .og-main .ads-closeup--side .story-block__head h2, main#case#case#case#case .og-main .ads-closeup--side .story-block__head h3 { max-width: none !important; }
 /* AI skills page (ac-* structure): same frame, its own components */
 main#case#case#case#case .og-main > .ac-sec, main#case#case#case#case .og-main > .cvex { position: relative; background: none !important; padding: var(--sp-xxl) 0 !important; }
 main#case#case#case#case .og-main > .ac-sec { counter-increment: ogch; }

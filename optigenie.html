@@ -1552,6 +1552,24 @@ main#optigenie#optigenie#optigenie#optigenie .og-main .og-dcard__fig video { box
 /* peer cards: visuals share one height, so titles line up across the row */
 main#optigenie#optigenie#optigenie#optigenie .og-main .story-phases .phase-note { height: clamp(150px, 13vw, 230px); display: flex; align-items: flex-start; }
 main#optigenie#optigenie#optigenie#optigenie .og-main .story-phases .phase-note > svg { max-height: 100%; width: auto; max-width: 100%; }
+
+/* diagram panels: no tinted card behind a diagram; it sits on the paper like a plate */
+main#optigenie#optigenie#optigenie#optigenie .og-main .story-block__art, main#optigenie#optigenie#optigenie#optigenie .og-main .story-sketch { background: transparent !important; border: 0 !important; box-shadow: none !important; padding: 0 !important; }
+main#optigenie#optigenie#optigenie#optigenie .og-main .story-block__art svg { width: 100%; height: auto; display: block; }
+
+/* peer rows, v2: equal columns (gap, not uneven padding); the divider sits in the middle of the gap */
+main#optigenie#optigenie#optigenie#optigenie .og-main .story-phases, main#optigenie#optigenie#optigenie#optigenie .og-main .wireframe-grid, main#optigenie#optigenie#optigenie#optigenie .og-main .og-lessons { column-gap: clamp(2.5rem, 4.4vw, 4.5rem) !important; }
+main#optigenie#optigenie#optigenie#optigenie .og-main .story-phases > *, main#optigenie#optigenie#optigenie#optigenie .og-main .wireframe-grid > *, main#optigenie#optigenie#optigenie#optigenie .og-main .og-lessons > * { position: relative; padding-left: 0 !important; padding-right: 0 !important; border-left: 0 !important; }
+main#optigenie#optigenie#optigenie#optigenie .og-main .story-phases > * + *::before, main#optigenie#optigenie#optigenie#optigenie .og-main .wireframe-grid > * + *::before, main#optigenie#optigenie#optigenie#optigenie .og-main .og-lessons > * + *::before { content: ""; position: absolute; top: 0; bottom: 0; left: calc(-1 * clamp(2.5rem, 4.4vw, 4.5rem) / 2); width: 1px; background: var(--line); }
+/* wireframes: notes and figures on shared rows, so every figure starts on the same line */
+main#optigenie#optigenie#optigenie#optigenie .og-main .wireframe-grid { grid-template-rows: auto auto; align-items: start !important; }
+main#optigenie#optigenie#optigenie#optigenie .og-main .wireframe-grid > .wireframe-study { display: grid !important; grid-row: span 2; grid-template-rows: subgrid; row-gap: var(--sp-m); }
+main#optigenie#optigenie#optigenie#optigenie .og-main .wireframe-grid .wireframe-figure { margin: 0 !important; align-self: start !important; }
+main#optigenie#optigenie#optigenie#optigenie .og-main .wireframe-grid .wireframe-figure img { width: 100%; height: auto; aspect-ratio: 16 / 11; object-fit: cover; display: block; }
+/* side close-ups: every part spans the column; text above, visual below */
+main#optigenie#optigenie#optigenie#optigenie .og-main .ads-closeup--side > * { grid-column: 1 / -1 !important; grid-row: auto !important; width: 100% !important; max-width: none !important; }
+main#optigenie#optigenie#optigenie#optigenie .og-main .ads-closeup--side > .story-block__head { max-width: 68ch !important; }
+main#optigenie#optigenie#optigenie#optigenie .og-main .ads-closeup--side .story-block__head h2, main#optigenie#optigenie#optigenie#optigenie .og-main .ads-closeup--side .story-block__head h3 { max-width: none !important; }
 </style>
     <script src="./js/aboutTexture.js"></script>
 <script>/* chapter index: highlight the chapter in view */(function(){try{var links=[].slice.call(document.querySelectorAll('.og-index__list a'));if(!links.length||!('IntersectionObserver' in window))return;var by={};links.forEach(function(a){by[a.dataset.target]=a;});var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){links.forEach(function(a){a.classList.remove('is-active');});var a=by[e.target.id];if(a)a.classList.add('is-active');}});},{rootMargin:'-35% 0px -60% 0px'});Object.keys(by).forEach(function(id){var s=document.getElementById(id);if(s)io.observe(s);});}catch(e){}})();</script>
