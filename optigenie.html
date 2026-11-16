@@ -1483,6 +1483,12 @@ main#optigenie#optigenie#optigenie#optigenie .og-main .media-story + .media-stor
 main#optigenie#optigenie#optigenie#optigenie .og-main .media-story + .case-figure, main#optigenie#optigenie#optigenie#optigenie .og-main .case-figure + .media-story { margin-top: var(--sp-xl) !important; padding-top: var(--sp-xl) !important; border-top: 1px solid var(--line) !important; }
 
 main#optigenie#optigenie#optigenie#optigenie .og-main .media-story-copy p.media-kicker, main#optigenie#optigenie#optigenie#optigenie .og-main .intro-copy p.media-kicker, main#optigenie#optigenie#optigenie#optigenie .og-main p.ads-label, main#optigenie#optigenie#optigenie#optigenie .og-main p.page-chapter, main#optigenie#optigenie#optigenie#optigenie .og-main p.phase { margin: 0 0 var(--sp-s) !important; }
+
+/* Tasks steps: captions left-aligned, separated by vertical hairlines (same as the challenge cards) */
+main#optigenie#optigenie#optigenie#optigenie .og-main .og-flow figcaption { justify-self: stretch !important; max-width: none !important; text-align: left !important; padding: var(--sp-s) 0 0 !important; }
+main#optigenie#optigenie#optigenie#optigenie .og-main .og-flow > figure:nth-of-type(n+2) figcaption { border-left: 1px solid var(--line); padding-left: clamp(1rem, 2vw, 1.75rem) !important; margin-left: calc(-1 * clamp(1rem, 2vw, 1.75rem)) !important; }
+main#optigenie#optigenie#optigenie#optigenie .og-main .og-flow figcaption b { margin: var(--sp-s) 0 var(--sp-xs) !important; }
+main#optigenie#optigenie#optigenie#optigenie .og-main .og-flow figcaption .n { display: inline-grid !important; }
 </style>
     <script src="./js/aboutTexture.js"></script>
 <script>/* chapter index: highlight the chapter in view */(function(){try{var links=[].slice.call(document.querySelectorAll('.og-index__list a'));if(!links.length||!('IntersectionObserver' in window))return;var by={};links.forEach(function(a){by[a.dataset.target]=a;});var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){links.forEach(function(a){a.classList.remove('is-active');});var a=by[e.target.id];if(a)a.classList.add('is-active');}});},{rootMargin:'-35% 0px -60% 0px'});Object.keys(by).forEach(function(id){var s=document.getElementById(id);if(s)io.observe(s);});}catch(e){}})();</script>
