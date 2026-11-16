@@ -262,6 +262,20 @@ body:has(main .og-body) .ads-hero.ads-hero--walk::after, body:has(main .og-body)
 /* overview statement: wider measure; when it stands alone it spans the whole row */
 #case #overview .big { max-width: 22ch !important; }
 #case #overview .big:only-child, #case #overview .big:last-child { grid-column: 1 / -1; max-width: 26ch !important; }
+
+/* one border only: the mat carries the hairline, the image inside has none */
+main#case#case#case#case .og-main .ads-closeup__frame img, main#case#case#case#case .og-main .ads-shot img, main#case#case#case#case .og-main .ads-shot video { outline: 0 !important; border: 0 !important; }
+main#case#case#case#case .og-main .ads-shot { border: 0 !important; }
+
+/* close-up cards already carry their own card border: no mat around them (one border only) */
+main#case#case#case#case .og-main .ads-closeup__shot { background: transparent !important; padding: 0 !important; border: 0 !important; border-radius: 0 !important; }
+main#case#case#case#case .og-main .ads-closeup__frame img { outline: 0 !important; border: 0 !important; border-radius: 12px !important; }
+/* side close-up: title above, notes left, card right */
+main#case#case#case#case .og-main .ads-closeup--side { grid-template-columns: minmax(0, 1fr) minmax(0, 420px) !important; column-gap: clamp(2.5rem, 5vw, 5rem) !important; align-items: start !important; }
+main#case#case#case#case .og-main .ads-closeup--side > .story-block__head { grid-column: 1 / -1 !important; grid-row: 1 !important; }
+main#case#case#case#case .og-main .ads-closeup--side > .ads-closeup__notes { grid-column: 1 !important; grid-row: 2 !important; max-width: none !important; display: block !important; }
+main#case#case#case#case .og-main .ads-closeup--side > .ads-closeup__shot { grid-column: 2 !important; grid-row: 2 !important; width: 100% !important; max-width: 420px !important; justify-self: end !important; }
+@media (max-width: 900px) { main#case#case#case#case .og-main .ads-closeup--side { grid-template-columns: minmax(0, 1fr) !important; } main#case#case#case#case .og-main .ads-closeup--side > * { grid-column: 1 !important; grid-row: auto !important; } }
 /* AI skills page (ac-* structure): same frame, its own components */
 main#case#case#case#case .og-main > .ac-sec, main#case#case#case#case .og-main > .cvex { position: relative; background: none !important; padding: var(--sp-xxl) 0 !important; }
 main#case#case#case#case .og-main > .ac-sec { counter-increment: ogch; }

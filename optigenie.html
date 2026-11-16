@@ -1594,6 +1594,20 @@ body:has(main .og-body) .ads-hero.ads-hero--walk::after, body:has(main .og-body)
 /* overview statement: wider measure; when it stands alone it spans the whole row */
 #optigenie #overview .big { max-width: 22ch !important; }
 #optigenie #overview .big:only-child, #optigenie #overview .big:last-child { grid-column: 1 / -1; max-width: 26ch !important; }
+
+/* one border only: the mat carries the hairline, the image inside has none */
+main#optigenie#optigenie#optigenie#optigenie .og-main .ads-closeup__frame img, main#optigenie#optigenie#optigenie#optigenie .og-main .ads-shot img, main#optigenie#optigenie#optigenie#optigenie .og-main .ads-shot video { outline: 0 !important; border: 0 !important; }
+main#optigenie#optigenie#optigenie#optigenie .og-main .ads-shot { border: 0 !important; }
+
+/* close-up cards already carry their own card border: no mat around them (one border only) */
+main#optigenie#optigenie#optigenie#optigenie .og-main .ads-closeup__shot { background: transparent !important; padding: 0 !important; border: 0 !important; border-radius: 0 !important; }
+main#optigenie#optigenie#optigenie#optigenie .og-main .ads-closeup__frame img { outline: 0 !important; border: 0 !important; border-radius: 12px !important; }
+/* side close-up: title above, notes left, card right */
+main#optigenie#optigenie#optigenie#optigenie .og-main .ads-closeup--side { grid-template-columns: minmax(0, 1fr) minmax(0, 420px) !important; column-gap: clamp(2.5rem, 5vw, 5rem) !important; align-items: start !important; }
+main#optigenie#optigenie#optigenie#optigenie .og-main .ads-closeup--side > .story-block__head { grid-column: 1 / -1 !important; grid-row: 1 !important; }
+main#optigenie#optigenie#optigenie#optigenie .og-main .ads-closeup--side > .ads-closeup__notes { grid-column: 1 !important; grid-row: 2 !important; max-width: none !important; display: block !important; }
+main#optigenie#optigenie#optigenie#optigenie .og-main .ads-closeup--side > .ads-closeup__shot { grid-column: 2 !important; grid-row: 2 !important; width: 100% !important; max-width: 420px !important; justify-self: end !important; }
+@media (max-width: 900px) { main#optigenie#optigenie#optigenie#optigenie .og-main .ads-closeup--side { grid-template-columns: minmax(0, 1fr) !important; } main#optigenie#optigenie#optigenie#optigenie .og-main .ads-closeup--side > * { grid-column: 1 !important; grid-row: auto !important; } }
 </style>
     <script src="./js/aboutTexture.js"></script>
 <script>/* chapter index: highlight the chapter in view */(function(){try{var links=[].slice.call(document.querySelectorAll('.og-index__list a'));if(!links.length||!('IntersectionObserver' in window))return;var by={};links.forEach(function(a){by[a.dataset.target]=a;});var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){links.forEach(function(a){a.classList.remove('is-active');});var a=by[e.target.id];if(a)a.classList.add('is-active');}});},{rootMargin:'-35% 0px -60% 0px'});Object.keys(by).forEach(function(id){var s=document.getElementById(id);if(s)io.observe(s);});}catch(e){}})();</script>
