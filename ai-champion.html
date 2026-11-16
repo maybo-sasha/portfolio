@@ -1324,6 +1324,7 @@
 #p-dsui .ch-open { grid-template-columns: minmax(0, 1fr); }
 #p-dsui .ch-text { max-width: 72ch; }
 </style>
+    <link rel="stylesheet" href="./style/case-system.css">
 </head>
 <body>
 
@@ -1377,7 +1378,7 @@
         </div>
     </nav>
 
-    <main class="ac">
+    <main class="ac" id="case">
 
         <!-- HERO -->
         <section class="ac-hero">
@@ -1411,7 +1412,7 @@
         </section>
 
 
-        <section class="ac-sec ac-ch" id="ch-compose" data-rail="compose-optimove-screens"><div class="ac-wrap">
+        <div class="og-body"><aside class="og-index" aria-label="Chapters"><ol class="og-index__list"><li><a href="#ch-compose" data-target="ch-compose"><i class="og-index__n">01</i>compose-optimove-screens</a></li><li><a href="#ch-icon" data-target="ch-icon"><i class="og-index__n">02</i>generate-misc-icon</a></li><li><a href="#ch-ux" data-target="ch-ux"><i class="og-index__n">03</i>ux-test-analysis</a></li></ol></aside><div class="og-main" style="--cs-total:'03'"><section class="ac-sec ac-ch" id="ch-compose" data-rail="compose-optimove-screens"><div class="ac-wrap">
             <article class="work-panel is-on" id="p-dsui">
                 <div class="ch-open">
                     <div class="ch-text"><p class="ch-num fade-up">01</p><p class="ac-label fade-up">Team skill</p><h2 class="skill-name fade-up"><span class="dot"></span>compose-optimove-screens</h2><p class="ac-body fade-up" style="margin-top:1.2rem">I built this skill to turn product briefs into working Optimove screens, grounded in our design system’s components, tokens and patterns. It checks both the building blocks and the experience: hierarchy, readability, interactions and states. When something is missing, it flags the gap. This gives the team tangible ideas to explore and test, with a clear basis for design review.</p>
@@ -1698,7 +1699,7 @@
           </figure>
         </section>
       </article>
-    </div></section>
+    </div></section></div></div>
         <nav class="ch-rail sr" aria-label="Chapters"><a class="sr-mark sr-major sr-quiet" href="#ch-compose"><i></i><span>compose-optimove-screens</span></a><a class="sr-mark sr-major sr-quiet" href="#ch-icon"><i></i><span>generate-misc-icon</span></a><a class="sr-mark sr-major sr-quiet" href="#ch-ux"><i></i><span>ux-test-analysis</span></a></nav>
 
 
@@ -2258,5 +2259,7 @@ body::after { z-index: -1 !important; }
 </script>
 
     <script src="./js/aboutTexture.js"></script>
+    <script src="./js/scrollProgress.js"></script>
+    <script src="./js/caseIndex.js"></script>
 </body>
 </html>

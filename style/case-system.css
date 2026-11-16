@@ -1,0 +1,186 @@
+/* Case-study system, shared by every project page. Generated from optigenie.html (apply_system.py); edit there, then regenerate. */
+/* Body system (Sasha 11-16, after jithinrp.com/slot-booking): sticky index left, one reading column right.
+   Chapters are separated by a hairline and equal padding; one title size; text and media share one left edge. */
+#case .og-body { display: grid; grid-template-columns: 220px minmax(0, 1fr); column-gap: clamp(3rem, 6vw, 7rem); padding: 0 6vw; max-width: 1680px; margin: 0 auto; border-top: 1px solid var(--line); }
+#case .og-index { position: sticky; top: 96px; align-self: start; padding-block: 96px; }
+#case .og-index__list { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 18px; font-size: 1rem; line-height: 1.25; }
+#case .og-index__list a { color: var(--muted); text-decoration: none; transition: color .25s ease; }
+#case .og-index__list a:hover { color: var(--ink); }
+#case .og-index__list a.is-active { color: var(--ink); font-weight: 600; }
+#case .og-index__list a.is-active::before { content: ""; display: inline-block; width: 14px; height: 2px; margin: 0 10px 4px 0; background: var(--violet); vertical-align: middle; }
+#case .og-main { min-width: 0; }
+#case .og-main > .ads-sec { background: none !important; padding: 96px 0 !important; counter-increment: none; }
+#case .og-main > .ads-sec + .ads-sec { border-top: 1px solid var(--line); }
+#case .og-main .ads-wrap { padding: 0 !important; max-width: none !important; margin: 0 !important; }
+#case .og-main .ads-label::before { content: none !important; display: none !important; }
+#case .og-main .ads-label, #case .og-main .page-chapter { display: block; margin: 0 0 1rem; color: var(--violet); font-size: .8rem; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; text-align: left; }
+#case .og-main .ads-h2 { font-size: clamp(1.75rem, 2.5vw, 2.5rem) !important; line-height: 1.15 !important; max-width: 24ch !important; margin: 0 0 1.5rem !important; }
+/* every opening and story row: one column, copy first, media under it */
+#case .og-main .story-opening,
+#case .og-main .ads-sec:not(#themes):not(#motion) .media-story,
+#case .og-main #motion .story-opening--sketch { display: grid !important; grid-template-columns: minmax(0, 1fr) !important; gap: 2rem !important; max-width: none !important; margin: 0 !important; padding: 0 !important; border: 0 !important; text-align: left; justify-items: stretch; }
+#case .og-main .ads-sec:not(#themes):not(#motion) .media-story + .media-story { margin-top: 4rem !important; padding-top: 4rem !important; border-top: 1px solid var(--line) !important; }
+#case .og-main .ads-head, #case .og-main .intro-copy, #case .og-main .media-story-copy { max-width: 68ch !important; margin: 0 !important; text-align: left; }
+#case .og-main .intro-copy { padding: 0 !important; }
+#case .og-main .media-story-copy h2, #case .og-main .media-story-copy h3 { max-width: none !important; }
+#case .og-main .ads-sec:not(#themes):not(#motion) .media-story > .case-figure,
+#case .og-main .story-sketch { justify-self: start !important; width: 100% !important; max-width: min(100%, 900px) !important; margin: 0 !important; }
+#case .og-main .story-sketch svg { width: 100%; height: auto; }
+#case .og-main .og-decisions, #case .og-main .og-lessons, #case .og-main .story-phases { margin-top: 3.5rem; }
+/* each decision: copy left, its phone right, inside the column */
+#case .og-main .og-dcard { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 6fr); column-gap: clamp(2rem, 4vw, 4rem); align-items: center; padding-top: 3rem; border-top: 1px solid var(--line); }
+#case .og-main .og-dcard__fig { justify-self: stretch; max-width: none; aspect-ratio: 4 / 3; }
+#case .og-main .og-decisions .og-dcard__fig video { width: auto !important; height: 90% !important; }
+/* the floating rail is replaced by the index */
+@media (min-width: 1001px) { .ads-rail { display: none !important; } }
+@media (max-width: 1000px) {
+  #case .og-body { grid-template-columns: minmax(0, 1fr); padding: 0 6vw; }
+  #case .og-index { display: none; }
+  #case .og-main > .ads-sec { padding: 64px 0 !important; }
+  #case .og-main .og-dcard { grid-template-columns: minmax(0, 1fr); row-gap: 1.5rem; }
+}
+
+#case #overview .ads-wrap { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); column-gap: clamp(3rem, 6vw, 7rem); align-items: center; text-align: left; max-width: 1680px; padding: 0 6vw; }
+#case #overview .big { margin: 0; text-align: left; max-width: 14ch; }
+#case #overview .sub { margin: 0; text-align: left; max-width: 52ch; padding-left: clamp(2rem, 4vw, 4rem); border-left: 1px solid var(--line); }
+@media (max-width: 1000px) { #case #overview .ads-wrap { grid-template-columns: minmax(0, 1fr); row-gap: 1.5rem; } #case #overview .sub { padding-left: 0; border-left: 0; } }
+
+/* Sasha 11-16 round 2: index follows the scroll (main clipped, not a scroll box), text full column width,
+   media centred under its text, card text clear of the dividers, flowchart neutral. */
+#case { overflow: clip !important; }
+#case .og-main .ads-head, #case .og-main .intro-copy, #case .og-main .media-story-copy,
+#case .og-main .ads-body, #case .og-main .media-story-copy p, #case .og-main .intro-copy p { max-width: none !important; }
+#case .og-main .media-story, #case .og-main .media-story--lead { display: grid !important; grid-template-columns: minmax(0, 1fr) !important; gap: 2rem !important; justify-items: stretch !important; }
+#case .og-main .media-story > .case-figure, #case .og-main .story-sketch, #case .og-main .media-story > figure { justify-self: center !important; margin-inline: auto !important; }
+#case .og-main .story-sketch { max-width: 1100px !important; }
+#case .og-main .og-navchart { display: block; width: 100%; height: auto; }
+#case .og-main .og-dcard { grid-template-columns: minmax(0, 1fr) !important; row-gap: 2rem; justify-items: center; }
+#case .og-main .og-dcard__copy { justify-self: stretch; max-width: none; }
+#case .og-main .og-dcard__fig { width: min(100%, 720px); aspect-ratio: 4 / 3; }
+#case .og-main .story-phases > article, #case .og-main .og-lessons > article { padding: 2.5rem clamp(1.25rem, 2.2vw, 2.25rem) !important; min-width: 0; }
+#case .og-main .story-phases > article:first-child, #case .og-main .og-lessons > article:first-child { padding-left: 0 !important; }
+#case .og-main .story-phases h3, #case .og-main .og-lessons h3 { font-size: clamp(1.1rem, 1.4vw, 1.35rem) !important; overflow-wrap: anywhere; hyphens: auto; }
+#case .og-main .story-phases p { max-width: none !important; }
+
+/* index and overview share the BACK button's left edge (6vw) at every width */
+#case .og-body, #case #overview .ads-wrap { max-width: none !important; margin: 0 !important; padding-left: 6vw !important; padding-right: 6vw !important; }
+
+/* media centred in the column; more room on the right for the progress meter */
+#case .og-body { padding-right: clamp(6rem, 10vw, 12rem) !important; }
+#case .og-main .og-dcard { justify-items: center !important; }
+#case .og-main .og-dcard__copy { justify-self: stretch !important; width: 100%; }
+#case .og-main .og-dcard__fig, #case .og-main figure.case-figure, #case .og-main .story-sketch,
+#case .og-main .media-story > *:not(.media-story-copy) { justify-self: center !important; margin-left: auto !important; margin-right: auto !important; }
+#case .og-main .story-opening > .story-sketch { width: 100% !important; }
+#case .og-main .story-phases, #case .og-main .og-lessons { border-bottom: 0 !important; }
+#case .og-main .story-phases > article, #case .og-main .og-lessons > article { border-bottom: 0 !important; }
+
+/* index current state: the tick draws in and the label slides over, on the M3 standard curve; no weight jump */
+#case .og-index__list a { display: inline-flex; align-items: center; font-weight: 500; transition: color .35s cubic-bezier(.2,0,0,1); }
+#case .og-index__list a::before, #case .og-index__list a.is-active::before { content: ""; display: inline-block; flex: none; width: 0; height: 2px; margin: 0; background: var(--violet); vertical-align: middle; transition: width .45s cubic-bezier(.2,0,0,1), margin-right .45s cubic-bezier(.2,0,0,1); }
+#case .og-index__list a.is-active { font-weight: 500; color: var(--ink); }
+#case .og-index__list a.is-active::before { width: 16px; margin: 0 10px 0 0; }
+@media (prefers-reduced-motion: reduce) { #case .og-index__list a, #case .og-index__list a::before { transition: none; } }
+
+/* Spacing scale (Sasha 11-16, "too close"): 8 / 16 / 24 / 56 / 96 / 120.
+   label→title 16 · title→text 24 · paragraph→paragraph 16 · text→media 56 · row→row 96 (hairline in the middle) · chapter padding 120 */
+#case .og-main { --sp-xs: .5rem; --sp-s: 1rem; --sp-m: 1.5rem; --sp-l: 3.5rem; --sp-xl: 6rem; --sp-xxl: 7.5rem; }
+#case .og-main > .ads-sec { padding: var(--sp-xxl) 0 !important; }
+#case .og-main .ads-label, #case .og-main .page-chapter, #case .og-main .media-kicker, #case .og-main .phase { margin: 0 0 var(--sp-s) !important; }
+#case .og-main .ads-h2 { margin: 0 0 var(--sp-m) !important; }
+#case .og-main h3 { margin-top: 0 !important; margin-bottom: var(--sp-s) !important; }
+#case .og-main p + p { margin-top: var(--sp-s) !important; }
+#case .og-main .story-opening, #case .og-main .media-story, #case .og-main .media-story--lead { row-gap: var(--sp-l) !important; }
+#case .og-main .story-opening .ads-head { margin-bottom: 0 !important; }
+#case .og-main .media-story-copy > div + div { margin-top: 0 !important; }
+#case .og-main .story-opening + .story-sketch, #case .og-main .story-opening + .case-figure,
+#case .og-main .story-opening + .media-story, #case .og-main .story-opening + figure { margin-top: var(--sp-l) !important; padding-top: 0 !important; border-top: 0 !important; }
+#case .og-main .media-story + .media-story, #case .og-main .media-story + .case-figure, #case .og-main .case-figure + .case-figure, #case .og-main .case-figure + .media-story,
+#case .og-main .og-dcard + .og-dcard, #case .og-main .og-decisions + .media-story { margin-top: var(--sp-xl) !important; padding-top: var(--sp-xl) !important; border-top: 1px solid var(--line) !important; }
+#case .og-main .og-dcard { padding-top: 0 !important; border-top: 0; row-gap: var(--sp-l) !important; }
+#case .og-main .og-decisions { margin-top: var(--sp-xl) !important; padding-top: var(--sp-xl) !important; border-top: 1px solid var(--line); gap: 0 !important; }
+#case .og-main .og-instead { margin-top: var(--sp-m) !important; padding-top: var(--sp-s) !important; }
+#case .og-main .og-lessons, #case .og-main .story-phases { margin-top: var(--sp-l) !important; }
+#case .og-main .og-vs, #case .og-main figcaption { margin-top: var(--sp-s) !important; }
+
+/* text→media 56px everywhere: beat the older id-scoped rules */
+main#case#case#case#case .og-main .media-story, main#case#case#case#case .og-main .media-story--lead, main#case#case#case#case .og-main .story-opening { row-gap: var(--sp-l) !important; gap: var(--sp-l) !important; }
+main#case#case#case#case .og-main .story-opening + .story-phases, main#case#case#case#case .og-main .story-opening ~ .story-phases { margin-top: var(--sp-l) !important; }
+main#case#case#case#case .og-main .story-phases > article > figure, main#case#case#case#case .og-main .story-phases > article > .phase-note { margin-top: 0 !important; }
+
+/* Sasha 11-16: text not stretched. Reading lines ~72ch; the column keeps more room on the right. Media can go wider than text. */
+main#case#case#case#case .og-body { padding-right: clamp(8rem, 16vw, 20rem) !important; }
+main#case#case#case#case .og-main .ads-head, main#case#case#case#case .og-main .intro-copy,
+main#case#case#case#case .og-main .media-story-copy, main#case#case#case#case .og-main .og-dcard__copy,
+main#case#case#case#case .og-main .ads-body, main#case#case#case#case .og-main .media-story-copy p,
+main#case#case#case#case .og-main .intro-copy p, main#case#case#case#case .og-main .og-close { max-width: 72ch !important; }
+
+main#case#case#case#case .og-main .ads-body, main#case#case#case#case .og-main .intro-copy p, main#case#case#case#case .og-main .media-story-copy p { margin-bottom: 0 !important; }
+main#case#case#case#case .og-main .intro-copy > p + p, main#case#case#case#case .og-main .ads-head > p + p, main#case#case#case#case .og-main .media-story-copy p + p { margin-top: var(--sp-s) !important; }
+main#case#case#case#case .og-main #tasks .story-opening + .og-flow { margin-top: var(--sp-l) !important; }
+
+/* decision videos: bigger, in a phone frame (bezel follows the screen's corners); no drop shadow */
+main#case#case#case#case .og-main .og-dcard__fig { width: min(100%, 880px) !important; aspect-ratio: 1 / 1 !important; }
+main#case#case#case#case .og-main .og-decisions .og-dcard__fig video { height: 84% !important; width: auto !important; border-radius: 11.5% / 5.3% !important; box-shadow: 0 0 0 9px #16151f, 0 0 0 10px #2c2a3a !important; }
+
+/* dividers: every horizontal rule spans the full content column (reference rule); text inside stays at 72ch */
+main#case#case#case#case .og-main .og-dcard__copy, main#case#case#case#case .og-main .media-story-copy, main#case#case#case#case .og-main .ads-head, main#case#case#case#case .og-main .intro-copy { max-width: none !important; width: 100%; }
+main#case#case#case#case .og-main .og-dcard__copy > p:not(.og-instead), main#case#case#case#case .og-main .media-story-copy p, main#case#case#case#case .og-main .intro-copy p, main#case#case#case#case .og-main .ads-head p { max-width: 72ch !important; }
+main#case#case#case#case .og-main .og-instead { max-width: none !important; width: 100%; border-top: 1px solid var(--line) !important; }
+main#case#case#case#case .og-main .og-dcard { justify-items: stretch !important; }
+main#case#case#case#case .og-main .og-dcard__fig { justify-self: center !important; }
+main#case#case#case#case .og-main hr, main#case#case#case#case .og-main [class*="divider"] { width: 100% !important; margin-inline: 0 !important; }
+/* title → intro text 24px in the stacked openings */
+main#case#case#case#case .og-main .story-opening--stack { row-gap: var(--sp-m) !important; gap: var(--sp-m) !important; }
+
+/* ===== Spacing layer v2 (Sasha 11-16, audited by script): the only vertical rhythm in the reading column. =====
+   label→title 16 · title→text 24 · text→text 16 · text→media 56 · block→block across a hairline 96 + 96 */
+main#case#case#case#case .og-main p, main#case#case#case#case .og-main h2, main#case#case#case#case .og-main h3, main#case#case#case#case .og-main .ads-body { margin-top: 0 !important; margin-bottom: 0 !important; }
+main#case#case#case#case .og-main p + p { margin-top: var(--sp-s) !important; }
+main#case#case#case#case .og-main .ads-label, main#case#case#case#case .og-main .page-chapter, main#case#case#case#case .og-main .media-kicker, main#case#case#case#case .og-main .phase { display: block; margin: 0 0 var(--sp-s) !important; }
+main#case#case#case#case .og-main h2, main#case#case#case#case .og-main h3 { margin-bottom: var(--sp-m) !important; }
+main#case#case#case#case .og-main .ads-head > .ads-h2:last-child, main#case#case#case#case .og-main .media-story-copy > div > h2:last-child, main#case#case#case#case .og-main .media-story-copy > div > h3:last-child { margin-bottom: 0 !important; }
+main#case#case#case#case .og-main .story-opening--stack { gap: var(--sp-m) !important; row-gap: var(--sp-m) !important; }
+main#case#case#case#case .og-main .ads-head { display: block !important; }
+main#case#case#case#case .og-main .media-story-copy { display: flex !important; flex-direction: column; gap: var(--sp-m) !important; }
+main#case#case#case#case .og-main .media-story-copy > div { margin: 0 !important; }
+main#case#case#case#case .og-main .og-dcard__copy .og-instead { margin-top: var(--sp-m) !important; padding-top: var(--sp-s) !important; }
+/* block → block: a hairline with 96 on each side */
+main#case#case#case#case .og-main .og-decisions + .media-story, main#case#case#case#case .og-main .og-decisions ~ .media-story,
+main#case#case#case#case .og-main .media-story + .media-story, main#case#case#case#case .og-main .og-dcard + .og-dcard,
+main#case#case#case#case .og-main .media-story + .case-figure, main#case#case#case#case .og-main .case-figure + .media-story { margin-top: var(--sp-xl) !important; padding-top: var(--sp-xl) !important; border-top: 1px solid var(--line) !important; }
+
+main#case#case#case#case .og-main .media-story-copy p.media-kicker, main#case#case#case#case .og-main .intro-copy p.media-kicker, main#case#case#case#case .og-main p.ads-label, main#case#case#case#case .og-main p.page-chapter, main#case#case#case#case .og-main p.phase { margin: 0 0 var(--sp-s) !important; }
+
+/* Tasks steps: captions left-aligned, separated by vertical hairlines (same as the challenge cards) */
+main#case#case#case#case .og-main .og-flow figcaption { justify-self: stretch !important; max-width: none !important; text-align: left !important; padding: var(--sp-s) 0 0 !important; }
+main#case#case#case#case .og-main .og-flow > figure:nth-of-type(n+2) figcaption { border-left: 1px solid var(--line); padding-left: clamp(1rem, 2vw, 1.75rem) !important; margin-left: calc(-1 * clamp(1rem, 2vw, 1.75rem)) !important; }
+main#case#case#case#case .og-main .og-flow figcaption b { margin: var(--sp-s) 0 var(--sp-xs) !important; }
+main#case#case#case#case .og-main .og-flow figcaption .n { display: inline-grid !important; }
+
+/* ===== Grid language from the home page (Sasha 11-16): hairlines, mono coordinates, small caps. Same proportions at every width. ===== */
+main#case#case#case#case .og-body { grid-template-columns: clamp(200px, 15vw, 320px) minmax(0, 1fr) !important; column-gap: 0 !important; padding-left: 6vw !important; padding-right: 6vw !important; }
+main#case#case#case#case .og-main { border-left: 1px solid var(--line); padding-left: clamp(2.5rem, 5vw, 6rem); }
+main#case#case#case#case .og-main > .ads-sec { position: relative; counter-increment: ogch; }
+main#case#case#case#case .og-main > .ads-sec::before { content: counter(ogch, decimal-leading-zero) " / " var(--cs-total, ""); position: absolute; top: 2.25rem; right: 0; font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 10px; letter-spacing: .08em; color: var(--muted); opacity: .7; }
+main#case#case#case#case .og-main { counter-reset: ogch; }
+main#case#case#case#case .og-index__list a { gap: 0; }
+main#case#case#case#case .og-index__n { font-style: normal; font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 10px; letter-spacing: .08em; color: var(--muted); opacity: .7; width: 2.4em; flex: none; }
+/* text: one measure that grows with the screen, so big screens keep the same proportions */
+main#case#case#case#case .og-main p, main#case#case#case#case .og-main .ads-body { font-size: clamp(1rem, .55rem + .5vw, 1.3rem) !important; }
+main#case#case#case#case .og-main .og-dcard__copy > p:not(.og-instead), main#case#case#case#case .og-main .media-story-copy p, main#case#case#case#case .og-main .intro-copy p, main#case#case#case#case .og-main .ads-head p { max-width: 68ch !important; }
+main#case#case#case#case .og-main .og-lessons p, main#case#case#case#case .og-main .story-phases p, main#case#case#case#case .og-main .og-flow figcaption span { font-size: clamp(.95rem, .5rem + .45vw, 1.2rem) !important; max-width: none !important; }
+main#case#case#case#case .og-main .og-dcard__fig { width: min(100%, 64vw, 1100px) !important; }
+
+main#case#case#case#case .og-main p.ads-label, main#case#case#case#case .og-main p.page-chapter, main#case#case#case#case .og-main p.media-kicker, main#case#case#case#case .og-main .phase { font-size: .8rem !important; }
+main#case#case#case#case .og-main .og-instead { font-size: clamp(.9rem, .5rem + .4vw, 1.1rem) !important; }
+
+/* AI skills page (ac-* structure): same frame, its own components */
+main#case#case#case#case .og-main > .ac-sec, main#case#case#case#case .og-main > .cvex { position: relative; background: none !important; padding: var(--sp-xxl) 0 !important; }
+main#case#case#case#case .og-main > .ac-sec { counter-increment: ogch; }
+main#case#case#case#case .og-main > .ac-sec + *, main#case#case#case#case .og-main > .cvex + .ac-sec { border-top: 1px solid var(--line); }
+main#case#case#case#case .og-main > .ac-sec::before { content: counter(ogch, decimal-leading-zero) " / " var(--cs-total, ""); position: absolute; top: 2.25rem; right: 0; font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 10px; letter-spacing: .08em; color: var(--muted); opacity: .7; }
+main#case#case#case#case .og-main .ac-wrap { padding: 0 !important; max-width: none !important; margin: 0 !important; }
+main#case#case#case#case .og-main .ch-num { display: none !important; }
+main#case#case#case#case .og-main .ch-open { display: block !important; }
+main#case#case#case#case .og-main .ch-text { max-width: 68ch; }
