@@ -1506,6 +1506,52 @@ main#optigenie#optigenie#optigenie#optigenie .og-main .og-dcard__fig { width: mi
 
 main#optigenie#optigenie#optigenie#optigenie .og-main p.ads-label, main#optigenie#optigenie#optigenie#optigenie .og-main p.page-chapter, main#optigenie#optigenie#optigenie#optigenie .og-main p.media-kicker, main#optigenie#optigenie#optigenie#optigenie .og-main .phase { font-size: .8rem !important; }
 main#optigenie#optigenie#optigenie#optigenie .og-main .og-instead { font-size: clamp(.9rem, .5rem + .4vw, 1.1rem) !important; }
+
+/* ===== Ground and marks (Sasha 11-16: minimal, scientific, like art) =====
+   Paper #fcfaff with a faint film grain; registration crosses where a chapter line meets the column hairline;
+   mono figure numbers under each figure. */
+body:has(main .og-body) { background: #fcfaff !important; }
+main#optigenie#optigenie#optigenie#optigenie, main#optigenie#optigenie#optigenie#optigenie .og-body, main#optigenie#optigenie#optigenie#optigenie .ads-lede, main#optigenie#optigenie#optigenie#optigenie .ads-metabar { background: transparent !important; }
+body:has(main .og-body)::after { content: ""; position: fixed; inset: -50%; z-index: 9990; pointer-events: none; opacity: .055; mix-blend-mode: multiply;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='220' height='220'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 1 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>"); }
+main#optigenie#optigenie#optigenie#optigenie .og-main { --cs-pad: clamp(2.5rem, 5vw, 6rem); padding-left: var(--cs-pad) !important; }
+main#optigenie#optigenie#optigenie#optigenie .og-main > .ads-sec + .ads-sec::after, main#optigenie#optigenie#optigenie#optigenie .og-main > .ac-sec + *::after { content: "+"; position: absolute; top: -.62em; left: calc(-1 * var(--cs-pad) - .3em); font: 300 18px/1 ui-monospace, SFMono-Regular, Menlo, monospace; color: var(--ink); opacity: .55; background: #fcfaff; }
+main#optigenie#optigenie#optigenie#optigenie .og-index { position: sticky; }
+main#optigenie#optigenie#optigenie#optigenie .og-main > .ads-sec, main#optigenie#optigenie#optigenie#optigenie .og-main > .ac-sec { counter-reset: ogfig; }
+main#optigenie#optigenie#optigenie#optigenie .og-main figure.case-figure, main#optigenie#optigenie#optigenie#optigenie .og-main .story-sketch { counter-increment: ogfig; }
+main#optigenie#optigenie#optigenie#optigenie .og-main figure.case-figure::after, main#optigenie#optigenie#optigenie#optigenie .og-main .story-sketch::after { content: "FIG. " counter(ogch, decimal-leading-zero) "." counter(ogfig); display: block; margin-top: .9rem; font: 10px/1 ui-monospace, SFMono-Regular, Menlo, monospace; letter-spacing: .1em; color: var(--muted); opacity: .75; text-align: left; }
+
+/* chapter lines run from the column hairline, so the cross sits on the intersection */
+main#optigenie#optigenie#optigenie#optigenie .og-main > .ads-sec, main#optigenie#optigenie#optigenie#optigenie .og-main > .ac-sec, main#optigenie#optigenie#optigenie#optigenie .og-main > .cvex { margin-left: calc(-1 * var(--cs-pad)) !important; padding-left: var(--cs-pad) !important; }
+main#optigenie#optigenie#optigenie#optigenie .og-main > .ads-sec + .ads-sec::after, main#optigenie#optigenie#optigenie#optigenie .og-main > .ac-sec + *::after { left: -.3em !important; }
+
+/* ===== Shared components across the case studies (Sasha 11-16: spacing, alignment, dividers) ===== */
+/* principle blocks: hairline instead of the violet rule; kicker → title 16, title → text 24 */
+main#optigenie#optigenie#optigenie#optigenie .og-main .princ { border-top: 1px solid var(--line) !important; padding-top: var(--sp-xl) !important; }
+main#optigenie#optigenie#optigenie#optigenie .og-main .princ > .n, main#optigenie#optigenie#optigenie#optigenie .og-main .princ > span:first-child { display: block !important; margin: 0 0 var(--sp-s) !important; }
+main#optigenie#optigenie#optigenie#optigenie .og-main .princ > h3 { margin: 0 0 var(--sp-m) !important; }
+main#optigenie#optigenie#optigenie#optigenie .og-main .story-opening--sketch { gap: var(--sp-l) !important; row-gap: var(--sp-l) !important; }
+/* close-ups with callouts: text above, the visual below, both on the column's left edge */
+main#optigenie#optigenie#optigenie#optigenie .og-main .ads-closeup { display: grid !important; grid-template-columns: minmax(0, 1fr) !important; row-gap: var(--sp-l) !important; justify-items: stretch !important; }
+main#optigenie#optigenie#optigenie#optigenie .og-main .ads-closeup > .story-block__head { order: 0; }
+main#optigenie#optigenie#optigenie#optigenie .og-main .ads-closeup > .ads-closeup__notes { order: 1; max-width: 68ch; display: grid; grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr)); column-gap: clamp(1.5rem, 3vw, 3rem); }
+main#optigenie#optigenie#optigenie#optigenie .og-main .ads-closeup > .ads-closeup__shot { order: 2; width: 100% !important; max-width: none !important; margin: 0 !important; justify-self: stretch !important; }
+/* every row of peer cards: vertical hairlines between the columns, text left */
+main#optigenie#optigenie#optigenie#optigenie .og-main .story-phases, main#optigenie#optigenie#optigenie#optigenie .og-main .wireframe-grid { column-gap: 0 !important; }
+main#optigenie#optigenie#optigenie#optigenie .og-main .story-phases > *, main#optigenie#optigenie#optigenie#optigenie .og-main .wireframe-grid > * { text-align: left !important; padding-left: clamp(1.25rem, 2.2vw, 2.25rem) !important; padding-right: clamp(1.25rem, 2.2vw, 2.25rem) !important; }
+main#optigenie#optigenie#optigenie#optigenie .og-main .story-phases > * + *, main#optigenie#optigenie#optigenie#optigenie .og-main .wireframe-grid > * + * { border-left: 1px solid var(--line) !important; }
+main#optigenie#optigenie#optigenie#optigenie .og-main .story-phases > *:first-child, main#optigenie#optigenie#optigenie#optigenie .og-main .wireframe-grid > *:first-child { padding-left: 0 !important; }
+main#optigenie#optigenie#optigenie#optigenie .og-main .story-phases > *:last-child, main#optigenie#optigenie#optigenie#optigenie .og-main .wireframe-grid > *:last-child { padding-right: 0 !important; }
+main#optigenie#optigenie#optigenie#optigenie .og-main .story-phases .phase-note { margin: var(--sp-s) 0 var(--sp-m) !important; }
+
+/* screens: no drop shadows anywhere; a flat hairline frame instead (modern, minimal) */
+main#optigenie#optigenie#optigenie#optigenie .og-main .ads-shot, main#optigenie#optigenie#optigenie#optigenie .og-main .ads-shot *, main#optigenie#optigenie#optigenie#optigenie .og-main .case-figure, main#optigenie#optigenie#optigenie#optigenie .og-main .case-figure > *, main#optigenie#optigenie#optigenie#optigenie .og-main .ads-closeup__shot, main#optigenie#optigenie#optigenie#optigenie .og-main .ads-closeup__shot *, main#optigenie#optigenie#optigenie#optigenie .og-main .story-sketch > *, main#optigenie#optigenie#optigenie#optigenie .og-main .shot-ui, main#optigenie#optigenie#optigenie#optigenie .og-main img, main#optigenie#optigenie#optigenie#optigenie .og-main video { box-shadow: none !important; filter: none !important; }
+main#optigenie#optigenie#optigenie#optigenie .og-main .ads-shot { border: 1px solid var(--line) !important; border-radius: 12px !important; background: #fff; }
+main#optigenie#optigenie#optigenie#optigenie .og-main .ads-shot::before, main#optigenie#optigenie#optigenie#optigenie .og-main .ads-shot::after, main#optigenie#optigenie#optigenie#optigenie .og-main .case-figure::before { box-shadow: none !important; }
+main#optigenie#optigenie#optigenie#optigenie .og-main .og-dcard__fig video { box-shadow: 0 0 0 9px #16151f !important; }
+/* peer cards: visuals share one height, so titles line up across the row */
+main#optigenie#optigenie#optigenie#optigenie .og-main .story-phases .phase-note { height: clamp(150px, 13vw, 230px); display: flex; align-items: flex-start; }
+main#optigenie#optigenie#optigenie#optigenie .og-main .story-phases .phase-note > svg { max-height: 100%; width: auto; max-width: 100%; }
 </style>
     <script src="./js/aboutTexture.js"></script>
 <script>/* chapter index: highlight the chapter in view */(function(){try{var links=[].slice.call(document.querySelectorAll('.og-index__list a'));if(!links.length||!('IntersectionObserver' in window))return;var by={};links.forEach(function(a){by[a.dataset.target]=a;});var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){links.forEach(function(a){a.classList.remove('is-active');});var a=by[e.target.id];if(a)a.classList.add('is-active');}});},{rootMargin:'-35% 0px -60% 0px'});Object.keys(by).forEach(function(id){var s=document.getElementById(id);if(s)io.observe(s);});}catch(e){}})();</script>

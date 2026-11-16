@@ -2,12 +2,15 @@
 1. style/case-system.css = the OptiGenie system block, scoped to main#case, chapter total from --cs-total.
 2. Each ads-structured page: <main id="case">, chapters wrapped in index + reading column, tints off, CSS + scripts linked."""
 import re, sys, html
-R = '/Users/sasha_m/Documents/Dev_2-optigenie-story/'
+import os
+R = os.path.dirname(os.path.dirname(os.path.abspath(__file__))) + '/'
 
 src = open(R + 'optigenie.html', encoding='utf-8').read()
 s = src.index('/* Body system (Sasha 11-16'); e = src.index('</style>', s)
 block = src[s:e]
 css = block.replace('#optigenie', '#case').replace('" / 11"', '" / " var(--cs-total, "")')
+AC_BLOCK = '/* AI skills page (ac-* structure): same frame, its own components */\nmain#case#case#case#case .og-main > .ac-sec, main#case#case#case#case .og-main > .cvex { position: relative; background: none !important; padding: var(--sp-xxl) 0 !important; }\nmain#case#case#case#case .og-main > .ac-sec { counter-increment: ogch; }\nmain#case#case#case#case .og-main > .ac-sec + *, main#case#case#case#case .og-main > .cvex + .ac-sec { border-top: 1px solid var(--line); }\nmain#case#case#case#case .og-main > .ac-sec::before { content: counter(ogch, decimal-leading-zero) " / " var(--cs-total, ""); position: absolute; top: 2.25rem; right: 0; font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 10px; letter-spacing: .08em; color: var(--muted); opacity: .7; }\nmain#case#case#case#case .og-main .ac-wrap { padding: 0 !important; max-width: none !important; margin: 0 !important; }\nmain#case#case#case#case .og-main .ch-num { display: none !important; }\nmain#case#case#case#case .og-main .ch-open { display: block !important; }\nmain#case#case#case#case .og-main .ch-text { max-width: 68ch; }\n'
+css += AC_BLOCK
 open(R + 'style/case-system.css', 'w', encoding='utf-8').write(
     '/* Case-study system, shared by every project page. Generated from optigenie.html (apply_system.py); edit there, then regenerate. */\n' + css)
 
@@ -44,5 +47,5 @@ def apply(page):
     print(page, len(secs), 'chapters:', [n for _, _, n in secs])
 
 
-for page in sys.argv[1:]:
+for page in sys.argv[1:]:  # no pages: only regenerate style/case-system.css
     apply(page)
