@@ -1204,6 +1204,27 @@ body::after { z-index: -1 !important; }
   .story-sketch.is-end { -webkit-mask-image: none; mask-image: none; }
   .sketch-hint { margin: .75rem 0 0; font-size: .8rem; letter-spacing: .02em; color: var(--violet); }
 }
+
+/* Sasha 11-16: every section full width and centred, more padding, no big empty side. */
+#optigenie .ads-sec,.ads-sec{padding:clamp(6rem,10vw,10.5rem) 0}
+.ads-sec .media-story,.ads-sec .media-story--lead{grid-template-columns:minmax(0,1fr)!important;justify-items:center;gap:clamp(2.5rem,4vw,4rem);text-align:center}
+.ads-sec .media-story-copy{max-width:62ch!important;margin-inline:auto;display:block}
+.ads-sec .media-story-copy>div{max-width:none}
+.ads-sec .media-story-copy h3,.ads-sec .media-story-copy h2{max-width:none!important;margin-inline:auto}
+.ads-sec .media-story-copy p{margin-inline:auto}
+.ads-sec .media-story>.case-figure{justify-self:center!important;margin-inline:auto;width:100%;max-width:var(--media-max,var(--og-media,720px))}
+.ads-sec .story-opening--stack .ads-head,.ads-sec .story-opening--stack .intro-copy{text-align:center;max-width:62ch;margin-inline:auto}
+.ads-sec .story-opening--stack .ads-h2{max-width:none;margin-inline:auto}
+.ads-sec .story-opening--stack .ads-body{margin-inline:auto}
+.ads-sec .story-opening--stack{display:block}
+.ads-sec .story-opening--page .ads-head{text-align:center}
+.ads-sec .story-opening--sketch{grid-template-columns:minmax(0,1fr);justify-items:center;text-align:center}
+.og-decisions article,.og-lessons article{text-align:left}
+.ads-sec .og-dcard .phase,.ads-sec .og-dcard h3{text-align:left}
+.ads-sec .story-sketch{width:100%!important;max-width:1100px;justify-self:center}.ads-sec .story-sketch svg{width:100%;height:auto}
+.ads-sec .ads-label,.ads-sec .page-chapter{text-align:center;display:block}.ads-sec .ads-label::before{display:block;margin-inline:auto;text-align:center}
+.ads-sec .media-story>.case-figure{max-width:min(100%,var(--media-max,var(--og-media,720px)))}
+.ads-sec .story-opening--stack .ads-head .ads-h2{margin-bottom:1.5rem}.ads-sec .intro-copy{margin-top:0}
 </style>
     <script src="./js/aboutTexture.js"></script>
 </body>
