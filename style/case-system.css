@@ -243,11 +243,11 @@ main#case#case#case#case .og-main .ads-closeup--side .story-block__head h2, main
 body:has(main .og-body) { background: #f5f5f5 !important; }
 main#case#case#case#case { --line: #e4e4e4; }
 /* Screens in a mat: a white passe-partout with one hairline, like a print on a wall. No shadow. */
-main#case#case#case#case .og-main .ads-shot { border: 1px solid #dedede !important; border-radius: 10px !important; box-shadow: 0 0 0 clamp(10px, 1.1vw, 16px) #ffffff, 0 0 0 calc(clamp(10px, 1.1vw, 16px) + 1px) #e4e4e4 !important; margin: clamp(10px, 1.1vw, 16px); }
+main#case#case#case#case .og-main .ads-shot { border: 1px solid #dedede !important; border-radius: 10px !important; box-shadow: 0 0 0 clamp(22px, 2.4vw, 40px) #ffffff, 0 0 0 calc(clamp(22px, 2.4vw, 40px) + 1px) #e4e4e4 !important; margin: clamp(22px, 2.4vw, 40px); }
 main#case#case#case#case .og-main .ads-shot img, main#case#case#case#case .og-main .ads-shot video { border-radius: 9px; }
 main#case#case#case#case .og-main .og-decisions .ads-shot, main#case#case#case#case .og-main .og-dcard .ads-shot { box-shadow: none !important; margin: 0; }
 
-main#case#case#case#case .og-main figure.case-figure::after, main#case#case#case#case .og-main .story-sketch::after { margin-top: calc(clamp(10px, 1.1vw, 16px) + 14px) !important; }
+main#case#case#case#case .og-main figure.case-figure::after, main#case#case#case#case .og-main .story-sketch::after { margin-top: calc(clamp(22px, 2.4vw, 40px) + 14px) !important; }
 /* AI skills page (ac-* structure): same frame, its own components */
 main#case#case#case#case .og-main > .ac-sec, main#case#case#case#case .og-main > .cvex { position: relative; background: none !important; padding: var(--sp-xxl) 0 !important; }
 main#case#case#case#case .og-main > .ac-sec { counter-increment: ogch; }
