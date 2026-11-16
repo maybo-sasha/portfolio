@@ -248,6 +248,12 @@ main#case#case#case#case .og-main .ads-shot img, main#case#case#case#case .og-ma
 main#case#case#case#case .og-main .og-decisions .ads-shot, main#case#case#case#case .og-main .og-dcard .ads-shot { box-shadow: none !important; margin: 0; }
 
 main#case#case#case#case .og-main figure.case-figure::after, main#case#case#case#case .og-main .story-sketch::after { margin-top: calc(clamp(22px, 2.4vw, 40px) + 14px) !important; }
+
+/* close-up cards: no tinted panel; the card itself sits in the same white mat as every screen, at a calmer size */
+main#case#case#case#case .og-main .ads-closeup__shot { background: #ffffff !important; padding: clamp(22px, 2.4vw, 40px) !important; border: 1px solid #e4e4e4 !important; border-radius: 20px !important; box-shadow: none !important; justify-self: start !important; }
+main#case#case#case#case .og-main .ads-closeup__frame img { box-shadow: none !important; outline: 1px solid #e4e4e4 !important; border-radius: 10px !important; }
+main#case#case#case#case .og-main .ads-closeup--side .ads-closeup__shot { width: min(100%, 460px) !important; max-width: 460px !important; }
+main#case#case#case#case .og-main .ads-closeup--wide .ads-closeup__shot { width: 100% !important; max-width: none !important; }
 /* AI skills page (ac-* structure): same frame, its own components */
 main#case#case#case#case .og-main > .ac-sec, main#case#case#case#case .og-main > .cvex { position: relative; background: none !important; padding: var(--sp-xxl) 0 !important; }
 main#case#case#case#case .og-main > .ac-sec { counter-increment: ogch; }
