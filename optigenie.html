@@ -1406,6 +1406,13 @@ body::after { z-index: -1 !important; }
 #optigenie .og-main .story-opening > .story-sketch { width: 100% !important; }
 #optigenie .og-main .story-phases, #optigenie .og-main .og-lessons { border-bottom: 0 !important; }
 #optigenie .og-main .story-phases > article, #optigenie .og-main .og-lessons > article { border-bottom: 0 !important; }
+
+/* index current state: the tick draws in and the label slides over, on the M3 standard curve; no weight jump */
+#optigenie .og-index__list a { display: inline-flex; align-items: center; font-weight: 500; transition: color .35s cubic-bezier(.2,0,0,1); }
+#optigenie .og-index__list a::before, #optigenie .og-index__list a.is-active::before { content: ""; display: inline-block; flex: none; width: 0; height: 2px; margin: 0; background: var(--violet); vertical-align: middle; transition: width .45s cubic-bezier(.2,0,0,1), margin-right .45s cubic-bezier(.2,0,0,1); }
+#optigenie .og-index__list a.is-active { font-weight: 500; color: var(--ink); }
+#optigenie .og-index__list a.is-active::before { width: 16px; margin: 0 10px 0 0; }
+@media (prefers-reduced-motion: reduce) { #optigenie .og-index__list a, #optigenie .og-index__list a::before { transition: none; } }
 </style>
     <script src="./js/aboutTexture.js"></script>
 <script>/* chapter index: highlight the chapter in view */(function(){try{var links=[].slice.call(document.querySelectorAll('.og-index__list a'));if(!links.length||!('IntersectionObserver' in window))return;var by={};links.forEach(function(a){by[a.dataset.target]=a;});var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){links.forEach(function(a){a.classList.remove('is-active');});var a=by[e.target.id];if(a)a.classList.add('is-active');}});},{rootMargin:'-35% 0px -60% 0px'});Object.keys(by).forEach(function(id){var s=document.getElementById(id);if(s)io.observe(s);});}catch(e){}})();</script>
