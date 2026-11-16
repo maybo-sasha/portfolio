@@ -1611,6 +1611,14 @@ main#optigenie#optigenie#optigenie#optigenie .og-main .ads-closeup--side > .stor
 main#optigenie#optigenie#optigenie#optigenie .og-main .ads-closeup--side > .ads-closeup__notes { grid-column: 1 !important; grid-row: 2 !important; max-width: none !important; display: block !important; }
 main#optigenie#optigenie#optigenie#optigenie .og-main .ads-closeup--side > .ads-closeup__shot { grid-column: 2 !important; grid-row: 2 !important; width: 100% !important; max-width: 420px !important; justify-self: end !important; }
 @media (max-width: 900px) { main#optigenie#optigenie#optigenie#optigenie .og-main .ads-closeup--side { grid-template-columns: minmax(0, 1fr) !important; } main#optigenie#optigenie#optigenie#optigenie .og-main .ads-closeup--side > * { grid-column: 1 !important; grid-row: auto !important; } }
+
+/* AI skills page: column padding restored, white ground, white cards with hairlines, no lavender glow */
+main#optigenie#optigenie#optigenie#optigenie .og-main > .ac-sec, main#optigenie#optigenie#optigenie#optigenie .og-main > .cvex { padding-left: var(--cs-pad) !important; }
+body:has(main .og-body)::before { display: none !important; }
+main#optigenie#optigenie#optigenie#optigenie .og-main .cvk-slide, main#optigenie#optigenie#optigenie#optigenie .og-main .cvex-window, main#optigenie#optigenie#optigenie#optigenie .og-main .ux-display-stage { background: #ffffff !important; border: 1px solid #e4e4e4 !important; box-shadow: none !important; }
+
+/* the floating section ruler duplicates the chapter index */
+@media (min-width: 1001px) { .ch-rail, .ads-rail { display: none !important; } }
 </style>
     <script src="./js/aboutTexture.js"></script>
 <script>/* chapter index: highlight the chapter in view */(function(){try{var links=[].slice.call(document.querySelectorAll('.og-index__list a'));if(!links.length||!('IntersectionObserver' in window))return;var by={};links.forEach(function(a){by[a.dataset.target]=a;});var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){links.forEach(function(a){a.classList.remove('is-active');});var a=by[e.target.id];if(a)a.classList.add('is-active');}});},{rootMargin:'-35% 0px -60% 0px'});Object.keys(by).forEach(function(id){var s=document.getElementById(id);if(s)io.observe(s);});}catch(e){}})();</script>

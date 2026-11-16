@@ -276,8 +276,16 @@ main#case#case#case#case .og-main .ads-closeup--side > .story-block__head { grid
 main#case#case#case#case .og-main .ads-closeup--side > .ads-closeup__notes { grid-column: 1 !important; grid-row: 2 !important; max-width: none !important; display: block !important; }
 main#case#case#case#case .og-main .ads-closeup--side > .ads-closeup__shot { grid-column: 2 !important; grid-row: 2 !important; width: 100% !important; max-width: 420px !important; justify-self: end !important; }
 @media (max-width: 900px) { main#case#case#case#case .og-main .ads-closeup--side { grid-template-columns: minmax(0, 1fr) !important; } main#case#case#case#case .og-main .ads-closeup--side > * { grid-column: 1 !important; grid-row: auto !important; } }
+
+/* AI skills page: column padding restored, white ground, white cards with hairlines, no lavender glow */
+main#case#case#case#case .og-main > .ac-sec, main#case#case#case#case .og-main > .cvex { padding-left: var(--cs-pad) !important; }
+body:has(main .og-body)::before { display: none !important; }
+main#case#case#case#case .og-main .cvk-slide, main#case#case#case#case .og-main .cvex-window, main#case#case#case#case .og-main .ux-display-stage { background: #ffffff !important; border: 1px solid #e4e4e4 !important; box-shadow: none !important; }
+
+/* the floating section ruler duplicates the chapter index */
+@media (min-width: 1001px) { .ch-rail, .ads-rail { display: none !important; } }
 /* AI skills page (ac-* structure): same frame, its own components */
-main#case#case#case#case .og-main > .ac-sec, main#case#case#case#case .og-main > .cvex { position: relative; background: none !important; padding: var(--sp-xxl) 0 !important; }
+main#case#case#case#case .og-main > .ac-sec, main#case#case#case#case .og-main > .cvex { position: relative; background: none !important; padding: var(--sp-xxl) 0 var(--sp-xxl) var(--cs-pad) !important; }
 main#case#case#case#case .og-main > .ac-sec { counter-increment: ogch; }
 main#case#case#case#case .og-main > .ac-sec + *, main#case#case#case#case .og-main > .cvex + .ac-sec { border-top: 1px solid var(--line); }
 main#case#case#case#case .og-main > .ac-sec::before { content: counter(ogch, decimal-leading-zero) " / " var(--cs-total, ""); position: absolute; top: 2.25rem; right: 0; font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 10px; letter-spacing: .08em; color: var(--muted); opacity: .7; }
