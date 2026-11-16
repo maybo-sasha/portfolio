@@ -254,6 +254,14 @@ main#case#case#case#case .og-main .ads-closeup__shot { background: #ffffff !impo
 main#case#case#case#case .og-main .ads-closeup__frame img { box-shadow: none !important; outline: 1px solid #e4e4e4 !important; border-radius: 10px !important; }
 main#case#case#case#case .og-main .ads-closeup--side .ads-closeup__shot { width: min(100%, 460px) !important; max-width: 460px !important; }
 main#case#case#case#case .og-main .ads-closeup--wide .ads-closeup__shot { width: 100% !important; max-width: none !important; }
+
+/* Hero scrim (Sasha 11-16: the purple gradient wasn't good). Neutral ink, bottom only, just enough for the title; the video stays clean. */
+body:has(main .og-body) .ads-hero.ads-hero--walk::after, body:has(main .og-body) .ads-hero::after {
+  background: linear-gradient(0deg, rgba(14,14,18,.78) 0%, rgba(14,14,18,.42) 22%, rgba(14,14,18,.08) 42%, rgba(14,14,18,0) 55%) !important; }
+
+/* overview statement: wider measure; when it stands alone it spans the whole row */
+#case #overview .big { max-width: 22ch !important; }
+#case #overview .big:only-child, #case #overview .big:last-child { grid-column: 1 / -1; max-width: 26ch !important; }
 /* AI skills page (ac-* structure): same frame, its own components */
 main#case#case#case#case .og-main > .ac-sec, main#case#case#case#case .og-main > .cvex { position: relative; background: none !important; padding: var(--sp-xxl) 0 !important; }
 main#case#case#case#case .og-main > .ac-sec { counter-increment: ogch; }
