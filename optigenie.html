@@ -1328,6 +1328,37 @@ body::after { z-index: -1 !important; }
 @media (max-width: 650px) {
     #optigenie .ads-sec:not(#themes) { padding: 3.5rem 0; }
 }
+
+/* Structure pass (Sasha 11-16, "the layout structure isn't good"): one grid everywhere. Section heads and story rows
+   are a 5/7 split, copy left and body or media right; each decision is its own 5/7 row; card grids span full width. */
+@media (min-width: 901px) {
+    #optigenie .ads-sec .story-opening--stack,
+    #optigenie .ads-sec:not(#themes):not(#motion) .story-opening--sketch,
+    #optigenie .ads-sec:not(#themes):not(#motion) .media-story,
+    #optigenie .og-dcard {
+        display: grid;
+        grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+        column-gap: clamp(3rem, 6vw, 7rem);
+        row-gap: 1.25rem;
+        align-items: start;
+        max-width: none;
+        width: 100%;
+    }
+    #optigenie .ads-sec .story-opening--stack > .intro-copy { padding-top: .5rem; }
+    #optigenie .ads-sec .story-opening--stack .ads-h2,
+    #optigenie .ads-sec .story-opening--sketch .ads-h2 { max-width: 14ch; }
+    #optigenie .ads-sec:not(#themes):not(#motion) .media-story > .case-figure,
+    #optigenie .ads-sec:not(#themes):not(#motion) .story-sketch {
+        justify-self: stretch;
+        width: 100%;
+        max-width: none;
+        margin: 0;
+    }
+    #optigenie .og-dcard { align-items: center; padding-top: clamp(3rem, 5vw, 5rem); }
+    #optigenie .og-dcard__copy { max-width: 46ch; }
+    #optigenie .og-dcard__fig { justify-self: stretch; max-width: none; aspect-ratio: 16 / 11; }
+    #optigenie .og-decisions .og-dcard__fig video { width: auto !important; height: 90% !important; }
+}
 </style>
     <script src="./js/aboutTexture.js"></script>
 </body>
