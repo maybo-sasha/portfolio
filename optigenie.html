@@ -1915,13 +1915,20 @@ main#optigenie#optigenie#optigenie#optigenie .og-main:not(#og_) > .ads-sec, main
 main#optigenie#optigenie#optigenie#optigenie .og-index__list a { color: #6b6a7a !important; }
 main#optigenie#optigenie#optigenie#optigenie .og-index__list a.is-active { color: #16151f !important; }
 main#optigenie#optigenie#optigenie#optigenie .og-index__n { color: #a3a2ae !important; }
+/* Sasha 11-17: mid screens (1501px up) put the nav and Back further left; the gutter grows smoothly from 32px instead of jumping to 7vw,
+   and the content moves left with it (Sasha 11-17: "push the all container a bit to the left") */
+@media (min-width: 1501px) {
+  main#optigenie#optigenie#optigenie#optigenie { --cs-x: clamp(32px, calc(14vw - 180px), 180px); }
+  main#optigenie#optigenie#optigenie#optigenie:not(#og_) .og-body { grid-template-columns: clamp(220px, 15vw, 320px) minmax(0, 1fr) !important; }
+  body:has(main .og-body) .inner-back { left: clamp(32px, calc(14vw - 180px), 180px) !important; }
+}
 /* chapter index hover (Sasha 11-17): ink label, violet number, a short dash previews the active one */
 @media (hover: hover) {
   main#optigenie#optigenie#optigenie#optigenie .og-index__list a:not(.is-active):hover { color: #16151f !important; }
   main#optigenie#optigenie#optigenie#optigenie .og-index__list a:not(.is-active):hover .og-index__n { color: var(--violet) !important; opacity: 1; }
   main#optigenie#optigenie#optigenie#optigenie .og-index__list a:not(.is-active):hover::before { width: 8px; margin: 0 10px 0 0; }
 }
-main#optigenie#optigenie#optigenie#optigenie .og-index__list a:focus-visible { color: #16151f !important; outline: 2px solid var(--violet); outline-offset: 4px; border-radius: 2px; }
+main#optigenie#optigenie#optigenie#optigenie .og-index__list a:focus { outline: none; } main#optigenie#optigenie#optigenie#optigenie .og-index__list a:focus-visible { color: #16151f !important; outline: none; } main#optigenie#optigenie#optigenie#optigenie .og-index__list a:not(.is-active):focus-visible::before { width: 8px; margin: 0 10px 0 0; } main#optigenie#optigenie#optigenie#optigenie .og-index__list a:focus-visible .og-index__n { color: var(--violet) !important; opacity: 1; }
 /* one label style: 11px mono, wide tracking, grey; titles black */
 main#optigenie#optigenie#optigenie#optigenie .og-main:not(#og_) .ac-label, main#optigenie#optigenie#optigenie#optigenie .og-main:not(#og_) .pns-k, main#optigenie#optigenie#optigenie#optigenie .og-main:not(#og_) .ux-overline, main#optigenie#optigenie#optigenie#optigenie .og-main:not(#og_) .ic-overline, main#optigenie#optigenie#optigenie#optigenie .og-main:not(#og_) .cv-title, main#optigenie#optigenie#optigenie#optigenie .og-main:not(#og_) .ux-stage-num, main#optigenie#optigenie#optigenie#optigenie .og-main:not(#og_) .ux-demo-label { font: 600 11px/1.4 ui-monospace, SFMono-Regular, Menlo, monospace !important; letter-spacing: .14em !important; text-transform: uppercase !important; color: #5c5c66 !important; margin: 0 0 var(--sp-s) !important; }
 main#optigenie#optigenie#optigenie#optigenie .og-main:not(#og_) .ux-stage-num { color: #4b3fd6 !important; }

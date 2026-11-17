@@ -830,6 +830,14 @@
             #ch-icon .ic-reference-set { gap: .7rem; --ref: 64px; } #ch-icon .ic-reference-set img { width: 64px; height: 64px; }
             #ch-icon .ic-construction { flex-direction: column; gap: 0; } #ch-icon .ic-construction ul { gap: .5rem; }
         }
+        /* Sasha 11-17, mid screens: captions wrap inside their column instead of spilling past the divider; reference icons shrink to fit */
+        @media (min-width: 761px) and (max-width: 1400px) {
+            #ch-icon .ic-row-visual .ic-meaning, #ch-icon .ic-row-visual .ic-construction ul { flex-direction: column; align-items: flex-start; gap: .5rem; width: fit-content; max-width: 100%; margin-left: auto; margin-right: auto; white-space: normal; }
+            #ch-icon .ic-row-visual .ic-meaning span, #ch-icon .ic-row-visual .ic-construction li { border-left: 2px solid var(--lav) !important; padding: 0 0 0 .7rem !important; }
+            #ch-icon .ic-reference-set { gap: .6rem; --ref: 62px; } #ch-icon .ic-reference-set img { width: 62px; height: 62px; }
+            #ch-icon .ic-reference-set span { max-width: 11ch; }
+            #ch-icon .ic-materials { display: grid; justify-content: center; justify-items: start; gap: .5rem; }
+        }
         @media (max-width: 760px) {
             #ch-icon .ic-stack { grid-template-columns: 1fr; }
             #ch-icon .ic-scale > li { padding: 1.2rem 1rem 1.4rem; }
