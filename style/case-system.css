@@ -594,6 +594,117 @@ main#case#case#case#case .og-main:not(#og_) .ads-closeup--wide .ads-closeup__not
 
 /* no registration crosses */
 main#case#case#case#case .og-main:not(#og_) > .ads-sec::after, main#case#case#case#case .og-main:not(#og_) > .ac-sec::after, main#case#case#case#case .og-main:not(#og_) > .cvex::after, main#case#case#case#case .og-main:not(#og_) > * + *::after { content: none !important; display: none !important; }
+
+/* ===== Responsive (Sasha 11-17): mid screens fit the window, mobile is one column, nothing needs a swipe ===== */
+/* every screen size: decisions closer together; phone panels sized to the window, never taller than it */
+main#case#case#case#case .og-main:not(#og_) .og-decisions { margin-top: var(--sp-l) !important; padding-top: 0 !important; }
+main#case#case#case#case .og-main:not(#og_) .og-dcard + .og-dcard { margin-top: var(--sp-xl) !important; padding-top: 0 !important; }
+main#case#case#case#case .og-main:not(#og_) .og-dcard__fig { width: 100% !important; max-width: 760px; height: min(78vh, 760px) !important; aspect-ratio: auto !important; }
+main#case#case#case#case .og-main:not(#og_) .og-dcard__fig video { height: 92% !important; width: auto !important; }
+main#case#case#case#case .og-main:not(#og_) .ads-shot video, main#case#case#case#case .og-main:not(#og_) .case-figure video { width: auto !important; height: auto !important; max-width: 100% !important; max-height: 76vh !important; margin-inline: auto !important; display: block !important; }
+main#case#case#case#case .og-main:not(#og_) .ads-shot { display: flex; justify-content: center; align-items: center; }
+main#case#case#case#case .og-main:not(#og_) .ads-shot > img, main#case#case#case#case .og-main:not(#og_) .ads-shot > video { flex: 0 1 auto; }
+main#case#case#case#case .og-main:not(#og_) .ux-bands { display: grid !important; grid-template-columns: repeat(auto-fit, minmax(7.5rem, 1fr)); gap: 8px !important; border-radius: 0 !important; overflow: visible !important; }
+main#case#case#case#case .og-main:not(#og_) .ux-band { padding: 12px 14px !important; border-radius: 8px; min-width: 0; }
+main#case#case#case#case .og-main:not(#og_) .ux-band b { white-space: normal !important; }
+
+/* mid screens: menu pushed left and narrower, more room for the content */
+@media (max-width: 1500px) {
+  main#case#case#case#case:not(#og_) .og-body, main#case#case#case#case:not(#og_) #overview .ads-wrap, main#case#case#case#case:not(#og_) .ads-metabar .ads-wrap, main#case#case#case#case:not(#og_) .ac-lede .ac-wrap, main#case#case#case#case:not(#og_) .ac-metabar .ac-wrap { padding-left: clamp(16px, 2vw, 32px) !important; padding-right: clamp(20px, 3vw, 48px) !important; }
+  main#case#case#case#case:not(#og_) .og-body { grid-template-columns: clamp(150px, 12vw, 190px) minmax(0, 1fr) !important; }
+  main#case#case#case#case:not(#og_) .og-main { --cs-pad: clamp(1.25rem, 2.4vw, 2.25rem); }
+  body:has(main .og-body) .inner-back { left: clamp(16px, 2vw, 32px) !important; }
+  main#case#case#case#case .og-main:not(#og_) figure.case-figure, main#case#case#case#case .og-main:not(#og_) .story-sketch, main#case#case#case#case .og-main:not(#og_) .story-block__art, main#case#case#case#case .og-main:not(#og_) .ads-closeup__shot, main#case#case#case#case .og-main:not(#og_) .media-story > figure { max-width: min(100%, 820px) !important; }
+  main#case#case#case#case .og-main:not(#og_) .ux-snapshot { max-width: 360px !important; }
+  main#case#case#case#case .og-main:not(#og_) .ads-closeup--side { grid-template-columns: minmax(0, 1fr) minmax(0, 360px) !important; }
+  /* screen examples: a plain grid, no carousel, no swipe */
+  main#case#case#case#case .og-main:not(#og_) .cvex-viewport { overflow: visible !important; padding: 0 !important; -webkit-mask-image: none !important; mask-image: none !important; }
+  main#case#case#case#case .og-main:not(#og_) .cvex-window { padding: 0 !important; overflow: visible !important; }
+  main#case#case#case#case .og-main:not(#og_) .cvex-track { display: block !important; width: auto !important; transform: none !important; }
+  main#case#case#case#case .og-main:not(#og_) .cvex-group[aria-hidden="true"] { display: none !important; }
+  main#case#case#case#case .og-main:not(#og_) .cvex-group { display: grid !important; width: auto !important; grid-template-columns: repeat(auto-fill, minmax(min(100%, 340px), 1fr)); column-gap: clamp(1.5rem, 3vw, 3rem); row-gap: var(--sp-xl); }
+  main#case#case#case#case .og-main:not(#og_) .cvex-row { width: auto !important; }
+  main#case#case#case#case .og-main:not(#og_) .cvex-heading ~ * [role="button"], main#case#case#case#case .og-main:not(#og_) .cvex-controls, main#case#case#case#case .og-main:not(#og_) .cvex-nav { display: none !important; }
+}
+
+/* tablet and mobile: one column, no menu, no horizontal scroll */
+@media (max-width: 1000px) {
+  main#case#case#case#case:not(#og_) .og-body { display: block !important; padding-left: 20px !important; padding-right: 20px !important; }
+  main#case#case#case#case:not(#og_) .og-index { display: none !important; }
+  main#case#case#case#case:not(#og_) #overview .ads-wrap, main#case#case#case#case:not(#og_) .ads-metabar .ads-wrap, main#case#case#case#case:not(#og_) .ac-lede .ac-wrap, main#case#case#case#case:not(#og_) .ac-metabar .ac-wrap { padding-left: 20px !important; padding-right: 20px !important; }
+  main#case#case#case#case .og-main:not(#og_) { border-left: 0 !important; --cs-pad: 0px; padding-left: 0 !important; }
+  main#case#case#case#case .og-main:not(#og_) > .ads-sec, main#case#case#case#case .og-main:not(#og_) > .ac-sec, main#case#case#case#case .og-main:not(#og_) > .cvex { margin-left: 0 !important; padding-left: 0 !important; padding-top: 3.5rem !important; padding-bottom: 3.5rem !important; }
+  main#case#case#case#case .og-main:not(#og_) .ads-h2 { font-size: clamp(1.5rem, 5.4vw, 2rem) !important; }
+  main#case#case#case#case:not(#og_) #overview .big, main#case#case#case#case:not(#og_) .ac-lede .big { font-size: clamp(1.7rem, 7vw, 2.6rem) !important; max-width: none !important; }
+  .ads-meta, .ac-meta { grid-template-columns: minmax(0, 1fr) !important; }
+  main#case#case#case#case:not(#og_) .ads-meta > div + div, main#case#case#case#case:not(#og_) .ac-meta > div + div { border-left: 0 !important; border-top: 1px solid var(--line) !important; }
+  main#case#case#case#case:not(#og_) .ads-meta > div, main#case#case#case#case:not(#og_) .ac-meta > div { padding: 18px 0 !important; }
+  /* diagrams scale to the screen instead of scrolling */
+  main#case#case#case#case .og-main:not(#og_) .story-sketch, main#case#case#case#case .og-main:not(#og_) .story-block__art { overflow: visible !important; -webkit-mask-image: none !important; mask-image: none !important; max-width: 100% !important; }
+  main#case#case#case#case .og-main:not(#og_) .story-sketch svg, main#case#case#case#case .og-main:not(#og_) .story-block__art svg { min-width: 0 !important; width: 100% !important; }
+  main#case#case#case#case .og-main:not(#og_) .sketch-hint { display: none !important; }
+  main#case#case#case#case .og-main:not(#og_) .ads-closeup--side, main#case#case#case#case .og-main:not(#og_) .ads-closeup--landscape { grid-template-columns: minmax(0, 1fr) !important; }
+  main#case#case#case#case .og-main:not(#og_) .ads-closeup--side > *, main#case#case#case#case .og-main:not(#og_) .ads-closeup--landscape > * { grid-column: 1 !important; grid-row: auto !important; }
+  main#case#case#case#case .og-main:not(#og_) .ads-closeup--side .ads-closeup__shot { justify-self: start !important; max-width: 420px !important; }
+  main#case#case#case#case .og-main:not(#og_) .ads-closeup__notes, main#case#case#case#case .og-main:not(#og_) .ads-closeup--side .ads-closeup__notes { max-width: none !important; }
+  main#case#case#case#case .og-main:not(#og_) .ads-shot { margin: 10px !important; box-shadow: 0 0 0 10px #ffffff, 0 0 0 11px #e4e4e4 !important; }
+  /* rows of peers: two columns, then one; verticals only between two columns */
+  main#case#case#case#case .og-main:not(#og_) .pns, main#case#case#case#case .og-main:not(#og_) .ux-stages, main#case#case#case#case .og-main:not(#og_) .cvk-stage { grid-template-columns: repeat(2, minmax(0, 1fr)) !important; }
+  main#case#case#case#case .og-main:not(#og_) .story-phases, main#case#case#case#case .og-main:not(#og_) .og-lessons, main#case#case#case#case .og-main:not(#og_) .ch-grid, main#case#case#case#case .og-main:not(#og_) .wireframe-grid, main#case#case#case#case .og-main:not(#og_) .ux-fhs, main#case#case#case#case .og-main:not(#og_) .ic-stack { grid-template-columns: minmax(0, 1fr) !important; }
+  main#case#case#case#case .og-main:not(#og_) .story-phases > *::before,
+  main#case#case#case#case .og-main:not(#og_) .og-lessons > *::before,
+  main#case#case#case#case .og-main:not(#og_) .wireframe-grid > *::before,
+  main#case#case#case#case .og-main:not(#og_) .ch-grid > *::before,
+  main#case#case#case#case .og-main:not(#og_) .pns > *::before,
+  main#case#case#case#case .og-main:not(#og_) .cvk-stage > *::before,
+  main#case#case#case#case .og-main:not(#og_) .ux-fhs > *::before,
+  main#case#case#case#case .og-main:not(#og_) .ux-stages > *::before,
+  main#case#case#case#case .og-main:not(#og_) .ic-stack > .ic-row:not(.ic-anatomy)::before { display: none !important; }
+  main#case#case#case#case .og-main:not(#og_) .pns > *:nth-child(even)::before, main#case#case#case#case .og-main:not(#og_) .ux-stages > *:nth-child(even)::before, main#case#case#case#case .og-main:not(#og_) .cvk-stage > *:nth-child(even)::before { display: block !important; }
+  main#case#case#case#case .og-main:not(#og_) .ic-stack > .ic-anatomy { grid-column: 1 / -1; }
+  main#case#case#case#case .og-main:not(#og_) .og-darkrow, main#case#case#case#case .og-main:not(#og_) .media-story, main#case#case#case#case .og-main:not(#og_) .story-opening { grid-template-columns: minmax(0, 1fr) !important; }
+  main#case#case#case#case .og-main:not(#og_) .og-dcard { grid-template-columns: minmax(0, 1fr) !important; }
+  main#case#case#case#case .og-main:not(#og_) .og-dcard__fig { max-width: 100%; height: min(70vh, 620px) !important; }
+  main#case#case#case#case .og-main:not(#og_) .ux-snapshot { max-width: 100% !important; }
+}
+@media (max-width: 640px) {
+  main#case#case#case#case .og-main:not(#og_) .pns, main#case#case#case#case .og-main:not(#og_) .ux-stages, main#case#case#case#case .og-main:not(#og_) .cvk-stage { grid-template-columns: minmax(0, 1fr) !important; }
+  main#case#case#case#case .og-main:not(#og_) .story-phases > *::before,
+  main#case#case#case#case .og-main:not(#og_) .og-lessons > *::before,
+  main#case#case#case#case .og-main:not(#og_) .wireframe-grid > *::before,
+  main#case#case#case#case .og-main:not(#og_) .ch-grid > *::before,
+  main#case#case#case#case .og-main:not(#og_) .pns > *::before,
+  main#case#case#case#case .og-main:not(#og_) .cvk-stage > *::before,
+  main#case#case#case#case .og-main:not(#og_) .ux-fhs > *::before,
+  main#case#case#case#case .og-main:not(#og_) .ux-stages > *::before,
+  main#case#case#case#case .og-main:not(#og_) .ic-stack > .ic-row:not(.ic-anatomy)::before { display: none !important; }
+  main#case#case#case#case .og-main:not(#og_) p, main#case#case#case#case .og-main:not(#og_) li, main#case#case#case#case .og-main:not(#og_) .ads-body { font-size: 15px !important; line-height: 1.75 !important; }
+  main#case#case#case#case .og-main:not(#og_) .ux-bands { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  main#case#case#case#case .og-main:not(#og_) .cvex-group { grid-template-columns: minmax(0, 1fr); }
+}
+
+/* fit fixes */
+@media (max-width: 1500px) {
+  main#case#case#case#case:not(#og_) .og-body { grid-template-columns: clamp(176px, 13.5vw, 210px) minmax(0, 1fr) !important; }
+  main#case#case#case#case:not(#og_) .og-index__list a { overflow-wrap: break-word !important; hyphens: none !important; font-size: 14px; }
+}
+@media (min-width: 701px) { main#case#case#case#case .og-main:not(#og_) .ux-bands { grid-template-columns: repeat(5, minmax(0, 1fr)) !important; } main#case#case#case#case .og-main:not(#og_) .ux-band { padding: 12px 10px !important; } }
+
+/* videos a little smaller; tighter card spacing on tablet and mobile */
+main#case#case#case#case .og-main:not(#og_) .og-dcard__fig { height: min(72vh, 680px) !important; }
+main#case#case#case#case .og-main:not(#og_) .ads-shot video, main#case#case#case#case .og-main:not(#og_) .case-figure video { max-height: 70vh !important; }
+@media (max-width: 1000px) {
+  main#case#case#case#case .og-main:not(#og_) .story-phases > *,
+  main#case#case#case#case .og-main:not(#og_) .og-lessons > *,
+  main#case#case#case#case .og-main:not(#og_) .wireframe-grid > *,
+  main#case#case#case#case .og-main:not(#og_) .ch-grid > *,
+  main#case#case#case#case .og-main:not(#og_) .pns > *,
+  main#case#case#case#case .og-main:not(#og_) .cvk-stage > *,
+  main#case#case#case#case .og-main:not(#og_) .ux-fhs > *,
+  main#case#case#case#case .og-main:not(#og_) .ux-stages > *,
+  main#case#case#case#case .og-main:not(#og_) .ic-stack > .ic-row:not(.ic-anatomy) { padding-top: 2rem !important; padding-bottom: 2.5rem !important; }
+  main#case#case#case#case .og-main:not(#og_) .og-dcard__fig { height: min(64vh, 560px) !important; }
+}
 /* AI skills page (ac-* structure): same frame, its own components */
 main#case#case#case#case .og-main > .ac-sec, main#case#case#case#case .og-main > .cvex { position: relative; background: none !important; padding: var(--sp-xxl) 0 var(--sp-xxl) var(--cs-pad) !important; }
 main#case#case#case#case .og-main > .ac-sec { counter-increment: ogch; }
