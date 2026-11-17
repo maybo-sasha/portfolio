@@ -753,3 +753,7 @@ main#case#case#case#case .og-main:not(#og_) :is(.ads-wrap, .ac-wrap) > :is(.stor
 
 /* Sasha 11-17: mid screens (1001-1800px) get a smaller chapter list */
 @media (min-width: 1001px) and (max-width: 1800px) { main#case#case#case#case:not(#og_) .og-index__list { font-size: 14px !important; gap: 14px !important; } main#case#case#case#case:not(#og_) .og-index__list a { font-size: 14px !important; } }
+
+/* Sasha 11-17: a hairline divider between the sub-sections of a chapter, the same rule on every case page */
+main#case#case#case#case .og-main:not(#og_) :is(.ic-process, .ic-sizing, .ux-part, .cvex-head, .ic-section, #ch-design-os .dl-part:not(.dl-everyday, .dl-value, [aria-labelledby="dl-everyday-title"], [aria-labelledby="dl-value-title"])) {
+  margin-top: var(--sp-xl) !important; padding-top: var(--sp-xl) !important; border-top: 1px solid var(--line) !important; }
