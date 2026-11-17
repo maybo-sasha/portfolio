@@ -402,6 +402,33 @@ main#case#case#case#case .og-main .princ { padding-top: 0 !important; margin-top
 main#case#case#case#case .og-main .ux-block { padding-top: 0 !important; }
 /* wide close-ups (charts, heatmaps): calmer size, like the diagrams */
 main#case#case#case#case .og-main .ads-closeup--wide .ads-closeup__shot, main#case#case#case#case .og-main .ads-closeup:not(.ads-closeup--side):not(.ads-closeup--landscape) .ads-closeup__shot { max-width: 1040px !important; }
+
+/* ===== Quiet typography + air (Sasha 11-17: smaller grey running text, black titles, more air) ===== */
+main#case#case#case#case { --cs-text: #5c5c66; --cs-title: #111114; }
+main#case#case#case#case .og-main p, main#case#case#case#case .og-main li, main#case#case#case#case .og-main .ads-body, main#case#case#case#case .og-main .og-instead, main#case#case#case#case .og-main figcaption span { font-size: clamp(15px, .6vw + 7px, 17px) !important; line-height: 1.8 !important; color: var(--cs-text) !important; letter-spacing: 0 !important; }
+main#case#case#case#case .og-main p strong, main#case#case#case#case .og-main li strong, main#case#case#case#case .og-main p b { color: var(--cs-title) !important; }
+main#case#case#case#case .og-main h2, main#case#case#case#case .og-main h3, main#case#case#case#case .og-main h4, main#case#case#case#case .og-main .ads-h2, main#case#case#case#case #overview .big, main#case#case#case#case .ac-lede .big { color: var(--cs-title) !important; }
+main#case#case#case#case .og-main .ads-h2 { font-size: clamp(1.6rem, 1.1rem + 1vw, 2.4rem) !important; letter-spacing: -.02em !important; }
+main#case#case#case#case .og-main h3 { font-size: clamp(1.1rem, .9rem + .4vw, 1.4rem) !important; letter-spacing: -.01em !important; }
+main#case#case#case#case #overview .sub, main#case#case#case#case .ac-lede .sub { color: var(--cs-text) !important; font-size: clamp(15px, .6vw + 7px, 17px) !important; line-height: 1.8 !important; }
+main#case#case#case#case #overview .big, main#case#case#case#case .ac-lede .big { max-width: 17ch !important; }
+/* small labels everywhere: one size, one tracking */
+main#case#case#case#case .og-main .ads-label, main#case#case#case#case .og-main .page-chapter, main#case#case#case#case .og-main .media-kicker, main#case#case#case#case .og-main .phase, main#case#case#case#case .og-main .ac-label, main#case#case#case#case .og-main .pns-k, main#case#case#case#case .og-main .ux-overline, main#case#case#case#case .og-main .evidence-kind, main#case#case#case#case .og-main .og-instead span { font-size: 11px !important; letter-spacing: .14em !important; line-height: 1.4 !important; }
+main#case#case#case#case .og-main p + p { margin-top: 1.1em !important; }
+/* text ↔ image: 5% more air */
+@media (min-width: 1680px) {
+  main#case#case#case#case .og-main .ads-sec:not(#themes) .media-story, main#case#case#case#case .og-main .ads-sec:not(#themes) .media-story--lead, main#case#case#case#case .og-main .ads-closeup--landscape, main#case#case#case#case .og-main .og-dcard { column-gap: calc(clamp(3rem, 4vw, 5rem) + 5%) !important; }
+}
+/* vertical card dividers run down to the next chapter line when the cards close the chapter */
+main#case#case#case#case .og-main .ads-wrap > .story-phases:last-child > * + *::before, main#case#case#case#case .og-main .ads-wrap > .og-lessons:last-child > * + *::before { bottom: calc(-1 * var(--sp-xxl)) !important; }
+/* AI skills page: cards become divided rows, labels quiet, more air before section labels */
+main#case#case#case#case .og-main .cvk-slide, main#case#case#case#case .og-main .ic-row, main#case#case#case#case .og-main .ux-fhs-card, main#case#case#case#case .og-main .pns-card { background: transparent !important; border: 0 !important; border-radius: 0 !important; box-shadow: none !important; padding-left: 0 !important; padding-right: 0 !important; border-top: 1px solid var(--line) !important; }
+main#case#case#case#case .og-main .pns { border-top: 0 !important; }
+main#case#case#case#case .og-main .pns-head, main#case#case#case#case .og-main .ac-label.pns-head { margin-top: var(--sp-xl) !important; margin-bottom: var(--sp-m) !important; }
+main#case#case#case#case .og-main > .ac-sec, main#case#case#case#case .og-main .ac-sec .ac-wrap, main#case#case#case#case .og-main .work-panel { border-top-width: 0; }
+
+/* numbered markers: black outline, no fill */
+main#case#case#case#case .og-main .ads-closeup__notes li::before, main#case#case#case#case .og-main .og-flow .n, main#case#case#case#case .og-main .princ > .n { background: transparent !important; color: #111114 !important; border: 1px solid #111114 !important; box-shadow: none !important; box-sizing: border-box; font-weight: 600 !important; }
 /* AI skills page (ac-* structure): same frame, its own components */
 main#case#case#case#case .og-main > .ac-sec, main#case#case#case#case .og-main > .cvex { position: relative; background: none !important; padding: var(--sp-xxl) 0 var(--sp-xxl) var(--cs-pad) !important; }
 main#case#case#case#case .og-main > .ac-sec { counter-increment: ogch; }

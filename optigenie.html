@@ -1745,6 +1745,33 @@ main#optigenie#optigenie#optigenie#optigenie .og-main .princ { padding-top: 0 !i
 main#optigenie#optigenie#optigenie#optigenie .og-main .ux-block { padding-top: 0 !important; }
 /* wide close-ups (charts, heatmaps): calmer size, like the diagrams */
 main#optigenie#optigenie#optigenie#optigenie .og-main .ads-closeup--wide .ads-closeup__shot, main#optigenie#optigenie#optigenie#optigenie .og-main .ads-closeup:not(.ads-closeup--side):not(.ads-closeup--landscape) .ads-closeup__shot { max-width: 1040px !important; }
+
+/* ===== Quiet typography + air (Sasha 11-17: smaller grey running text, black titles, more air) ===== */
+main#optigenie#optigenie#optigenie#optigenie { --cs-text: #5c5c66; --cs-title: #111114; }
+main#optigenie#optigenie#optigenie#optigenie .og-main p, main#optigenie#optigenie#optigenie#optigenie .og-main li, main#optigenie#optigenie#optigenie#optigenie .og-main .ads-body, main#optigenie#optigenie#optigenie#optigenie .og-main .og-instead, main#optigenie#optigenie#optigenie#optigenie .og-main figcaption span { font-size: clamp(15px, .6vw + 7px, 17px) !important; line-height: 1.8 !important; color: var(--cs-text) !important; letter-spacing: 0 !important; }
+main#optigenie#optigenie#optigenie#optigenie .og-main p strong, main#optigenie#optigenie#optigenie#optigenie .og-main li strong, main#optigenie#optigenie#optigenie#optigenie .og-main p b { color: var(--cs-title) !important; }
+main#optigenie#optigenie#optigenie#optigenie .og-main h2, main#optigenie#optigenie#optigenie#optigenie .og-main h3, main#optigenie#optigenie#optigenie#optigenie .og-main h4, main#optigenie#optigenie#optigenie#optigenie .og-main .ads-h2, main#optigenie#optigenie#optigenie#optigenie #overview .big, main#optigenie#optigenie#optigenie#optigenie .ac-lede .big { color: var(--cs-title) !important; }
+main#optigenie#optigenie#optigenie#optigenie .og-main .ads-h2 { font-size: clamp(1.6rem, 1.1rem + 1vw, 2.4rem) !important; letter-spacing: -.02em !important; }
+main#optigenie#optigenie#optigenie#optigenie .og-main h3 { font-size: clamp(1.1rem, .9rem + .4vw, 1.4rem) !important; letter-spacing: -.01em !important; }
+main#optigenie#optigenie#optigenie#optigenie #overview .sub, main#optigenie#optigenie#optigenie#optigenie .ac-lede .sub { color: var(--cs-text) !important; font-size: clamp(15px, .6vw + 7px, 17px) !important; line-height: 1.8 !important; }
+main#optigenie#optigenie#optigenie#optigenie #overview .big, main#optigenie#optigenie#optigenie#optigenie .ac-lede .big { max-width: 17ch !important; }
+/* small labels everywhere: one size, one tracking */
+main#optigenie#optigenie#optigenie#optigenie .og-main .ads-label, main#optigenie#optigenie#optigenie#optigenie .og-main .page-chapter, main#optigenie#optigenie#optigenie#optigenie .og-main .media-kicker, main#optigenie#optigenie#optigenie#optigenie .og-main .phase, main#optigenie#optigenie#optigenie#optigenie .og-main .ac-label, main#optigenie#optigenie#optigenie#optigenie .og-main .pns-k, main#optigenie#optigenie#optigenie#optigenie .og-main .ux-overline, main#optigenie#optigenie#optigenie#optigenie .og-main .evidence-kind, main#optigenie#optigenie#optigenie#optigenie .og-main .og-instead span { font-size: 11px !important; letter-spacing: .14em !important; line-height: 1.4 !important; }
+main#optigenie#optigenie#optigenie#optigenie .og-main p + p { margin-top: 1.1em !important; }
+/* text ↔ image: 5% more air */
+@media (min-width: 1680px) {
+  main#optigenie#optigenie#optigenie#optigenie .og-main .ads-sec:not(#themes) .media-story, main#optigenie#optigenie#optigenie#optigenie .og-main .ads-sec:not(#themes) .media-story--lead, main#optigenie#optigenie#optigenie#optigenie .og-main .ads-closeup--landscape, main#optigenie#optigenie#optigenie#optigenie .og-main .og-dcard { column-gap: calc(clamp(3rem, 4vw, 5rem) + 5%) !important; }
+}
+/* vertical card dividers run down to the next chapter line when the cards close the chapter */
+main#optigenie#optigenie#optigenie#optigenie .og-main .ads-wrap > .story-phases:last-child > * + *::before, main#optigenie#optigenie#optigenie#optigenie .og-main .ads-wrap > .og-lessons:last-child > * + *::before { bottom: calc(-1 * var(--sp-xxl)) !important; }
+/* AI skills page: cards become divided rows, labels quiet, more air before section labels */
+main#optigenie#optigenie#optigenie#optigenie .og-main .cvk-slide, main#optigenie#optigenie#optigenie#optigenie .og-main .ic-row, main#optigenie#optigenie#optigenie#optigenie .og-main .ux-fhs-card, main#optigenie#optigenie#optigenie#optigenie .og-main .pns-card { background: transparent !important; border: 0 !important; border-radius: 0 !important; box-shadow: none !important; padding-left: 0 !important; padding-right: 0 !important; border-top: 1px solid var(--line) !important; }
+main#optigenie#optigenie#optigenie#optigenie .og-main .pns { border-top: 0 !important; }
+main#optigenie#optigenie#optigenie#optigenie .og-main .pns-head, main#optigenie#optigenie#optigenie#optigenie .og-main .ac-label.pns-head { margin-top: var(--sp-xl) !important; margin-bottom: var(--sp-m) !important; }
+main#optigenie#optigenie#optigenie#optigenie .og-main > .ac-sec, main#optigenie#optigenie#optigenie#optigenie .og-main .ac-sec .ac-wrap, main#optigenie#optigenie#optigenie#optigenie .og-main .work-panel { border-top-width: 0; }
+
+/* numbered markers: black outline, no fill */
+main#optigenie#optigenie#optigenie#optigenie .og-main .ads-closeup__notes li::before, main#optigenie#optigenie#optigenie#optigenie .og-main .og-flow .n, main#optigenie#optigenie#optigenie#optigenie .og-main .princ > .n { background: transparent !important; color: #111114 !important; border: 1px solid #111114 !important; box-shadow: none !important; box-sizing: border-box; font-weight: 600 !important; }
 </style>
     <script src="./js/aboutTexture.js"></script>
 <script>/* chapter index: highlight the chapter in view */(function(){try{var links=[].slice.call(document.querySelectorAll('.og-index__list a'));if(!links.length||!('IntersectionObserver' in window))return;var by={};links.forEach(function(a){by[a.dataset.target]=a;});var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){links.forEach(function(a){a.classList.remove('is-active');});var a=by[e.target.id];if(a)a.classList.add('is-active');}});},{rootMargin:'-35% 0px -60% 0px'});Object.keys(by).forEach(function(id){var s=document.getElementById(id);if(s)io.observe(s);});}catch(e){}})();</script>
