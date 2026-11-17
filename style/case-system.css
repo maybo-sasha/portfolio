@@ -284,6 +284,15 @@ main#case#case#case#case .og-main .cvk-slide, main#case#case#case#case .og-main 
 
 /* the floating section ruler duplicates the chapter index */
 @media (min-width: 1001px) { .ch-rail, .ads-rail { display: none !important; } }
+
+/* spec-style diagrams (any page): mono labels, display names */
+.mg.og-spec text { font-family: var(--font-display), Inter, system-ui, sans-serif !important; letter-spacing: 0 !important; }
+.mg.og-spec text.n { font-family: var(--font-display), Inter, system-ui, sans-serif !important; letter-spacing: -.01em !important; }
+.og-main .story-sketch:has(.og-spec) { max-width: none !important; width: 100% !important; }
+
+/* index: keep long chapter names off the column hairline */
+#case .og-index { padding-right: 1.75rem; }
+#case .og-index__list a { overflow-wrap: anywhere; }
 /* AI skills page (ac-* structure): same frame, its own components */
 main#case#case#case#case .og-main > .ac-sec, main#case#case#case#case .og-main > .cvex { position: relative; background: none !important; padding: var(--sp-xxl) 0 var(--sp-xxl) var(--cs-pad) !important; }
 main#case#case#case#case .og-main > .ac-sec { counter-increment: ogch; }
