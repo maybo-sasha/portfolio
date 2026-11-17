@@ -1924,6 +1924,19 @@ main#optigenie#optigenie#optigenie#optigenie:not(#og_) #overview .ads-wrap, main
 main#optigenie#optigenie#optigenie#optigenie:not(#og_) #overview .big, main#optigenie#optigenie#optigenie#optigenie:not(#og_) .ac-lede .big { max-width: 22ch !important; padding-right: 0 !important; margin: 0 0 2.5rem !important; }
 main#optigenie#optigenie#optigenie#optigenie:not(#og_) #overview .sub, main#optigenie#optigenie#optigenie#optigenie:not(#og_) .ac-lede .sub { max-width: 68ch !important; padding-left: 0 !important; border-left: 0 !important; margin: 0 !important; }
 main#optigenie#optigenie#optigenie#optigenie:not(#og_) #overview, main#optigenie#optigenie#optigenie#optigenie:not(#og_) .ac-lede { padding-bottom: clamp(3rem, 5vw, 5rem) !important; }
+
+/* numbered notes: circle centred on the title line; dividers no longer than the text needs */
+main#optigenie#optigenie#optigenie#optigenie .og-main:not(#og_) .ads-closeup__notes li { --lh: calc(clamp(15px, .6vw + 7px, 17px) * 1.8); --pt: 0px; }
+main#optigenie#optigenie#optigenie#optigenie .og-main:not(#og_) .ads-closeup--wide .ads-closeup__notes li:nth-child(n+3), main#optigenie#optigenie#optigenie#optigenie .og-main:not(#og_) .ads-closeup--wide .ads-closeup__notes li:nth-child(2) { --pt: 18px; }
+main#optigenie#optigenie#optigenie#optigenie .og-main:not(#og_) .ads-closeup__notes li::before { top: calc(var(--pt) + (var(--lh) - 24px) / 2) !important; }
+main#optigenie#optigenie#optigenie#optigenie .og-main:not(#og_) .ads-closeup__notes li:nth-child(n+2) { --pt: 18px; }
+main#optigenie#optigenie#optigenie#optigenie .og-main:not(#og_) .ads-closeup__notes li:nth-child(n+2)::before { top: calc(18px + (var(--lh) - 24px) / 2) !important; }
+main#optigenie#optigenie#optigenie#optigenie .og-main:not(#og_) .ads-closeup--side .ads-closeup__notes, main#optigenie#optigenie#optigenie#optigenie .og-main:not(#og_) .ads-closeup--side .ads-closeup__notes ol, main#optigenie#optigenie#optigenie#optigenie .og-main:not(#og_) .ads-closeup--side > .ads-closeup__notes { max-width: 560px !important; width: 100% !important; }
+main#optigenie#optigenie#optigenie#optigenie .og-main:not(#og_) .ads-closeup--wide .ads-closeup__notes li:nth-child(2) { --pt: 0px; }
+@media (max-width: 1679px) { main#optigenie#optigenie#optigenie#optigenie .og-main:not(#og_) .ads-closeup--wide .ads-closeup__notes li:nth-child(2) { --pt: 0px; } main#optigenie#optigenie#optigenie#optigenie .og-main:not(#og_) .ads-closeup--wide .ads-closeup__notes li:nth-child(2)::before { top: calc((var(--lh) - 24px) / 2) !important; } }
+
+/* no registration crosses */
+main#optigenie#optigenie#optigenie#optigenie .og-main:not(#og_) > .ads-sec::after, main#optigenie#optigenie#optigenie#optigenie .og-main:not(#og_) > .ac-sec::after, main#optigenie#optigenie#optigenie#optigenie .og-main:not(#og_) > .cvex::after, main#optigenie#optigenie#optigenie#optigenie .og-main:not(#og_) > * + *::after { content: none !important; display: none !important; }
 </style>
     <script src="./js/aboutTexture.js"></script>
 <script>/* chapter index: highlight the chapter in view */(function(){try{var links=[].slice.call(document.querySelectorAll('.og-index__list a'));if(!links.length||!('IntersectionObserver' in window))return;var by={};links.forEach(function(a){by[a.dataset.target]=a;});var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){links.forEach(function(a){a.classList.remove('is-active');});var a=by[e.target.id];if(a)a.classList.add('is-active');}});},{rootMargin:'-35% 0px -60% 0px'});Object.keys(by).forEach(function(id){var s=document.getElementById(id);if(s)io.observe(s);});}catch(e){}})();</script>

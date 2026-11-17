@@ -581,6 +581,19 @@ main#case#case#case#case:not(#og_) #overview .ads-wrap, main#case#case#case#case
 main#case#case#case#case:not(#og_) #overview .big, main#case#case#case#case:not(#og_) .ac-lede .big { max-width: 22ch !important; padding-right: 0 !important; margin: 0 0 2.5rem !important; }
 main#case#case#case#case:not(#og_) #overview .sub, main#case#case#case#case:not(#og_) .ac-lede .sub { max-width: 68ch !important; padding-left: 0 !important; border-left: 0 !important; margin: 0 !important; }
 main#case#case#case#case:not(#og_) #overview, main#case#case#case#case:not(#og_) .ac-lede { padding-bottom: clamp(3rem, 5vw, 5rem) !important; }
+
+/* numbered notes: circle centred on the title line; dividers no longer than the text needs */
+main#case#case#case#case .og-main:not(#og_) .ads-closeup__notes li { --lh: calc(clamp(15px, .6vw + 7px, 17px) * 1.8); --pt: 0px; }
+main#case#case#case#case .og-main:not(#og_) .ads-closeup--wide .ads-closeup__notes li:nth-child(n+3), main#case#case#case#case .og-main:not(#og_) .ads-closeup--wide .ads-closeup__notes li:nth-child(2) { --pt: 18px; }
+main#case#case#case#case .og-main:not(#og_) .ads-closeup__notes li::before { top: calc(var(--pt) + (var(--lh) - 24px) / 2) !important; }
+main#case#case#case#case .og-main:not(#og_) .ads-closeup__notes li:nth-child(n+2) { --pt: 18px; }
+main#case#case#case#case .og-main:not(#og_) .ads-closeup__notes li:nth-child(n+2)::before { top: calc(18px + (var(--lh) - 24px) / 2) !important; }
+main#case#case#case#case .og-main:not(#og_) .ads-closeup--side .ads-closeup__notes, main#case#case#case#case .og-main:not(#og_) .ads-closeup--side .ads-closeup__notes ol, main#case#case#case#case .og-main:not(#og_) .ads-closeup--side > .ads-closeup__notes { max-width: 560px !important; width: 100% !important; }
+main#case#case#case#case .og-main:not(#og_) .ads-closeup--wide .ads-closeup__notes li:nth-child(2) { --pt: 0px; }
+@media (max-width: 1679px) { main#case#case#case#case .og-main:not(#og_) .ads-closeup--wide .ads-closeup__notes li:nth-child(2) { --pt: 0px; } main#case#case#case#case .og-main:not(#og_) .ads-closeup--wide .ads-closeup__notes li:nth-child(2)::before { top: calc((var(--lh) - 24px) / 2) !important; } }
+
+/* no registration crosses */
+main#case#case#case#case .og-main:not(#og_) > .ads-sec::after, main#case#case#case#case .og-main:not(#og_) > .ac-sec::after, main#case#case#case#case .og-main:not(#og_) > .cvex::after, main#case#case#case#case .og-main:not(#og_) > * + *::after { content: none !important; display: none !important; }
 /* AI skills page (ac-* structure): same frame, its own components */
 main#case#case#case#case .og-main > .ac-sec, main#case#case#case#case .og-main > .cvex { position: relative; background: none !important; padding: var(--sp-xxl) 0 var(--sp-xxl) var(--cs-pad) !important; }
 main#case#case#case#case .og-main > .ac-sec { counter-increment: ogch; }
