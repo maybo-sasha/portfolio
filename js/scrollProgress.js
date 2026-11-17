@@ -21,7 +21,7 @@
             '.sp-x{pointer-events:auto !important;padding:18px 22px 0 34px;margin:-18px -22px 0 -34px;touch-action:none;user-select:none}' +
             '.sp-x,.sp-x *{cursor:none !important}.sp-x .sp-track{transition:height .5s ' + EASE + ',width .35s ' + EASE + ',background .35s ease !important;overflow:visible !important;cursor:pointer;touch-action:none}' +
             '.sp-x .sp-thumb{position:absolute;left:50%;top:0;width:8px;margin-left:-4px;border-radius:8px;background:#fff;opacity:0;transform:scaleX(.3);transition:opacity .3s ease,transform .35s ' + EASE + ';pointer-events:none}' +
-            '.sp-x .sp-tick{position:absolute;left:50%;width:0;height:1px;background:#fff;opacity:.55;transform:translateX(-50%);transition:width .4s ' + EASE + ';pointer-events:none}' +
+            '.sp-x .sp-tick{position:absolute;left:50%;width:5px;height:1px;background:#fff;opacity:.35;transform:translateX(-50%);transition:width .4s ' + EASE + ',opacity .3s ease;pointer-events:none}'+'.sp-x .sp-tick.is-past{opacity:1;width:7px}' +
             '.sp-x .sp-tip{position:absolute;right:calc(100% + 14px);top:0;white-space:nowrap;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:#fff;opacity:0;transform:translate(6px,-50%);transition:opacity .2s ease,transform .3s ' + EASE + ';pointer-events:none;writing-mode:horizontal-tb}' +
             '.sp-x .sp-tip b{font-weight:600;opacity:.5;margin-right:.5em}' +
             '.sp-x.is-scrub{opacity:1 !important}' +
@@ -52,6 +52,11 @@
         var last = -1, ticking = false, base = label.textContent;
         var thumb = null, scrubOn = false;
         function maxScroll() { return Math.max(0, doc.documentElement.scrollHeight - win.innerHeight); }
+        function litTicks() {
+            if (!ticks || !ticks.length || !chs) return;
+            var y = (win.scrollY || 0) + win.innerHeight * 0.35;
+            chs.forEach(function (c, i) { if (ticks[i]) ticks[i].classList.toggle('is-past', c.y <= y); });
+        }
         function placeThumb() {
             if (!thumb || !scrubOn) return;
             var max = maxScroll(), h = track.getBoundingClientRect().height;
@@ -64,7 +69,7 @@
             ticking = false;
             var max = maxScroll();
             if (own) rail.classList.toggle('is-on', max > 40);
-            placeThumb();
+            placeThumb(); litTicks();
             if (max <= 40) return;
             var p = Math.min(100, Math.max(0, Math.round((win.scrollY || win.pageYOffset || 0) / max * 100)));
             if (p === last) return;
@@ -200,6 +205,8 @@
             rail.addEventListener('pointercancel', up);
         });
         win.addEventListener('resize', function () { if (scrubOn) layoutTicks(); });
+        win.addEventListener('load', function () { setTimeout(function () { layoutTicks(); litTicks(); }, 600); });
+        setTimeout(function () { layoutTicks(); litTicks(); }, 1200);
         var peeked = false;
         try { peeked = sessionStorage.getItem('sp-peek') === '1'; } catch (x) {}
         function peek() {
