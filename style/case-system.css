@@ -243,14 +243,14 @@ main#case#case#case#case .og-main .ads-closeup--side .story-block__head h2, main
 body:has(main .og-body) { background: #ffffff !important; }
 main#case#case#case#case { --line: #e4e4e4; }
 /* Screens in a mat: a white passe-partout with one hairline, like a print on a wall. No shadow. */
-main#case#case#case#case .og-main .ads-shot { border: 1px solid #dedede !important; border-radius: 10px !important; box-shadow: 0 0 0 clamp(22px, 2.4vw, 40px) #ffffff, 0 0 0 calc(clamp(22px, 2.4vw, 40px) + 1px) #e4e4e4 !important; margin: clamp(22px, 2.4vw, 40px); }
+main#case#case#case#case .og-main .ads-shot { border: 1px solid #dedede !important; border-radius: 10px !important; box-shadow: 0 0 0 clamp(10px, 1vw, 16px) #ffffff, 0 0 0 calc(clamp(10px, 1vw, 16px) + 1px) #e4e4e4 !important; margin: clamp(10px, 1vw, 16px); }
 main#case#case#case#case .og-main .ads-shot img, main#case#case#case#case .og-main .ads-shot video { border-radius: 9px; }
 main#case#case#case#case .og-main .og-decisions .ads-shot, main#case#case#case#case .og-main .og-dcard .ads-shot { box-shadow: none !important; margin: 0; }
 
-main#case#case#case#case .og-main figure.case-figure::after, main#case#case#case#case .og-main .story-sketch::after { margin-top: calc(clamp(22px, 2.4vw, 40px) + 14px) !important; }
+main#case#case#case#case .og-main figure.case-figure::after, main#case#case#case#case .og-main .story-sketch::after { margin-top: calc(clamp(10px, 1vw, 16px) + 14px) !important; }
 
 /* close-up cards: no tinted panel; the card itself sits in the same white mat as every screen, at a calmer size */
-main#case#case#case#case .og-main .ads-closeup__shot { background: #ffffff !important; padding: clamp(22px, 2.4vw, 40px) !important; border: 1px solid #e4e4e4 !important; border-radius: 20px !important; box-shadow: none !important; justify-self: start !important; }
+main#case#case#case#case .og-main .ads-closeup__shot { background: #ffffff !important; padding: clamp(10px, 1vw, 16px) !important; border: 1px solid #e4e4e4 !important; border-radius: 20px !important; box-shadow: none !important; justify-self: start !important; }
 main#case#case#case#case .og-main .ads-closeup__frame img { box-shadow: none !important; outline: 1px solid #e4e4e4 !important; border-radius: 10px !important; }
 main#case#case#case#case .og-main .ads-closeup--side .ads-closeup__shot { width: min(100%, 460px) !important; max-width: 460px !important; }
 main#case#case#case#case .og-main .ads-closeup--wide .ads-closeup__shot { width: 100% !important; max-width: none !important; }
@@ -358,6 +358,24 @@ main#case#case#case#case .og-main .ads-closeup--wide .ads-closeup__notes li::bef
 main#case#case#case#case .og-main .ads-closeup--wide .ads-closeup__notes li:nth-child(-n+2)::before { top: 0 !important; }
 
 main#case#case#case#case .og-body { border-top: 0 !important; }
+
+/* ===== Full-bleed dividers, wider content, lighter frames (Sasha 11-17) ===== */
+/* every horizontal divider between chapters, rows and around the facts bar runs the full page width */
+main#case#case#case#case .og-main > .ads-sec + .ads-sec, main#case#case#case#case .og-main > .ac-sec + *, main#case#case#case#case .og-main > .cvex + .ac-sec,
+main#case#case#case#case .og-main .media-story + .media-story, main#case#case#case#case .og-main .og-dcard + .og-dcard, main#case#case#case#case .og-main .og-decisions, main#case#case#case#case .og-main .og-decisions ~ .media-story,
+main#case#case#case#case .og-main .media-story + .case-figure, main#case#case#case#case .og-main .case-figure + .media-story, main#case#case#case#case .og-main .princ,
+main#case#case#case#case .ads-meta, main#case#case#case#case .ac-meta { border-image: linear-gradient(var(--line), var(--line)) 1 / 1px 0 / 0 100vw !important; }
+main#case#case#case#case .ads-meta, main#case#case#case#case .ac-meta { border-image-width: 1px 0 1px 0 !important; }
+main#case#case#case#case { overflow: clip !important; }
+/* stretch right: bigger frame, less right padding */
+main#case#case#case#case .og-body, main#case#case#case#case #overview .ads-wrap, main#case#case#case#case .ads-metabar .ads-wrap, main#case#case#case#case .ac-lede .ac-wrap, main#case#case#case#case .ac-metabar .ac-wrap { max-width: 2400px !important; padding-right: clamp(32px, 4vw, 96px) !important; }
+/* bigger product images and videos beside their copy on big screens */
+@media (min-width: 1680px) {
+  main#case#case#case#case .og-main .ads-sec:not(#themes) .media-story, main#case#case#case#case .og-main .ads-sec:not(#themes) .media-story--lead, main#case#case#case#case .og-main .ads-closeup--landscape, main#case#case#case#case .og-main .og-dcard { grid-template-columns: minmax(0, 4fr) minmax(0, 8fr) !important; }
+}
+/* frames: thin white mat, soft shadow */
+main#case#case#case#case .og-main .ads-shot { box-shadow: 0 0 0 clamp(10px, 1vw, 16px) #ffffff, 0 0 0 calc(clamp(10px, 1vw, 16px) + 1px) #e4e4e4, 0 28px 56px -28px rgba(16, 16, 28, .22) !important; }
+main#case#case#case#case .og-main .ads-closeup__frame img { box-shadow: 0 0 0 1px #e4e4e4, 0 28px 56px -28px rgba(16, 16, 28, .22) !important; }
 /* AI skills page (ac-* structure): same frame, its own components */
 main#case#case#case#case .og-main > .ac-sec, main#case#case#case#case .og-main > .cvex { position: relative; background: none !important; padding: var(--sp-xxl) 0 var(--sp-xxl) var(--cs-pad) !important; }
 main#case#case#case#case .og-main > .ac-sec { counter-increment: ogch; }
