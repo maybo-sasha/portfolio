@@ -169,6 +169,7 @@ main#case#case#case#case .og-index__n { font-style: normal; font-family: ui-mono
 /* text: one measure that grows with the screen, so big screens keep the same proportions */
 main#case#case#case#case .og-main p, main#case#case#case#case .og-main .ads-body { font-size: clamp(1rem, .55rem + .5vw, 1.3rem) !important; }
 main#case#case#case#case .og-main .og-dcard__copy > p:not(.og-instead), main#case#case#case#case .og-main .media-story-copy p, main#case#case#case#case .og-main .intro-copy p, main#case#case#case#case .og-main .ads-head p { max-width: 68ch !important; }
+main#case#case#case#case .og-main .ads-head p { max-width: 85ch !important; } /* Sasha 11-17: chapter intros run wider */
 main#case#case#case#case .og-main .og-lessons p, main#case#case#case#case .og-main .story-phases p, main#case#case#case#case .og-main .og-flow figcaption span { font-size: clamp(.95rem, .5rem + .45vw, 1.2rem) !important; max-width: none !important; }
 main#case#case#case#case .og-main .og-dcard__fig { width: min(100%, 64vw, 1100px) !important; }
 
@@ -568,6 +569,13 @@ main#case#case#case#case .og-main:not(#og_) > .ads-sec, main#case#case#case#case
 main#case#case#case#case .og-index__list a { color: #6b6a7a !important; }
 main#case#case#case#case .og-index__list a.is-active { color: #16151f !important; }
 main#case#case#case#case .og-index__n { color: #a3a2ae !important; }
+/* chapter index hover (Sasha 11-17): ink label, violet number, a short dash previews the active one */
+@media (hover: hover) {
+  main#case#case#case#case .og-index__list a:not(.is-active):hover { color: #16151f !important; }
+  main#case#case#case#case .og-index__list a:not(.is-active):hover .og-index__n { color: var(--violet) !important; opacity: 1; }
+  main#case#case#case#case .og-index__list a:not(.is-active):hover::before { width: 8px; margin: 0 10px 0 0; }
+}
+main#case#case#case#case .og-index__list a:focus-visible { color: #16151f !important; outline: 2px solid var(--violet); outline-offset: 4px; border-radius: 2px; }
 /* one label style: 11px mono, wide tracking, grey; titles black */
 main#case#case#case#case .og-main:not(#og_) .ac-label, main#case#case#case#case .og-main:not(#og_) .pns-k, main#case#case#case#case .og-main:not(#og_) .ux-overline, main#case#case#case#case .og-main:not(#og_) .ic-overline, main#case#case#case#case .og-main:not(#og_) .cv-title, main#case#case#case#case .og-main:not(#og_) .ux-stage-num, main#case#case#case#case .og-main:not(#og_) .ux-demo-label { font: 600 11px/1.4 ui-monospace, SFMono-Regular, Menlo, monospace !important; letter-spacing: .14em !important; text-transform: uppercase !important; color: #5c5c66 !important; margin: 0 0 var(--sp-s) !important; }
 main#case#case#case#case .og-main:not(#og_) .ux-stage-num { color: #4b3fd6 !important; }
@@ -666,6 +674,15 @@ main#case#case#case#case .og-main:not(#og_) .ux-band b { white-space: normal !im
   main#case#case#case#case .og-main:not(#og_) .og-dcard { grid-template-columns: minmax(0, 1fr) !important; }
   main#case#case#case#case .og-main:not(#og_) .og-dcard__fig { max-width: 100%; height: min(70vh, 620px) !important; }
   main#case#case#case#case .og-main:not(#og_) .ux-snapshot { max-width: 100% !important; }
+}
+/* meta strip (Sasha 11-17): tablet keeps 3 columns with vertical dividers, phones stack; the old tablet rule left a stray top hairline on columns 2 and 3 */
+@media (min-width: 721px) and (max-width: 1000px) {
+  main#case#case#case#case:not(#og_) .ads-meta > div + div, main#case#case#case#case:not(#og_) .ac-meta > div + div { border-top: 0 !important; border-left: 1px solid var(--line) !important; }
+  main#case#case#case#case:not(#og_) .ads-meta > div, main#case#case#case#case:not(#og_) .ac-meta > div { padding: 24px 20px !important; }
+  main#case#case#case#case:not(#og_) .ads-meta > div:first-child, main#case#case#case#case:not(#og_) .ac-meta > div:first-child { padding-left: 0 !important; }
+}
+@media (max-width: 720px) {
+  main#case#case#case#case:not(#og_) .ads-meta, main#case#case#case#case:not(#og_) .ac-meta { grid-template-columns: minmax(0, 1fr) !important; }
 }
 @media (max-width: 640px) {
   main#case#case#case#case .og-main:not(#og_) .pns, main#case#case#case#case .og-main:not(#og_) .ux-stages, main#case#case#case#case .og-main:not(#og_) .cvk-stage { grid-template-columns: minmax(0, 1fr) !important; }
