@@ -207,16 +207,5 @@
         win.addEventListener('resize', function () { if (scrubOn) layoutTicks(); });
         win.addEventListener('load', function () { setTimeout(function () { layoutTicks(); litTicks(); }, 600); });
         setTimeout(function () { layoutTicks(); litTicks(); }, 1200);
-        var peeked = false;
-        try { peeked = sessionStorage.getItem('sp-peek') === '1'; } catch (x) {}
-        function peek() {
-            if (peeked || scrubOn || (win.scrollY || 0) < 240) return;
-            peeked = true; try { sessionStorage.setItem('sp-peek', '1'); } catch (x) {}
-            win.removeEventListener('scroll', peek);
-            tip.innerHTML = 'hover to scroll'; tip.style.top = '50%';
-            rail.classList.add('is-peek', 'is-point');
-            setTimeout(function () { if (!scrubOn) rail.classList.remove('is-peek', 'is-point'); else rail.classList.remove('is-peek'); }, 2600);
-        }
-        if (!peeked) win.addEventListener('scroll', peek, { passive: true });
     } catch (e) { /* never break a page */ }
 })();
