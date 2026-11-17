@@ -299,7 +299,7 @@ main#case#case#case#case .og-main .cvk-slide, main#case#case#case#case .og-main 
    Text keeps a 68ch measure. Only the side profile card is a deliberate exception (420px beside its notes). */
 #case .og-main { --cs-col: 1040px; max-width: calc(var(--cs-col) + var(--cs-pad)) !important; }
 main#case#case#case#case .og-main figure.case-figure, main#case#case#case#case .og-main .story-sketch, main#case#case#case#case .og-main .story-block__art, main#case#case#case#case .og-main .og-darkfig, main#case#case#case#case .og-main .og-dcard__fig,
-main#case#case#case#case .og-main .ads-closeup--wide .ads-closeup__shot, main#case#case#case#case .og-main .ads-closeup--landscape .ads-closeup__shot, main#case#case#case#case .og-main .ads-closeup:not(.ads-closeup--side) .ads-closeup__shot,
+main#case#case#case#case .og-main .ads-closeup--wide .ads-closeup__shot, main#case#case#case#case .og-main .ads-closeup--landscape .ads-closeup__shot, main#case#case#case#case .og-main .ads-closeup--landscape .ads-closeup__shot,
 main#case#case#case#case .og-main .media-story > figure, main#case#case#case#case .og-main .story-opening > figure { width: 100% !important; max-width: none !important; margin-left: 0 !important; margin-right: 0 !important; justify-self: stretch !important; align-self: start !important; }
 main#case#case#case#case .og-main .media-story, main#case#case#case#case .og-main .media-story--lead, main#case#case#case#case .og-main .story-opening, main#case#case#case#case .og-main .og-dcard { justify-items: stretch !important; }
 main#case#case#case#case .og-main .ads-closeup--side { grid-template-columns: minmax(0, 1fr) 420px !important; }
@@ -313,6 +313,51 @@ main#case#case#case#case .og-main { max-width: none !important; }
 
 /* diagrams fill their figure edge to edge (no 1200px cap, no centring): drawing edges = text edges */
 main#case#case#case#case .og-main .story-sketch > svg, main#case#case#case#case .og-main .story-block__art > svg, main#case#case#case#case .og-main figure > svg.mg, main#case#case#case#case .og-main figure > svg.og-navchart { display: block; width: 100% !important; max-width: none !important; min-width: 0 !important; height: auto !important; margin: 0 !important; }
+
+/* ===== Frame v3 (Sasha 11-17) ===== one frame for overview, facts bar and body: max 2000px, centred, wider side padding */
+main#case#case#case#case { --cs-x: clamp(40px, 7vw, 180px); }
+main#case#case#case#case .og-body, main#case#case#case#case #overview .ads-wrap, main#case#case#case#case .ads-metabar .ads-wrap, main#case#case#case#case .ac-lede .ac-wrap, main#case#case#case#case .ac-metabar .ac-wrap { max-width: 2000px !important; margin-left: auto !important; margin-right: auto !important; padding-left: var(--cs-x) !important; padding-right: var(--cs-x) !important; box-sizing: border-box; }
+/* facts bar: left-aligned cells, hairlines top and bottom across the full frame content, dividers between cells */
+main#case#case#case#case .ads-metabar, main#case#case#case#case .ac-metabar { border: 0 !important; background: none !important; padding: 0 !important; }
+main#case#case#case#case .ads-meta, main#case#case#case#case .ac-meta { display: grid !important; grid-template-columns: repeat(3, minmax(0, 1fr)) !important; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); margin: 0 !important; max-width: none !important; }
+main#case#case#case#case .ads-meta > div, main#case#case#case#case .ac-meta > div { text-align: left !important; padding: 28px 32px !important; border: 0 !important; }
+main#case#case#case#case .ads-meta > div:first-child, main#case#case#case#case .ac-meta > div:first-child { padding-left: 0 !important; }
+main#case#case#case#case .ads-meta > div + div, main#case#case#case#case .ac-meta > div + div { border-left: 1px solid var(--line) !important; }
+main#case#case#case#case .ads-meta .k, main#case#case#case#case .ac-meta .k { display: block; margin-bottom: 8px; text-align: left !important; }
+main#case#case#case#case .ads-meta .v, main#case#case#case#case .ac-meta .v { text-align: left !important; }
+main#case#case#case#case #overview, main#case#case#case#case .ac-lede { padding-bottom: clamp(3rem, 5vw, 5rem) !important; }
+/* every divider inside the column spans the column */
+main#case#case#case#case .og-main .ads-closeup__notes, main#case#case#case#case .og-main .ads-closeup__notes ol, main#case#case#case#case .og-main .ads-closeup--side > .ads-closeup__notes { max-width: none !important; width: 100%; }
+main#case#case#case#case .og-main .ads-closeup__notes li { max-width: none !important; }
+/* challenge cards fill the column */
+main#case#case#case#case .og-main .ch-grid { display: grid !important; grid-template-columns: repeat(3, minmax(0, 1fr)) !important; column-gap: clamp(2.5rem, 4.4vw, 4.5rem) !important; width: 100% !important; max-width: none !important; }
+main#case#case#case#case .og-main .ch-grid > .ch-card { max-width: none !important; width: auto !important; min-width: 0; }
+main#case#case#case#case .og-main .ch-card__art { width: 100% !important; max-width: none !important; }
+/* big screens: copy beside its image (5/7), image kept to a reasonable size, both on the column edges */
+@media (min-width: 1680px) {
+  main#case#case#case#case .og-main .ads-sec:not(#themes) .media-story, main#case#case#case#case .og-main .ads-sec:not(#themes) .media-story--lead { grid-template-columns: minmax(0, 5fr) minmax(0, 7fr) !important; column-gap: clamp(3rem, 4vw, 5rem) !important; row-gap: 0 !important; align-items: start !important; }
+  main#case#case#case#case .og-main .ads-sec:not(#themes) .media-story > .media-story-copy { grid-column: 1; grid-row: 1; padding-top: 0; }
+  main#case#case#case#case .og-main .ads-sec:not(#themes) .media-story > figure { grid-column: 2; grid-row: 1; }
+  main#case#case#case#case .og-main .ads-closeup--landscape { grid-template-columns: minmax(0, 5fr) minmax(0, 7fr) !important; column-gap: clamp(3rem, 4vw, 5rem) !important; row-gap: var(--sp-m) !important; align-items: start !important; }
+  main#case#case#case#case .og-main .ads-closeup--landscape > .story-block__head { grid-column: 1; grid-row: 1; }
+  main#case#case#case#case .og-main .ads-closeup--landscape > .ads-closeup__notes { grid-column: 1; grid-row: 2; }
+  main#case#case#case#case .og-main .ads-closeup--landscape > .ads-closeup__shot { grid-column: 2; grid-row: 1 / span 2; }
+  main#case#case#case#case .og-main .ads-closeup--landscape .ads-closeup__notes ol { grid-template-columns: minmax(0, 1fr) !important; }
+  main#case#case#case#case .og-main .og-dcard { grid-template-columns: minmax(0, 5fr) minmax(0, 7fr) !important; column-gap: clamp(3rem, 4vw, 5rem) !important; align-items: center !important; }
+  main#case#case#case#case .og-main .og-dcard > .og-dcard__copy { grid-column: 1; grid-row: 1; }
+  main#case#case#case#case .og-main .og-dcard > .og-dcard__fig { grid-column: 2; grid-row: 1; aspect-ratio: 4 / 3 !important; }
+}
+
+/* wide table close-ups stay stacked at full width; their notes run in two columns, each row's divider spanning its column */
+main#case#case#case#case .og-main .ads-closeup--wide .ads-closeup__notes ol { display: grid !important; grid-template-columns: repeat(2, minmax(0, 1fr)) !important; column-gap: clamp(2.5rem, 4.4vw, 4.5rem) !important; }
+@media (max-width: 900px) { main#case#case#case#case .og-main .ads-closeup--wide .ads-closeup__notes ol { grid-template-columns: minmax(0, 1fr) !important; } }
+
+main#case#case#case#case .og-main .ads-closeup--wide .ads-closeup__notes li { margin: 0 !important; padding: 18px 0 18px 2.5rem !important; border-top: 1px solid var(--line) !important; }
+main#case#case#case#case .og-main .ads-closeup--wide .ads-closeup__notes li:nth-child(-n+2) { border-top: 0 !important; padding-top: 0 !important; }
+main#case#case#case#case .og-main .ads-closeup--wide .ads-closeup__notes li::before { top: 18px !important; }
+main#case#case#case#case .og-main .ads-closeup--wide .ads-closeup__notes li:nth-child(-n+2)::before { top: 0 !important; }
+
+main#case#case#case#case .og-body { border-top: 0 !important; }
 /* AI skills page (ac-* structure): same frame, its own components */
 main#case#case#case#case .og-main > .ac-sec, main#case#case#case#case .og-main > .cvex { position: relative; background: none !important; padding: var(--sp-xxl) 0 var(--sp-xxl) var(--cs-pad) !important; }
 main#case#case#case#case .og-main > .ac-sec { counter-increment: ogch; }
