@@ -48,8 +48,8 @@
     addEventListener('scroll', () => { scrolled = true; }, { passive: true });
     if (window.lenis && window.lenis.on) window.lenis.on('scroll', () => { scrolled = true; });
 
-    const NEED = 900;            // px of further scrolling, in total, to open the next project
-    const GRACE = 450;           // ms after arriving at the bottom to ignore input, so a flick's momentum cannot open it
+    const NEED = 520;            // px of further scrolling, in total, to open the next project (Sasha 11-17: faster; was 900)
+    const GRACE = 220;           // ms after arriving at the bottom to ignore input, so a flick's momentum cannot open it
     let armed = false, armedAt = 0, p = 0, lastInput = 0, raf = 0, leaving = false, prefetched = false, last = 0;
 
     function show() {
@@ -60,7 +60,7 @@
     }
     function loop(now) {
         const dt = last ? Math.min(0.1, (now - last) / 1000) : 0; last = now;
-        if (!leaving && now - lastInput > 650 && p > 0) p = Math.max(0, p - dt * 0.55);   // stopped scrolling: it drains back
+        if (!leaving && now - lastInput > 800 && p > 0) p = Math.max(0, p - dt * 0.55);   // stopped scrolling: it drains back
         show();
         if (p > 0 || armed) raf = requestAnimationFrame(loop); else { raf = 0; last = 0; }
     }
@@ -99,6 +99,6 @@
                 if (!leaving) { p = 0; show(); }
             }
         });
-    }, { threshold: 0 });
+    }, { threshold: 0, rootMargin: '0px 0px 35% 0px' });   // arms a little before the very bottom (Sasha 11-17: earlier)
     io.observe(sentinel);
 })();

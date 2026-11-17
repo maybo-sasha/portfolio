@@ -44,7 +44,18 @@ if (mouse) {
     let isLocked   = false;
     let unlockTimer;
 
+    let magOn = false;
     gsap.ticker.add(() => {
+        const m = window.__cursorMagnet;   // js/scrollProgress.js: lock onto the scrollbar thumb
+        if (m) {
+            const r = m(); magOn = true;
+            setLeft(r.x); setTop(r.y);
+            const cw = mouse.offsetWidth, ch = mouse.offsetHeight;   // follow the thumb's size every frame (Sasha 11-17: snap onto it)
+                gsap.killTweensOf(mouse, 'width,height,borderRadius');
+                mouse.style.width = (cw + (r.w - cw) * 0.3) + 'px'; mouse.style.height = (ch + (r.h - ch) * 0.3) + 'px'; mouse.style.borderRadius = '999px';
+            return;
+        }
+        if (magOn) { magOn = false; gsap.to(mouse, { width: '2rem', height: '2rem', borderRadius: '50%', duration: 0.3, ease: 'power2.out', overwrite: 'auto' }); }
         if (!isLocked) { setLeft(rawX); setTop(rawY); }
     });
 

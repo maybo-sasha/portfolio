@@ -30,7 +30,21 @@
     if (g) {
         const setL = g.quickSetter(cursor, 'left', 'px');
         const setT = g.quickSetter(cursor, 'top', 'px');
-        g.ticker.add(() => { if (moved()) { shownX = rawX; shownY = rawY; setL(rawX); setT(rawY); } });
+        // window.__cursorMagnet (set by js/scrollProgress.js): the ring locks onto a moving target and takes its shape
+        let magOn = false;
+        g.ticker.add(() => {
+            const m = window.__cursorMagnet;
+            if (m) {
+                const r = m(); magOn = true; shownX = shownY = NaN;
+                setL(r.x); setT(r.y);
+                const cw = cursor.offsetWidth, ch = cursor.offsetHeight;   // follow the thumb's size every frame (Sasha 11-17: snap onto it)
+                g.killTweensOf(cursor, 'width,height,borderRadius');
+                cursor.style.width = (cw + (r.w - cw) * 0.3) + 'px'; cursor.style.height = (ch + (r.h - ch) * 0.3) + 'px'; cursor.style.borderRadius = '999px';
+                return;
+            }
+            if (magOn) { magOn = false; reset(); }
+            if (moved()) { shownX = rawX; shownY = rawY; setL(rawX); setT(rawY); }
+        });
     } else {
         const loop = () => {
             if (moved()) { shownX = rawX; shownY = rawY; cursor.style.left = rawX + 'px'; cursor.style.top = rawY + 'px'; }

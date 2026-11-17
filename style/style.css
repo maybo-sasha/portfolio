@@ -254,7 +254,7 @@ html.instant .inner-back {
 .next-project.is-near .np-name { transform: translateY(-6px); }
 /* the progress bar: appears at the bottom, fills as the visitor keeps scrolling, opens the next project when full (js/projectNav.js) */
 .next-project .np-progress { display: flex; flex-direction: column; align-items: center; gap: 0.9rem; margin-top: 1.2rem; opacity: 0; transform: translateY(8px);
-    transition: opacity .5s ease, transform .6s cubic-bezier(0.23, 1, 0.32, 1); }
+    transition: opacity .25s ease, transform .35s cubic-bezier(0.23, 1, 0.32, 1); }   /* Sasha 11-17: appears faster */
 .next-project.is-near .np-progress { opacity: 1; transform: none; }
 .next-project .np-bar { display: block; width: min(340px, 62vw); height: 3px; border-radius: 3px; background: rgba(255, 255, 255, 0.18); overflow: hidden; }
 .next-project .np-fill { display: block; width: 100%; height: 100%; border-radius: 3px; background: #fff; transform: scaleX(0); transform-origin: 0 50%; }
@@ -1511,3 +1511,6 @@ html.on-intro #logo .logo-sub { opacity: 0; }
     .about-info .about-block:not(:first-child) { grid-column: 1; height: min(var(--cell, 72px), 6.2vh) !important; }
     .about-info .about-block:nth-child(2) { grid-row: 3; } .about-info .about-block:nth-child(3) { grid-row: 4; } .about-info .about-block:nth-child(4) { grid-row: 5; }
 }
+
+/* Sasha 2026-11-17: hide Work on touch screens; the home page already lists every project, and the hover menu is desktop-only */
+@media (max-width: 900px), (hover: none) { .nav-link[data-menu="work"], [data-menu="work"].nav-link { display: none !important; } }
