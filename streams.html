@@ -836,7 +836,7 @@ body::after { content: ""; position: fixed; inset: 0; z-index: 9000; pointer-eve
         // Keep the page usable when the optional animation libraries are unavailable.
         const reduceMotion = matchMedia('(prefers-reduced-motion: reduce)').matches;
         const hasGsap = !!window.gsap;
-        const lenis = !reduceMotion && window.Lenis ? new Lenis({ lerp: 0.08, smoothWheel: true }) : null;
+        const lenis = !reduceMotion && window.Lenis ? new Lenis({ lerp: 0.08, smoothWheel: true }) : null; window.__lenis = lenis;
         if (lenis && hasGsap) { gsap.ticker.add(t => lenis.raf(t * 1000)); gsap.ticker.lagSmoothing(0); }
         else if (lenis) { const tick = t => { lenis.raf(t); requestAnimationFrame(tick); }; requestAnimationFrame(tick); }
         const goTo = el => {

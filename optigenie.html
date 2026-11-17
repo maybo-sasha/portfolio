@@ -935,7 +935,7 @@ main#optigenie#optigenie#optigenie#optigenie#optigenie .og-main .og-spec { width
         // Keep the page usable when the optional animation libraries are unavailable.
         const reduceMotion = matchMedia('(prefers-reduced-motion: reduce)').matches;
         const hasGsap = !!window.gsap;
-        const lenis = !reduceMotion && window.Lenis ? new Lenis({ lerp: 0.08, smoothWheel: true }) : null;
+        const lenis = !reduceMotion && window.Lenis ? new Lenis({ lerp: 0.08, smoothWheel: true }) : null; window.__lenis = lenis;
         if (lenis && hasGsap) { gsap.ticker.add(t => lenis.raf(t * 1000)); gsap.ticker.lagSmoothing(0); }
         else if (lenis) { const tick = t => { lenis.raf(t); requestAnimationFrame(tick); }; requestAnimationFrame(tick); }
         const goTo = el => {
@@ -1719,6 +1719,23 @@ main#optigenie#optigenie#optigenie#optigenie .og-body, main#optigenie#optigenie#
 /* frames: thin white mat, soft shadow */
 main#optigenie#optigenie#optigenie#optigenie .og-main .ads-shot { box-shadow: 0 0 0 clamp(10px, 1vw, 16px) #ffffff, 0 0 0 calc(clamp(10px, 1vw, 16px) + 1px) #e4e4e4, 0 28px 56px -28px rgba(16, 16, 28, .22) !important; }
 main#optigenie#optigenie#optigenie#optigenie .og-main .ads-closeup__frame img { box-shadow: 0 0 0 1px #e4e4e4, 0 28px 56px -28px rgba(16, 16, 28, .22) !important; }
+
+/* close-up cards carry their own border in the image: shadow only, no outline (one border) */
+main#optigenie#optigenie#optigenie#optigenie .og-main .ads-closeup__frame img { box-shadow: 0 24px 48px -28px rgba(16, 16, 28, .20) !important; outline: 0 !important; border: 0 !important; }
+/* diagrams: calmer size, on the text's left edge */
+main#optigenie#optigenie#optigenie#optigenie .og-main .story-sketch:has(> svg), main#optigenie#optigenie#optigenie#optigenie .og-main .story-block__art:has(> svg) { max-width: 1040px !important; }
+
+/* header on one 3-column grid with the facts bar: statement spans 1–2, description in 3; dividers line up */
+main#optigenie#optigenie#optigenie#optigenie #overview .ads-wrap, main#optigenie#optigenie#optigenie#optigenie .ac-lede .ac-wrap { display: grid !important; grid-template-columns: repeat(3, minmax(0, 1fr)) !important; column-gap: 0 !important; align-items: center !important; text-align: left; }
+main#optigenie#optigenie#optigenie#optigenie #overview .big, main#optigenie#optigenie#optigenie#optigenie .ac-lede .big { grid-column: 1 / span 2 !important; max-width: none !important; padding-right: 32px; margin: 0 !important; }
+main#optigenie#optigenie#optigenie#optigenie #overview .sub, main#optigenie#optigenie#optigenie#optigenie .ac-lede .sub { grid-column: 3 !important; max-width: none !important; margin: 0 !important; padding-left: 32px !important; border-left: 1px solid var(--line) !important; }
+@media (max-width: 900px) { main#optigenie#optigenie#optigenie#optigenie #overview .ads-wrap, main#optigenie#optigenie#optigenie#optigenie .ac-lede .ac-wrap { grid-template-columns: minmax(0, 1fr) !important; row-gap: 1.25rem; } main#optigenie#optigenie#optigenie#optigenie #overview .big, main#optigenie#optigenie#optigenie#optigenie .ac-lede .big, main#optigenie#optigenie#optigenie#optigenie #overview .sub, main#optigenie#optigenie#optigenie#optigenie .ac-lede .sub { grid-column: 1 !important; padding: 0 !important; border: 0 !important; } }
+
+/* content dividers start at the column hairline and run right only, so they never cross the chapter index */
+main#optigenie#optigenie#optigenie#optigenie .og-main > .ads-sec + .ads-sec, main#optigenie#optigenie#optigenie#optigenie .og-main > .ac-sec + *, main#optigenie#optigenie#optigenie#optigenie .og-main > .cvex + .ac-sec,
+main#optigenie#optigenie#optigenie#optigenie .og-main .media-story + .media-story, main#optigenie#optigenie#optigenie#optigenie .og-main .og-dcard + .og-dcard, main#optigenie#optigenie#optigenie#optigenie .og-main .og-decisions, main#optigenie#optigenie#optigenie#optigenie .og-main .og-decisions ~ .media-story,
+main#optigenie#optigenie#optigenie#optigenie .og-main .media-story + .case-figure, main#optigenie#optigenie#optigenie#optigenie .og-main .case-figure + .media-story, main#optigenie#optigenie#optigenie#optigenie .og-main .princ { border-image-outset: 0 100vw 0 0 !important; }
+main#optigenie#optigenie#optigenie#optigenie .og-main .media-story + .media-story, main#optigenie#optigenie#optigenie#optigenie .og-main .og-dcard + .og-dcard, main#optigenie#optigenie#optigenie#optigenie .og-main .og-decisions, main#optigenie#optigenie#optigenie#optigenie .og-main .og-decisions ~ .media-story, main#optigenie#optigenie#optigenie#optigenie .og-main .media-story + .case-figure, main#optigenie#optigenie#optigenie#optigenie .og-main .case-figure + .media-story, main#optigenie#optigenie#optigenie#optigenie .og-main .princ { border-image-outset: 0 100vw 0 var(--cs-pad) !important; }
 </style>
     <script src="./js/aboutTexture.js"></script>
 <script>/* chapter index: highlight the chapter in view */(function(){try{var links=[].slice.call(document.querySelectorAll('.og-index__list a'));if(!links.length||!('IntersectionObserver' in window))return;var by={};links.forEach(function(a){by[a.dataset.target]=a;});var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){links.forEach(function(a){a.classList.remove('is-active');});var a=by[e.target.id];if(a)a.classList.add('is-active');}});},{rootMargin:'-35% 0px -60% 0px'});Object.keys(by).forEach(function(id){var s=document.getElementById(id);if(s)io.observe(s);});}catch(e){}})();</script>

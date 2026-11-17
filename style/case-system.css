@@ -376,6 +376,23 @@ main#case#case#case#case .og-body, main#case#case#case#case #overview .ads-wrap,
 /* frames: thin white mat, soft shadow */
 main#case#case#case#case .og-main .ads-shot { box-shadow: 0 0 0 clamp(10px, 1vw, 16px) #ffffff, 0 0 0 calc(clamp(10px, 1vw, 16px) + 1px) #e4e4e4, 0 28px 56px -28px rgba(16, 16, 28, .22) !important; }
 main#case#case#case#case .og-main .ads-closeup__frame img { box-shadow: 0 0 0 1px #e4e4e4, 0 28px 56px -28px rgba(16, 16, 28, .22) !important; }
+
+/* close-up cards carry their own border in the image: shadow only, no outline (one border) */
+main#case#case#case#case .og-main .ads-closeup__frame img { box-shadow: 0 24px 48px -28px rgba(16, 16, 28, .20) !important; outline: 0 !important; border: 0 !important; }
+/* diagrams: calmer size, on the text's left edge */
+main#case#case#case#case .og-main .story-sketch:has(> svg), main#case#case#case#case .og-main .story-block__art:has(> svg) { max-width: 1040px !important; }
+
+/* header on one 3-column grid with the facts bar: statement spans 1–2, description in 3; dividers line up */
+main#case#case#case#case #overview .ads-wrap, main#case#case#case#case .ac-lede .ac-wrap { display: grid !important; grid-template-columns: repeat(3, minmax(0, 1fr)) !important; column-gap: 0 !important; align-items: center !important; text-align: left; }
+main#case#case#case#case #overview .big, main#case#case#case#case .ac-lede .big { grid-column: 1 / span 2 !important; max-width: none !important; padding-right: 32px; margin: 0 !important; }
+main#case#case#case#case #overview .sub, main#case#case#case#case .ac-lede .sub { grid-column: 3 !important; max-width: none !important; margin: 0 !important; padding-left: 32px !important; border-left: 1px solid var(--line) !important; }
+@media (max-width: 900px) { main#case#case#case#case #overview .ads-wrap, main#case#case#case#case .ac-lede .ac-wrap { grid-template-columns: minmax(0, 1fr) !important; row-gap: 1.25rem; } main#case#case#case#case #overview .big, main#case#case#case#case .ac-lede .big, main#case#case#case#case #overview .sub, main#case#case#case#case .ac-lede .sub { grid-column: 1 !important; padding: 0 !important; border: 0 !important; } }
+
+/* content dividers start at the column hairline and run right only, so they never cross the chapter index */
+main#case#case#case#case .og-main > .ads-sec + .ads-sec, main#case#case#case#case .og-main > .ac-sec + *, main#case#case#case#case .og-main > .cvex + .ac-sec,
+main#case#case#case#case .og-main .media-story + .media-story, main#case#case#case#case .og-main .og-dcard + .og-dcard, main#case#case#case#case .og-main .og-decisions, main#case#case#case#case .og-main .og-decisions ~ .media-story,
+main#case#case#case#case .og-main .media-story + .case-figure, main#case#case#case#case .og-main .case-figure + .media-story, main#case#case#case#case .og-main .princ { border-image-outset: 0 100vw 0 0 !important; }
+main#case#case#case#case .og-main .media-story + .media-story, main#case#case#case#case .og-main .og-dcard + .og-dcard, main#case#case#case#case .og-main .og-decisions, main#case#case#case#case .og-main .og-decisions ~ .media-story, main#case#case#case#case .og-main .media-story + .case-figure, main#case#case#case#case .og-main .case-figure + .media-story, main#case#case#case#case .og-main .princ { border-image-outset: 0 100vw 0 var(--cs-pad) !important; }
 /* AI skills page (ac-* structure): same frame, its own components */
 main#case#case#case#case .og-main > .ac-sec, main#case#case#case#case .og-main > .cvex { position: relative; background: none !important; padding: var(--sp-xxl) 0 var(--sp-xxl) var(--cs-pad) !important; }
 main#case#case#case#case .og-main > .ac-sec { counter-increment: ogch; }
