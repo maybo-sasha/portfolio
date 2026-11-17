@@ -1853,17 +1853,6 @@ main#optigenie#optigenie#optigenie#optigenie .og-main .ux-stage + .ux-stage::bef
 main#optigenie#optigenie#optigenie#optigenie .og-main .ux-stages .ux-arrow, main#optigenie#optigenie#optigenie#optigenie .og-main .ux-stage .arr { display: none !important; }
 main#optigenie#optigenie#optigenie#optigenie .og-main .ux-process { border: 0 !important; background: none !important; box-shadow: none !important; padding: 0 !important; }
 
-/* ===== Connected dividers (Sasha 11-17) =====
-   No hairline beside the menu; chapter lines start at the text edge. Rows of peers: one continuous top line per row
-   (it bridges the gaps), vertical lines centred in the gaps, rows touching so verticals run unbroken. */
-main#optigenie#optigenie#optigenie#optigenie#optigenie .og-main { border-left: 0 !important; }
-main#optigenie#optigenie#optigenie#optigenie#optigenie .og-main > .ads-sec, main#optigenie#optigenie#optigenie#optigenie#optigenie .og-main > .ac-sec, main#optigenie#optigenie#optigenie#optigenie#optigenie .og-main > .cvex { margin-left: 0 !important; padding-left: 0 !important; }
-main#optigenie#optigenie#optigenie#optigenie#optigenie .og-main > .ads-sec + .ads-sec::after, main#optigenie#optigenie#optigenie#optigenie#optigenie .og-main > .ac-sec + *::after, main#optigenie#optigenie#optigenie#optigenie#optigenie .og-main > .cvex + .ac-sec::after { content: none !important; display: none !important; }
-main#optigenie#optigenie#optigenie#optigenie#optigenie .og-main .story-phases, main#optigenie#optigenie#optigenie#optigenie#optigenie .og-main .og-lessons, main#optigenie#optigenie#optigenie#optigenie#optigenie .og-main .wireframe-grid, main#optigenie#optigenie#optigenie#optigenie#optigenie .og-main .ch-grid, main#optigenie#optigenie#optigenie#optigenie#optigenie .og-main .pns, main#optigenie#optigenie#optigenie#optigenie#optigenie .og-main .cvk-stage, main#optigenie#optigenie#optigenie#optigenie#optigenie .og-main .ux-fhs, main#optigenie#optigenie#optigenie#optigenie#optigenie .og-main .ux-stages, main#optigenie#optigenie#optigenie#optigenie#optigenie .og-main .ic-stack { column-gap: clamp(2.5rem, 4.4vw, 4.5rem) !important; row-gap: 0 !important; border-top: 0 !important; clip-path: inset(-100vh 0 -100vh 0); }
-main#optigenie#optigenie#optigenie#optigenie#optigenie .og-main .story-phases > *, main#optigenie#optigenie#optigenie#optigenie#optigenie .og-main .og-lessons > *, main#optigenie#optigenie#optigenie#optigenie#optigenie .og-main .wireframe-grid > *, main#optigenie#optigenie#optigenie#optigenie#optigenie .og-main .ch-grid > *, main#optigenie#optigenie#optigenie#optigenie#optigenie .og-main .pns > *, main#optigenie#optigenie#optigenie#optigenie#optigenie .og-main .cvk-stage > *, main#optigenie#optigenie#optigenie#optigenie#optigenie .og-main .ux-fhs > *, main#optigenie#optigenie#optigenie#optigenie#optigenie .og-main .ux-stages > *, main#optigenie#optigenie#optigenie#optigenie#optigenie .og-main .ic-stack > * { position: relative; border-top: 1px solid transparent !important; border-image: linear-gradient(var(--line), var(--line)) 1 / 1px 0 0 0 / 0 calc(clamp(2.5rem, 4.4vw, 4.5rem) / 2) 0 calc(clamp(2.5rem, 4.4vw, 4.5rem) / 2) !important; padding-top: var(--sp-l) !important; padding-bottom: var(--sp-xl) !important; margin-top: 0 !important; }
-main#optigenie#optigenie#optigenie#optigenie#optigenie .og-main .story-phases > *::before, main#optigenie#optigenie#optigenie#optigenie#optigenie .og-main .og-lessons > *::before, main#optigenie#optigenie#optigenie#optigenie#optigenie .og-main .wireframe-grid > *::before, main#optigenie#optigenie#optigenie#optigenie#optigenie .og-main .ch-grid > *::before, main#optigenie#optigenie#optigenie#optigenie#optigenie .og-main .pns > *::before, main#optigenie#optigenie#optigenie#optigenie#optigenie .og-main .cvk-stage > *::before, main#optigenie#optigenie#optigenie#optigenie#optigenie .og-main .ux-fhs > *::before, main#optigenie#optigenie#optigenie#optigenie#optigenie .og-main .ux-stages > *::before, main#optigenie#optigenie#optigenie#optigenie#optigenie .og-main .ic-stack > *::before { content: "" !important; display: block !important; position: absolute !important; top: -1px !important; bottom: 0 !important; left: calc(-1 * clamp(2.5rem, 4.4vw, 4.5rem) / 2) !important; width: 1px !important; height: auto !important; background: var(--line) !important; border: 0 !important; }
-main#optigenie#optigenie#optigenie#optigenie#optigenie .og-main .story-phases > *::after, main#optigenie#optigenie#optigenie#optigenie#optigenie .og-main .og-lessons > *::after, main#optigenie#optigenie#optigenie#optigenie#optigenie .og-main .wireframe-grid > *::after, main#optigenie#optigenie#optigenie#optigenie#optigenie .og-main .ch-grid > *::after, main#optigenie#optigenie#optigenie#optigenie#optigenie .og-main .pns > *::after, main#optigenie#optigenie#optigenie#optigenie#optigenie .og-main .cvk-stage > *::after, main#optigenie#optigenie#optigenie#optigenie#optigenie .og-main .ux-fhs > *::after, main#optigenie#optigenie#optigenie#optigenie#optigenie .og-main .ux-stages > *::after, main#optigenie#optigenie#optigenie#optigenie#optigenie .og-main .ic-stack > *::after { content: none !important; }
-main#optigenie#optigenie#optigenie#optigenie#optigenie .og-main .ads-wrap > :is(.story-phases, .og-lessons, .wireframe-grid, .ch-grid, .pns, .cvk-stage, .ux-fhs, .ux-stages, .ic-stack):last-child > *::before, main#optigenie#optigenie#optigenie#optigenie#optigenie .og-main .ac-wrap :is(.story-phases, .og-lessons, .wireframe-grid, .ch-grid, .pns, .cvk-stage, .ux-fhs, .ux-stages, .ic-stack):last-child > *::before { bottom: calc(-1 * var(--sp-xxl)) !important; }
 /* numbered notes: every divider spans the same notes column */
 main#optigenie#optigenie#optigenie#optigenie#optigenie .og-main .ads-closeup__notes ol { width: 100% !important; }
 main#optigenie#optigenie#optigenie#optigenie#optigenie .og-main .ads-closeup__notes li { width: auto !important; margin-left: 0 !important; margin-right: 0 !important; }
@@ -1873,6 +1862,68 @@ main#optigenie#optigenie#optigenie#optigenie#optigenie .og-main #discovery .og-d
 main#optigenie#optigenie#optigenie#optigenie#optigenie .og-main #discovery .og-decisions ~ .media-story > figure { grid-column: 1 !important; grid-row: 2 !important; max-width: 1040px !important; }
 /* theme comparison and theme switch: smaller */
 main#optigenie#optigenie#optigenie#optigenie#optigenie .og-main #themes .og-duo, main#optigenie#optigenie#optigenie#optigenie#optigenie .og-main #themes .media-story:not(.og-darkrow) > figure { max-width: 720px !important; }
+
+/* ===== Connected dividers v2 (Sasha 11-17) =====
+   Each cell draws its own top line, extended across the gap to the next cell, and a vertical line centred in the gap.
+   Rows touch, so the verticals run unbroken and meet the lines. The container clips only left and right. */
+main#optigenie#optigenie#optigenie#optigenie .og-main:not(#og_) .story-phases,
+main#optigenie#optigenie#optigenie#optigenie .og-main:not(#og_) .og-lessons,
+main#optigenie#optigenie#optigenie#optigenie .og-main:not(#og_) .wireframe-grid,
+main#optigenie#optigenie#optigenie#optigenie .og-main:not(#og_) .ch-grid,
+main#optigenie#optigenie#optigenie#optigenie .og-main:not(#og_) .pns,
+main#optigenie#optigenie#optigenie#optigenie .og-main:not(#og_) .cvk-stage,
+main#optigenie#optigenie#optigenie#optigenie .og-main:not(#og_) .ux-fhs,
+main#optigenie#optigenie#optigenie#optigenie .og-main:not(#og_) .ux-stages,
+main#optigenie#optigenie#optigenie#optigenie .og-main:not(#og_) .ic-stack { column-gap: clamp(2.5rem, 4.4vw, 4.5rem) !important; row-gap: 0 !important; border-top: 0 !important; clip-path: inset(-100vh 0 -100vh 0); }
+main#optigenie#optigenie#optigenie#optigenie .og-main:not(#og_) .story-phases > *,
+main#optigenie#optigenie#optigenie#optigenie .og-main:not(#og_) .og-lessons > *,
+main#optigenie#optigenie#optigenie#optigenie .og-main:not(#og_) .wireframe-grid > *,
+main#optigenie#optigenie#optigenie#optigenie .og-main:not(#og_) .ch-grid > *,
+main#optigenie#optigenie#optigenie#optigenie .og-main:not(#og_) .pns > *,
+main#optigenie#optigenie#optigenie#optigenie .og-main:not(#og_) .cvk-stage > *,
+main#optigenie#optigenie#optigenie#optigenie .og-main:not(#og_) .ux-fhs > *,
+main#optigenie#optigenie#optigenie#optigenie .og-main:not(#og_) .ux-stages > *,
+main#optigenie#optigenie#optigenie#optigenie .og-main:not(#og_) .ic-stack > .ic-row:not(.ic-anatomy) { position: relative; border: 0 !important; border-image: none !important; border-radius: 0 !important; background: none !important; box-shadow: none !important; padding-top: var(--sp-l) !important; padding-bottom: var(--sp-xl) !important; margin-top: 0 !important; }
+main#optigenie#optigenie#optigenie#optigenie .og-main:not(#og_) .story-phases > *::after,
+main#optigenie#optigenie#optigenie#optigenie .og-main:not(#og_) .og-lessons > *::after,
+main#optigenie#optigenie#optigenie#optigenie .og-main:not(#og_) .wireframe-grid > *::after,
+main#optigenie#optigenie#optigenie#optigenie .og-main:not(#og_) .ch-grid > *::after,
+main#optigenie#optigenie#optigenie#optigenie .og-main:not(#og_) .pns > *::after,
+main#optigenie#optigenie#optigenie#optigenie .og-main:not(#og_) .cvk-stage > *::after,
+main#optigenie#optigenie#optigenie#optigenie .og-main:not(#og_) .ux-fhs > *::after,
+main#optigenie#optigenie#optigenie#optigenie .og-main:not(#og_) .ux-stages > *::after,
+main#optigenie#optigenie#optigenie#optigenie .og-main:not(#og_) .ic-stack > .ic-row:not(.ic-anatomy)::after { content: "" !important; display: block !important; position: absolute !important; top: 0 !important; left: 0 !important; right: calc(-1 * clamp(2.5rem, 4.4vw, 4.5rem)) !important; height: 1px !important; width: auto !important; background: var(--line) !important; border: 0 !important; transform: none !important; }
+main#optigenie#optigenie#optigenie#optigenie .og-main:not(#og_) .story-phases > *:not(:first-child)::before,
+main#optigenie#optigenie#optigenie#optigenie .og-main:not(#og_) .og-lessons > *:not(:first-child)::before,
+main#optigenie#optigenie#optigenie#optigenie .og-main:not(#og_) .wireframe-grid > *:not(:first-child)::before,
+main#optigenie#optigenie#optigenie#optigenie .og-main:not(#og_) .ch-grid > *:not(:first-child)::before,
+main#optigenie#optigenie#optigenie#optigenie .og-main:not(#og_) .pns > *:not(:first-child)::before,
+main#optigenie#optigenie#optigenie#optigenie .og-main:not(#og_) .cvk-stage > *:not(:first-child)::before,
+main#optigenie#optigenie#optigenie#optigenie .og-main:not(#og_) .ux-fhs > *:not(:first-child)::before,
+main#optigenie#optigenie#optigenie#optigenie .og-main:not(#og_) .ux-stages > *:not(:first-child)::before,
+main#optigenie#optigenie#optigenie#optigenie .og-main:not(#og_) .ic-stack > .ic-row:not(.ic-anatomy):not(:first-child)::before { content: "" !important; display: block !important; position: absolute !important; top: 0 !important; bottom: 0 !important; left: calc(-1 * clamp(2.5rem, 4.4vw, 4.5rem) / 2) !important; width: 1px !important; height: auto !important; background: var(--line) !important; border: 0 !important; transform: none !important; }
+main#optigenie#optigenie#optigenie#optigenie .og-main:not(#og_) .ads-wrap > :is(.story-phases, .og-lessons, .wireframe-grid, .ch-grid, .pns, .cvk-stage, .ux-fhs, .ux-stages, .ic-stack):last-child > *:not(:first-child)::before { bottom: calc(-1 * var(--sp-xxl)) !important; }
+/* the carousel window and its frame are not a divider: no border, no panel */
+main#optigenie#optigenie#optigenie#optigenie .og-main:not(#og_) .cvex-window { border: 0 !important; background: transparent !important; box-shadow: none !important; border-radius: 0 !important; }
+/* vertical divider between the menu and the content, full height; chapter lines start on it */
+main#optigenie#optigenie#optigenie#optigenie .og-main:not(#og_) { border-left: 1px solid var(--line) !important; }
+main#optigenie#optigenie#optigenie#optigenie .og-main:not(#og_) > .ads-sec, main#optigenie#optigenie#optigenie#optigenie .og-main:not(#og_) > .ac-sec, main#optigenie#optigenie#optigenie#optigenie .og-main:not(#og_) > .cvex { margin-left: calc(-1 * var(--cs-pad)) !important; padding-left: var(--cs-pad) !important; }
+main#optigenie#optigenie#optigenie#optigenie .og-index__list a { color: #6b6a7a !important; }
+main#optigenie#optigenie#optigenie#optigenie .og-index__list a.is-active { color: #16151f !important; }
+main#optigenie#optigenie#optigenie#optigenie .og-index__n { color: #a3a2ae !important; }
+/* one label style: 11px mono, wide tracking, grey; titles black */
+main#optigenie#optigenie#optigenie#optigenie .og-main:not(#og_) .ac-label, main#optigenie#optigenie#optigenie#optigenie .og-main:not(#og_) .pns-k, main#optigenie#optigenie#optigenie#optigenie .og-main:not(#og_) .ux-overline, main#optigenie#optigenie#optigenie#optigenie .og-main:not(#og_) .ic-overline, main#optigenie#optigenie#optigenie#optigenie .og-main:not(#og_) .cv-title, main#optigenie#optigenie#optigenie#optigenie .og-main:not(#og_) .ux-stage-num, main#optigenie#optigenie#optigenie#optigenie .og-main:not(#og_) .ux-demo-label { font: 600 11px/1.4 ui-monospace, SFMono-Regular, Menlo, monospace !important; letter-spacing: .14em !important; text-transform: uppercase !important; color: #5c5c66 !important; margin: 0 0 var(--sp-s) !important; }
+main#optigenie#optigenie#optigenie#optigenie .og-main:not(#og_) .ux-stage-num { color: #4b3fd6 !important; }
+main#optigenie#optigenie#optigenie#optigenie .og-main:not(#og_) .skill-name { font-size: clamp(1.7rem, 1.2rem + 1vw, 2.4rem) !important; font-weight: 600 !important; letter-spacing: -.02em !important; color: #111114 !important; margin: 0 0 var(--sp-m) !important; }
+/* breathing room between stacked blocks inside a chapter */
+main#optigenie#optigenie#optigenie#optigenie .og-main:not(#og_) .ic-process, main#optigenie#optigenie#optigenie#optigenie .og-main:not(#og_) .ic-sizing, main#optigenie#optigenie#optigenie#optigenie .og-main:not(#og_) .ux-part, main#optigenie#optigenie#optigenie#optigenie .og-main:not(#og_) .cvex-head, main#optigenie#optigenie#optigenie#optigenie .og-main:not(#og_) .work-panel > * + .cvex, main#optigenie#optigenie#optigenie#optigenie .og-main:not(#og_) .ic-section { margin-top: var(--sp-xxl) !important; }
+main#optigenie#optigenie#optigenie#optigenie .og-main:not(#og_) .ic-overline + h2, main#optigenie#optigenie#optigenie#optigenie .og-main:not(#og_) .ic-overline + h3, main#optigenie#optigenie#optigenie#optigenie .og-main:not(#og_) .ac-label + h2, main#optigenie#optigenie#optigenie#optigenie .og-main:not(#og_) .ac-label + h3 { margin-top: 0 !important; }
+
+/* header stack (Sasha 11-17): statement, its description beneath, then Role / Company / Worked with */
+main#optigenie#optigenie#optigenie#optigenie:not(#og_) #overview .ads-wrap, main#optigenie#optigenie#optigenie#optigenie:not(#og_) .ac-lede .ac-wrap { display: block !important; }
+main#optigenie#optigenie#optigenie#optigenie:not(#og_) #overview .big, main#optigenie#optigenie#optigenie#optigenie:not(#og_) .ac-lede .big { max-width: 22ch !important; padding-right: 0 !important; margin: 0 0 2.5rem !important; }
+main#optigenie#optigenie#optigenie#optigenie:not(#og_) #overview .sub, main#optigenie#optigenie#optigenie#optigenie:not(#og_) .ac-lede .sub { max-width: 68ch !important; padding-left: 0 !important; border-left: 0 !important; margin: 0 !important; }
+main#optigenie#optigenie#optigenie#optigenie:not(#og_) #overview, main#optigenie#optigenie#optigenie#optigenie:not(#og_) .ac-lede { padding-bottom: clamp(3rem, 5vw, 5rem) !important; }
 </style>
     <script src="./js/aboutTexture.js"></script>
 <script>/* chapter index: highlight the chapter in view */(function(){try{var links=[].slice.call(document.querySelectorAll('.og-index__list a'));if(!links.length||!('IntersectionObserver' in window))return;var by={};links.forEach(function(a){by[a.dataset.target]=a;});var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){links.forEach(function(a){a.classList.remove('is-active');});var a=by[e.target.id];if(a)a.classList.add('is-active');}});},{rootMargin:'-35% 0px -60% 0px'});Object.keys(by).forEach(function(id){var s=document.getElementById(id);if(s)io.observe(s);});}catch(e){}})();</script>
