@@ -393,6 +393,15 @@ main#case#case#case#case .og-main > .ads-sec + .ads-sec, main#case#case#case#cas
 main#case#case#case#case .og-main .media-story + .media-story, main#case#case#case#case .og-main .og-dcard + .og-dcard, main#case#case#case#case .og-main .og-decisions, main#case#case#case#case .og-main .og-decisions ~ .media-story,
 main#case#case#case#case .og-main .media-story + .case-figure, main#case#case#case#case .og-main .case-figure + .media-story, main#case#case#case#case .og-main .princ { border-image-outset: 0 100vw 0 0 !important; }
 main#case#case#case#case .og-main .media-story + .media-story, main#case#case#case#case .og-main .og-dcard + .og-dcard, main#case#case#case#case .og-main .og-decisions, main#case#case#case#case .og-main .og-decisions ~ .media-story, main#case#case#case#case .og-main .media-story + .case-figure, main#case#case#case#case .og-main .case-figure + .media-story, main#case#case#case#case .og-main .princ { border-image-outset: 0 100vw 0 var(--cs-pad) !important; }
+
+/* only chapter lines divide the column; rows, decisions, blocks and results are separated by space alone */
+main#case#case#case#case .og-main .og-decisions, main#case#case#case#case .og-main .og-dcard, main#case#case#case#case .og-main .media-story, main#case#case#case#case .og-main .ux-block, main#case#case#case#case .og-main .princ, main#case#case#case#case .og-main .ads-result, main#case#case#case#case .og-main .story-opening,
+main#case#case#case#case .og-main .media-story + .media-story, main#case#case#case#case .og-main .og-dcard + .og-dcard, main#case#case#case#case .og-main .og-decisions ~ .media-story, main#case#case#case#case .og-main .media-story + .case-figure, main#case#case#case#case .og-main .case-figure + .media-story, main#case#case#case#case .og-main .case-figure + .case-figure {
+  border-top: 0 !important; border-bottom: 0 !important; border-image: none !important; }
+main#case#case#case#case .og-main .princ { padding-top: 0 !important; margin-top: var(--sp-xl) !important; }
+main#case#case#case#case .og-main .ux-block { padding-top: 0 !important; }
+/* wide close-ups (charts, heatmaps): calmer size, like the diagrams */
+main#case#case#case#case .og-main .ads-closeup--wide .ads-closeup__shot, main#case#case#case#case .og-main .ads-closeup:not(.ads-closeup--side):not(.ads-closeup--landscape) .ads-closeup__shot { max-width: 1040px !important; }
 /* AI skills page (ac-* structure): same frame, its own components */
 main#case#case#case#case .og-main > .ac-sec, main#case#case#case#case .og-main > .cvex { position: relative; background: none !important; padding: var(--sp-xxl) 0 var(--sp-xxl) var(--cs-pad) !important; }
 main#case#case#case#case .og-main > .ac-sec { counter-increment: ogch; }
