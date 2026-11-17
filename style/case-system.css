@@ -304,6 +304,12 @@ main#case#case#case#case .og-main .media-story > figure, main#case#case#case#cas
 main#case#case#case#case .og-main .media-story, main#case#case#case#case .og-main .media-story--lead, main#case#case#case#case .og-main .story-opening, main#case#case#case#case .og-main .og-dcard { justify-items: stretch !important; }
 main#case#case#case#case .og-main .ads-closeup--side { grid-template-columns: minmax(0, 1fr) 420px !important; }
 main#case#case#case#case .og-main .ads-closeup__notes, main#case#case#case#case .og-main .ads-closeup--side > .ads-closeup__notes { max-width: 68ch !important; }
+
+/* ===== Centred, wide (Sasha 11-17: "align to the middle", "not so small on big screens", more side padding) =====
+   The whole page block (index + column, and the overview) centres in a 2000px frame with 5vw side padding.
+   The column fills what is left, so figures grow with the screen; text keeps its measure. */
+main#case#case#case#case .og-body, main#case#case#case#case #overview .ads-wrap { max-width: 2000px !important; margin-left: auto !important; margin-right: auto !important; padding-left: clamp(24px, 5vw, 128px) !important; padding-right: clamp(24px, 5vw, 128px) !important; box-sizing: border-box; }
+main#case#case#case#case .og-main { max-width: none !important; }
 /* AI skills page (ac-* structure): same frame, its own components */
 main#case#case#case#case .og-main > .ac-sec, main#case#case#case#case .og-main > .cvex { position: relative; background: none !important; padding: var(--sp-xxl) 0 var(--sp-xxl) var(--cs-pad) !important; }
 main#case#case#case#case .og-main > .ac-sec { counter-increment: ogch; }
