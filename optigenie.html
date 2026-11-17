@@ -1635,6 +1635,17 @@ main#optigenie#optigenie#optigenie#optigenie .og-main .cvk-slide, main#optigenie
 /* index: keep long chapter names off the column hairline */
 #optigenie .og-index { padding-right: 1.75rem; }
 #optigenie .og-index__list a { overflow-wrap: anywhere; }
+
+/* ===== One media rule (Sasha 11-17: harmony on big screens) =====
+   The reading column is capped at 1040px. Every figure fills it exactly, starting on the text's left edge.
+   Text keeps a 68ch measure. Only the side profile card is a deliberate exception (420px beside its notes). */
+#optigenie .og-main { --cs-col: 1040px; max-width: calc(var(--cs-col) + var(--cs-pad)) !important; }
+main#optigenie#optigenie#optigenie#optigenie .og-main figure.case-figure, main#optigenie#optigenie#optigenie#optigenie .og-main .story-sketch, main#optigenie#optigenie#optigenie#optigenie .og-main .story-block__art, main#optigenie#optigenie#optigenie#optigenie .og-main .og-darkfig, main#optigenie#optigenie#optigenie#optigenie .og-main .og-dcard__fig,
+main#optigenie#optigenie#optigenie#optigenie .og-main .ads-closeup--wide .ads-closeup__shot, main#optigenie#optigenie#optigenie#optigenie .og-main .ads-closeup--landscape .ads-closeup__shot, main#optigenie#optigenie#optigenie#optigenie .og-main .ads-closeup:not(.ads-closeup--side) .ads-closeup__shot,
+main#optigenie#optigenie#optigenie#optigenie .og-main .media-story > figure, main#optigenie#optigenie#optigenie#optigenie .og-main .story-opening > figure { width: 100% !important; max-width: none !important; margin-left: 0 !important; margin-right: 0 !important; justify-self: stretch !important; align-self: start !important; }
+main#optigenie#optigenie#optigenie#optigenie .og-main .media-story, main#optigenie#optigenie#optigenie#optigenie .og-main .media-story--lead, main#optigenie#optigenie#optigenie#optigenie .og-main .story-opening, main#optigenie#optigenie#optigenie#optigenie .og-main .og-dcard { justify-items: stretch !important; }
+main#optigenie#optigenie#optigenie#optigenie .og-main .ads-closeup--side { grid-template-columns: minmax(0, 1fr) 420px !important; }
+main#optigenie#optigenie#optigenie#optigenie .og-main .ads-closeup__notes, main#optigenie#optigenie#optigenie#optigenie .og-main .ads-closeup--side > .ads-closeup__notes { max-width: 68ch !important; }
 </style>
     <script src="./js/aboutTexture.js"></script>
 <script>/* chapter index: highlight the chapter in view */(function(){try{var links=[].slice.call(document.querySelectorAll('.og-index__list a'));if(!links.length||!('IntersectionObserver' in window))return;var by={};links.forEach(function(a){by[a.dataset.target]=a;});var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){links.forEach(function(a){a.classList.remove('is-active');});var a=by[e.target.id];if(a)a.classList.add('is-active');}});},{rootMargin:'-35% 0px -60% 0px'});Object.keys(by).forEach(function(id){var s=document.getElementById(id);if(s)io.observe(s);});}catch(e){}})();</script>

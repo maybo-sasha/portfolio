@@ -293,6 +293,17 @@ main#case#case#case#case .og-main .cvk-slide, main#case#case#case#case .og-main 
 /* index: keep long chapter names off the column hairline */
 #case .og-index { padding-right: 1.75rem; }
 #case .og-index__list a { overflow-wrap: anywhere; }
+
+/* ===== One media rule (Sasha 11-17: harmony on big screens) =====
+   The reading column is capped at 1040px. Every figure fills it exactly, starting on the text's left edge.
+   Text keeps a 68ch measure. Only the side profile card is a deliberate exception (420px beside its notes). */
+#case .og-main { --cs-col: 1040px; max-width: calc(var(--cs-col) + var(--cs-pad)) !important; }
+main#case#case#case#case .og-main figure.case-figure, main#case#case#case#case .og-main .story-sketch, main#case#case#case#case .og-main .story-block__art, main#case#case#case#case .og-main .og-darkfig, main#case#case#case#case .og-main .og-dcard__fig,
+main#case#case#case#case .og-main .ads-closeup--wide .ads-closeup__shot, main#case#case#case#case .og-main .ads-closeup--landscape .ads-closeup__shot, main#case#case#case#case .og-main .ads-closeup:not(.ads-closeup--side) .ads-closeup__shot,
+main#case#case#case#case .og-main .media-story > figure, main#case#case#case#case .og-main .story-opening > figure { width: 100% !important; max-width: none !important; margin-left: 0 !important; margin-right: 0 !important; justify-self: stretch !important; align-self: start !important; }
+main#case#case#case#case .og-main .media-story, main#case#case#case#case .og-main .media-story--lead, main#case#case#case#case .og-main .story-opening, main#case#case#case#case .og-main .og-dcard { justify-items: stretch !important; }
+main#case#case#case#case .og-main .ads-closeup--side { grid-template-columns: minmax(0, 1fr) 420px !important; }
+main#case#case#case#case .og-main .ads-closeup__notes, main#case#case#case#case .og-main .ads-closeup--side > .ads-closeup__notes { max-width: 68ch !important; }
 /* AI skills page (ac-* structure): same frame, its own components */
 main#case#case#case#case .og-main > .ac-sec, main#case#case#case#case .og-main > .cvex { position: relative; background: none !important; padding: var(--sp-xxl) 0 var(--sp-xxl) var(--cs-pad) !important; }
 main#case#case#case#case .og-main > .ac-sec { counter-increment: ogch; }
