@@ -739,3 +739,17 @@ main#case#case#case#case .og-main .ch-text { max-width: 68ch; }
   main#case#case#case#case:not(#og_) .og-body { grid-template-columns: clamp(220px, 15vw, 320px) minmax(0, 1fr) !important; }
   body:has(main .og-body) .inner-back { left: clamp(32px, calc(14vw - 180px), 180px) !important; }
 }
+
+/* Sasha 11-17: big gaps under column grids. Columns pad 40px at the bottom (was 96); a grid that ends its section adds none,
+   so only the section's own spacing sits under the longest column */
+main#case#case#case#case .og-main:not(#og_) :is(.story-phases, .og-lessons, .wireframe-grid, .ch-grid, .pns, .cvk-stage, .ux-fhs, .ux-stages) > *, main#case#case#case#case .og-main:not(#og_) .ic-stack > .ic-row:not(.ic-anatomy) { padding-bottom: 2.5rem !important; }
+main#case#case#case#case .og-main:not(#og_) :is(.ads-wrap, .ac-wrap) > :is(.story-phases, .og-lessons, .wireframe-grid, .ch-grid, .pns, .cvk-stage, .ux-fhs, .ux-stages, .ic-stack):last-child > * { padding-bottom: 0 !important; }
+
+/* Sasha 11-17: mid screens stretch the intro: heading runs to 32ch, paragraph to 100ch, so the top half isn't empty */
+@media (min-width: 1001px) and (max-width: 1800px) {
+  main#case#case#case#case:not(#og_):not(#og_) #overview .big, main#case#case#case#case:not(#og_):not(#og_) .ac-lede .big { max-width: 32ch !important; }
+  main#case#case#case#case:not(#og_):not(#og_) #overview .sub, main#case#case#case#case:not(#og_):not(#og_) .ac-lede .sub { max-width: 100ch !important; }
+}
+
+/* Sasha 11-17: mid screens (1001-1800px) get a smaller chapter list */
+@media (min-width: 1001px) and (max-width: 1800px) { main#case#case#case#case:not(#og_) .og-index__list { font-size: 14px !important; gap: 14px !important; } main#case#case#case#case:not(#og_) .og-index__list a { font-size: 14px !important; } }

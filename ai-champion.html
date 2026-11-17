@@ -830,8 +830,16 @@
             #ch-icon .ic-reference-set { gap: .7rem; --ref: 64px; } #ch-icon .ic-reference-set img { width: 64px; height: 64px; }
             #ch-icon .ic-construction { flex-direction: column; gap: 0; } #ch-icon .ic-construction ul { gap: .5rem; }
         }
+        main#case#case#case#case .og-main:not(#og_) #ch-icon .ic-sizing { margin-top: 3.5rem !important; }   /* Sasha 11-17: smaller gap above Size in context */
+        /* Sasha 11-17: the three columns share rows (text / drawing / caption) so the drawings and captions line up across them */
+        @media (min-width: 761px) {
+            main#case#case#case#case .og-main #ch-icon .ic-stack > .ic-row:not(.ic-anatomy) { display: grid !important; grid-row: span 3; grid-template-rows: subgrid; row-gap: 0; }
+            #ch-icon .ic-stack > .ic-row:not(.ic-anatomy) > .ic-row-visual { display: contents; }
+            #ch-icon .ic-stack > .ic-row:not(.ic-anatomy) .ic-visual-art { margin-top: 2rem; align-self: center; }
+            #ch-icon .ic-stack > .ic-row:not(.ic-anatomy) .ic-visual-caption { min-height: 0; padding-top: 1rem; }
+        }
         /* Sasha 11-17, mid screens: captions wrap inside their column instead of spilling past the divider; reference icons shrink to fit */
-        @media (min-width: 761px) and (max-width: 1400px) {
+        @media (min-width: 761px) and (max-width: 1800px) {
             #ch-icon .ic-row-visual .ic-meaning, #ch-icon .ic-row-visual .ic-construction ul { flex-direction: column; align-items: flex-start; gap: .5rem; width: fit-content; max-width: 100%; margin-left: auto; margin-right: auto; white-space: normal; }
             #ch-icon .ic-row-visual .ic-meaning span, #ch-icon .ic-row-visual .ic-construction li { border-left: 2px solid var(--lav) !important; padding: 0 0 0 .7rem !important; }
             #ch-icon .ic-reference-set { gap: .6rem; --ref: 62px; } #ch-icon .ic-reference-set img { width: 62px; height: 62px; }

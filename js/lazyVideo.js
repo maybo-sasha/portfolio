@@ -36,6 +36,9 @@
         var blocked = [];
         function play(v) {
             poster(v);
+            // Play-once films (no loop attribute) end on their last frame and stay there: no replay when scrolled back (Sasha 11-17)
+            if (v.__done) return;
+            if (!v.loop && !v.__onceBound) { v.__onceBound = true; v.addEventListener('ended', function () { v.__done = true; v.dataset.videoState = 'done'; }); }
             if (!shouldPlay(v)) return;
             if (v.__released) { v.__released = false; v.preload = 'auto'; }
             var p;
@@ -56,7 +59,7 @@
         }
         // Off screen: stop decoding and drop the buffer; the time is restored when it comes back
         function release(v) {
-            if (!v.__started || v.__released) return;
+            if (!v.__started || v.__released || v.__done) return;
             v.__resumeAt = v.currentTime || 0;
             v.__released = true;
             v.preload = 'none';
