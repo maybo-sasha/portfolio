@@ -157,7 +157,7 @@
             };
         }
         function hint() {   // shown on the thumb until the pointer moves along the track
-            tip.innerHTML = 'drag to scroll';
+            tip.innerHTML = 'scroll';
             tip.style.top = (parseFloat(thumb.style.top || 0) + thumb.offsetHeight / 2) + 'px';
             rail.classList.add('is-point');
         }
