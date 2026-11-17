@@ -735,6 +735,19 @@ body::after { content: ""; position: fixed; inset: 0; z-index: 9000; pointer-eve
 @keyframes mg-sink{0%{opacity:0;transform:translate(0,0) scale(1)}18%{opacity:1}80%{opacity:1}100%{opacity:0;transform:translate(var(--dx),var(--dy)) scale(.45)}}
 @media (prefers-reduced-motion:reduce){.mg .sink{display:none}}</style>
     <link rel="stylesheet" href="./style/case-system.css">
+    <style>
+        /* Challenge cards: one row grid across the three cards, so title, challenge and solution start on the same line,
+           with a hairline above the solution that lines up across columns (Sasha 2026-11-17). Side-by-side layout only. */
+        @media (min-width: 1101px) {
+            main#case .ch-grid { grid-template-rows: repeat(5, auto); }
+            main#case .ch-grid > .ch-card { display: grid !important; grid-row: span 5; grid-template-rows: subgrid; row-gap: 0; }
+            main#case .ch-card > .ch-card__body { display: contents !important; }
+            main#case .ch-card .ch-card__n { margin-top: 1.5rem; }
+            main#case .ch-card h3 { margin-top: .75rem !important; }
+            main#case .ch-card .ch-card__body > p { margin: .75rem 0 0 !important; }
+            main#case .ch-card .ch-card__body > p + p { margin-top: 1.75rem !important; padding-top: 1.5rem; border-top: 1px solid var(--plan-line); }
+        }
+    </style>
 </head>
 <body>
 
