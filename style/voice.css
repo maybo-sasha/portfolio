@@ -186,7 +186,9 @@ html body a.inner-back:focus-visible { outline: 2px solid #0f0f0f !important; ou
 /* OptiGenie: one flat grey surface per figure (Sasha 11-23: "bg on bg"). The media are 238 grey, so every layer is 238,
    and no inner frame draws a shadow, ring or second tone. */
 main#optigenie#optigenie#optigenie#optigenie#optigenie .og-main :is(.case-figure, .og-darkfig, .og-dcard__fig, .ads-shot, .ads-shot.recording-frame) { background-color: #eeeeee !important; box-shadow: none !important; }
-main#optigenie#optigenie#optigenie#optigenie#optigenie .og-main :is(.case-figure, .og-darkfig, .og-dcard__fig) :is(video, img) { box-shadow: none !important; }
+main#optigenie#optigenie#optigenie#optigenie#optigenie .og-main :is(.case-figure, .og-darkfig) :is(video, img) { box-shadow: none !important; }
+/* the decision-card phones draw their bezel as a ring: keep it (Sasha 11-23: "we lost our mobile frame") */
+main#optigenie#optigenie#optigenie#optigenie#optigenie .og-main .og-dcard__fig video { box-shadow: 0 0 0 9px #16151f, 0 0 0 10px #2c2a3a !important; }
 
 /* ---------- phones (Sasha 11-23): cards take the film's own 16:9, so walkthroughs aren't cropped; the greeting sits under the title in size ---------- */
 @media (max-width: 900px) {
