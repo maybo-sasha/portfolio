@@ -187,3 +187,10 @@ html body a.inner-back:focus-visible { outline: 2px solid #0f0f0f !important; ou
    and no inner frame draws a shadow, ring or second tone. */
 main#optigenie#optigenie#optigenie#optigenie#optigenie .og-main :is(.case-figure, .og-darkfig, .og-dcard__fig, .ads-shot, .ads-shot.recording-frame) { background-color: #eeeeee !important; box-shadow: none !important; }
 main#optigenie#optigenie#optigenie#optigenie#optigenie .og-main :is(.case-figure, .og-darkfig, .og-dcard__fig) :is(video, img) { box-shadow: none !important; }
+
+/* ---------- phones (Sasha 11-23): cards take the film's own 16:9, so walkthroughs aren't cropped; the greeting sits under the title in size ---------- */
+@media (max-width: 900px) {
+  html body .project-img-wrap, html body .project-img-wrap.is-phone { height: auto !important; aspect-ratio: 16 / 9 !important; min-height: 0 !important; }
+  html body .project-img-wrap > video, html body .project-img-wrap > img, html body .project-img-wrap > canvas { width: 100% !important; height: 100% !important; object-fit: contain !important; }
+  html body .intro-hi { font-size: clamp(1.35rem, 6vw, 1.6rem) !important; font-weight: 600 !important; letter-spacing: -0.01em !important; line-height: 1.2 !important; margin-bottom: .5rem !important; opacity: .72; }
+}

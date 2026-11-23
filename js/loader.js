@@ -37,11 +37,11 @@
     else {
         window.addEventListener('load', markDone, { once: true });
         if (document.readyState === 'loading') {
-            document.addEventListener('DOMContentLoaded', function () { setTimeout(markDone, 700); }, { once: true });
-        } else setTimeout(markDone, 700);
+            document.addEventListener('DOMContentLoaded', function () { setTimeout(markDone, 250); }, { once: true });
+        } else setTimeout(markDone, 250);
     }
-    var readyCap = setTimeout(markDone, 4000);
-    var safety = setTimeout(remove, 6500);
+    var readyCap = setTimeout(markDone, 2200);  // perf pass 11-23: never wait on media
+    var safety = setTimeout(remove, 4000);
 
     function remove() {
         if (removed) return;
@@ -70,13 +70,13 @@
             if (removed) return;
             root.classList.remove('loading');
             el.classList.add('is-done');
-            setTimeout(remove, reduce.matches ? 0 : 750);
-        }, reduce.matches ? 0 : 250);
+            setTimeout(remove, reduce.matches ? 0 : 500);
+        }, reduce.matches ? 0 : 150);
     }
     function tick() {
         if (removed || finished) return;
         target = done ? 100 : Math.min(92, target + Math.random() * 5);
-        pct += (target - pct) * (reduce.matches ? 1 : 0.12);
+        pct += (target - pct) * (reduce.matches ? 1 : 0.18);
         var shown = Math.min(100, Math.round(pct));
         num.textContent = shown;
         bar.style.transform = 'scaleX(' + (pct / 100) + ')';
