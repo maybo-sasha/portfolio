@@ -196,3 +196,6 @@ main#optigenie#optigenie#optigenie#optigenie#optigenie .og-main .og-dcard__fig v
   html body .project-img-wrap > video, html body .project-img-wrap > img, html body .project-img-wrap > canvas { width: 100% !important; height: 100% !important; object-fit: contain !important; }
   html body .intro-hi { font-size: clamp(1.35rem, 6vw, 1.6rem) !important; font-weight: 600 !important; letter-spacing: -0.01em !important; line-height: 1.2 !important; margin-bottom: .5rem !important; opacity: .72; }
 }
+/* OptiGenie motion tiles: the film is the surface; no grey box round or under it (Sasha 11-23: "grey leftovers") */
+main#optigenie#optigenie#optigenie#optigenie#optigenie .og-main .case-figure.og-tile { background: transparent !important; padding: 0 !important; box-shadow: none !important; }
+main#optigenie#optigenie#optigenie#optigenie#optigenie .og-main .case-figure.og-tile > :is(video, .ads-shot) { width: 100% !important; max-width: none !important; margin: 0 !important; border-radius: 18px !important; display: block; }
