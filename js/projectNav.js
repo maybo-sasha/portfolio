@@ -25,7 +25,8 @@
         '<span class="np-name">' + next.name + '</span>' +
         '<span class="np-progress" role="progressbar" aria-label="Keep scrolling to open ' + next.name + '" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">' +
             '<span class="np-bar"><span class="np-fill"></span></span>' +
-            '<span class="np-hint">Keep scrolling to continue</span>' +
+            '<span class="np-hint">Keep scrolling to open ' + next.name + '</span>' +
+            '<span class="np-cue" aria-hidden="true"></span>' +
         '</span>';
     document.body.appendChild(a);
     const prog = a.querySelector('.np-progress'), fill = a.querySelector('.np-fill'), hint = a.querySelector('.np-hint');
@@ -55,7 +56,7 @@
     function show() {
         fill.style.transform = 'scaleX(' + p.toFixed(4) + ')';
         prog.setAttribute('aria-valuenow', String(Math.round(p * 100)));
-        hint.textContent = leaving ? 'Opening ' + next.name : p > 0.02 ? 'Loading ' + next.name + '…' : 'Keep scrolling to continue';
+        hint.textContent = leaving ? 'Opening ' + next.name + '…' : 'Keep scrolling to open ' + next.name;   // Sasha 11-23: never 'Loading', it reads as a wait and people stop
         a.classList.toggle('is-loading', p > 0.02);
     }
     function loop(now) {

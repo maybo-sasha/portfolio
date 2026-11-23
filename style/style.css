@@ -1,9 +1,9 @@
 :root {
     --swup-blue: hsl(239, 50%, 30%);
     --background: #0f0f0f;
-    /* Montserrat (Google Fonts, SIL Open Font Licence), loaded by each page; Helvetica stands in until it arrives */
-    --font-display: 'Montserrat', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-    --font-body: 'Montserrat', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    /* Plus Jakarta Sans (Google Fonts, SIL Open Font Licence), loaded by each page; Helvetica stands in until it arrives */
+    --font-display: 'Plus Jakarta Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    --font-body: 'Plus Jakarta Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 
 /* Typographic baseline — applies across the whole site */
@@ -67,7 +67,7 @@ html.loading { overflow: hidden; }
     position: fixed;
     inset: 0;
     z-index: 999999;
-    background: #0a0a0a;
+    background: var(--background);
     color: #fff;
     display: flex;
     align-items: center;
@@ -107,6 +107,10 @@ html.loading { overflow: hidden; }
     transform: scaleX(0);
     transform-origin: left center;
 }
+
+.sl-stack { display: flex; flex-direction: column; align-items: center; gap: clamp(20px, 3vh, 32px); }
+.site-loader .sl-caption { margin: 0; font: 500 clamp(12px, .9vw, 16px)/1.4 var(--font-body); letter-spacing: .08em; color: rgba(255,255,255,.7); }
+@media (prefers-reduced-motion: reduce) { .site-loader { transition: none; } }
 
 /* ── Mobile responsive baseline ──────────────────────────── */
 @media (max-width: 760px) {
@@ -1434,22 +1438,36 @@ html.deck-held body { pointer-events: none; touch-action: none; }
 .intro { position: absolute; inset: 0; animation: intro-in .9s ease-out both; }
 @keyframes intro-in { from { opacity: 0; } to { opacity: 1; } }
 @media (prefers-reduced-motion: reduce) { .intro { animation: none; } }
+/* Start only after the loader has completely left; no filter remains at rest. */
+html.intro-pending .intro > :is(p, h1, .intro-col) { opacity: 0; transform: translateY(48px); }
+/* Sasha 11-23: after the loader each block rises from below into place, one after another, top to bottom */
+html.intro-enter .intro > :is(p, h1, .intro-col) { animation: intro-rise .9s cubic-bezier(.05,.7,.1,1) var(--intro-delay, 0s) both; }
+html.intro-enter .intro-hi { --intro-delay: .09s; }
+html.intro-enter .intro-title { --intro-delay: .18s; }
+html.intro-enter .intro-col--1 { --intro-delay: .32s; }
+html.intro-enter .intro-col--2 { --intro-delay: .41s; }
+@keyframes intro-rise { from { opacity: 0; transform: translateY(48px); } to { opacity: 1; transform: none; } }
+@media (prefers-reduced-motion: reduce) {
+    html.intro-pending .intro > :is(p, h1, .intro-col), html.intro-enter .intro > :is(p, h1, .intro-col) { animation: none; opacity: 1; filter: none; transform: none; }
+}
+
 .phi-lines { position: absolute; inset: 0; pointer-events: none; }
 .phi-v, .phi-h { position: absolute; background: rgba(255, 255, 255, 0.09); }
 .phi-v { top: 0; bottom: 0; width: 1px; } .phi-h { left: 0; right: 0; height: 1px; }
 .phi-v i, .phi-h i { position: absolute; font-style: normal; font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 10px; letter-spacing: 0.08em; color: rgba(255, 255, 255, 0.3); }
 .phi-v i { bottom: 14px; left: 8px; } .phi-h i { right: 14px; top: 6px; }
 .intro > p, .intro > h1, .intro > div:not(.phi-lines) { position: absolute; margin: 0; }
+.intro-edition { left: 9.02%; bottom: calc(61.8% + var(--b) * 5.6); font-size: clamp(12px, .85vw, 16px); line-height: 1.4; font-weight: 500; letter-spacing: .07em; color: rgba(255,255,255,.72); }
 .intro-hi { left: 9.02%; bottom: calc(61.8% + var(--b) * 1.618);   /* in the cell above the 0.382 line */
     color: #fff; font-family: var(--font-display); font-size: calc(var(--b) * 2.618);
     font-weight: 800; line-height: 1; letter-spacing: -0.03em; }
 /* the title's grid fit: "senior"'s x-height sits on the 0.382 line and "designer."'s baseline on the 0.618 line.
-   Montserrat 900 measured: x-height 0.547em, ascent 0.968em, descent 0.251em; at line-height 0.86 the first baseline is
+   Plus Jakarta Sans 900 measured: x-height 0.547em, ascent 0.968em, descent 0.251em; at line-height 0.86 the first baseline is
    0.7885em below the box top, the x-height top 0.2415em, the second baseline 1.6485em; so 1.407em = 23.6% of the height,
    F = 16.77vh (width caps it at 7.1vw so "senior product" ends before the 0.618 line) */
 .intro-title { left: 9.02%; top: calc(50% - 1.01 * var(--F));   /* ink centred in the band (ink from 0.02em to 2.0em at line-height 0.96) */
     color: #fff; font-family: var(--font-display); font-size: var(--F);
-    font-weight: 900; line-height: 0.96; letter-spacing: -0.055em; }
+    font-weight: 700; line-height: 0.96; letter-spacing: -0.05em; }
 .intro-col { top: calc(61.8% + var(--b) * 2.618); width: calc(23.6% - var(--b) * 2.618); display: flex; flex-direction: column; gap: calc(var(--b) * 0.618);
     font-size: var(--b); line-height: 1.618; color: rgba(255, 255, 255, 0.72); }
 .intro-col p { margin: 0; }
@@ -1514,3 +1532,49 @@ html.on-intro #logo .logo-sub { opacity: 0; }
 
 /* Sasha 2026-11-17: hide Work on touch screens; the home page already lists every project, and the hover menu is desktop-only */
 @media (max-width: 900px), (hover: none) { .nav-link[data-menu="work"], [data-menu="work"].nav-link { display: none !important; } }
+
+/* About: warm paper surface, dark type. Shared by the page and circle-reveal overlay. */
+body.about-light, .about-page, .about-overlay {
+    --about-bg: #efede5;
+    --about-ink: #0f0f0f;
+    --about-copy: #36363b;
+    --about-muted: #65656d;
+    --about-line: rgba(15, 15, 15, .14);
+    background: var(--about-bg);
+    color: var(--about-ink);
+    color-scheme: light;
+}
+html:has(body.about-light) { background: #efede5; }
+:is(.about-page, .about-overlay) .about-texture { filter: invert(1); }
+:is(.about-page, .about-overlay) :is(.about-hello h1, .about-hello h2, .about-skills) { color: var(--about-ink); }
+:is(.about-page, .about-overlay) .about-skills li:last-child { color: var(--about-muted); }
+:is(.about-page, .about-overlay) .about-block { border-top-color: var(--about-line); }
+:is(.about-page, .about-overlay) .about-info .about-block-text,
+:is(.about-page, .about-overlay) .about-info .about-block:first-child .about-block-text { color: var(--about-copy); }
+:is(.about-page, .about-overlay) .about-info .about-block:not(:first-child) .about-block-label { color: var(--about-muted); }
+:is(.about-page, .about-overlay) :is(.about-social a, .about-block-text a, .about-cv-actions a) { color: var(--about-ink); }
+:is(.about-page, .about-overlay) .about-cv-actions a { border-color: var(--about-line); }
+:is(.about-page, .about-overlay) :is(.about-social a, .about-block-text a):hover { color: var(--about-ink); }
+:is(.about-page, .about-overlay) .about-cv-actions a:hover { background: var(--about-ink); color: var(--about-bg); border-color: var(--about-ink); }
+:is(.about-page, .about-overlay) .about-content a:focus-visible { outline: 2px solid var(--about-ink); outline-offset: 6px; }
+.about-back-link {
+    position: fixed; top: 1.5rem; left: 1.5rem; z-index: 200;
+    display: inline-flex; align-items: center; gap: .55rem;
+    font-family: var(--font-display); font-size: .7rem; font-weight: 600;
+    letter-spacing: .18em; text-transform: uppercase; text-decoration: none;
+    padding: .7rem 1.1rem .7rem .85rem; border-radius: 999px;
+}
+body.about-light .about-back-link, .about-overlay .about-back {
+    color: var(--about-ink); background: var(--about-bg);
+    border: 1px solid var(--about-line); box-shadow: none;
+}
+body.about-light .about-back-link:hover, .about-overlay .about-back:hover { background: #f2f2f4; border-color: var(--about-muted); }
+body.about-light .about-back-link:focus-visible, .about-overlay .about-back:focus-visible { outline: 2px solid var(--about-ink); outline-offset: 5px; }
+/* Cursor geometry and motion stay controlled by the existing scripts. */
+body.about-light:not(:has(.nav-bar.is-open)) .cursor,
+body:has(.about-overlay.is-open) .cursor {
+    --cursor-ring: rgba(15, 15, 15, .65);
+    border-color: var(--cursor-ring) !important;
+}
+body.about-light:not(:has(.nav-bar.is-open)) .cursor.has-ripple,
+body:has(.about-overlay.is-open) .cursor.has-ripple { background-color: rgba(15, 15, 15, .04) !important; }
